@@ -1,0 +1,427 @@
+{
+  "chapter": "CH11",
+  "title": "函数 (返回值)",
+  "difficulty": "较难",
+  "questions": [
+    {
+      "id": "CH11-X-001",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回最小步数（DP 记忆化）。",
+      "code_template": "def min_steps(n, memo=None):\n    if memo is None:\n        memo = {}\n    if n <= 1:\n        return 0\n    if n in memo:\n        return memo[n]\n    memo[n] = 1 + min_steps(n - 1, memo)\n    return memo[n]\n\nprint(___)",
+      "expected_output": "Steps: 5\n",
+      "hints": "填空 DP 返回。",
+      "test_cases": [
+        "assert captured_output == 'Steps: 5\\n'"
+      ],
+      "solution": "def min_steps(n, memo=None):\n    if memo is None:\n        memo = {}\n    if n <= 1:\n        return 0\n    if n in memo:\n        return memo[n]\n    memo[n] = 1 + min_steps(n - 1, memo)\n    return memo[n]\n\nprint(f\"Steps: {min_steps(6)}\")"
+    },
+    {
+      "id": "CH11-X-002",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回最长公共前缀。",
+      "code_template": "def common_prefix(words):\n    if not words:\n        return \"\"\n    prefix = words[0]\n    for w in words[1:]:\n        while not w.startswith(prefix):\n            prefix = prefix[:-1]\n            if not prefix:\n                return \"\"\n    return prefix\n\nprint(___)",
+      "expected_output": "fl\n",
+      "hints": "填空公共前缀。",
+      "test_cases": [
+        "assert captured_output == 'fl\\n'"
+      ],
+      "solution": "def common_prefix(words):\n    if not words:\n        return \"\"\n    prefix = words[0]\n    for w in words[1:]:\n        while not w.startswith(prefix):\n            prefix = prefix[:-1]\n            if not prefix:\n                return \"\"\n    return prefix\n\nprint(common_prefix([\"flower\", \"flow\", \"flight\"]))"
+    },
+    {
+      "id": "CH11-X-003",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回合并区间。",
+      "code_template": "def merge(intervals):\n    intervals.sort()\n    result = []\n    for start, end in intervals:\n        if result and start <= result[-1][1]:\n            result[-1][1] = max(result[-1][1], end)\n        else:\n            result.append([start, end])\n    return result\n\nprint(___)",
+      "expected_output": "[[1, 6], [8, 10], [15, 18]]\n",
+      "hints": "填空区间合并返回。",
+      "test_cases": [
+        "assert captured_output == '[[1, 6], [8, 10], [15, 18]]\\n'"
+      ],
+      "solution": "def merge(intervals):\n    intervals.sort()\n    result = []\n    for start, end in intervals:\n        if result and start <= result[-1][1]:\n            result[-1][1] = max(result[-1][1], end)\n        else:\n            result.append([start, end])\n    return result\n\nprint(merge([[1, 3], [2, 6], [8, 10], [15, 18]]))"
+    },
+    {
+      "id": "CH11-X-004",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回两数之和索引。",
+      "code_template": "def two_sum(nums, target):\n    seen = {}\n    for i, n in enumerate(nums):\n        if target - n in seen:\n            return [seen[target - n], i]\n        seen[n] = i\n    return []\n\nprint(___)",
+      "expected_output": "[0, 1]\n",
+      "hints": "填空两数之和。",
+      "test_cases": [
+        "assert captured_output == '[0, 1]\\n'"
+      ],
+      "solution": "def two_sum(nums, target):\n    seen = {}\n    for i, n in enumerate(nums):\n        if target - n in seen:\n            return [seen[target - n], i]\n        seen[n] = i\n    return []\n\nprint(two_sum([2, 7, 11, 15], 9))"
+    },
+    {
+      "id": "CH11-X-005",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回矩阵螺旋。",
+      "code_template": "def spiral(matrix):\n    result = []\n    while matrix:\n        result += matrix.pop(0)\n        if matrix and matrix[0]:\n            for row in matrix:\n                result.append(row.pop())\n        if matrix:\n            result += matrix.pop()[::-1]\n        if matrix and matrix[0]:\n            for row in matrix[::-1]:\n                result.append(row.pop(0))\n    return result\n\nprint(___)",
+      "expected_output": "[1, 2, 3, 6, 9, 8, 7, 4, 5]\n",
+      "hints": "填空螺旋返回。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3, 6, 9, 8, 7, 4, 5]\\n'"
+      ],
+      "solution": "def spiral(matrix):\n    result = []\n    while matrix:\n        result += matrix.pop(0)\n        if matrix and matrix[0]:\n            for row in matrix:\n                result.append(row.pop())\n        if matrix:\n            result += matrix.pop()[::-1]\n        if matrix and matrix[0]:\n            for row in matrix[::-1]:\n                result.append(row.pop(0))\n    return result\n\nprint(spiral([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))"
+    },
+    {
+      "id": "CH11-X-006",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回最大子数组和。",
+      "code_template": "def max_sub(nums):\n    best = nums[0]\n    cur = 0\n    for n in nums:\n        cur = max(n, cur + n)\n        best = max(best, cur)\n    return best\n\nprint(___)",
+      "expected_output": "Max: 6\n",
+      "hints": "填空 Kadane 返回。",
+      "test_cases": [
+        "assert captured_output == 'Max: 6\\n'"
+      ],
+      "solution": "def max_sub(nums):\n    best = nums[0]\n    cur = 0\n    for n in nums:\n        cur = max(n, cur + n)\n        best = max(best, cur)\n    return best\n\nprint(f\"Max: {max_sub([-2, 1, -3, 4, -1, 2, 1])}\")"
+    },
+    {
+      "id": "CH11-X-007",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回字符串压缩。",
+      "code_template": "def compress(s):\n    result = \"\"\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i - 1]:\n            count += 1\n        else:\n            result += s[i - 1] + str(count)\n            count = 1\n    result += s[-1] + str(count)\n    return result\n\nprint(___)",
+      "expected_output": "a2b1c5a3\n",
+      "hints": "填空压缩返回。",
+      "test_cases": [
+        "assert captured_output == 'a2b1c5a3\\n'"
+      ],
+      "solution": "def compress(s):\n    result = \"\"\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i - 1]:\n            count += 1\n        else:\n            result += s[i - 1] + str(count)\n            count = 1\n    result += s[-1] + str(count)\n    return result\n\nprint(compress(\"aabcccccaaa\"))"
+    },
+    {
+      "id": "CH11-X-008",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回第 n 个质数。",
+      "code_template": "def nth_prime(n):\n    primes = []\n    num = 2\n    while len(primes) < n:\n        if all(num % p for p in primes if p * p <= num):\n            primes.append(num)\n        num += 1\n    return primes[-1]\n\nprint(___)",
+      "expected_output": "Prime: 17\n",
+      "hints": "填空第 n 质数。",
+      "test_cases": [
+        "assert captured_output == 'Prime: 17\\n'"
+      ],
+      "solution": "def nth_prime(n):\n    primes = []\n    num = 2\n    while len(primes) < n:\n        if all(num % p for p in primes if p * p <= num):\n            primes.append(num)\n        num += 1\n    return primes[-1]\n\nprint(f\"Prime: {nth_prime(7)}\")"
+    },
+    {
+      "id": "CH11-X-009",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回最大回文子串长度。",
+      "code_template": "def longest_pal(s):\n    best = 1\n    for i in range(len(s)):\n        for j in range(i, len(s)):\n            sub = s[i:j + 1]\n            if sub == sub[::-1]:\n                best = max(best, len(sub))\n    return best\n\nprint(___)",
+      "expected_output": "Length: 3\n",
+      "hints": "填空回文长度。",
+      "test_cases": [
+        "assert captured_output == 'Length: 3\\n'"
+      ],
+      "solution": "def longest_pal(s):\n    best = 1\n    for i in range(len(s)):\n        for j in range(i, len(s)):\n            sub = s[i:j + 1]\n            if sub == sub[::-1]:\n                best = max(best, len(sub))\n    return best\n\nprint(f\"Length: {longest_pal('babad')}\")"
+    },
+    {
+      "id": "CH11-X-010",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回约瑟夫幸存者。",
+      "code_template": "def josephus(n, k):\n    people = list(range(1, n + 1))\n    idx = 0\n    while len(people) > 1:\n        idx = (idx + k - 1) % len(people)\n        people.pop(idx)\n    return people[0]\n\nprint(___)",
+      "expected_output": "Survivor: 1\n",
+      "hints": "填空约瑟夫返回。",
+      "test_cases": [
+        "assert captured_output == 'Survivor: 1\\n'"
+      ],
+      "solution": "def josephus(n, k):\n    people = list(range(1, n + 1))\n    idx = 0\n    while len(people) > 1:\n        idx = (idx + k - 1) % len(people)\n        people.pop(idx)\n    return people[0]\n\nprint(f\"Survivor: {josephus(6, 3)}\")"
+    },
+    {
+      "id": "CH11-X-011",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回罗马数字。",
+      "code_template": "def to_roman(n):\n    pairs = [(10, \"X\"), (9, \"IX\"), (5, \"V\"), (4, \"IV\"), (1, \"I\")]\n    result = \"\"\n    for value, symbol in pairs:\n        while n >= value:\n            result += symbol\n            n -= value\n    return result\n\nprint(___)",
+      "expected_output": "XIV\n",
+      "hints": "填空罗马返回。",
+      "test_cases": [
+        "assert captured_output == 'XIV\\n'"
+      ],
+      "solution": "def to_roman(n):\n    pairs = [(10, \"X\"), (9, \"IX\"), (5, \"V\"), (4, \"IV\"), (1, \"I\")]\n    result = \"\"\n    for value, symbol in pairs:\n        while n >= value:\n            result += symbol\n            n -= value\n    return result\n\nprint(to_roman(14))"
+    },
+    {
+      "id": "CH11-X-012",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回最接近目标的和。",
+      "code_template": "def closest(nums, target):\n    closest_sum = sum(nums[:3])\n    for i in range(len(nums)):\n        for j in range(i + 1, len(nums)):\n            for k in range(j + 1, len(nums)):\n                total = nums[i] + nums[j] + nums[k]\n                if abs(total - target) < abs(closest_sum - target):\n                    closest_sum = total\n    return closest_sum\n\nprint(___)",
+      "expected_output": "Closest: 2\n",
+      "hints": "填空最近和。",
+      "test_cases": [
+        "assert captured_output == 'Closest: 2\\n'"
+      ],
+      "solution": "def closest(nums, target):\n    closest_sum = sum(nums[:3])\n    for i in range(len(nums)):\n        for j in range(i + 1, len(nums)):\n            for k in range(j + 1, len(nums)):\n                total = nums[i] + nums[j] + nums[k]\n                if abs(total - target) < abs(closest_sum - target):\n                    closest_sum = total\n    return closest_sum\n\nprint(f\"Closest: {closest([-1, 2, 1, -4], 1)}\")"
+    },
+    {
+      "id": "CH11-X-013",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回括号是否有效。",
+      "code_template": "def valid_brackets(s):\n    stack = []\n    pairs = {\")\": \"(\", \"]\": \"[\", \"}\": \"{\"}\n    for ch in s:\n        if ch in \"([{\":\n            stack.append(ch)\n        elif not stack or stack.pop() != pairs[ch]:\n            return False\n    return not stack\n\nprint('Valid:',___, valid_brackets('([)]'))",
+      "expected_output": "Valid: True False\n",
+      "hints": "填空括号校验。",
+      "test_cases": [
+        "assert captured_output == 'Valid: True False\\n'"
+      ],
+      "solution": "def valid_brackets(s):\n    stack = []\n    pairs = {\")\": \"(\", \"]\": \"[\", \"}\": \"{\"}\n    for ch in s:\n        if ch in \"([{\":\n            stack.append(ch)\n        elif not stack or stack.pop() != pairs[ch]:\n            return False\n    return not stack\n\nprint('Valid:', valid_brackets('{[]}'), valid_brackets('([)]'))"
+    },
+    {
+      "id": "CH11-X-014",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回下一个更大元素。",
+      "code_template": "def next_greater(nums):\n    result = [-1] * len(nums)\n    stack = []\n    for i in range(len(nums)):\n        while stack and nums[stack[-1]] < nums[i]:\n            result[stack.pop()] = nums[i]\n        stack.append(i)\n    return result\n\nprint(___)",
+      "expected_output": "[4, 4, -1, -1]\n",
+      "hints": "填空单调栈。",
+      "test_cases": [
+        "assert captured_output == '[4, 4, -1, -1]\\n'"
+      ],
+      "solution": "def next_greater(nums):\n    result = [-1] * len(nums)\n    stack = []\n    for i in range(len(nums)):\n        while stack and nums[stack[-1]] < nums[i]:\n            result[stack.pop()] = nums[i]\n        stack.append(i)\n    return result\n\nprint(next_greater([2, 1, 4, 3]))"
+    },
+    {
+      "id": "CH11-X-015",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回乘法表。",
+      "code_template": "def mul_table(n):\n    return [[i * j for j in range(1, n + 1)] for i in range(1, n + 1)]\n\nfor row in mul_table(3):\n    print(___)",
+      "expected_output": "[1, 2, 3]\n[2, 4, 6]\n[3, 6, 9]\n",
+      "hints": "填空乘法表返回。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3]\\n[2, 4, 6]\\n[3, 6, 9]\\n'"
+      ],
+      "solution": "def mul_table(n):\n    return [[i * j for j in range(1, n + 1)] for i in range(1, n + 1)]\n\nfor row in mul_table(3):\n    print(row)"
+    },
+    {
+      "id": "CH11-X-016",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回最大水位差。",
+      "code_template": "def max_water(heights):\n    max_area = 0\n    for i in range(len(heights)):\n        for j in range(i + 1, len(heights)):\n            area = min(heights[i], heights[j]) * (j - i)\n            max_area = max(max_area, area)\n    return max_area\n\nprint(___)",
+      "expected_output": "Area: 49\n",
+      "hints": "填空最大面积。",
+      "test_cases": [
+        "assert captured_output == 'Area: 49\\n'"
+      ],
+      "solution": "def max_water(heights):\n    max_area = 0\n    for i in range(len(heights)):\n        for j in range(i + 1, len(heights)):\n            area = min(heights[i], heights[j]) * (j - i)\n            max_area = max(max_area, area)\n    return max_area\n\nprint(f\"Area: {max_water([1, 8, 6, 2, 5, 4, 8, 3, 7])}\")"
+    },
+    {
+      "id": "CH11-X-017",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回移动后数组。",
+      "code_template": "def rotate(nums, k):\n    k = k % len(nums)\n    return nums[-k:] + nums[:-k]\n\nprint(___)",
+      "expected_output": "[4, 5, 1, 2, 3]\n",
+      "hints": "填空旋转返回。",
+      "test_cases": [
+        "assert captured_output == '[4, 5, 1, 2, 3]\\n'"
+      ],
+      "solution": "def rotate(nums, k):\n    k = k % len(nums)\n    return nums[-k:] + nums[:-k]\n\nprint(rotate([1, 2, 3, 4, 5], 2))"
+    },
+    {
+      "id": "CH11-X-018",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回第一个缺失正数。",
+      "code_template": "def first_missing(nums):\n    present = set(nums)\n    n = 1\n    while n in present:\n        n += 1\n    return n\n\nprint(___)",
+      "expected_output": "Missing: 3\n",
+      "hints": "填空缺失数。",
+      "test_cases": [
+        "assert captured_output == 'Missing: 3\\n'"
+      ],
+      "solution": "def first_missing(nums):\n    present = set(nums)\n    n = 1\n    while n in present:\n        n += 1\n    return n\n\nprint(f\"Missing: {first_missing([1, 2, 0])}\")"
+    },
+    {
+      "id": "CH11-X-019",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回分组异或结果。",
+      "code_template": "def xor_groups(nums, size):\n    result = []\n    for i in range(0, len(nums), size):\n        group = nums[i:i + size]\n        total = 0\n        for n in group:\n            total ^= n\n        result.append(total)\n    return result\n\nprint(___)",
+      "expected_output": "[3, 7]\n",
+      "hints": "填空异或分组。",
+      "test_cases": [
+        "assert captured_output == '[3, 7]\\n'"
+      ],
+      "solution": "def xor_groups(nums, size):\n    result = []\n    for i in range(0, len(nums), size):\n        group = nums[i:i + size]\n        total = 0\n        for n in group:\n            total ^= n\n        result.append(total)\n    return result\n\nprint(xor_groups([1, 2, 3, 4], 2))"
+    },
+    {
+      "id": "CH11-X-020",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回可形成最大数。",
+      "code_template": "def largest_number(nums):\n    from functools import cmp_to_key\n    strs = [str(n) for n in nums]\n    strs.sort(key=cmp_to_key(lambda a, b: -1 if a + b > b + a else 1))\n    result = \"\".join(strs)\n    return \"0\" if result[0] == \"0\" else result\n\nprint(___)",
+      "expected_output": "9534330\n",
+      "hints": "填空最大数。",
+      "test_cases": [
+        "assert captured_output == '9534330\\n'"
+      ],
+      "solution": "def largest_number(nums):\n    from functools import cmp_to_key\n    strs = [str(n) for n in nums]\n    strs.sort(key=cmp_to_key(lambda a, b: -1 if a + b > b + a else 1))\n    result = \"\".join(strs)\n    return \"0\" if result[0] == \"0\" else result\n\nprint(largest_number([3, 30, 34, 5, 9]))"
+    },
+    {
+      "id": "CH11-X-021",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回加一后的列表。",
+      "code_template": "def plus_one(digits):\n    n = len(digits)\n    for i in range(n - 1, -1, -1):\n        if digits[i] < 9:\n            digits[i] += 1\n            return digits\n        digits[i] = 0\n    return [1] + digits\n\nprint(___, plus_one([9, 9]))",
+      "expected_output": "[1, 2, 4] [1, 0, 0]\n",
+      "hints": "填空加一返回。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 4] [1, 0, 0]\\n'"
+      ],
+      "solution": "def plus_one(digits):\n    n = len(digits)\n    for i in range(n - 1, -1, -1):\n        if digits[i] < 9:\n            digits[i] += 1\n            return digits\n        digits[i] = 0\n    return [1] + digits\n\nprint(plus_one([1, 2, 3]), plus_one([9, 9]))"
+    },
+    {
+      "id": "CH11-X-022",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回去重后的长度。",
+      "code_template": "def remove_duplicates(nums):\n    nums.sort()\n    unique = []\n    for n in nums:\n        if not unique or unique[-1] != n:\n            unique.append(n)\n    return len(unique)\n\nprint(___)",
+      "expected_output": "Length: 2\n",
+      "hints": "填空去重长度。",
+      "test_cases": [
+        "assert captured_output == 'Length: 2\\n'"
+      ],
+      "solution": "def remove_duplicates(nums):\n    nums.sort()\n    unique = []\n    for n in nums:\n        if not unique or unique[-1] != n:\n            unique.append(n)\n    return len(unique)\n\nprint(f\"Length: {remove_duplicates([1, 1, 2])}\")"
+    },
+    {
+      "id": "CH11-X-023",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回最大子序列乘积。",
+      "code_template": "def max_prod(nums):\n    best = nums[0]\n    for i in range(len(nums)):\n        prod = 1\n        for j in range(i, len(nums)):\n            prod *= nums[j]\n            best = max(best, prod)\n    return best\n\nprint(___)",
+      "expected_output": "Product: 6\n",
+      "hints": "填空乘积返回。",
+      "test_cases": [
+        "assert captured_output == 'Product: 6\\n'"
+      ],
+      "solution": "def max_prod(nums):\n    best = nums[0]\n    for i in range(len(nums)):\n        prod = 1\n        for j in range(i, len(nums)):\n            prod *= nums[j]\n            best = max(best, prod)\n    return best\n\nprint(f\"Product: {max_prod([2, 3, -2, 4])}\")"
+    },
+    {
+      "id": "CH11-X-024",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回分块结果。",
+      "code_template": "def chunk(nums, size):\n    return [nums[i:i + size] for i in range(0, len(nums), size)]\n\nprint(___)",
+      "expected_output": "[[1, 2], [3, 4], [5]]\n",
+      "hints": "填空分块返回。",
+      "test_cases": [
+        "assert captured_output == '[[1, 2], [3, 4], [5]]\\n'"
+      ],
+      "solution": "def chunk(nums, size):\n    return [nums[i:i + size] for i in range(0, len(nums), size)]\n\nprint(chunk([1, 2, 3, 4, 5], 2))"
+    },
+    {
+      "id": "CH11-X-025",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回最长连续序列长度。",
+      "code_template": "def longest_consecutive(nums):\n    num_set = set(nums)\n    longest = 0\n    for n in num_set:\n        if n - 1 not in num_set:\n            length = 1\n            while n + length in num_set:\n                length += 1\n            longest = max(longest, length)\n    return longest\n\nprint(___)",
+      "expected_output": "Longest: 4\n",
+      "hints": "填空连续长度。",
+      "test_cases": [
+        "assert captured_output == 'Longest: 4\\n'"
+      ],
+      "solution": "def longest_consecutive(nums):\n    num_set = set(nums)\n    longest = 0\n    for n in num_set:\n        if n - 1 not in num_set:\n            length = 1\n            while n + length in num_set:\n                length += 1\n            longest = max(longest, length)\n    return longest\n\nprint(f\"Longest: {longest_consecutive([100, 4, 200, 1, 3, 2])}\")"
+    },
+    {
+      "id": "CH11-X-026",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回矩阵副对角线和。",
+      "code_template": "def anti_diag(matrix):\n    n = len(matrix)\n    return sum(matrix[i][n - 1 - i] for i in range(n))\n\nprint(___)",
+      "expected_output": "Sum: 15\n",
+      "hints": "填空副对角线。",
+      "test_cases": [
+        "assert captured_output == 'Sum: 15\\n'"
+      ],
+      "solution": "def anti_diag(matrix):\n    n = len(matrix)\n    return sum(matrix[i][n - 1 - i] for i in range(n))\n\nprint(f\"Sum: {anti_diag([[1, 2, 3], [4, 5, 6], [7, 8, 9]])}\")"
+    },
+    {
+      "id": "CH11-X-027",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回表达式结果表。",
+      "code_template": "def evaluate(a, b):\n    return [a + b, a - b, a * b, a / b]\n\nprint(___)",
+      "expected_output": "[12, 8, 20, 5.0]\n",
+      "hints": "填空表达式返回。",
+      "test_cases": [
+        "assert captured_output == '[12, 8, 20, 5.0]\\n'"
+      ],
+      "solution": "def evaluate(a, b):\n    return [a + b, a - b, a * b, a / b]\n\nprint(evaluate(10, 2))"
+    },
+    {
+      "id": "CH11-X-028",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回第 k 大元素。",
+      "code_template": "def kth_largest(nums, k):\n    return sorted(nums, reverse=True)[k - 1]\n\nprint(___)",
+      "expected_output": "Kth: 5\n",
+      "hints": "填空第 k 大。",
+      "test_cases": [
+        "assert captured_output == 'Kth: 5\\n'"
+      ],
+      "solution": "def kth_largest(nums, k):\n    return sorted(nums, reverse=True)[k - 1]\n\nprint(f\"Kth: {kth_largest([3, 2, 1, 5, 6, 4], 2)}\")"
+    },
+    {
+      "id": "CH11-X-029",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数返回列表中的峰元素。",
+      "code_template": "def peak(nums):\n    for i in range(1, len(nums) - 1):\n        if nums[i] > nums[i - 1] and nums[i] > nums[i + 1]:\n            return nums[i]\n    return None\n\nprint('Peak:',___)",
+      "expected_output": "Peak: 3\n",
+      "hints": "填空峰元素。",
+      "test_cases": [
+        "assert captured_output == 'Peak: 3\\n'"
+      ],
+      "solution": "def peak(nums):\n    for i in range(1, len(nums) - 1):\n        if nums[i] > nums[i - 1] and nums[i] > nums[i + 1]:\n            return nums[i]\n    return None\n\nprint('Peak:', peak([1, 3, 2, 4, 1]))"
+    },
+    {
+      "id": "CH11-X-030",
+      "topic": "函数 (返回值)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "综合：函数返回多维度统计。",
+      "code_template": "def full_stats(nums):\n    return len(nums), sum(nums), sum(nums) / len(nums), max(nums), min(nums)\n\ncount, total, avg, mx, mn = full_stats([4, 8, 6])\nprint(___, total, round(avg, 1), mx, mn)",
+      "expected_output": "3 18 6.0 8 4\n",
+      "hints": "填空综合统计返回。",
+      "test_cases": [
+        "assert captured_output == '3 18 6.0 8 4\\n'"
+      ],
+      "solution": "def full_stats(nums):\n    return len(nums), sum(nums), sum(nums) / len(nums), max(nums), min(nums)\n\ncount, total, avg, mx, mn = full_stats([4, 8, 6])\nprint(count, total, round(avg, 1), mx, mn)"
+    }
+  ]
+}

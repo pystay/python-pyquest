@@ -1,0 +1,487 @@
+{
+  "chapter": "CH01",
+  "title": "Hello, World!",
+  "difficulty": "中等",
+  "questions": [
+    {
+      "id": "CH01-H-001",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "根据分数 85 输出对应的成绩等级。",
+      "code_template": "score = ___\nif score >= 90:\n    grade = \"A\"\nelif ___ >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelse:\n    grade = \"D\"\nprint(f\"Grade: {___}\")",
+      "expected_output": "Grade: B\n",
+      "hints": "依次填 85、score、grade。",
+      "test_cases": [
+        "assert captured_output == 'Grade: B\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'Grade: B'"
+      ],
+      "solution": "score = 85\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelse:\n    grade = \"D\"\nprint(f\"Grade: {grade}\")"
+    },
+    {
+      "id": "CH01-H-002",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "判断数字 -3 的正负或零并输出。",
+      "code_template": "n = ___\nif n > 0:\n    print(___, \"is positive\")\nelif n < 0:\n    print(n, \"is negative\")\nelse:\n    print(___, \"is zero\")",
+      "expected_output": "-3 is negative\n",
+      "hints": "依次填 -3、n、n。",
+      "test_cases": [
+        "assert captured_output == '-3 is negative\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '-3 is negative'"
+      ],
+      "solution": "n = -3\nif n > 0:\n    print(n, \"is positive\")\nelif n < 0:\n    print(n, \"is negative\")\nelse:\n    print(n, \"is zero\")"
+    },
+    {
+      "id": "CH01-H-003",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "比较 a 和 b 输出较大的数。",
+      "code_template": "a = 7\nb = ___\nif ___ > b:\n    larger = a\nelse:\n    larger = b\nprint(f\"The larger number is {___}\")",
+      "expected_output": "The larger number is 9\n",
+      "hints": "依次填 9、a、larger。",
+      "test_cases": [
+        "assert captured_output == 'The larger number is 9\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'The larger number is 9'"
+      ],
+      "solution": "a = 7\nb = 9\nif a > b:\n    larger = a\nelse:\n    larger = b\nprint(f\"The larger number is {larger}\")"
+    },
+    {
+      "id": "CH01-H-004",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "判断数字 7 是奇数还是偶数。",
+      "code_template": "n = ___\nif n % 2 == ___:\n    result = \"even\"\nelse:\n    result = \"odd\"\nprint(f\"{n} is {___}\")",
+      "expected_output": "7 is odd\n",
+      "hints": "依次填 7、0、result。",
+      "test_cases": [
+        "assert captured_output == '7 is odd\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '7 is odd'"
+      ],
+      "solution": "n = 7\nif n % 2 == 0:\n    result = \"even\"\nelse:\n    result = \"odd\"\nprint(f\"{n} is {result}\")"
+    },
+    {
+      "id": "CH01-H-005",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "根据温度 35 输出天气提示。",
+      "code_template": "temp = ___\nif temp >= 30:\n    weather = \"Hot\"\nelif temp >= ___:\n    weather = \"Warm\"\nelse:\n    weather = \"Cold\"\nprint(f\"It is {___}\")",
+      "expected_output": "It is Hot\n",
+      "hints": "依次填 35、15、weather。",
+      "test_cases": [
+        "assert captured_output == 'It is Hot\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'It is Hot'"
+      ],
+      "solution": "temp = 35\nif temp >= 30:\n    weather = \"Hot\"\nelif temp >= 15:\n    weather = \"Warm\"\nelse:\n    weather = \"Cold\"\nprint(f\"It is {weather}\")"
+    },
+    {
+      "id": "CH01-H-006",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "比较猜测值与答案并给出提示。",
+      "code_template": "answer = 7\nguess = ___\nif guess < ___:\n    message = \"Too low\"\nelif guess > answer:\n    message = \"Too high\"\nelse:\n    message = \"Correct\"\nprint(___)\n",
+      "expected_output": "Too low\n",
+      "hints": "依次填 5、answer、message。",
+      "test_cases": [
+        "assert captured_output == 'Too low\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'Too low'"
+      ],
+      "solution": "answer = 7\nguess = 5\nif guess < answer:\n    message = \"Too low\"\nelif guess > answer:\n    message = \"Too high\"\nelse:\n    message = \"Correct\"\nprint(message)"
+    },
+    {
+      "id": "CH01-H-007",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "判断年份 2024 是否为闰年。",
+      "code_template": "year = ___\nif (year % 4 == 0 and year % 100 != 0) or ___ == 0:\n    result = \"leap year\"\nelse:\n    result = \"common year\"\nprint(f\"{year} is a {___}\")",
+      "expected_output": "2024 is a leap year\n",
+      "hints": "依次填 2024、year % 400、result。",
+      "test_cases": [
+        "assert captured_output == '2024 is a leap year\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '2024 is a leap year'"
+      ],
+      "solution": "year = 2024\nif (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:\n    result = \"leap year\"\nelse:\n    result = \"common year\"\nprint(f\"{year} is a {result}\")"
+    },
+    {
+      "id": "CH01-H-008",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "输出数字 15 所在的区间。",
+      "code_template": "x = ___\nif x <= 10:\n    zone = \"0-10\"\nelif x <= ___:\n    zone = \"11-20\"\nelse:\n    zone = \"21+\"\nprint(f\"{x} is in range {___}\")",
+      "expected_output": "15 is in range 11-20\n",
+      "hints": "依次填 15、20、zone。",
+      "test_cases": [
+        "assert captured_output == '15 is in range 11-20\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '15 is in range 11-20'"
+      ],
+      "solution": "x = 15\nif x <= 10:\n    zone = \"0-10\"\nelif x <= 20:\n    zone = \"11-20\"\nelse:\n    zone = \"21+\"\nprint(f\"{x} is in range {zone}\")"
+    },
+    {
+      "id": "CH01-H-009",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 for 循环输出 1 到 5 的平方和立方。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nfor n in ___:\n    square = n * n\n    cube = n ** 3\n    print(f\"{n}: square={___}, cube={___}\")",
+      "expected_output": "1: square=1, cube=1\n2: square=4, cube=8\n3: square=9, cube=27\n4: square=16, cube=64\n5: square=25, cube=125\n",
+      "hints": "依次填 nums、square、cube。",
+      "test_cases": [
+        "assert captured_output == '1: square=1, cube=1\\n2: square=4, cube=8\\n3: square=9, cube=27\\n4: square=16, cube=64\\n5: square=25, cube=125\\n'",
+        "assert captured_output.count(chr(10)) == 5",
+        "assert captured_output.strip() == '1: square=1, cube=1\\n2: square=4, cube=8\\n3: square=9, cube=27\\n4: square=16, cube=64\\n5: square=25, cube=125'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nfor n in nums:\n    square = n * n\n    cube = n ** 3\n    print(f\"{n}: square={square}, cube={cube}\")"
+    },
+    {
+      "id": "CH01-H-010",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 for 循环求 1 到 10 的和。",
+      "code_template": "start = 1\nend = 10\ntotal = 0\nfor i in range(start, ___ + 1):\n    total += i\nprint(f\"Sum of {start} to {end} is {___}\")",
+      "expected_output": "Sum of 1 to 10 is 55\n",
+      "hints": "依次填 end、total。",
+      "test_cases": [
+        "assert captured_output == 'Sum of 1 to 10 is 55\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'Sum of 1 to 10 is 55'"
+      ],
+      "solution": "start = 1\nend = 10\ntotal = 0\nfor i in range(start, end + 1):\n    total += i\nprint(f\"Sum of {start} to {end} is {total}\")"
+    },
+    {
+      "id": "CH01-H-011",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 while 循环输出 2 到 10 的偶数。",
+      "code_template": "start = 2\nlimit = 10\ni = start\nwhile i <= ___:\n    print(i)\n    i += ___\n",
+      "expected_output": "2\n4\n6\n8\n10\n",
+      "hints": "依次填 limit、2。",
+      "test_cases": [
+        "assert captured_output == '2\\n4\\n6\\n8\\n10\\n'",
+        "assert captured_output.count(chr(10)) == 5",
+        "assert captured_output.strip() == '2\\n4\\n6\\n8\\n10'"
+      ],
+      "solution": "start = 2\nlimit = 10\ni = start\nwhile i <= limit:\n    print(i)\n    i += 2"
+    },
+    {
+      "id": "CH01-H-012",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 while 循环计算 5 的阶乘。",
+      "code_template": "n = 5\nfact = 1\ni = 1\nwhile i <= ___:\n    fact *= ___\n    i += 1\nprint(f\"{n}! = {___}\")",
+      "expected_output": "5! = 120\n",
+      "hints": "依次填 n、i、fact。",
+      "test_cases": [
+        "assert captured_output == '5! = 120\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '5! = 120'"
+      ],
+      "solution": "n = 5\nfact = 1\ni = 1\nwhile i <= n:\n    fact *= i\n    i += 1\nprint(f\"{n}! = {fact}\")"
+    },
+    {
+      "id": "CH01-H-013",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 for 循环逐字符输出并用 - 连接。",
+      "code_template": "word = \"Python\"\nseparator = \"-\"\nfor ch in ___:\n    print(___, end=___)\nprint()",
+      "expected_output": "P-y-t-h-o-n-\n",
+      "hints": "依次填 word、ch、separator。",
+      "test_cases": [
+        "assert captured_output == 'P-y-t-h-o-n-\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'P-y-t-h-o-n-'"
+      ],
+      "solution": "word = \"Python\"\nseparator = \"-\"\nfor ch in word:\n    print(ch, end=separator)\nprint()"
+    },
+    {
+      "id": "CH01-H-014",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 while 循环倒计时并发射。",
+      "code_template": "count = ___\nwhile count > 0:\n    print(___)\n    count -= 1\nprint(\"Launch!\")",
+      "expected_output": "5\n4\n3\n2\n1\nLaunch!\n",
+      "hints": "依次填 5、count。",
+      "test_cases": [
+        "assert captured_output == '5\\n4\\n3\\n2\\n1\\nLaunch!\\n'",
+        "assert captured_output.count(chr(10)) == 6",
+        "assert captured_output.strip() == '5\\n4\\n3\\n2\\n1\\nLaunch!'"
+      ],
+      "solution": "count = 5\nwhile count > 0:\n    print(count)\n    count -= 1\nprint(\"Launch!\")"
+    },
+    {
+      "id": "CH01-H-015",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 for 循环打印 5 行星号三角形。",
+      "code_template": "symbol = \"*\"\nrows = 5\nfor i in range(1, ___ + 1):\n    stars = symbol * i\n    print(___)",
+      "expected_output": "*\n**\n***\n****\n*****\n",
+      "hints": "依次填 rows、stars。",
+      "test_cases": [
+        "assert captured_output == '*\\n**\\n***\\n****\\n*****\\n'",
+        "assert captured_output.count(chr(10)) == 5",
+        "assert captured_output.strip() == '*\\n**\\n***\\n****\\n*****'"
+      ],
+      "solution": "symbol = \"*\"\nrows = 5\nfor i in range(1, rows + 1):\n    stars = symbol * i\n    print(stars)"
+    },
+    {
+      "id": "CH01-H-016",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 while 循环求 1 到 100 的和。",
+      "code_template": "total = 0\ni = 1\nwhile i <= 100:\n    total += ___\n    i += 1\nprint(f\"Sum = {___}\")",
+      "expected_output": "Sum = 5050\n",
+      "hints": "依次填 i、total。",
+      "test_cases": [
+        "assert captured_output == 'Sum = 5050\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'Sum = 5050'"
+      ],
+      "solution": "total = 0\ni = 1\nwhile i <= 100:\n    total += i\n    i += 1\nprint(f\"Sum = {total}\")"
+    },
+    {
+      "id": "CH01-H-017",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "通过索引访问列表首尾元素并输出。",
+      "code_template": "fruits = [\"apple\", \"banana\", \"cherry\"]\nfirst = fruits[___]\nlast = fruits[___]\ncount = len(fruits)\nprint(f\"First: {___}, Last: {___}, Count: {count}\")",
+      "expected_output": "First: apple, Last: cherry, Count: 3\n",
+      "hints": "依次填 0、-1、first、last。",
+      "test_cases": [
+        "assert captured_output == 'First: apple, Last: cherry, Count: 3\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'First: apple, Last: cherry, Count: 3'"
+      ],
+      "solution": "fruits = [\"apple\", \"banana\", \"cherry\"]\nfirst = fruits[0]\nlast = fruits[-1]\ncount = len(fruits)\nprint(f\"First: {first}, Last: {last}, Count: {count}\")"
+    },
+    {
+      "id": "CH01-H-018",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "通过键访问字典中的值并求和。",
+      "code_template": "scores = {\"Alice\": 90, \"Bob\": 85, \"Cara\": 88}\nalice = scores[___]\nbob = scores[___]\ntotal = alice + bob\nprint(f\"Alice: {___}, Bob: {___}, Sum: {total}\")",
+      "expected_output": "Alice: 90, Bob: 85, Sum: 175\n",
+      "hints": "依次填 \"Alice\"、\"Bob\"、alice、bob。",
+      "test_cases": [
+        "assert captured_output == 'Alice: 90, Bob: 85, Sum: 175\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'Alice: 90, Bob: 85, Sum: 175'"
+      ],
+      "solution": "scores = {\"Alice\": 90, \"Bob\": 85, \"Cara\": 88}\nalice = scores[\"Alice\"]\nbob = scores[\"Bob\"]\ntotal = alice + bob\nprint(f\"Alice: {alice}, Bob: {bob}, Sum: {total}\")"
+    },
+    {
+      "id": "CH01-H-019",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "遍历字典输出姓名和分数。",
+      "code_template": "scores = {\"Alice\": 90, \"Bob\": 85}\nprint(\"Score report:\")\nprint(\"-\" * 15)\nfor name, score in ___.items():\n    print(f\"{___}: {___}\")",
+      "expected_output": "Score report:\n---------------\nAlice: 90\nBob: 85\n",
+      "hints": "依次填 scores、name、score。",
+      "test_cases": [
+        "assert captured_output == 'Score report:\\n---------------\\nAlice: 90\\nBob: 85\\n'",
+        "assert captured_output.count(chr(10)) == 4",
+        "assert captured_output.strip() == 'Score report:\\n---------------\\nAlice: 90\\nBob: 85'"
+      ],
+      "solution": "scores = {\"Alice\": 90, \"Bob\": 85}\nprint(\"Score report:\")\nprint(\"-\" * 15)\nfor name, score in scores.items():\n    print(f\"{name}: {score}\")"
+    },
+    {
+      "id": "CH01-H-020",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 enumerate 输出带编号的颜色列表。",
+      "code_template": "colors = [\"red\", \"green\", \"blue\"]\nprint(\"Color list:\")\nfor i, color in enumerate(colors, ___):\n    print(f\"{___}. {___}\")",
+      "expected_output": "Color list:\n1. red\n2. green\n3. blue\n",
+      "hints": "依次填 1、i、color。",
+      "test_cases": [
+        "assert captured_output == 'Color list:\\n1. red\\n2. green\\n3. blue\\n'",
+        "assert captured_output.count(chr(10)) == 4",
+        "assert captured_output.strip() == 'Color list:\\n1. red\\n2. green\\n3. blue'"
+      ],
+      "solution": "colors = [\"red\", \"green\", \"blue\"]\nprint(\"Color list:\")\nfor i, color in enumerate(colors, 1):\n    print(f\"{i}. {color}\")"
+    },
+    {
+      "id": "CH01-H-021",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 f-string 输出姓名、年龄和身高。",
+      "code_template": "name = \"Bob\"\nage = 25\nheight = 1.75\nprint(f\"{___} is {___} years old, {___:.2f} m tall\")",
+      "expected_output": "Bob is 25 years old, 1.75 m tall\n",
+      "hints": "依次填 name、age、height。",
+      "test_cases": [
+        "assert captured_output == 'Bob is 25 years old, 1.75 m tall\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'Bob is 25 years old, 1.75 m tall'"
+      ],
+      "solution": "name = \"Bob\"\nage = 25\nheight = 1.75\nprint(f\"{name} is {age} years old, {height:.2f} m tall\")"
+    },
+    {
+      "id": "CH01-H-022",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 format() 的位置与关键字参数输出。",
+      "code_template": "name = \"Bob\"\nage = 25\nprint(\"{} is {} years old\".format(___, ___))\nprint(\"{n} will be {a} next year\".format(n=___, a=___ + 1))",
+      "expected_output": "Bob is 25 years old\nBob will be 26 next year\n",
+      "hints": "依次填 name、age、name、age。",
+      "test_cases": [
+        "assert captured_output == 'Bob is 25 years old\\nBob will be 26 next year\\n'",
+        "assert captured_output.count(chr(10)) == 2",
+        "assert captured_output.strip() == 'Bob is 25 years old\\nBob will be 26 next year'"
+      ],
+      "solution": "name = \"Bob\"\nage = 25\nprint(\"{} is {} years old\".format(name, age))\nprint(\"{n} will be {a} next year\".format(n=name, a=age + 1))"
+    },
+    {
+      "id": "CH01-H-023",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用旧式 % 格式化输出姓名和分数。",
+      "code_template": "name = \"Bob\"\nscore = 92.5\nprint(\"%s scored %.1f%%\" % (___, ___))",
+      "expected_output": "Bob scored 92.5%\n",
+      "hints": "依次填 name、score。",
+      "test_cases": [
+        "assert captured_output == 'Bob scored 92.5%\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'Bob scored 92.5%'"
+      ],
+      "solution": "name = \"Bob\"\nscore = 92.5\nprint(\"%s scored %.1f%%\" % (name, score))"
+    },
+    {
+      "id": "CH01-H-024",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 sep 和 end 输出三行 CSV 数据。",
+      "code_template": "header = [\"Name\", \"Age\", \"City\"]\nrow1 = [\"Alice\", 30, \"Beijing\"]\nrow2 = [\"Bob\", 25, \"Shanghai\"]\nprint(*header, sep=___, end=\"\\n\")\nprint(*row1, sep=\",\", end=\"\\n\")\nprint(*row2, sep=\",\", end=___)",
+      "expected_output": "Name,Age,City\nAlice,30,Beijing\nBob,25,Shanghai\n",
+      "hints": "依次填 \",\"、\"\\n\"。",
+      "test_cases": [
+        "assert captured_output == 'Name,Age,City\\nAlice,30,Beijing\\nBob,25,Shanghai\\n'",
+        "assert captured_output.count(chr(10)) == 3",
+        "assert captured_output.strip() == 'Name,Age,City\\nAlice,30,Beijing\\nBob,25,Shanghai'"
+      ],
+      "solution": "header = [\"Name\", \"Age\", \"City\"]\nrow1 = [\"Alice\", 30, \"Beijing\"]\nrow2 = [\"Bob\", 25, \"Shanghai\"]\nprint(*header, sep=\",\", end=\"\\n\")\nprint(*row1, sep=\",\", end=\"\\n\")\nprint(*row2, sep=\",\", end=\"\\n\")"
+    },
+    {
+      "id": "CH01-H-025",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 f-string 对齐输出三种方式。",
+      "code_template": "name = \"PyQuest\"\nwidth = 10\nprint(f\"|{name:___<{width}}|\")\nprint(f\"|{name:___>{width}}|\")\nprint(f\"|{name:___^{width}}|\")",
+      "expected_output": "|PyQuest   |\n|   PyQuest|\n| PyQuest  |\n",
+      "hints": "依次填 <、>、^。",
+      "test_cases": [
+        "assert captured_output == '|PyQuest   |\\n|   PyQuest|\\n| PyQuest  |\\n'",
+        "assert captured_output.count(chr(10)) == 3",
+        "assert captured_output.strip() == '|PyQuest   |\\n|   PyQuest|\\n| PyQuest  |'"
+      ],
+      "solution": "name = \"PyQuest\"\nwidth = 10\nprint(f\"|{name:<{width}}|\")\nprint(f\"|{name:>{width}}|\")\nprint(f\"|{name:^{width}}|\")"
+    },
+    {
+      "id": "CH01-H-026",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 f-string 格式化小数与千分位。",
+      "code_template": "pi = 3.14159265\namount = 1234567.891\npi_text = f\"{pi:___}\"\namount_text = f\"{amount:___}\"\nprint(f\"Pi: {___}\")\nprint(f\"Amount: {___}\")",
+      "expected_output": "Pi: 3.14\nAmount: 1,234,567.89\n",
+      "hints": "依次填 .2f、,.2f、pi_text、amount_text。",
+      "test_cases": [
+        "assert captured_output == 'Pi: 3.14\\nAmount: 1,234,567.89\\n'",
+        "assert captured_output.count(chr(10)) == 2",
+        "assert captured_output.strip() == 'Pi: 3.14\\nAmount: 1,234,567.89'"
+      ],
+      "solution": "pi = 3.14159265\namount = 1234567.891\npi_text = f\"{pi:.2f}\"\namount_text = f\"{amount:,.2f}\"\nprint(f\"Pi: {pi_text}\")\nprint(f\"Amount: {amount_text}\")"
+    },
+    {
+      "id": "CH01-H-027",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "输出含转义字符的路径、制表符与换行。",
+      "code_template": "print(\"Path: C:___Users___admin\")\nprint(\"Table:___A___B___C\")\nprint(\"Line1___Line2\")",
+      "expected_output": "Path: C:\\Users\\admin\nTable:\tA\tB\tC\nLine1\nLine2\n",
+      "hints": "依次填 \\\\、\\\\、\\t、\\t、\\n。",
+      "test_cases": [
+        "assert captured_output == 'Path: C:\\\\Users\\\\admin\\nTable:\\tA\\tB\\tC\\nLine1\\nLine2\\n'",
+        "assert captured_output.count(chr(10)) == 4",
+        "assert captured_output.strip() == 'Path: C:\\\\Users\\\\admin\\nTable:\\tA\\tB\\tC\\nLine1\\nLine2'"
+      ],
+      "solution": "print(\"Path: C:\\\\Users\\\\admin\")\nprint(\"Table:\\tA\\tB\\tC\")\nprint(\"Line1\\nLine2\")"
+    },
+    {
+      "id": "CH01-H-028",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "在列表项之间输出空行。",
+      "code_template": "items = [\"one\", \"two\", \"three\"]\nfor i, item in enumerate(items):\n    print(___)\n    if i < len(items) - 1:\n        print()",
+      "expected_output": "one\n\ntwo\n\nthree\n",
+      "hints": "填空 item。",
+      "test_cases": [
+        "assert captured_output == 'one\\n\\ntwo\\n\\nthree\\n'",
+        "assert captured_output.count(chr(10)) == 5",
+        "assert captured_output.strip() == 'one\\n\\ntwo\\n\\nthree'"
+      ],
+      "solution": "items = [\"one\", \"two\", \"three\"]\nfor i, item in enumerate(items):\n    print(item)\n    if i < len(items) - 1:\n        print()"
+    },
+    {
+      "id": "CH01-H-029",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "输出带表头和分隔线的成绩表。",
+      "code_template": "print(\"Name\\tScore\")\nprint(___ * 12)\nfor name, score in [(\"Alice\", 90), (\"Bob\", 85)]:\n    print(f\"{___}\\t{___}\")",
+      "expected_output": "Name\tScore\n------------\nAlice\t90\nBob\t85\n",
+      "hints": "依次填 \"-\"、name、score。",
+      "test_cases": [
+        "assert captured_output == 'Name\\tScore\\n------------\\nAlice\\t90\\nBob\\t85\\n'",
+        "assert captured_output.count(chr(10)) == 4",
+        "assert captured_output.strip() == 'Name\\tScore\\n------------\\nAlice\\t90\\nBob\\t85'"
+      ],
+      "solution": "print(\"Name\\tScore\")\nprint(\"-\" * 12)\nfor name, score in [(\"Alice\", 90), (\"Bob\", 85)]:\n    print(f\"{name}\\t{score}\")"
+    },
+    {
+      "id": "CH01-H-030",
+      "topic": "print() 函数的综合应用与格式化输出",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "综合：循环判断分数并输出平均分。",
+      "code_template": "scores = [88, 92, 76, 95]\ntotal = 0\nfor score in ___:\n    total += ___\n    if score >= 90:\n        print(f\"{score}: excellent\")\n    elif score >= 80:\n        print(f\"{score}: good\")\n    else:\n        print(f\"{score}: keep going\")\navg = total / len(scores)\nprint(f\"Average: {___:.1f}\")",
+      "expected_output": "88: good\n92: excellent\n76: keep going\n95: excellent\nAverage: 87.8\n",
+      "hints": "依次填 scores、score、avg。",
+      "test_cases": [
+        "assert captured_output == '88: good\\n92: excellent\\n76: keep going\\n95: excellent\\nAverage: 87.8\\n'",
+        "assert captured_output.count(chr(10)) == 5",
+        "assert captured_output.strip() == '88: good\\n92: excellent\\n76: keep going\\n95: excellent\\nAverage: 87.8'"
+      ],
+      "solution": "scores = [88, 92, 76, 95]\ntotal = 0\nfor score in scores:\n    total += score\n    if score >= 90:\n        print(f\"{score}: excellent\")\n    elif score >= 80:\n        print(f\"{score}: good\")\n    else:\n        print(f\"{score}: keep going\")\navg = total / len(scores)\nprint(f\"Average: {avg:.1f}\")"
+    }
+  ]
+}

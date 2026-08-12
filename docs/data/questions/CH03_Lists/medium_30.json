@@ -1,0 +1,427 @@
+{
+  "chapter": "CH03",
+  "title": "列表 (Lists)",
+  "difficulty": "简单",
+  "questions": [
+    {
+      "id": "CH03-M-001",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用循环往列表中添加元素。",
+      "code_template": "nums = []\nfor i in range(0, 10, 3):\n    nums.append(i)\nprint(___)",
+      "expected_output": "[0, 3, 6, 9]\n",
+      "hints": "填空 append(i)。",
+      "test_cases": [
+        "assert captured_output == '[0, 3, 6, 9]\\n'"
+      ],
+      "solution": "nums = []\nfor i in range(0, 10, 3):\n    nums.append(i)\nprint(nums)"
+    },
+    {
+      "id": "CH03-M-002",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用列表推导式生成平方数列表。",
+      "code_template": "squares = [n * n for n in range(1, 6)]\nprint(___)",
+      "expected_output": "[1, 4, 9, 16, 25]\n",
+      "hints": "填空 n * n。",
+      "test_cases": [
+        "assert captured_output == '[1, 4, 9, 16, 25]\\n'"
+      ],
+      "solution": "squares = [n * n for n in range(1, 6)]\nprint(squares)"
+    },
+    {
+      "id": "CH03-M-003",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "输出列表的和与长度。",
+      "code_template": "nums = [2, 4, 6]\nprint(___, len(nums))",
+      "expected_output": "12 3\n",
+      "hints": "填空 sum(nums)、len(nums)。",
+      "test_cases": [
+        "assert captured_output == '12 3\\n'"
+      ],
+      "solution": "nums = [2, 4, 6]\nprint(sum(nums), len(nums))"
+    },
+    {
+      "id": "CH03-M-004",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用切片复制整个列表。",
+      "code_template": "nums = [7, 8, 9]\ncopy = nums[:]\nprint(___)",
+      "expected_output": "[7, 8, 9]\n",
+      "hints": "填空 nums[:]。",
+      "test_cases": [
+        "assert captured_output == '[7, 8, 9]\\n'"
+      ],
+      "solution": "nums = [7, 8, 9]\ncopy = nums[:]\nprint(copy)"
+    },
+    {
+      "id": "CH03-M-005",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 del 删除指定索引元素。",
+      "code_template": "nums = [1, 2, 3]\ndel nums[1]\nprint(___)",
+      "expected_output": "[1, 3]\n",
+      "hints": "填空 del nums[1]。",
+      "test_cases": [
+        "assert captured_output == '[1, 3]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3]\ndel nums[1]\nprint(nums)"
+    },
+    {
+      "id": "CH03-M-006",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 extend() 扩展列表。",
+      "code_template": "a = [1, 2]\na.extend([9, 8])\nprint(___)",
+      "expected_output": "[1, 2, 9, 8]\n",
+      "hints": "填空 a.extend([9, 8])。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 9, 8]\\n'"
+      ],
+      "solution": "a = [1, 2]\na.extend([9, 8])\nprint(a)"
+    },
+    {
+      "id": "CH03-M-007",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "修改并插入列表元素。",
+      "code_template": "nums = [1, 2, 3]\nnums[1] = 20\nnums.insert(2, 15)\nprint(___)",
+      "expected_output": "[1, 20, 15, 3]\n",
+      "hints": "填空修改与插入。",
+      "test_cases": [
+        "assert captured_output == '[1, 20, 15, 3]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3]\nnums[1] = 20\nnums.insert(2, 15)\nprint(nums)"
+    },
+    {
+      "id": "CH03-M-008",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用循环筛选出偶数。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nevens = []\nfor n in nums:\n    if n % 2 == 0:\n        evens.append(n)\nprint(___)",
+      "expected_output": "[2, 4]\n",
+      "hints": "填空条件与 append。",
+      "test_cases": [
+        "assert captured_output == '[2, 4]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nevens = []\nfor n in nums:\n    if n % 2 == 0:\n        evens.append(n)\nprint(evens)"
+    },
+    {
+      "id": "CH03-M-009",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用带条件的列表推导式生成奇数。",
+      "code_template": "odds = [n for n in range(1, 11) if n % 2 == 1]\nprint(___)",
+      "expected_output": "[1, 3, 5, 7, 9]\n",
+      "hints": "填空推导式。",
+      "test_cases": [
+        "assert captured_output == '[1, 3, 5, 7, 9]\\n'"
+      ],
+      "solution": "odds = [n for n in range(1, 11) if n % 2 == 1]\nprint(odds)"
+    },
+    {
+      "id": "CH03-M-010",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把列表中的字符串转大写。",
+      "code_template": "words = [\"hi\", \"bye\"]\nprint(___)",
+      "expected_output": "['HI', 'BYE']\n",
+      "hints": "填空 w.upper()。",
+      "test_cases": [
+        "assert captured_output == \"['HI', 'BYE']\\n\""
+      ],
+      "solution": "words = [\"hi\", \"bye\"]\nprint([w.upper() for w in words])"
+    },
+    {
+      "id": "CH03-M-011",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "输出每个单词的长度列表。",
+      "code_template": "words = [\"hello\", \"hi\", \"hey\"]\nprint(___)",
+      "expected_output": "[5, 2, 3]\n",
+      "hints": "填空 len(w)。",
+      "test_cases": [
+        "assert captured_output == '[5, 2, 3]\\n'"
+      ],
+      "solution": "words = [\"hello\", \"hi\", \"hey\"]\nprint([len(w) for w in words])"
+    },
+    {
+      "id": "CH03-M-012",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "访问嵌套列表的两个元素。",
+      "code_template": "matrix = [[1, 2], [3, 4]]\nprint(___, matrix[1][0])",
+      "expected_output": "2 3\n",
+      "hints": "填空两处索引。",
+      "test_cases": [
+        "assert captured_output == '2 3\\n'"
+      ],
+      "solution": "matrix = [[1, 2], [3, 4]]\nprint(matrix[0][1], matrix[1][0])"
+    },
+    {
+      "id": "CH03-M-013",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 reversed() 反转列表并转为列表。",
+      "code_template": "nums = [1, 2, 3, 4]\nprint(___)",
+      "expected_output": "[4, 3, 2, 1]\n",
+      "hints": "填空 reversed(nums)。",
+      "test_cases": [
+        "assert captured_output == '[4, 3, 2, 1]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4]\nprint(list(reversed(nums)))"
+    },
+    {
+      "id": "CH03-M-014",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 all() 判断是否全部为正数。",
+      "code_template": "print(\"All positive:\",___)",
+      "expected_output": "All positive: False\n",
+      "hints": "填空 n > 0。",
+      "test_cases": [
+        "assert captured_output == 'All positive: False\\n'"
+      ],
+      "solution": "print(\"All positive:\", all(n > 0 for n in [1, 2, -3]))"
+    },
+    {
+      "id": "CH03-M-015",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用索引访问并相加列表元素。",
+      "code_template": "nums = [10, 20, 30]\nprint(___)",
+      "expected_output": "60\n",
+      "hints": "填空三处索引。",
+      "test_cases": [
+        "assert captured_output == '60\\n'"
+      ],
+      "solution": "nums = [10, 20, 30]\nprint(nums[0] + nums[1] + nums[2])"
+    },
+    {
+      "id": "CH03-M-016",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 enumerate() 同时输出索引和元素。",
+      "code_template": "fruits = [\"a\", \"b\", \"c\"]\nfor i, f in enumerate(fruits):\n    print(___, f)",
+      "expected_output": "0 a\n1 b\n2 c\n",
+      "hints": "填空 enumerate(fruits)。",
+      "test_cases": [
+        "assert captured_output == '0 a\\n1 b\\n2 c\\n'"
+      ],
+      "solution": "fruits = [\"a\", \"b\", \"c\"]\nfor i, f in enumerate(fruits):\n    print(i, f)"
+    },
+    {
+      "id": "CH03-M-017",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 zip() 对应相加两个列表。",
+      "code_template": "a = [1, 2, 3]\nb = [4, 5, 6]\nprint(___)",
+      "expected_output": "[5, 7, 9]\n",
+      "hints": "填空 zip(a, b)。",
+      "test_cases": [
+        "assert captured_output == '[5, 7, 9]\\n'"
+      ],
+      "solution": "a = [1, 2, 3]\nb = [4, 5, 6]\nprint([x + y for x, y in zip(a, b)])"
+    },
+    {
+      "id": "CH03-M-018",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 join() 拼接字符串列表。",
+      "code_template": "words = [\"Py\", \"Quest\"]\nprint(___)",
+      "expected_output": "PyQuest\n",
+      "hints": "填空 join(words)。",
+      "test_cases": [
+        "assert captured_output == 'PyQuest\\n'"
+      ],
+      "solution": "words = [\"Py\", \"Quest\"]\nprint(\"\".join(words))"
+    },
+    {
+      "id": "CH03-M-019",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 join() 把数字列表拼成字符串。",
+      "code_template": "nums = [1, 2, 3]\nprint(___)",
+      "expected_output": "1-2-3\n",
+      "hints": "填空 map(str, nums)。",
+      "test_cases": [
+        "assert captured_output == '1-2-3\\n'"
+      ],
+      "solution": "nums = [1, 2, 3]\nprint(\"-\".join(map(str, nums)))"
+    },
+    {
+      "id": "CH03-M-020",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 set 去重后求和。",
+      "code_template": "nums = [1, 2, 2, 3, 5]\nprint(___)",
+      "expected_output": "11\n",
+      "hints": "填空 set(nums)。",
+      "test_cases": [
+        "assert captured_output == '11\\n'"
+      ],
+      "solution": "nums = [1, 2, 2, 3, 5]\nprint(sum(set(nums)))"
+    },
+    {
+      "id": "CH03-M-021",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 sorted() 降序排序。",
+      "code_template": "nums = [5, 1, 3]\nprint(___)",
+      "expected_output": "[5, 3, 1]\n",
+      "hints": "填空 reverse=True。",
+      "test_cases": [
+        "assert captured_output == '[5, 3, 1]\\n'"
+      ],
+      "solution": "nums = [5, 1, 3]\nprint(sorted(nums, reverse=True))"
+    },
+    {
+      "id": "CH03-M-022",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用列表推导式生成二维网格。",
+      "code_template": "grid = [[0] * 3 for _ in range(2)]\nprint(___)",
+      "expected_output": "[[0, 0, 0], [0, 0, 0]]\n",
+      "hints": "填空 [0] * 3。",
+      "test_cases": [
+        "assert captured_output == '[[0, 0, 0], [0, 0, 0]]\\n'"
+      ],
+      "solution": "grid = [[0] * 3 for _ in range(2)]\nprint(grid)"
+    },
+    {
+      "id": "CH03-M-023",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用切片替换列表片段。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nnums[1:3] = [20, 30]\nprint(___)",
+      "expected_output": "[1, 20, 30, 4, 5]\n",
+      "hints": "填空切片替换。",
+      "test_cases": [
+        "assert captured_output == '[1, 20, 30, 4, 5]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nnums[1:3] = [20, 30]\nprint(nums)"
+    },
+    {
+      "id": "CH03-M-024",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "清空列表并输出长度。",
+      "code_template": "nums = [1, 2, 3]\nnums.clear()\nprint(___, len(nums))",
+      "expected_output": "[] 0\n",
+      "hints": "填空 nums.clear()。",
+      "test_cases": [
+        "assert captured_output == '[] 0\\n'"
+      ],
+      "solution": "nums = [1, 2, 3]\nnums.clear()\nprint(nums, len(nums))"
+    },
+    {
+      "id": "CH03-M-025",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "求列表中偶数的和。",
+      "code_template": "nums = [1, 2, 3, 4, 5, 6]\nprint(___)",
+      "expected_output": "12\n",
+      "hints": "填空生成器表达式。",
+      "test_cases": [
+        "assert captured_output == '12\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5, 6]\nprint(sum(n for n in nums if n % 2 == 0))"
+    },
+    {
+      "id": "CH03-M-026",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "找最大值所在的位置。",
+      "code_template": "nums = [5, 9, 3]\nprint(\"Index of max:\",___)",
+      "expected_output": "Index of max: 1\n",
+      "hints": "填空 max(nums)。",
+      "test_cases": [
+        "assert captured_output == 'Index of max: 1\\n'"
+      ],
+      "solution": "nums = [5, 9, 3]\nprint(\"Index of max:\", nums.index(max(nums)))"
+    },
+    {
+      "id": "CH03-M-027",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把字符串转成字符列表。",
+      "code_template": "s = \"abc\"\nprint(___)",
+      "expected_output": "['a', 'b', 'c']\n",
+      "hints": "填空 list(s)。",
+      "test_cases": [
+        "assert captured_output == \"['a', 'b', 'c']\\n\""
+      ],
+      "solution": "s = \"abc\"\nprint(list(s))"
+    },
+    {
+      "id": "CH03-M-028",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "修改嵌套列表中的元素。",
+      "code_template": "matrix = [[1, 2], [3, 4]]\nmatrix[1][1] = 40\nprint(___)",
+      "expected_output": "[[1, 2], [3, 40]]\n",
+      "hints": "填空修改嵌套元素。",
+      "test_cases": [
+        "assert captured_output == '[[1, 2], [3, 40]]\\n'"
+      ],
+      "solution": "matrix = [[1, 2], [3, 4]]\nmatrix[1][1] = 40\nprint(matrix)"
+    },
+    {
+      "id": "CH03-M-029",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "交换列表首尾元素。",
+      "code_template": "nums = [1, 2, 3, 4]\nnums[0], nums[-1] = nums[-1], nums[0]\nprint(___)",
+      "expected_output": "[4, 2, 3, 1]\n",
+      "hints": "填空首尾交换。",
+      "test_cases": [
+        "assert captured_output == '[4, 2, 3, 1]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4]\nnums[0], nums[-1] = nums[-1], nums[0]\nprint(nums)"
+    },
+    {
+      "id": "CH03-M-030",
+      "topic": "列表 (Lists)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用切片步长取偶数索引元素。",
+      "code_template": "nums = [10, 20, 30, 40]\nprint(___)",
+      "expected_output": "[10, 30]\n",
+      "hints": "切片填 ::2。",
+      "test_cases": [
+        "assert captured_output == '[10, 30]\\n'"
+      ],
+      "solution": "nums = [10, 20, 30, 40]\nprint(nums[::2])"
+    }
+  ]
+}

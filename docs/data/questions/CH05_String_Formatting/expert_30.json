@@ -1,0 +1,427 @@
+{
+  "chapter": "CH05",
+  "title": "字符串格式化",
+  "difficulty": "较难",
+  "questions": [
+    {
+      "id": "CH05-X-001",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "生成任意行数的对齐表格。",
+      "code_template": "headers = [\"Name\", \"Age\", \"Score\"]\nrows = [[\"Alice\", 20, 92], [\"Bob\", 21, 88], [\"Cara\", 22, 95]]\nwidths = [max(len(str(r[i])) for r in [headers] + rows) + 2 for i in range(3)]\nline = \"+\" + \"+\".join(\"-\" * w for w in widths) + \"+\"\nprint(line)\nfor row in [headers] + rows:\n    cells = [str(v).ljust(w - 1) for v, w in zip(row, widths)]\n    print(\"|\" + \"|\".join(cells) + \"|\")\n    print(___)",
+      "expected_output": "+-------+-----+-------+\n|Name  |Age |Score |\n+-------+-----+-------+\n|Alice |20  |92    |\n+-------+-----+-------+\n|Bob   |21  |88    |\n+-------+-----+-------+\n|Cara  |22  |95    |\n+-------+-----+-------+\n",
+      "hints": "填空表格生成。",
+      "test_cases": [
+        "assert captured_output == '+-------+-----+-------+\\n|Name  |Age |Score |\\n+-------+-----+-------+\\n|Alice |20  |92    |\\n+-------+-----+-------+\\n|Bob   |21  |88    |\\n+-------+-----+-------+\\n|Cara  |22  |95    |\\n+-------+-----+-------+\\n'"
+      ],
+      "solution": "headers = [\"Name\", \"Age\", \"Score\"]\nrows = [[\"Alice\", 20, 92], [\"Bob\", 21, 88], [\"Cara\", 22, 95]]\nwidths = [max(len(str(r[i])) for r in [headers] + rows) + 2 for i in range(3)]\nline = \"+\" + \"+\".join(\"-\" * w for w in widths) + \"+\"\nprint(line)\nfor row in [headers] + rows:\n    cells = [str(v).ljust(w - 1) for v, w in zip(row, widths)]\n    print(\"|\" + \"|\".join(cells) + \"|\")\n    print(line)"
+    },
+    {
+      "id": "CH05-X-002",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "绘制垂直直方图。",
+      "code_template": "data = {\"A\": 3, \"B\": 5, \"C\": 4}\nmax_h = max(data.values())\nfor level in range(max_h, 0, -1):\n    line = \"\"\n    for v in data.values():\n        line += \" # \" if v >= level else \"   \"\n    print(line)\nprint(___)",
+      "expected_output": "    #    \n    #  # \n #  #  # \n #  #  # \n #  #  # \n A B C\n",
+      "hints": "填空垂直直方图。",
+      "test_cases": [
+        "assert captured_output == '    #    \\n    #  # \\n #  #  # \\n #  #  # \\n #  #  # \\n A B C\\n'"
+      ],
+      "solution": "data = {\"A\": 3, \"B\": 5, \"C\": 4}\nmax_h = max(data.values())\nfor level in range(max_h, 0, -1):\n    line = \"\"\n    for v in data.values():\n        line += \" # \" if v >= level else \"   \"\n    print(line)\nprint(\" \" + \" \".join(data.keys()))"
+    },
+    {
+      "id": "CH05-X-003",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "生成 3 月日历（模拟）。",
+      "code_template": "month = 3\ndays = 31\nstart = 2\nprint(f\"{'March 2026':^21}\")\nprint(\"Mo Tu We Th Fr Sa Su\")\nprint(\"   \" * start, end=\"\")\nfor day in range(1, days + 1):\n    print(f\"{day:>2} \", end=\"\")\n    if (day + start) % 7 == 0:\n        print(___)",
+      "expected_output": "     March 2026      \nMo Tu We Th Fr Sa Su\n       1  2  3  4  5 \n 6  7  8  9 10 11 12 \n13 14 15 16 17 18 19 \n20 21 22 23 24 25 26 \n27 28 29 30 31 ",
+      "hints": "填空日历生成。",
+      "test_cases": [
+        "assert captured_output == '     March 2026      \\nMo Tu We Th Fr Sa Su\\n       1  2  3  4  5 \\n 6  7  8  9 10 11 12 \\n13 14 15 16 17 18 19 \\n20 21 22 23 24 25 26 \\n27 28 29 30 31 '"
+      ],
+      "solution": "month = 3\ndays = 31\nstart = 2\nprint(f\"{'March 2026':^21}\")\nprint(\"Mo Tu We Th Fr Sa Su\")\nprint(\"   \" * start, end=\"\")\nfor day in range(1, days + 1):\n    print(f\"{day:>2} \", end=\"\")\n    if (day + start) % 7 == 0:\n        print()"
+    },
+    {
+      "id": "CH05-X-004",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "实现两端对齐文本。",
+      "code_template": "words = \"the quick brown fox jumps\".split()\nwidth = 20\nline = \"\"\nresult = []\nfor w in words:\n    if len(line) + len(w) <= width:\n        line += w + \" \"\n    else:\n        result.append(line.strip().ljust(width))\n        line = w + \" \"\nresult.append(line.strip())\nfor l in result:\n    print(___)",
+      "expected_output": "the quick brown fox \njumps\n",
+      "hints": "填空两端对齐。",
+      "test_cases": [
+        "assert captured_output == 'the quick brown fox \\njumps\\n'"
+      ],
+      "solution": "words = \"the quick brown fox jumps\".split()\nwidth = 20\nline = \"\"\nresult = []\nfor w in words:\n    if len(line) + len(w) <= width:\n        line += w + \" \"\n    else:\n        result.append(line.strip().ljust(width))\n        line = w + \" \"\nresult.append(line.strip())\nfor l in result:\n    print(l)"
+    },
+    {
+      "id": "CH05-X-005",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "输出螺旋矩阵并格式化。",
+      "code_template": "n = 3\nmatrix = [[0] * n for _ in range(n)]\ntop, bottom, left, right = 0, n - 1, 0, n - 1\nnum = 1\nwhile top <= bottom and left <= right:\n    for j in range(left, right + 1):\n        matrix[top][j] = num\n        num += 1\n    top += 1\n    for i in range(top, bottom + 1):\n        matrix[i][right] = num\n        num += 1\n    right -= 1\n    for j in range(right, left - 1, -1):\n        matrix[bottom][j] = num\n        num += 1\n    bottom -= 1\n    for i in range(bottom, top - 1, -1):\n        matrix[i][left] = num\n        num += 1\n    left += 1\nfor row in matrix:\n    print(___)",
+      "expected_output": " 1  2  3\n 8  9  4\n 7  6  5\n",
+      "hints": "填空螺旋与格式化。",
+      "test_cases": [
+        "assert captured_output == ' 1  2  3\\n 8  9  4\\n 7  6  5\\n'"
+      ],
+      "solution": "n = 3\nmatrix = [[0] * n for _ in range(n)]\ntop, bottom, left, right = 0, n - 1, 0, n - 1\nnum = 1\nwhile top <= bottom and left <= right:\n    for j in range(left, right + 1):\n        matrix[top][j] = num\n        num += 1\n    top += 1\n    for i in range(top, bottom + 1):\n        matrix[i][right] = num\n        num += 1\n    right -= 1\n    for j in range(right, left - 1, -1):\n        matrix[bottom][j] = num\n        num += 1\n    bottom -= 1\n    for i in range(bottom, top - 1, -1):\n        matrix[i][left] = num\n        num += 1\n    left += 1\nfor row in matrix:\n    print(\" \".join(f\"{v:>2}\" for v in row))"
+    },
+    {
+      "id": "CH05-X-006",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "输出十六进制转储（hexdump）。",
+      "code_template": "text = \"Hello\"\nfor i in range(0, len(text), 2):\n    chunk = text[i:i + 2]\n    hex_part = \" \".join(f\"{ord(c):02x}\" for c in chunk)\n    ascii_part = \"\".join(c if c.isprintable() else \".\" for c in chunk)\n    print(___)",
+      "expected_output": "0000  48 65   He\n0002  6c 6c   ll\n0004  6f      o\n",
+      "hints": "填空 hexdump。",
+      "test_cases": [
+        "assert captured_output == '0000  48 65   He\\n0002  6c 6c   ll\\n0004  6f      o\\n'"
+      ],
+      "solution": "text = \"Hello\"\nfor i in range(0, len(text), 2):\n    chunk = text[i:i + 2]\n    hex_part = \" \".join(f\"{ord(c):02x}\" for c in chunk)\n    ascii_part = \"\".join(c if c.isprintable() else \".\" for c in chunk)\n    print(f\"{i:04x}  {hex_part:<6}  {ascii_part}\")"
+    },
+    {
+      "id": "CH05-X-007",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "生成乘法表大表格（5x5 对齐）。",
+      "code_template": "size = 5\nprint(f\"{'x':>4}\" + \"\".join(f\"{j:>4}\" for j in range(1, size + 1)))\nfor i in range(1, size + 1):\n    print(___)",
+      "expected_output": "   x   1   2   3   4   5\n   1   1   2   3   4   5\n   2   2   4   6   8  10\n   3   3   6   9  12  15\n   4   4   8  12  16  20\n   5   5  10  15  20  25\n",
+      "hints": "填空大表格。",
+      "test_cases": [
+        "assert captured_output == '   x   1   2   3   4   5\\n   1   1   2   3   4   5\\n   2   2   4   6   8  10\\n   3   3   6   9  12  15\\n   4   4   8  12  16  20\\n   5   5  10  15  20  25\\n'"
+      ],
+      "solution": "size = 5\nprint(f\"{'x':>4}\" + \"\".join(f\"{j:>4}\" for j in range(1, size + 1)))\nfor i in range(1, size + 1):\n    print(f\"{i:>4}\" + \"\".join(f\"{i * j:>4}\" for j in range(1, size + 1)))"
+    },
+    {
+      "id": "CH05-X-008",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "输出数字菱形。",
+      "code_template": "n = 3\nfor i in range(1, n + 1):\n    line = \"\".join(str(j) for j in range(1, i + 1))\n    line += \"\".join(str(j) for j in range(i - 1, 0, -1))\n    print(f\"{line:^{2 * n - 1}}\")\nfor i in range(n - 1, 0, -1):\n    line = \"\".join(str(j) for j in range(1, i + 1))\n    line += \"\".join(str(j) for j in range(i - 1, 0, -1))\n    print(___)",
+      "expected_output": "  1  \n 121 \n12321\n 121 \n  1  \n",
+      "hints": "填空数字菱形。",
+      "test_cases": [
+        "assert captured_output == '  1  \\n 121 \\n12321\\n 121 \\n  1  \\n'"
+      ],
+      "solution": "n = 3\nfor i in range(1, n + 1):\n    line = \"\".join(str(j) for j in range(1, i + 1))\n    line += \"\".join(str(j) for j in range(i - 1, 0, -1))\n    print(f\"{line:^{2 * n - 1}}\")\nfor i in range(n - 1, 0, -1):\n    line = \"\".join(str(j) for j in range(1, i + 1))\n    line += \"\".join(str(j) for j in range(i - 1, 0, -1))\n    print(f\"{line:^{2 * n - 1}}\")"
+    },
+    {
+      "id": "CH05-X-009",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "生成学生成绩分布统计图。",
+      "code_template": "scores = [55, 72, 88, 91, 63, 77, 85, 95, 68, 80]\nbuckets = {\"A(90+)\": 0, \"B(80+)\": 0, \"C(70+)\": 0, \"D(<70)\": 0}\nfor s in scores:\n    if s >= 90:\n        buckets[\"A(90+)\"] += 1\n    elif s >= 80:\n        buckets[\"B(80+)\"] += 1\n    elif s >= 70:\n        buckets[\"C(70+)\"] += 1\n    else:\n        buckets[\"D(<70)\"] += 1\nfor k, v in buckets.items():\n    print(___)",
+      "expected_output": "A(90+)  ## (2)\nB(80+)  ### (3)\nC(70+)  ## (2)\nD(<70)  ### (3)\n",
+      "hints": "填空分布统计。",
+      "test_cases": [
+        "assert captured_output == 'A(90+)  ## (2)\\nB(80+)  ### (3)\\nC(70+)  ## (2)\\nD(<70)  ### (3)\\n'"
+      ],
+      "solution": "scores = [55, 72, 88, 91, 63, 77, 85, 95, 68, 80]\nbuckets = {\"A(90+)\": 0, \"B(80+)\": 0, \"C(70+)\": 0, \"D(<70)\": 0}\nfor s in scores:\n    if s >= 90:\n        buckets[\"A(90+)\"] += 1\n    elif s >= 80:\n        buckets[\"B(80+)\"] += 1\n    elif s >= 70:\n        buckets[\"C(70+)\"] += 1\n    else:\n        buckets[\"D(<70)\"] += 1\nfor k, v in buckets.items():\n    print(f\"{k:<8}{'#' * v} ({v})\")"
+    },
+    {
+      "id": "CH05-X-010",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "格式化输出对数表。",
+      "code_template": "import math\nprint(f\"{'n':>4}{'log10':>10}\")\nfor n in [1, 2, 5, 10, 20]:\n    print(___)",
+      "expected_output": "   n     log10\n   1    0.0000\n   2    0.3010\n   5    0.6990\n  10    1.0000\n  20    1.3010\n",
+      "hints": "填空对数表。",
+      "test_cases": [
+        "assert captured_output == '   n     log10\\n   1    0.0000\\n   2    0.3010\\n   5    0.6990\\n  10    1.0000\\n  20    1.3010\\n'"
+      ],
+      "solution": "import math\nprint(f\"{'n':>4}{'log10':>10}\")\nfor n in [1, 2, 5, 10, 20]:\n    print(f\"{n:>4}{math.log10(n):>10.4f}\")"
+    },
+    {
+      "id": "CH05-X-011",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "生成 4x4 棋盘并格式化。",
+      "code_template": "size = 4\nfor i in range(size):\n    row = \"\"\n    for j in range(size):\n        row += \"# \" if (i + j) % 2 == 0 else \". \"\n    print(___)",
+      "expected_output": "# . # . \n. # . # \n# . # . \n. # . # \n",
+      "hints": "填空棋盘格式。",
+      "test_cases": [
+        "assert captured_output == '# . # . \\n. # . # \\n# . # . \\n. # . # \\n'"
+      ],
+      "solution": "size = 4\nfor i in range(size):\n    row = \"\"\n    for j in range(size):\n        row += \"# \" if (i + j) % 2 == 0 else \". \"\n    print(row)"
+    },
+    {
+      "id": "CH05-X-012",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "输出单词长度统计报告。",
+      "code_template": "text = \"python programming is fun and powerful\"\nwords = text.split()\nlengths = {}\nfor w in words:\n    lengths[len(w)] = lengths.get(len(w), 0) + 1\nprint(f\"{'Len':>4}{'Count':>8}\")\nfor length in sorted(lengths):\n    print(___)",
+      "expected_output": " Len   Count\n   2       1\n   3       2\n   6       1\n   8       1\n  11       1\n",
+      "hints": "填空长度统计。",
+      "test_cases": [
+        "assert captured_output == ' Len   Count\\n   2       1\\n   3       2\\n   6       1\\n   8       1\\n  11       1\\n'"
+      ],
+      "solution": "text = \"python programming is fun and powerful\"\nwords = text.split()\nlengths = {}\nfor w in words:\n    lengths[len(w)] = lengths.get(len(w), 0) + 1\nprint(f\"{'Len':>4}{'Count':>8}\")\nfor length in sorted(lengths):\n    print(f\"{length:>4}{lengths[length]:>8}\")"
+    },
+    {
+      "id": "CH05-X-013",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "格式化输出斐波那契对照表。",
+      "code_template": "a, b = 0, 1\nprint(f\"{'n':>3}{'fib':>8}\")\nfor n in range(1, 11):\n    print(___)\n    a, b = b, a + b",
+      "expected_output": "  n     fib\n  1       0\n  2       1\n  3       1\n  4       2\n  5       3\n  6       5\n  7       8\n  8      13\n  9      21\n 10      34\n",
+      "hints": "填空斐波那契表。",
+      "test_cases": [
+        "assert captured_output == '  n     fib\\n  1       0\\n  2       1\\n  3       1\\n  4       2\\n  5       3\\n  6       5\\n  7       8\\n  8      13\\n  9      21\\n 10      34\\n'"
+      ],
+      "solution": "a, b = 0, 1\nprint(f\"{'n':>3}{'fib':>8}\")\nfor n in range(1, 11):\n    print(f\"{n:>3}{a:>8}\")\n    a, b = b, a + b"
+    },
+    {
+      "id": "CH05-X-014",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "生成 ASCII 表片段。",
+      "code_template": "print(f\"{'Char':<6}{'Dec':>5}{'Hex':>5}\")\nfor code in range(65, 75):\n    print(___)",
+      "expected_output": "Char    Dec  Hex\nA        65  0x41\nB        66  0x42\nC        67  0x43\nD        68  0x44\nE        69  0x45\nF        70  0x46\nG        71  0x47\nH        72  0x48\nI        73  0x49\nJ        74  0x4a\n",
+      "hints": "填空 ASCII 表。",
+      "test_cases": [
+        "assert captured_output == 'Char    Dec  Hex\\nA        65  0x41\\nB        66  0x42\\nC        67  0x43\\nD        68  0x44\\nE        69  0x45\\nF        70  0x46\\nG        71  0x47\\nH        72  0x48\\nI        73  0x49\\nJ        74  0x4a\\n'"
+      ],
+      "solution": "print(f\"{'Char':<6}{'Dec':>5}{'Hex':>5}\")\nfor code in range(65, 75):\n    print(f\"{chr(code):<6}{code:>5}{code:>#6x}\")"
+    },
+    {
+      "id": "CH05-X-015",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "输出居中多行欢迎横幅。",
+      "code_template": "lines = [\"WELCOME\", \"TO\", \"PYQUEST\"]\nwidth = 24\nborder = \"*\" * width\nprint(border)\nfor line in lines:\n    print(f\"*{line:^{width - 2}}*\")\nprint(___)",
+      "expected_output": "************************\n*       WELCOME        *\n*          TO          *\n*       PYQUEST        *\n************************\n",
+      "hints": "填空横幅格式。",
+      "test_cases": [
+        "assert captured_output == '************************\\n*       WELCOME        *\\n*          TO          *\\n*       PYQUEST        *\\n************************\\n'"
+      ],
+      "solution": "lines = [\"WELCOME\", \"TO\", \"PYQUEST\"]\nwidth = 24\nborder = \"*\" * width\nprint(border)\nfor line in lines:\n    print(f\"*{line:^{width - 2}}*\")\nprint(border)"
+    },
+    {
+      "id": "CH05-X-016",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "格式化输出摄氏/华氏/开氏对照表。",
+      "code_template": "print(f\"{'C':>6}{'F':>8}{'K':>8}\")\nfor c in [0, 20, 37, 100]:\n    f = c * 9 / 5 + 32\n    k = c + 273.15\n    print(___)",
+      "expected_output": "     C       F       K\n   0.0    32.0  273.15\n  20.0    68.0  293.15\n  37.0    98.6  310.15\n 100.0   212.0  373.15\n",
+      "hints": "填空三单位表。",
+      "test_cases": [
+        "assert captured_output == '     C       F       K\\n   0.0    32.0  273.15\\n  20.0    68.0  293.15\\n  37.0    98.6  310.15\\n 100.0   212.0  373.15\\n'"
+      ],
+      "solution": "print(f\"{'C':>6}{'F':>8}{'K':>8}\")\nfor c in [0, 20, 37, 100]:\n    f = c * 9 / 5 + 32\n    k = c + 273.15\n    print(f\"{c:>6.1f}{f:>8.1f}{k:>8.2f}\")"
+    },
+    {
+      "id": "CH05-X-017",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用格式输出帕斯卡三角。",
+      "code_template": "rows = 5\ntriangle = []\nfor i in range(rows):\n    row = [1] * (i + 1)\n    for j in range(1, i):\n        row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]\n    triangle.append(row)\nfor row in triangle:\n    text = \" \".join(str(v) for v in row)\n    print(___)",
+      "expected_output": "         1          \n        1 1         \n       1 2 1        \n      1 3 3 1       \n     1 4 6 4 1      \n",
+      "hints": "填空帕斯卡三角。",
+      "test_cases": [
+        "assert captured_output == '         1          \\n        1 1         \\n       1 2 1        \\n      1 3 3 1       \\n     1 4 6 4 1      \\n'"
+      ],
+      "solution": "rows = 5\ntriangle = []\nfor i in range(rows):\n    row = [1] * (i + 1)\n    for j in range(1, i):\n        row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]\n    triangle.append(row)\nfor row in triangle:\n    text = \" \".join(str(v) for v in row)\n    print(f\"{text:^{rows * 4}}\")"
+    },
+    {
+      "id": "CH05-X-018",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "生成购物小票（含边框）。",
+      "code_template": "items = [(\"Apple\", 3.5, 2), (\"Milk\", 5.0, 1), (\"Bread\", 4.5, 1)]\ntotal = 0\nprint(\"-\" * 28)\nfor name, price, qty in items:\n    sub = price * qty\n    total += sub\n    print(f\"{name:<8} x{qty}  {sub:>8.2f}\")\nprint(\"-\" * 28)\nprint(f\"{'TOTAL':<12}{total:>10.2f}\")\nprint(___)",
+      "expected_output": "----------------------------\nApple    x2      7.00\nMilk     x1      5.00\nBread    x1      4.50\n----------------------------\nTOTAL            16.50\n----------------------------\n",
+      "hints": "填空小票边框。",
+      "test_cases": [
+        "assert captured_output == '----------------------------\\nApple    x2      7.00\\nMilk     x1      5.00\\nBread    x1      4.50\\n----------------------------\\nTOTAL            16.50\\n----------------------------\\n'"
+      ],
+      "solution": "items = [(\"Apple\", 3.5, 2), (\"Milk\", 5.0, 1), (\"Bread\", 4.5, 1)]\ntotal = 0\nprint(\"-\" * 28)\nfor name, price, qty in items:\n    sub = price * qty\n    total += sub\n    print(f\"{name:<8} x{qty}  {sub:>8.2f}\")\nprint(\"-\" * 28)\nprint(f\"{'TOTAL':<12}{total:>10.2f}\")\nprint(\"-\" * 28)"
+    },
+    {
+      "id": "CH05-X-019",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "格式化输出秒数分解。",
+      "code_template": "total_seconds = 3725\nhours = total_seconds // 3600\nminutes = (total_seconds % 3600) // 60\nseconds = total_seconds % 60\nprint(f\"{hours:02d}:{minutes:02d}:{seconds:02d}\")\nprint(___)",
+      "expected_output": "01:02:05\n3725 seconds\n",
+      "hints": "填空时间分解。",
+      "test_cases": [
+        "assert captured_output == '01:02:05\\n3725 seconds\\n'"
+      ],
+      "solution": "total_seconds = 3725\nhours = total_seconds // 3600\nminutes = (total_seconds % 3600) // 60\nseconds = total_seconds % 60\nprint(f\"{hours:02d}:{minutes:02d}:{seconds:02d}\")\nprint(f\"{total_seconds} seconds\")"
+    },
+    {
+      "id": "CH05-X-020",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "输出金额大写辅助表。",
+      "code_template": "amounts = [0.5, 1.25, 100.75]\nfor a in amounts:\n    print(___)",
+      "expected_output": "      0.50  (       0 元)\n      1.25  (       1 元)\n    100.75  (     101 元)\n",
+      "hints": "填空金额格式。",
+      "test_cases": [
+        "assert captured_output == '      0.50  (       0 元)\\n      1.25  (       1 元)\\n    100.75  (     101 元)\\n'"
+      ],
+      "solution": "amounts = [0.5, 1.25, 100.75]\nfor a in amounts:\n    print(f\"{a:>10,.2f}  ({a:>8.0f} 元)\")"
+    },
+    {
+      "id": "CH05-X-021",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "生成统计柱状图（横向 + 数值）。",
+      "code_template": "data = [(\"Python\", 9), (\"Java\", 7), (\"C\", 5)]\nmax_v = max(v for _, v in data)\nfor name, v in data:\n    bar = \"#\" * v + \".\" * (max_v - v)\n    print(___)",
+      "expected_output": "Python  ######### 9\nJava    #######.. 7\nC       #####.... 5\n",
+      "hints": "填空柱状图。",
+      "test_cases": [
+        "assert captured_output == 'Python  ######### 9\\nJava    #######.. 7\\nC       #####.... 5\\n'"
+      ],
+      "solution": "data = [(\"Python\", 9), (\"Java\", 7), (\"C\", 5)]\nmax_v = max(v for _, v in data)\nfor name, v in data:\n    bar = \"#\" * v + \".\" * (max_v - v)\n    print(f\"{name:<8}{bar} {v}\")"
+    },
+    {
+      "id": "CH05-X-022",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "格式化输出质数表。",
+      "code_template": "primes = []\nfor n in range(2, 40):\n    if all(n % d for d in range(2, int(n ** 0.5) + 1)):\n        primes.append(n)\nfor i in range(0, len(primes), 5):\n    print(___)",
+      "expected_output": "  2   3   5   7  11\n 13  17  19  23  29\n 31  37\n",
+      "hints": "填空质数表。",
+      "test_cases": [
+        "assert captured_output == '  2   3   5   7  11\\n 13  17  19  23  29\\n 31  37\\n'"
+      ],
+      "solution": "primes = []\nfor n in range(2, 40):\n    if all(n % d for d in range(2, int(n ** 0.5) + 1)):\n        primes.append(n)\nfor i in range(0, len(primes), 5):\n    print(\" \".join(f\"{p:>3}\" for p in primes[i:i + 5]))"
+    },
+    {
+      "id": "CH05-X-023",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "输出坐标平面网格点。",
+      "code_template": "for y in range(3, 0, -1):\n    row = \" \".join(f\"({x},{y})\" for x in range(1, 4))\n    print(row)\nprint(___)",
+      "expected_output": "(1,3) (2,3) (3,3)\n(1,2) (2,2) (3,2)\n(1,1) (2,1) (3,1)\n   x=1  x=2  x=3\n",
+      "hints": "填空坐标网格。",
+      "test_cases": [
+        "assert captured_output == '(1,3) (2,3) (3,3)\\n(1,2) (2,2) (3,2)\\n(1,1) (2,1) (3,1)\\n   x=1  x=2  x=3\\n'"
+      ],
+      "solution": "for y in range(3, 0, -1):\n    row = \" \".join(f\"({x},{y})\" for x in range(1, 4))\n    print(row)\nprint(\"  \" + \" \".join(f\" x={x}\" for x in range(1, 4)))"
+    },
+    {
+      "id": "CH05-X-024",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用格式生成菱形数字表。",
+      "code_template": "n = 4\nfor i in range(1, n + 1):\n    print(\" \" * (n - i) + \"\".join(str(i) for _ in range(2 * i - 1)))\nfor i in range(n - 1, 0, -1):\n    print(___)",
+      "expected_output": "   1\n  222\n 33333\n4444444\n 33333\n  222\n   1\n",
+      "hints": "填空数字菱形表。",
+      "test_cases": [
+        "assert captured_output == '   1\\n  222\\n 33333\\n4444444\\n 33333\\n  222\\n   1\\n'"
+      ],
+      "solution": "n = 4\nfor i in range(1, n + 1):\n    print(\" \" * (n - i) + \"\".join(str(i) for _ in range(2 * i - 1)))\nfor i in range(n - 1, 0, -1):\n    print(\" \" * (n - i) + \"\".join(str(i) for _ in range(2 * i - 1)))"
+    },
+    {
+      "id": "CH05-X-025",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "格式化输出模拟日志。",
+      "code_template": "logs = [(1, \"INFO\", \"start\"), (2, \"WARN\", \"retry\"), (3, \"ERROR\", \"fail\")]\nfor num, level, msg in logs:\n    print(___)",
+      "expected_output": "[001] INFO  start\n[002] WARN  retry\n[003] ERROR fail\n",
+      "hints": "填空日志格式。",
+      "test_cases": [
+        "assert captured_output == '[001] INFO  start\\n[002] WARN  retry\\n[003] ERROR fail\\n'"
+      ],
+      "solution": "logs = [(1, \"INFO\", \"start\"), (2, \"WARN\", \"retry\"), (3, \"ERROR\", \"fail\")]\nfor num, level, msg in logs:\n    print(f\"[{num:03d}] {level:<5} {msg}\")"
+    },
+    {
+      "id": "CH05-X-026",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "输出科学计数法对比表。",
+      "code_template": "print(f\"{'n':>12}{'sci':>14}\")\nfor n in [0.0001, 0.5, 12345.0, 1e6]:\n    print(___)",
+      "expected_output": "           n           sci\n      0.0001     1.000e-04\n      0.5000     5.000e-01\n  12345.0000     1.234e+04\n1000000.0000     1.000e+06\n",
+      "hints": "填空科学计数法。",
+      "test_cases": [
+        "assert captured_output == '           n           sci\\n      0.0001     1.000e-04\\n      0.5000     5.000e-01\\n  12345.0000     1.234e+04\\n1000000.0000     1.000e+06\\n'"
+      ],
+      "solution": "print(f\"{'n':>12}{'sci':>14}\")\nfor n in [0.0001, 0.5, 12345.0, 1e6]:\n    print(f\"{n:>12.4f}{n:>14.3e}\")"
+    },
+    {
+      "id": "CH05-X-027",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "生成分数与小数对照表。",
+      "code_template": "print(f\"{'Fraction':<10}{'Decimal':>10}\")\nfor num, den in [(1, 2), (1, 3), (2, 3), (1, 8)]:\n    print(___)",
+      "expected_output": "Fraction     Decimal\n1/2           0.5000\n1/3           0.3333\n2/3           0.6667\n1/8           0.1250\n",
+      "hints": "填空分数小数表。",
+      "test_cases": [
+        "assert captured_output == 'Fraction     Decimal\\n1/2           0.5000\\n1/3           0.3333\\n2/3           0.6667\\n1/8           0.1250\\n'"
+      ],
+      "solution": "print(f\"{'Fraction':<10}{'Decimal':>10}\")\nfor num, den in [(1, 2), (1, 3), (2, 3), (1, 8)]:\n    print(f\"{num}/{den:<8}{num / den:>10.4f}\")"
+    },
+    {
+      "id": "CH05-X-028",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "输出多语言问候横幅。",
+      "code_template": "greetings = [(\"English\", \"Hello\"), (\"中文\", \"你好\"), (\"日本語\", \"こんにちは\")]\nwidth = 26\nprint(\"*\" * width)\nfor lang, text in greetings:\n    print(f\"* {lang:<8}{text:>10} *\")\nprint(___)",
+      "expected_output": "**************************\n* English      Hello *\n* 中文              你好 *\n* 日本語          こんにちは *\n**************************\n",
+      "hints": "填空问候横幅。",
+      "test_cases": [
+        "assert captured_output == '**************************\\n* English      Hello *\\n* 中文              你好 *\\n* 日本語          こんにちは *\\n**************************\\n'"
+      ],
+      "solution": "greetings = [(\"English\", \"Hello\"), (\"中文\", \"你好\"), (\"日本語\", \"こんにちは\")]\nwidth = 26\nprint(\"*\" * width)\nfor lang, text in greetings:\n    print(f\"* {lang:<8}{text:>10} *\")\nprint(\"*\" * width)"
+    },
+    {
+      "id": "CH05-X-029",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "格式化输出 BMI 计算表。",
+      "code_template": "print(f\"{'Height':>8}{'Weight':>8}{'BMI':>8}{'Status':>10}\")\nfor h, w in [(1.6, 50), (1.7, 65), (1.75, 80)]:\n    bmi = w / h ** 2\n    status = \"Normal\" if bmi < 24 else \"Overweight\"\n    print(___)",
+      "expected_output": "  Height  Weight     BMI    Status\n    1.60    50.0    19.5    Normal\n    1.70    65.0    22.5    Normal\n    1.75    80.0    26.1Overweight\n",
+      "hints": "填空 BMI 表。",
+      "test_cases": [
+        "assert captured_output == '  Height  Weight     BMI    Status\\n    1.60    50.0    19.5    Normal\\n    1.70    65.0    22.5    Normal\\n    1.75    80.0    26.1Overweight\\n'"
+      ],
+      "solution": "print(f\"{'Height':>8}{'Weight':>8}{'BMI':>8}{'Status':>10}\")\nfor h, w in [(1.6, 50), (1.7, 65), (1.75, 80)]:\n    bmi = w / h ** 2\n    status = \"Normal\" if bmi < 24 else \"Overweight\"\n    print(f\"{h:>8.2f}{w:>8.1f}{bmi:>8.1f}{status:>10}\")"
+    },
+    {
+      "id": "CH05-X-030",
+      "topic": "字符串格式化",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "综合：格式化学生成绩报告单。",
+      "code_template": "students = [(\"Alice\", 92, 88), (\"Bob\", 78, 84)]\nprint(f\"{'Name':<8}{'Math':>6}{'English':>8}{'Avg':>8}\")\nprint(\"-\" * 30)\nfor name, math, eng in students:\n    avg = (math + eng) / 2\n    print(___)",
+      "expected_output": "Name      Math English     Avg\n------------------------------\nAlice       92      88    90.0\nBob         78      84    81.0\n",
+      "hints": "填空成绩报告单。",
+      "test_cases": [
+        "assert captured_output == 'Name      Math English     Avg\\n------------------------------\\nAlice       92      88    90.0\\nBob         78      84    81.0\\n'"
+      ],
+      "solution": "students = [(\"Alice\", 92, 88), (\"Bob\", 78, 84)]\nprint(f\"{'Name':<8}{'Math':>6}{'English':>8}{'Avg':>8}\")\nprint(\"-\" * 30)\nfor name, math, eng in students:\n    avg = (math + eng) / 2\n    print(f\"{name:<8}{math:>6}{eng:>8}{avg:>8.1f}\")"
+    }
+  ]
+}

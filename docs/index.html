@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PyQuest — 互动式 Python 练习平台</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1 class="logo">Py<span>Quest</span></h1>
+      <nav class="topnav">
+        <a href="https://github.com/pystay/python-pyquest" target="_blank" rel="noopener">GitHub 仓库</a>
+        <a href="https://learn-py.org/" target="_blank" rel="noopener">learn-py.org</a>
+      </nav>
+      <div id="engine-status" class="engine-status">Python 引擎加载中…</div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="progress-card">
+        <div class="progress-label">已完成 <span id="progress-count">0</span> / <span id="progress-total">0</span></div>
+        <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+      </div>
+      <div id="chapter-list" class="chapter-list"></div>
+    </aside>
+
+    <main class="workspace">
+      <section id="welcome" class="welcome">
+        <h2>欢迎来到 PyQuest 🎉</h2>
+        <p>闯关式 Python 刷题平台。从 <strong>CH01 Hello, World!</strong> 开始，完成一题解锁下一题。</p>
+        <p class="muted">题库：15 章 · 1780 道题 · 四档难度（超简单 → 较难）。代码在浏览器内通过 Pyodide 实时运行判分。</p>
+        <button id="btn-start" class="btn primary">开始刷题</button>
+      </section>
+
+      <section id="quiz" class="quiz hidden">
+        <div class="quiz-head">
+          <div>
+            <span id="q-id" class="q-id"></span>
+            <span id="q-difficulty" class="badge"></span>
+            <span id="q-stars" class="q-stars"></span>
+          </div>
+          <h2 id="q-topic" class="q-topic"></h2>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">题目描述</h3>
+          <p id="q-description" class="q-description"></p>
+          <div id="q-hints" class="q-hints hidden">
+            <strong>💡 提示：</strong><span id="q-hints-text"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <h3 class="card-title">代码</h3>
+            <div class="code-actions">
+              <button id="btn-reset" class="btn ghost">重置</button>
+              <button id="btn-hint" class="btn ghost">提示</button>
+              <button id="btn-run" class="btn primary">▶ 运行</button>
+            </div>
+          </div>
+          <textarea id="editor" class="editor" spellcheck="false" autocomplete="off"></textarea>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">输出</h3>
+          <pre id="output" class="output">点击「运行」查看结果…</pre>
+          <div id="verdict" class="verdict hidden"></div>
+        </div>
+
+        <div class="quiz-nav">
+          <button id="btn-prev" class="btn ghost">← 上一题</button>
+          <button id="btn-next" class="btn primary">下一题 →</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

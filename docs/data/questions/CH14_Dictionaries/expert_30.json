@@ -1,0 +1,427 @@
+{
+  "chapter": "CH14",
+  "title": "字典 (Dictionaries)",
+  "difficulty": "较难",
+  "questions": [
+    {
+      "id": "CH14-X-001",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "实现简易 LRU 缓存。",
+      "code_template": "class LRUCache:\n    def __init__(self, capacity):\n        self.cache = {}\n        self.capacity = capacity\n    def get(self, key):\n        return self.cache.get(key, -1)\n    def put(self, key, value):\n        if len(self.cache) >= self.capacity and key not in self.cache:\n            self.cache.pop(next(iter(self.cache)))\n        self.cache[key] = value\n\ncache = LRUCache(2)\ncache.put(\"a\", 1)\ncache.put(\"b\", 2)\ncache.put(\"c\", 3)\nprint(___, cache.get(\"c\"))",
+      "expected_output": "-1 3\n",
+      "hints": "填空 LRU 雏形。",
+      "test_cases": [
+        "assert captured_output == '-1 3\\n'"
+      ],
+      "solution": "class LRUCache:\n    def __init__(self, capacity):\n        self.cache = {}\n        self.capacity = capacity\n    def get(self, key):\n        return self.cache.get(key, -1)\n    def put(self, key, value):\n        if len(self.cache) >= self.capacity and key not in self.cache:\n            self.cache.pop(next(iter(self.cache)))\n        self.cache[key] = value\n\ncache = LRUCache(2)\ncache.put(\"a\", 1)\ncache.put(\"b\", 2)\ncache.put(\"c\", 3)\nprint(cache.get(\"a\"), cache.get(\"c\"))"
+    },
+    {
+      "id": "CH14-X-002",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "词频统计并输出完整排行。",
+      "code_template": "text = \"apple banana apple cherry banana apple\"\nwords = text.split()\ncounts = {}\nfor w in words:\n    counts[w] = counts.get(w, 0) + 1\nranking = sorted(counts.items(), key=lambda x: x[1], reverse=True)\nfor w, c in ranking:\n    print(___)",
+      "expected_output": "apple: 3\nbanana: 2\ncherry: 1\n",
+      "hints": "填空词频排行。",
+      "test_cases": [
+        "assert captured_output == 'apple: 3\\nbanana: 2\\ncherry: 1\\n'"
+      ],
+      "solution": "text = \"apple banana apple cherry banana apple\"\nwords = text.split()\ncounts = {}\nfor w in words:\n    counts[w] = counts.get(w, 0) + 1\nranking = sorted(counts.items(), key=lambda x: x[1], reverse=True)\nfor w, c in ranking:\n    print(f\"{w}: {c}\")"
+    },
+    {
+      "id": "CH14-X-003",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "两字典求交集值。",
+      "code_template": "d1 = {\"a\": 1, \"b\": 2, \"c\": 3}\nd2 = {\"b\": 20, \"c\": 30, \"d\": 40}\ncommon = {k: d1[k] + d2[k] for k in d1 if k in d2}\nprint(___)",
+      "expected_output": "{'b': 22, 'c': 33}\n",
+      "hints": "填空交集求和。",
+      "test_cases": [
+        "assert captured_output == \"{'b': 22, 'c': 33}\\n\""
+      ],
+      "solution": "d1 = {\"a\": 1, \"b\": 2, \"c\": 3}\nd2 = {\"b\": 20, \"c\": 30, \"d\": 40}\ncommon = {k: d1[k] + d2[k] for k in d1 if k in d2}\nprint(common)"
+    },
+    {
+      "id": "CH14-X-004",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现数字转汉字（简化）。",
+      "code_template": "digit_map = {0: \"零\", 1: \"一\", 2: \"二\", 3: \"三\"}\nn = 13\nresult = \"\".join(digit_map[int(d)] for d in str(n))\nprint(___)",
+      "expected_output": "一三\n",
+      "hints": "填空数字映射。",
+      "test_cases": [
+        "assert captured_output == '一三\\n'"
+      ],
+      "solution": "digit_map = {0: \"零\", 1: \"一\", 2: \"二\", 3: \"三\"}\nn = 13\nresult = \"\".join(digit_map[int(d)] for d in str(n))\nprint(result)"
+    },
+    {
+      "id": "CH14-X-005",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "深度合并两个字典。",
+      "code_template": "def deep_merge(d1, d2):\n    result = dict(d1)\n    for k, v in d2.items():\n        if k in result and isinstance(result[k], dict) and isinstance(v, dict):\n            result[k] = deep_merge(result[k], v)\n        else:\n            result[k] = v\n    return result\n\nprint(___)",
+      "expected_output": "{'a': {'x': 1, 'y': 2}}\n",
+      "hints": "填空深度合并。",
+      "test_cases": [
+        "assert captured_output == \"{'a': {'x': 1, 'y': 2}}\\n\""
+      ],
+      "solution": "def deep_merge(d1, d2):\n    result = dict(d1)\n    for k, v in d2.items():\n        if k in result and isinstance(result[k], dict) and isinstance(v, dict):\n            result[k] = deep_merge(result[k], v)\n        else:\n            result[k] = v\n    return result\n\nprint(deep_merge({\"a\": {\"x\": 1}}, {\"a\": {\"y\": 2}}))"
+    },
+    {
+      "id": "CH14-X-006",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "统计并输出字母频次分布。",
+      "code_template": "text = \"abracadabra\"\ncounts = {}\nfor ch in text:\n    counts[ch] = counts.get(ch, 0) + 1\nfor ch in sorted(counts):\n    print(___)",
+      "expected_output": "a: #####\nb: ##\nc: #\nd: #\nr: ##\n",
+      "hints": "填空频次柱状。",
+      "test_cases": [
+        "assert captured_output == 'a: #####\\nb: ##\\nc: #\\nd: #\\nr: ##\\n'"
+      ],
+      "solution": "text = \"abracadabra\"\ncounts = {}\nfor ch in text:\n    counts[ch] = counts.get(ch, 0) + 1\nfor ch in sorted(counts):\n    print(f\"{ch}: {'#' * counts[ch]}\")"
+    },
+    {
+      "id": "CH14-X-007",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现分组求和。",
+      "code_template": "transactions = [(\"food\", 30), (\"transport\", 20), (\"food\", 40), (\"fun\", 50)]\ntotals = {}\nfor category, amount in transactions:\n    totals[category] = totals.get(category, 0) + amount\nprint(___)",
+      "expected_output": "{'food': 70, 'transport': 20, 'fun': 50}\n",
+      "hints": "填空分组求和。",
+      "test_cases": [
+        "assert captured_output == \"{'food': 70, 'transport': 20, 'fun': 50}\\n\""
+      ],
+      "solution": "transactions = [(\"food\", 30), (\"transport\", 20), (\"food\", 40), (\"fun\", 50)]\ntotals = {}\nfor category, amount in transactions:\n    totals[category] = totals.get(category, 0) + amount\nprint(totals)"
+    },
+    {
+      "id": "CH14-X-008",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "嵌套字典构建成绩单。",
+      "code_template": "students = [(\"Alice\", \"Math\", 92), (\"Alice\", \"Eng\", 88), (\"Bob\", \"Math\", 78)]\nreport = {}\nfor name, subject, score in students:\n    report.setdefault(name, {})[subject] = score\nprint(___)",
+      "expected_output": "{'Alice': {'Math': 92, 'Eng': 88}, 'Bob': {'Math': 78}}\n",
+      "hints": "填空嵌套构建。",
+      "test_cases": [
+        "assert captured_output == \"{'Alice': {'Math': 92, 'Eng': 88}, 'Bob': {'Math': 78}}\\n\""
+      ],
+      "solution": "students = [(\"Alice\", \"Math\", 92), (\"Alice\", \"Eng\", 88), (\"Bob\", \"Math\", 78)]\nreport = {}\nfor name, subject, score in students:\n    report.setdefault(name, {})[subject] = score\nprint(report)"
+    },
+    {
+      "id": "CH14-X-009",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现频率排序。",
+      "code_template": "nums = [4, 1, 4, 2, 1, 4]\ncounts = {}\nfor n in nums:\n    counts[n] = counts.get(n, 0) + 1\nby_freq = sorted(counts, key=lambda k: (-counts[k], k))\nprint(___)",
+      "expected_output": "[4, 1, 2]\n",
+      "hints": "填空频率排序。",
+      "test_cases": [
+        "assert captured_output == '[4, 1, 2]\\n'"
+      ],
+      "solution": "nums = [4, 1, 4, 2, 1, 4]\ncounts = {}\nfor n in nums:\n    counts[n] = counts.get(n, 0) + 1\nby_freq = sorted(counts, key=lambda k: (-counts[k], k))\nprint(by_freq)"
+    },
+    {
+      "id": "CH14-X-010",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现缓存计算。",
+      "code_template": "cache = {}\ndef fib(n):\n    if n in cache:\n        return cache[n]\n    if n <= 1:\n        cache[n] = n\n    else:\n        cache[n] = fib(n - 1) + fib(n - 2)\n    return cache[n]\n\nprint(fib(10))\nprint(___)",
+      "expected_output": "55\n{1: 1, 0: 0, 2: 1, 3: 2, 4: 3, 5: 5, 6: 8, 7: 13, 8: 21, 9: 34, 10: 55}\n",
+      "hints": "填空缓存斐波那契。",
+      "test_cases": [
+        "assert captured_output == '55\\n{1: 1, 0: 0, 2: 1, 3: 2, 4: 3, 5: 5, 6: 8, 7: 13, 8: 21, 9: 34, 10: 55}\\n'"
+      ],
+      "solution": "cache = {}\ndef fib(n):\n    if n in cache:\n        return cache[n]\n    if n <= 1:\n        cache[n] = n\n    else:\n        cache[n] = fib(n - 1) + fib(n - 2)\n    return cache[n]\n\nprint(fib(10))\nprint(cache)"
+    },
+    {
+      "id": "CH14-X-011",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典求最接近值。",
+      "code_template": "d = {\"a\": 10, \"b\": 25, \"c\": 40}\ntarget = 30\nclosest_key = min(d, key=lambda k: abs(d[k] - target))\nprint(___)",
+      "expected_output": "Closest: b\n",
+      "hints": "填空最近键。",
+      "test_cases": [
+        "assert captured_output == 'Closest: b\\n'"
+      ],
+      "solution": "d = {\"a\": 10, \"b\": 25, \"c\": 40}\ntarget = 30\nclosest_key = min(d, key=lambda k: abs(d[k] - target))\nprint(f\"Closest: {closest_key}\")"
+    },
+    {
+      "id": "CH14-X-012",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现多级分组。",
+      "code_template": "data = [(\"x\", 1), (\"x\", 2), (\"y\", 3)]\ngroups = {}\nfor key, value in data:\n    groups.setdefault(key, []).append(value)\nprint(___)",
+      "expected_output": "{'x': [1, 2], 'y': [3]}\n",
+      "hints": "填空多级分组。",
+      "test_cases": [
+        "assert captured_output == \"{'x': [1, 2], 'y': [3]}\\n\""
+      ],
+      "solution": "data = [(\"x\", 1), (\"x\", 2), (\"y\", 3)]\ngroups = {}\nfor key, value in data:\n    groups.setdefault(key, []).append(value)\nprint(groups)"
+    },
+    {
+      "id": "CH14-X-013",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现词频 top 字典。",
+      "code_template": "words = [\"a\", \"b\", \"a\", \"c\", \"b\", \"a\"]\ncounts = {}\nfor w in words:\n    counts[w] = counts.get(w, 0) + 1\ntop = dict(sorted(counts.items(), key=lambda x: x[1], reverse=True)[:2])\nprint(___)",
+      "expected_output": "{'a': 3, 'b': 2}\n",
+      "hints": "填空 top 字典。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 3, 'b': 2}\\n\""
+      ],
+      "solution": "words = [\"a\", \"b\", \"a\", \"c\", \"b\", \"a\"]\ncounts = {}\nfor w in words:\n    counts[w] = counts.get(w, 0) + 1\ntop = dict(sorted(counts.items(), key=lambda x: x[1], reverse=True)[:2])\nprint(top)"
+    },
+    {
+      "id": "CH14-X-014",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典键值对筛选重建。",
+      "code_template": "d = {\"a\": 1, \"b\": 4, \"c\": 9, \"d\": 16}\nroots = {k: v for k, v in d.items() if int(v ** 0.5) ** 2 == v}\nprint(___)",
+      "expected_output": "{'a': 1, 'b': 4, 'c': 9, 'd': 16}\n",
+      "hints": "填空平方筛选。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 1, 'b': 4, 'c': 9, 'd': 16}\\n\""
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 4, \"c\": 9, \"d\": 16}\nroots = {k: v for k, v in d.items() if int(v ** 0.5) ** 2 == v}\nprint(roots)"
+    },
+    {
+      "id": "CH14-X-015",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现状态统计。",
+      "code_template": "states = [\"open\", \"closed\", \"open\", \"open\", \"closed\"]\ncounts = {}\nfor s in states:\n    counts[s] = counts.get(s, 0) + 1\nprint(___)",
+      "expected_output": "{'open': 3, 'closed': 2}\n",
+      "hints": "填空状态统计。",
+      "test_cases": [
+        "assert captured_output == \"{'open': 3, 'closed': 2}\\n\""
+      ],
+      "solution": "states = [\"open\", \"closed\", \"open\", \"open\", \"closed\"]\ncounts = {}\nfor s in states:\n    counts[s] = counts.get(s, 0) + 1\nprint(counts)"
+    },
+    {
+      "id": "CH14-X-016",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现价格折扣表。",
+      "code_template": "prices = {\"apple\": 3.5, \"milk\": 5.0}\ndiscounts = {k: round(v * 0.9, 2) for k, v in prices.items()}\nprint(___)",
+      "expected_output": "{'apple': 3.15, 'milk': 4.5}\n",
+      "hints": "填空折扣表。",
+      "test_cases": [
+        "assert captured_output == \"{'apple': 3.15, 'milk': 4.5}\\n\""
+      ],
+      "solution": "prices = {\"apple\": 3.5, \"milk\": 5.0}\ndiscounts = {k: round(v * 0.9, 2) for k, v in prices.items()}\nprint(discounts)"
+    },
+    {
+      "id": "CH14-X-017",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典求值之差最大对。",
+      "code_template": "d = {\"a\": 1, \"b\": 9, \"c\": 4}\nmax_key = max(d, key=d.get)\nmin_key = min(d, key=d.get)\nprint(___)",
+      "expected_output": "Max: b, Min: a\n",
+      "hints": "填空极值对。",
+      "test_cases": [
+        "assert captured_output == 'Max: b, Min: a\\n'"
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 9, \"c\": 4}\nmax_key = max(d, key=d.get)\nmin_key = min(d, key=d.get)\nprint(f\"Max: {max_key}, Min: {min_key}\")"
+    },
+    {
+      "id": "CH14-X-018",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "嵌套字典深层取值。",
+      "code_template": "data = {\"a\": {\"b\": {\"c\": 42}}}\nresult = data[\"a\"][\"b\"][\"c\"]\nprint(___)",
+      "expected_output": "42\n",
+      "hints": "填空深层取值。",
+      "test_cases": [
+        "assert captured_output == '42\\n'"
+      ],
+      "solution": "data = {\"a\": {\"b\": {\"c\": 42}}}\nresult = data[\"a\"][\"b\"][\"c\"]\nprint(result)"
+    },
+    {
+      "id": "CH14-X-019",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现默认值计数器。",
+      "code_template": "counts = {}\nfor ch in \"aabbb\":\n    counts[ch] = counts.get(ch, 0) + 1\nmost = max(counts, key=counts.get)\nprint(___)",
+      "expected_output": "b: 3\n",
+      "hints": "填空众数输出。",
+      "test_cases": [
+        "assert captured_output == 'b: 3\\n'"
+      ],
+      "solution": "counts = {}\nfor ch in \"aabbb\":\n    counts[ch] = counts.get(ch, 0) + 1\nmost = max(counts, key=counts.get)\nprint(f\"{most}: {counts[most]}\")"
+    },
+    {
+      "id": "CH14-X-020",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典求键值对数量变化。",
+      "code_template": "d = {}\nfor i in range(5):\n    d[i] = i * 10\nprint(___, d[4])",
+      "expected_output": "5 40\n",
+      "hints": "填空动态构建。",
+      "test_cases": [
+        "assert captured_output == '5 40\\n'"
+      ],
+      "solution": "d = {}\nfor i in range(5):\n    d[i] = i * 10\nprint(len(d), d[4])"
+    },
+    {
+      "id": "CH14-X-021",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现缓存幂运算。",
+      "code_template": "cache = {}\ndef power_cache(base, exp):\n    key = (base, exp)\n    if key not in cache:\n        cache[key] = base ** exp\n    return cache[key]\n\nprint(power_cache(2, 5), power_cache(3, 3))\nprint(___)",
+      "expected_output": "32 27\n2\n",
+      "hints": "填空幂缓存。",
+      "test_cases": [
+        "assert captured_output == '32 27\\n2\\n'"
+      ],
+      "solution": "cache = {}\ndef power_cache(base, exp):\n    key = (base, exp)\n    if key not in cache:\n        cache[key] = base ** exp\n    return cache[key]\n\nprint(power_cache(2, 5), power_cache(3, 3))\nprint(len(cache))"
+    },
+    {
+      "id": "CH14-X-022",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现分组最大值。",
+      "code_template": "data = [(\"a\", 5), (\"b\", 3), (\"a\", 9), (\"b\", 7)]\nmaxes = {}\nfor key, value in data:\n    maxes[key] = max(maxes.get(key, value), value)\nprint(___)",
+      "expected_output": "{'a': 9, 'b': 7}\n",
+      "hints": "填空分组最大。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 9, 'b': 7}\\n\""
+      ],
+      "solution": "data = [(\"a\", 5), (\"b\", 3), (\"a\", 9), (\"b\", 7)]\nmaxes = {}\nfor key, value in data:\n    maxes[key] = max(maxes.get(key, value), value)\nprint(maxes)"
+    },
+    {
+      "id": "CH14-X-023",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典值排序后重建。",
+      "code_template": "d = {\"a\": 3, \"b\": 1, \"c\": 2}\nsorted_d = dict(sorted(d.items(), key=lambda x: x[1]))\nprint(___)",
+      "expected_output": "{'b': 1, 'c': 2, 'a': 3}\n",
+      "hints": "填空值排序重建。",
+      "test_cases": [
+        "assert captured_output == \"{'b': 1, 'c': 2, 'a': 3}\\n\""
+      ],
+      "solution": "d = {\"a\": 3, \"b\": 1, \"c\": 2}\nsorted_d = dict(sorted(d.items(), key=lambda x: x[1]))\nprint(sorted_d)"
+    },
+    {
+      "id": "CH14-X-024",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现词频柱状图。",
+      "code_template": "text = \"data science data\"\ncounts = {}\nfor w in text.split():\n    counts[w] = counts.get(w, 0) + 1\nfor w, c in sorted(counts.items()):\n    print(___)",
+      "expected_output": "data: **\nscience: *\n",
+      "hints": "填空柱状图。",
+      "test_cases": [
+        "assert captured_output == 'data: **\\nscience: *\\n'"
+      ],
+      "solution": "text = \"data science data\"\ncounts = {}\nfor w in text.split():\n    counts[w] = counts.get(w, 0) + 1\nfor w, c in sorted(counts.items()):\n    print(f\"{w}: {'*' * c}\")"
+    },
+    {
+      "id": "CH14-X-025",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典求多键值交叉。",
+      "code_template": "d = {\"x\": 1, \"y\": 2, \"z\": 3}\nkeys = [\"x\", \"z\"]\nresult = {k: d[k] for k in keys}\nprint(___)",
+      "expected_output": "{'x': 1, 'z': 3}\n",
+      "hints": "填空键筛选。",
+      "test_cases": [
+        "assert captured_output == \"{'x': 1, 'z': 3}\\n\""
+      ],
+      "solution": "d = {\"x\": 1, \"y\": 2, \"z\": 3}\nkeys = [\"x\", \"z\"]\nresult = {k: d[k] for k in keys}\nprint(result)"
+    },
+    {
+      "id": "CH14-X-026",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现回文统计。",
+      "code_template": "words = [\"radar\", \"hello\", \"level\"]\npal_count = 0\nfor w in words:\n    if w == w[::-1]:\n        pal_count += 1\nprint(___)",
+      "expected_output": "Palindromes: 2\n",
+      "hints": "填空回文统计。",
+      "test_cases": [
+        "assert captured_output == 'Palindromes: 2\\n'"
+      ],
+      "solution": "words = [\"radar\", \"hello\", \"level\"]\npal_count = 0\nfor w in words:\n    if w == w[::-1]:\n        pal_count += 1\nprint(f\"Palindromes: {pal_count}\")"
+    },
+    {
+      "id": "CH14-X-027",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现嵌套排序。",
+      "code_template": "students = {\"alice\": {\"score\": 90}, \"bob\": {\"score\": 85}}\nranking = sorted(students.items(), key=lambda x: x[1][\"score\"], reverse=True)\nfor name, info in ranking:\n    print(___, info[\"score\"])",
+      "expected_output": "alice 90\nbob 85\n",
+      "hints": "填空嵌套排序。",
+      "test_cases": [
+        "assert captured_output == 'alice 90\\nbob 85\\n'"
+      ],
+      "solution": "students = {\"alice\": {\"score\": 90}, \"bob\": {\"score\": 85}}\nranking = sorted(students.items(), key=lambda x: x[1][\"score\"], reverse=True)\nfor name, info in ranking:\n    print(name, info[\"score\"])"
+    },
+    {
+      "id": "CH14-X-028",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典实现多条件筛选。",
+      "code_template": "d = {\"a\": 2, \"b\": 5, \"c\": 8, \"d\": 11}\nfiltered = {k: v for k, v in d.items() if v % 2 == 0 and v > 5}\nprint(___)",
+      "expected_output": "{'c': 8}\n",
+      "hints": "填空多条件筛选。",
+      "test_cases": [
+        "assert captured_output == \"{'c': 8}\\n\""
+      ],
+      "solution": "d = {\"a\": 2, \"b\": 5, \"c\": 8, \"d\": 11}\nfiltered = {k: v for k, v in d.items() if v % 2 == 0 and v > 5}\nprint(filtered)"
+    },
+    {
+      "id": "CH14-X-029",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "字典值求和占比。",
+      "code_template": "d = {\"a\": 2, \"b\": 6}\ntotal = sum(d.values())\nfor k, v in d.items():\n    print(___)",
+      "expected_output": "a: 25%\nb: 75%\n",
+      "hints": "填空占比输出。",
+      "test_cases": [
+        "assert captured_output == 'a: 25%\\nb: 75%\\n'"
+      ],
+      "solution": "d = {\"a\": 2, \"b\": 6}\ntotal = sum(d.values())\nfor k, v in d.items():\n    print(f\"{k}: {v / total:.0%}\")"
+    },
+    {
+      "id": "CH14-X-030",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "综合：字典数据报告。",
+      "code_template": "sales = {\"mon\": 120, \"tue\": 90, \"wed\": 150}\ntotal = sum(sales.values())\navg = total / len(sales)\nbest = max(sales, key=sales.get)\nprint(___)",
+      "expected_output": "Total: 360, Avg: 120.0, Best: wed\n",
+      "hints": "填空综合报告。",
+      "test_cases": [
+        "assert captured_output == 'Total: 360, Avg: 120.0, Best: wed\\n'"
+      ],
+      "solution": "sales = {\"mon\": 120, \"tue\": 90, \"wed\": 150}\ntotal = sum(sales.values())\navg = total / len(sales)\nbest = max(sales, key=sales.get)\nprint(f\"Total: {total}, Avg: {avg}, Best: {best}\")"
+    }
+  ]
+}

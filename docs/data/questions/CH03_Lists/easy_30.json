@@ -1,0 +1,427 @@
+{
+  "chapter": "CH03",
+  "title": "列表 (Lists)",
+  "difficulty": "超简单",
+  "questions": [
+    {
+      "id": "CH03-E-001",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "创建列表并输出。",
+      "code_template": "nums = [1, 2, 3]\nprint(___)",
+      "expected_output": "[1, 2, 3]\n",
+      "hints": "print 括号内填 nums。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3]\nprint(nums)"
+    },
+    {
+      "id": "CH03-E-002",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "创建空列表并输出。",
+      "code_template": "empty = []\nprint(___)",
+      "expected_output": "[]\n",
+      "hints": "print 括号内填 empty。",
+      "test_cases": [
+        "assert captured_output == '[]\\n'"
+      ],
+      "solution": "empty = []\nprint(empty)"
+    },
+    {
+      "id": "CH03-E-003",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用索引访问列表第一个元素。",
+      "code_template": "fruits = [\"apple\", \"banana\", \"cherry\"]\nprint(fruits[___])",
+      "expected_output": "apple\n",
+      "hints": "索引填 0。",
+      "test_cases": [
+        "assert captured_output == 'apple\\n'"
+      ],
+      "solution": "fruits = [\"apple\", \"banana\", \"cherry\"]\nprint(fruits[0])"
+    },
+    {
+      "id": "CH03-E-004",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用负索引访问列表最后一个元素。",
+      "code_template": "fruits = [\"apple\", \"banana\", \"cherry\"]\nprint(fruits[___])",
+      "expected_output": "cherry\n",
+      "hints": "索引填 -1。",
+      "test_cases": [
+        "assert captured_output == 'cherry\\n'"
+      ],
+      "solution": "fruits = [\"apple\", \"banana\", \"cherry\"]\nprint(fruits[-1])"
+    },
+    {
+      "id": "CH03-E-005",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用切片截取列表中间部分。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nprint(nums[1:___])",
+      "expected_output": "[2, 3, 4]\n",
+      "hints": "结束索引填 4。",
+      "test_cases": [
+        "assert captured_output == '[2, 3, 4]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nprint(nums[1:4])"
+    },
+    {
+      "id": "CH03-E-006",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用切片截取列表尾部。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nprint(nums[___])",
+      "expected_output": "[4, 5]\n",
+      "hints": "切片填 3:。",
+      "test_cases": [
+        "assert captured_output == '[4, 5]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nprint(nums[3:])"
+    },
+    {
+      "id": "CH03-E-007",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用切片步长隔一个取一个。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nprint(nums[___])",
+      "expected_output": "[1, 3, 5]\n",
+      "hints": "切片填 ::2。",
+      "test_cases": [
+        "assert captured_output == '[1, 3, 5]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nprint(nums[::2])"
+    },
+    {
+      "id": "CH03-E-008",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 len() 获取列表长度。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nprint(len(___))",
+      "expected_output": "5\n",
+      "hints": "len 括号内填 nums。",
+      "test_cases": [
+        "assert captured_output == '5\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nprint(len(nums))"
+    },
+    {
+      "id": "CH03-E-009",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 append() 在末尾添加元素。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nnums.append(___)\nprint(nums)",
+      "expected_output": "[1, 2, 3, 4, 5, 6]\n",
+      "hints": "添加数字 6。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3, 4, 5, 6]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nnums.append(6)\nprint(nums)"
+    },
+    {
+      "id": "CH03-E-010",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 pop() 删除末尾元素。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nnums.pop()\nprint(___)",
+      "expected_output": "[1, 2, 3, 4]\n",
+      "hints": "填空 nums.pop()。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3, 4]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nnums.pop()\nprint(nums)"
+    },
+    {
+      "id": "CH03-E-011",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 pop() 删除指定索引的元素。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nnums.pop(___)\nprint(nums)",
+      "expected_output": "[2, 3, 4, 5]\n",
+      "hints": "索引填 0。",
+      "test_cases": [
+        "assert captured_output == '[2, 3, 4, 5]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nnums.pop(0)\nprint(nums)"
+    },
+    {
+      "id": "CH03-E-012",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 insert() 在开头插入元素。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nnums.insert(0, ___)\nprint(nums)",
+      "expected_output": "[0, 1, 2, 3, 4, 5]\n",
+      "hints": "插入数字 0。",
+      "test_cases": [
+        "assert captured_output == '[0, 1, 2, 3, 4, 5]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nnums.insert(0, 0)\nprint(nums)"
+    },
+    {
+      "id": "CH03-E-013",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 remove() 删除指定元素。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nnums.remove(___)\nprint(nums)",
+      "expected_output": "[1, 2, 4, 5]\n",
+      "hints": "删除数字 3。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 4, 5]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nnums.remove(3)\nprint(nums)"
+    },
+    {
+      "id": "CH03-E-014",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "按索引修改列表元素。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nnums[___] = 100\nprint(nums)",
+      "expected_output": "[100, 2, 3, 4, 5]\n",
+      "hints": "索引填 0。",
+      "test_cases": [
+        "assert captured_output == '[100, 2, 3, 4, 5]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nnums[0] = 100\nprint(nums)"
+    },
+    {
+      "id": "CH03-E-015",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "创建字符串列表并输出。",
+      "code_template": "colors = [\"red\", \"green\"]\nprint(___)",
+      "expected_output": "['red', 'green']\n",
+      "hints": "填空 colors。",
+      "test_cases": [
+        "assert captured_output == \"['red', 'green']\\n\""
+      ],
+      "solution": "colors = [\"red\", \"green\"]\nprint(colors)"
+    },
+    {
+      "id": "CH03-E-016",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "创建混合类型列表并输出。",
+      "code_template": "mixed = [1, \"two\", 3.0]\nprint(___)",
+      "expected_output": "[1, 'two', 3.0]\n",
+      "hints": "填空 mixed。",
+      "test_cases": [
+        "assert captured_output == \"[1, 'two', 3.0]\\n\""
+      ],
+      "solution": "mixed = [1, \"two\", 3.0]\nprint(mixed)"
+    },
+    {
+      "id": "CH03-E-017",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用乘法快速生成重复元素的列表。",
+      "code_template": "print([___] * 4)",
+      "expected_output": "[0, 0, 0, 0]\n",
+      "hints": "填 0。",
+      "test_cases": [
+        "assert captured_output == '[0, 0, 0, 0]\\n'"
+      ],
+      "solution": "print([0] * 4)"
+    },
+    {
+      "id": "CH03-E-018",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 + 拼接两个列表。",
+      "code_template": "a = [5, 6]\nb = [7, 8]\nprint(___ + ___)",
+      "expected_output": "[5, 6, 7, 8]\n",
+      "hints": "依次填 a、b。",
+      "test_cases": [
+        "assert captured_output == '[5, 6, 7, 8]\\n'"
+      ],
+      "solution": "a = [5, 6]\nb = [7, 8]\nprint(a + b)"
+    },
+    {
+      "id": "CH03-E-019",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 max() 求列表最大值。",
+      "code_template": "nums = [4, 9, 2]\nprint(max(___))",
+      "expected_output": "9\n",
+      "hints": "填 nums。",
+      "test_cases": [
+        "assert captured_output == '9\\n'"
+      ],
+      "solution": "nums = [4, 9, 2]\nprint(max(nums))"
+    },
+    {
+      "id": "CH03-E-020",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 min() 求列表最小值。",
+      "code_template": "nums = [4, 9, 5]\nprint(min(___))",
+      "expected_output": "4\n",
+      "hints": "填 nums。",
+      "test_cases": [
+        "assert captured_output == '4\\n'"
+      ],
+      "solution": "nums = [4, 9, 5]\nprint(min(nums))"
+    },
+    {
+      "id": "CH03-E-021",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 sum() 求列表总和。",
+      "code_template": "nums = [4, 9, 2]\nprint(sum(___))",
+      "expected_output": "15\n",
+      "hints": "填 nums。",
+      "test_cases": [
+        "assert captured_output == '15\\n'"
+      ],
+      "solution": "nums = [4, 9, 2]\nprint(sum(nums))"
+    },
+    {
+      "id": "CH03-E-022",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 count() 统计元素出现次数。",
+      "code_template": "nums = [1, 2, 2, 3]\nprint(nums.count(___))",
+      "expected_output": "2\n",
+      "hints": "统计数字 2。",
+      "test_cases": [
+        "assert captured_output == '2\\n'"
+      ],
+      "solution": "nums = [1, 2, 2, 3]\nprint(nums.count(2))"
+    },
+    {
+      "id": "CH03-E-023",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 index() 查找元素的位置。",
+      "code_template": "nums = [1, 2, 2, 3]\nprint(nums.index(___))",
+      "expected_output": "1\n",
+      "hints": "查找数字 2。",
+      "test_cases": [
+        "assert captured_output == '1\\n'"
+      ],
+      "solution": "nums = [1, 2, 2, 3]\nprint(nums.index(2))"
+    },
+    {
+      "id": "CH03-E-024",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 in 判断元素是否在列表中。",
+      "code_template": "nums = [1, 2, 3]\nprint(___ in nums)",
+      "expected_output": "True\n",
+      "hints": "判断数字 2。",
+      "test_cases": [
+        "assert captured_output == 'True\\n'"
+      ],
+      "solution": "nums = [1, 2, 3]\nprint(2 in nums)"
+    },
+    {
+      "id": "CH03-E-025",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 for 循环遍历列表逐行输出。",
+      "code_template": "for n in [1, 2, 3]:\n    print(___)\n",
+      "expected_output": "1\n2\n3\n",
+      "hints": "输出变量 n。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n3\\n'"
+      ],
+      "solution": "for n in [1, 2, 3]:\n    print(n)"
+    },
+    {
+      "id": "CH03-E-026",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用切片反转列表。",
+      "code_template": "nums = [1, 2, 3]\nprint(nums[___])",
+      "expected_output": "[3, 2, 1]\n",
+      "hints": "切片填 ::-1。",
+      "test_cases": [
+        "assert captured_output == '[3, 2, 1]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3]\nprint(nums[::-1])"
+    },
+    {
+      "id": "CH03-E-027",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 sorted() 返回排序后的新列表。",
+      "code_template": "nums = [5, 3, 4]\nprint(sorted(___))",
+      "expected_output": "[3, 4, 5]\n",
+      "hints": "填 nums。",
+      "test_cases": [
+        "assert captured_output == '[3, 4, 5]\\n'"
+      ],
+      "solution": "nums = [5, 3, 4]\nprint(sorted(nums))"
+    },
+    {
+      "id": "CH03-E-028",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 sort() 原地排序列表。",
+      "code_template": "nums = [2, 1]\nnums.sort()\nprint(___)",
+      "expected_output": "[1, 2]\n",
+      "hints": "print 括号内填 nums。",
+      "test_cases": [
+        "assert captured_output == '[1, 2]\\n'"
+      ],
+      "solution": "nums = [2, 1]\nnums.sort()\nprint(nums)"
+    },
+    {
+      "id": "CH03-E-029",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 reverse() 原地反转列表。",
+      "code_template": "nums = [1, 2]\nnums.reverse()\nprint(___)",
+      "expected_output": "[2, 1]\n",
+      "hints": "print 括号内填 nums。",
+      "test_cases": [
+        "assert captured_output == '[2, 1]\\n'"
+      ],
+      "solution": "nums = [1, 2]\nnums.reverse()\nprint(nums)"
+    },
+    {
+      "id": "CH03-E-030",
+      "topic": "列表 (Lists)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "访问嵌套列表中的元素。",
+      "code_template": "matrix = [[1, 2], [3, 4]]\nprint(matrix[___][0])",
+      "expected_output": "3\n",
+      "hints": "外层索引填 1。",
+      "test_cases": [
+        "assert captured_output == '3\\n'"
+      ],
+      "solution": "matrix = [[1, 2], [3, 4]]\nprint(matrix[1][0])"
+    }
+  ]
+}

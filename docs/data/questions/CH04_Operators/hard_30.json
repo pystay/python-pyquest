@@ -1,0 +1,427 @@
+{
+  "chapter": "CH04",
+  "title": "基础运算符",
+  "difficulty": "中等",
+  "questions": [
+    {
+      "id": "CH04-H-001",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "输出两个数七种运算的结果。",
+      "code_template": "a = 15\nb = 4\nprint(___, a - b, a * b, a / b, a // b, a % b, a ** 2)",
+      "expected_output": "19 11 60 3.75 3 3 225\n",
+      "hints": "填空七种运算符。",
+      "test_cases": [
+        "assert captured_output == '19 11 60 3.75 3 3 225\\n'"
+      ],
+      "solution": "a = 15\nb = 4\nprint(a + b, a - b, a * b, a / b, a // b, a % b, a ** 2)"
+    },
+    {
+      "id": "CH04-H-002",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "统计 1 到 10 的奇偶个数。",
+      "code_template": "odd = even = 0\nfor i in range(1, 11):\n    if i % 2 == 0:\n        even += 1\n    else:\n        odd += 1\nprint(\"Odd:\",___, \"Even:\", even)",
+      "expected_output": "Odd: 5 Even: 5\n",
+      "hints": "填空取余判断。",
+      "test_cases": [
+        "assert captured_output == 'Odd: 5 Even: 5\\n'"
+      ],
+      "solution": "odd = even = 0\nfor i in range(1, 11):\n    if i % 2 == 0:\n        even += 1\n    else:\n        odd += 1\nprint(\"Odd:\", odd, \"Even:\", even)"
+    },
+    {
+      "id": "CH04-H-003",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "判断 17 是否为素数。",
+      "code_template": "n = 17\nis_prime = True\nfor d in range(2, n):\n    if n % d == 0:\n        is_prime = False\n        break\nprint(___, \"is prime:\", is_prime)",
+      "expected_output": "17 is prime: True\n",
+      "hints": "填空取余判断。",
+      "test_cases": [
+        "assert captured_output == '17 is prime: True\\n'"
+      ],
+      "solution": "n = 17\nis_prime = True\nfor d in range(2, n):\n    if n % d == 0:\n        is_prime = False\n        break\nprint(n, \"is prime:\", is_prime)"
+    },
+    {
+      "id": "CH04-H-004",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "输出 1 到 50 中同时被 3 和 5 整除的数。",
+      "code_template": "for i in range(1, 51):\n    if i % 3 == 0 and i % 5 == 0:\n        print(___, end=\" \")",
+      "expected_output": "15 30 45 ",
+      "hints": "填空 and 条件。",
+      "test_cases": [
+        "assert captured_output == '15 30 45 '"
+      ],
+      "solution": "for i in range(1, 51):\n    if i % 3 == 0 and i % 5 == 0:\n        print(i, end=\" \")"
+    },
+    {
+      "id": "CH04-H-005",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用算术运算反转三位数。",
+      "code_template": "n = 123\nrev = 0\nwhile n > 0:\n    rev = rev * 10 + n % 10\n    n //= 10\nprint(___)",
+      "expected_output": "321\n",
+      "hints": "填空取余与整除。",
+      "test_cases": [
+        "assert captured_output == '321\\n'"
+      ],
+      "solution": "n = 123\nrev = 0\nwhile n > 0:\n    rev = rev * 10 + n % 10\n    n //= 10\nprint(rev)"
+    },
+    {
+      "id": "CH04-H-006",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "判断 121 是否为回文数。",
+      "code_template": "n = 121\nrev = 0\ntemp = n\nwhile temp > 0:\n    rev = rev * 10 + temp % 10\n    temp //= 10\nprint(___, \"palindrome:\", n == rev)",
+      "expected_output": "121 palindrome: True\n",
+      "hints": "填空反转比较。",
+      "test_cases": [
+        "assert captured_output == '121 palindrome: True\\n'"
+      ],
+      "solution": "n = 121\nrev = 0\ntemp = n\nwhile temp > 0:\n    rev = rev * 10 + temp % 10\n    temp //= 10\nprint(n, \"palindrome:\", n == rev)"
+    },
+    {
+      "id": "CH04-H-007",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "统计数字的位数与各位和。",
+      "code_template": "n = 12345\ncount = 0\ntotal = 0\nwhile n > 0:\n    total += n % 10\n    count += 1\n    n //= 10\nprint(\"Digits:\",___, \"Sum:\", total)",
+      "expected_output": "Digits: 5 Sum: 15\n",
+      "hints": "填空取位累加。",
+      "test_cases": [
+        "assert captured_output == 'Digits: 5 Sum: 15\\n'"
+      ],
+      "solution": "n = 12345\ncount = 0\ntotal = 0\nwhile n > 0:\n    total += n % 10\n    count += 1\n    n //= 10\nprint(\"Digits:\", count, \"Sum:\", total)"
+    },
+    {
+      "id": "CH04-H-008",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "输出 2 的 1 到 6 次幂。",
+      "code_template": "for i in range(1, 7):\n    print(___)",
+      "expected_output": "2^1 = 2\n2^2 = 4\n2^3 = 8\n2^4 = 16\n2^5 = 32\n2^6 = 64\n",
+      "hints": "填空幂运算。",
+      "test_cases": [
+        "assert captured_output == '2^1 = 2\\n2^2 = 4\\n2^3 = 8\\n2^4 = 16\\n2^5 = 32\\n2^6 = 64\\n'"
+      ],
+      "solution": "for i in range(1, 7):\n    print(f\"2^{i} = {2 ** i}\")"
+    },
+    {
+      "id": "CH04-H-009",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "计算 6 的阶乘。",
+      "code_template": "n = 6\nfact = 1\nfor i in range(2, n + 1):\n    fact *= i\nprint(___)",
+      "expected_output": "6! = 720\n",
+      "hints": "填空累乘。",
+      "test_cases": [
+        "assert captured_output == '6! = 720\\n'"
+      ],
+      "solution": "n = 6\nfact = 1\nfor i in range(2, n + 1):\n    fact *= i\nprint(f\"{n}! = {fact}\")"
+    },
+    {
+      "id": "CH04-H-010",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "求 12 和 18 的最大公约数。",
+      "code_template": "a, b = 12, 18\nwhile b:\n    a, b = b, a % b\nprint(\"gcd =\",___)",
+      "expected_output": "gcd = 6\n",
+      "hints": "填空辗转相除。",
+      "test_cases": [
+        "assert captured_output == 'gcd = 6\\n'"
+      ],
+      "solution": "a, b = 12, 18\nwhile b:\n    a, b = b, a % b\nprint(\"gcd =\", a)"
+    },
+    {
+      "id": "CH04-H-011",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "求 4 和 6 的最小公倍数。",
+      "code_template": "a, b = 4, 6\nm, n = a, b\nwhile n:\n    m, n = n, m % n\nprint(\"lcm =\",___)",
+      "expected_output": "lcm = 12\n",
+      "hints": "填空 gcd 后求 lcm。",
+      "test_cases": [
+        "assert captured_output == 'lcm = 12\\n'"
+      ],
+      "solution": "a, b = 4, 6\nm, n = a, b\nwhile n:\n    m, n = n, m % n\nprint(\"lcm =\", a * b // m)"
+    },
+    {
+      "id": "CH04-H-012",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "输出摄氏到华氏的温度表。",
+      "code_template": "print(\"C   F\")\nc = 0\nwhile c <= 100:\n    f = c * 9 / 5 + 32\n    print(___)\n    c += 20",
+      "expected_output": "C   F\n  0   32.0\n 20   68.0\n 40  104.0\n 60  140.0\n 80  176.0\n100  212.0\n",
+      "hints": "填空转换公式。",
+      "test_cases": [
+        "assert captured_output == 'C   F\\n  0   32.0\\n 20   68.0\\n 40  104.0\\n 60  140.0\\n 80  176.0\\n100  212.0\\n'"
+      ],
+      "solution": "print(\"C   F\")\nc = 0\nwhile c <= 100:\n    f = c * 9 / 5 + 32\n    print(f\"{c:3d} {f:6.1f}\")\n    c += 20"
+    },
+    {
+      "id": "CH04-H-013",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用百分制分数输出等级。",
+      "code_template": "score = 85\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelse:\n    grade = \"D\"\nprint(___)",
+      "expected_output": "Grade: B\n",
+      "hints": "填空条件判断。",
+      "test_cases": [
+        "assert captured_output == 'Grade: B\\n'"
+      ],
+      "solution": "score = 85\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelse:\n    grade = \"D\"\nprint(f\"Grade: {grade}\")"
+    },
+    {
+      "id": "CH04-H-014",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "猜数字并给出提示。",
+      "code_template": "answer = 7\nguess = 5\nif guess == answer:\n    print(\"Correct!\")\nelif guess > answer:\n    print(\"Too high\")\nelse:\n    print(___)",
+      "expected_output": "Too low\n",
+      "hints": "填空比较判断。",
+      "test_cases": [
+        "assert captured_output == 'Too low\\n'"
+      ],
+      "solution": "answer = 7\nguess = 5\nif guess == answer:\n    print(\"Correct!\")\nelif guess > answer:\n    print(\"Too high\")\nelse:\n    print(\"Too low\")"
+    },
+    {
+      "id": "CH04-H-015",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 100 元找零计算最少张数。",
+      "code_template": "price = 37\nchange = 100 - price\nprint(\"Change:\", change)\nfor denom in [50, 20, 10, 5, 1]:\n    count = change // denom\n    change %= denom\n    if count:\n        print(___, \"x\", count)",
+      "expected_output": "Change: 63\n50 x 1\n10 x 1\n1 x 3\n",
+      "hints": "填空整除与取余。",
+      "test_cases": [
+        "assert captured_output == 'Change: 63\\n50 x 1\\n10 x 1\\n1 x 3\\n'"
+      ],
+      "solution": "price = 37\nchange = 100 - price\nprint(\"Change:\", change)\nfor denom in [50, 20, 10, 5, 1]:\n    count = change // denom\n    change %= denom\n    if count:\n        print(denom, \"x\", count)"
+    },
+    {
+      "id": "CH04-H-016",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "判断 2024 是否为闰年。",
+      "code_template": "year = 2024\nif (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:\n    print(year, \"leap\")\nelse:\n    print(___, \"common\")",
+      "expected_output": "2024 leap\n",
+      "hints": "填空闰年条件。",
+      "test_cases": [
+        "assert captured_output == '2024 leap\\n'"
+      ],
+      "solution": "year = 2024\nif (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:\n    print(year, \"leap\")\nelse:\n    print(year, \"common\")"
+    },
+    {
+      "id": "CH04-H-017",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "输出 100 以内的完数。",
+      "code_template": "for n in range(2, 101):\n    total = 0\n    for d in range(1, n):\n        if n % d == 0:\n            total += d\n    if total == n:\n        print(___)",
+      "expected_output": "6\n28\n",
+      "hints": "填空约数累加。",
+      "test_cases": [
+        "assert captured_output == '6\\n28\\n'"
+      ],
+      "solution": "for n in range(2, 101):\n    total = 0\n    for d in range(1, n):\n        if n % d == 0:\n            total += d\n    if total == n:\n        print(n)"
+    },
+    {
+      "id": "CH04-H-018",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "输出所有三位水仙花数。",
+      "code_template": "for n in range(100, 1000):\n    a = n // 100\n    b = (n // 10) % 10\n    c = n % 10\n    if a ** 3 + b ** 3 + c ** 3 == n:\n        print(___)",
+      "expected_output": "153\n370\n371\n407\n",
+      "hints": "填空位分解与立方和。",
+      "test_cases": [
+        "assert captured_output == '153\\n370\\n371\\n407\\n'"
+      ],
+      "solution": "for n in range(100, 1000):\n    a = n // 100\n    b = (n // 10) % 10\n    c = n % 10\n    if a ** 3 + b ** 3 + c ** 3 == n:\n        print(n)"
+    },
+    {
+      "id": "CH04-H-019",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "输出逻辑运算真值表。",
+      "code_template": "for a in [True, False]:\n    for b in [True, False]:\n        print(___, b, \"and:\", a and b, \"or:\", a or b)",
+      "expected_output": "True True and: True or: True\nTrue False and: False or: True\nFalse True and: False or: True\nFalse False and: False or: False\n",
+      "hints": "填空双层循环。",
+      "test_cases": [
+        "assert captured_output == 'True True and: True or: True\\nTrue False and: False or: True\\nFalse True and: False or: True\\nFalse False and: False or: False\\n'"
+      ],
+      "solution": "for a in [True, False]:\n    for b in [True, False]:\n        print(a, b, \"and:\", a and b, \"or:\", a or b)"
+    },
+    {
+      "id": "CH04-H-020",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "验证运算符优先级的三行输出。",
+      "code_template": "print(2 + 3 * 4)\nprint((2 + 3) * 4)\nprint(___)",
+      "expected_output": "14\n20\n18\n",
+      "hints": "填空三个表达式。",
+      "test_cases": [
+        "assert captured_output == '14\\n20\\n18\\n'"
+      ],
+      "solution": "print(2 + 3 * 4)\nprint((2 + 3) * 4)\nprint(2 * 3 ** 2)"
+    },
+    {
+      "id": "CH04-H-021",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "输出斐波那契数列前 8 项。",
+      "code_template": "a, b = 0, 1\nfor _ in range(8):\n    print(___, end=\" \")\n    a, b = b, a + b",
+      "expected_output": "0 1 1 2 3 5 8 13 ",
+      "hints": "填空递推加法。",
+      "test_cases": [
+        "assert captured_output == '0 1 1 2 3 5 8 13 '"
+      ],
+      "solution": "a, b = 0, 1\nfor _ in range(8):\n    print(a, end=\" \")\n    a, b = b, a + b"
+    },
+    {
+      "id": "CH04-H-022",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "统计数字中 7 出现的次数。",
+      "code_template": "n = 7771237\ncount = 0\nwhile n > 0:\n    if n % 10 == 7:\n        count += 1\n    n //= 10\nprint(\"Sevens:\",___)",
+      "expected_output": "Sevens: 4\n",
+      "hints": "填空取位判断。",
+      "test_cases": [
+        "assert captured_output == 'Sevens: 4\\n'"
+      ],
+      "solution": "n = 7771237\ncount = 0\nwhile n > 0:\n    if n % 10 == 7:\n        count += 1\n    n //= 10\nprint(\"Sevens:\", count)"
+    },
+    {
+      "id": "CH04-H-023",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "逐步输出复合赋值过程。",
+      "code_template": "x = 2\nprint(x)\nx += 3\nprint(x)\nx *= 4\nprint(x)\nx -= 5\nprint(___)",
+      "expected_output": "2\n5\n20\n15\n",
+      "hints": "填空复合赋值链。",
+      "test_cases": [
+        "assert captured_output == '2\\n5\\n20\\n15\\n'"
+      ],
+      "solution": "x = 2\nprint(x)\nx += 3\nprint(x)\nx *= 4\nprint(x)\nx -= 5\nprint(x)"
+    },
+    {
+      "id": "CH04-H-024",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "统计比较结果为真的个数。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\ncount = 0\nfor n in nums:\n    if n > 3:\n        count += 1\nprint(\"Greater than 3:\",___)",
+      "expected_output": "Greater than 3: 2\n",
+      "hints": "填空比较计数。",
+      "test_cases": [
+        "assert captured_output == 'Greater than 3: 2\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\ncount = 0\nfor n in nums:\n    if n > 3:\n        count += 1\nprint(\"Greater than 3:\", count)"
+    },
+    {
+      "id": "CH04-H-025",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用条件表达式求两数较大者。",
+      "code_template": "a, b = 7, 9\nlarger = a if a > b else b\nprint(\"Larger:\",___)",
+      "expected_output": "Larger: 9\n",
+      "hints": "填空三元表达式。",
+      "test_cases": [
+        "assert captured_output == 'Larger: 9\\n'"
+      ],
+      "solution": "a, b = 7, 9\nlarger = a if a > b else b\nprint(\"Larger:\", larger)"
+    },
+    {
+      "id": "CH04-H-026",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用位运算输出与、或、异或。",
+      "code_template": "a, b = 6, 3\nprint(___, a | b, a ^ b)",
+      "expected_output": "2 7 5\n",
+      "hints": "填空三种位运算。",
+      "test_cases": [
+        "assert captured_output == '2 7 5\\n'"
+      ],
+      "solution": "a, b = 6, 3\nprint(a & b, a | b, a ^ b)"
+    },
+    {
+      "id": "CH04-H-027",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用成员运算符判断元素存在。",
+      "code_template": "nums = [1, 2, 3]\nprint(\"2 in:\",___, \"5 in:\", 5 in nums)",
+      "expected_output": "2 in: True 5 in: False\n",
+      "hints": "填空 in 判断。",
+      "test_cases": [
+        "assert captured_output == '2 in: True 5 in: False\\n'"
+      ],
+      "solution": "nums = [1, 2, 3]\nprint(\"2 in:\", 2 in nums, \"5 in:\", 5 in nums)"
+    },
+    {
+      "id": "CH04-H-028",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "计算平均分并四舍五入。",
+      "code_template": "scores = [88, 92, 76]\navg = sum(scores) / len(scores)\nprint(\"Avg:\",___)",
+      "expected_output": "Avg: 85.3\n",
+      "hints": "填空平均与 round。",
+      "test_cases": [
+        "assert captured_output == 'Avg: 85.3\\n'"
+      ],
+      "solution": "scores = [88, 92, 76]\navg = sum(scores) / len(scores)\nprint(\"Avg:\", round(avg, 1))"
+    },
+    {
+      "id": "CH04-H-029",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "判断完全平方数。",
+      "code_template": "n = 81\nroot = int(n ** 0.5)\nprint(___, \"perfect square:\", root * root == n)",
+      "expected_output": "81 perfect square: True\n",
+      "hints": "填空开方判断。",
+      "test_cases": [
+        "assert captured_output == '81 perfect square: True\\n'"
+      ],
+      "solution": "n = 81\nroot = int(n ** 0.5)\nprint(n, \"perfect square:\", root * root == n)"
+    },
+    {
+      "id": "CH04-H-030",
+      "topic": "基础运算符",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "综合：统计 1 到 100 中被 7 整除的个数。",
+      "code_template": "count = 0\nfor i in range(1, 101):\n    if i % 7 == 0:\n        count += 1\nprint(\"Multiples of 7:\",___)",
+      "expected_output": "Multiples of 7: 14\n",
+      "hints": "填空取余计数。",
+      "test_cases": [
+        "assert captured_output == 'Multiples of 7: 14\\n'"
+      ],
+      "solution": "count = 0\nfor i in range(1, 101):\n    if i % 7 == 0:\n        count += 1\nprint(\"Multiples of 7:\", count)"
+    }
+  ]
+}

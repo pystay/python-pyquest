@@ -1,0 +1,427 @@
+{
+  "chapter": "CH06",
+  "title": "条件语句",
+  "difficulty": "超简单",
+  "questions": [
+    {
+      "id": "CH06-E-001",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "若 x 大于 3 则输出 big。",
+      "code_template": "x = 5\nif x > 3:\n    print(___)",
+      "expected_output": "big\n",
+      "hints": "填 \"big\"。",
+      "test_cases": [
+        "assert captured_output == 'big\\n'"
+      ],
+      "solution": "x = 5\nif x > 3:\n    print(\"big\")"
+    },
+    {
+      "id": "CH06-E-002",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "若 x 大于 3 输出 big，否则输出 small。",
+      "code_template": "x = 2\nif x > 3:\n    print(\"big\")\nelse:\n    print(___)",
+      "expected_output": "small\n",
+      "hints": "填 \"small\"。",
+      "test_cases": [
+        "assert captured_output == 'small\\n'"
+      ],
+      "solution": "x = 2\nif x > 3:\n    print(\"big\")\nelse:\n    print(\"small\")"
+    },
+    {
+      "id": "CH06-E-003",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断数字 7 的奇偶并输出。",
+      "code_template": "n = 7\nif n % 2 == 0:\n    print(\"even\")\nelse:\n    print(___)",
+      "expected_output": "odd\n",
+      "hints": "填 \"odd\"。",
+      "test_cases": [
+        "assert captured_output == 'odd\\n'"
+      ],
+      "solution": "n = 7\nif n % 2 == 0:\n    print(\"even\")\nelse:\n    print(\"odd\")"
+    },
+    {
+      "id": "CH06-E-004",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断数字 -5 是否为正数。",
+      "code_template": "n = -5\nif n > 0:\n    print(\"positive\")\nelse:\n    print(___)",
+      "expected_output": "non-positive\n",
+      "hints": "填 \"non-positive\"。",
+      "test_cases": [
+        "assert captured_output == 'non-positive\\n'"
+      ],
+      "solution": "n = -5\nif n > 0:\n    print(\"positive\")\nelse:\n    print(\"non-positive\")"
+    },
+    {
+      "id": "CH06-E-005",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断两个数是否相等。",
+      "code_template": "a = 5\nb = 5\nif a == b:\n    print(___)",
+      "expected_output": "equal\n",
+      "hints": "填 \"equal\"。",
+      "test_cases": [
+        "assert captured_output == 'equal\\n'"
+      ],
+      "solution": "a = 5\nb = 5\nif a == b:\n    print(\"equal\")"
+    },
+    {
+      "id": "CH06-E-006",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断两个数是否不相等。",
+      "code_template": "a = 5\nb = 3\nif a != b:\n    print(___)",
+      "expected_output": "different\n",
+      "hints": "填 \"different\"。",
+      "test_cases": [
+        "assert captured_output == 'different\\n'"
+      ],
+      "solution": "a = 5\nb = 3\nif a != b:\n    print(\"different\")"
+    },
+    {
+      "id": "CH06-E-007",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断 x 是否大于等于 10。",
+      "code_template": "x = 10\nif x >= 10:\n    print(___)",
+      "expected_output": "ten or more\n",
+      "hints": "填 \"ten or more\"。",
+      "test_cases": [
+        "assert captured_output == 'ten or more\\n'"
+      ],
+      "solution": "x = 10\nif x >= 10:\n    print(\"ten or more\")"
+    },
+    {
+      "id": "CH06-E-008",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断 x 是否小于 5。",
+      "code_template": "x = 4\nif x < 5:\n    print(___)",
+      "expected_output": "less than 5\n",
+      "hints": "填 \"less than 5\"。",
+      "test_cases": [
+        "assert captured_output == 'less than 5\\n'"
+      ],
+      "solution": "x = 4\nif x < 5:\n    print(\"less than 5\")"
+    },
+    {
+      "id": "CH06-E-009",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 and 判断是否为成年人。",
+      "code_template": "age = 20\nif age >= 18 and age < 60:\n    print(___)",
+      "expected_output": "adult\n",
+      "hints": "填 \"adult\"。",
+      "test_cases": [
+        "assert captured_output == 'adult\\n'"
+      ],
+      "solution": "age = 20\nif age >= 18 and age < 60:\n    print(\"adult\")"
+    },
+    {
+      "id": "CH06-E-010",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 or 判断是否为优秀。",
+      "code_template": "score = 95\nif score >= 90 or score == 100:\n    print(___)",
+      "expected_output": "excellent\n",
+      "hints": "填 \"excellent\"。",
+      "test_cases": [
+        "assert captured_output == 'excellent\\n'"
+      ],
+      "solution": "score = 95\nif score >= 90 or score == 100:\n    print(\"excellent\")"
+    },
+    {
+      "id": "CH06-E-011",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 not 判断布尔变量。",
+      "code_template": "flag = False\nif not flag:\n    print(___)",
+      "expected_output": "flag is False\n",
+      "hints": "填 \"flag is False\"。",
+      "test_cases": [
+        "assert captured_output == 'flag is False\\n'"
+      ],
+      "solution": "flag = False\nif not flag:\n    print(\"flag is False\")"
+    },
+    {
+      "id": "CH06-E-012",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "按分数 75 输出等级。",
+      "code_template": "score = 75\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelse:\n    grade = \"D\"\nprint(___)\n",
+      "expected_output": "C\n",
+      "hints": "填 grade。",
+      "test_cases": [
+        "assert captured_output == 'C\\n'"
+      ],
+      "solution": "score = 75\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelse:\n    grade = \"D\"\nprint(grade)"
+    },
+    {
+      "id": "CH06-E-013",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断 x 是否在 10 到 20 之间。",
+      "code_template": "x = 15\nif 10 < x < 20:\n    print(___)",
+      "expected_output": "middle\n",
+      "hints": "填 \"middle\"。",
+      "test_cases": [
+        "assert captured_output == 'middle\\n'"
+      ],
+      "solution": "x = 15\nif 10 < x < 20:\n    print(\"middle\")"
+    },
+    {
+      "id": "CH06-E-014",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用三元表达式取较大者。",
+      "code_template": "a = 7\nb = 3\nresult = \"a\" if a > b else \"b\"\nprint(___)",
+      "expected_output": "a\n",
+      "hints": "填 result。",
+      "test_cases": [
+        "assert captured_output == 'a\\n'"
+      ],
+      "solution": "a = 7\nb = 3\nresult = \"a\" if a > b else \"b\"\nprint(result)"
+    },
+    {
+      "id": "CH06-E-015",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 in 判断字符是否存在。",
+      "code_template": "fruit = \"apple\"\nif \"a\" in fruit:\n    print(___)",
+      "expected_output": "has a\n",
+      "hints": "填 \"has a\"。",
+      "test_cases": [
+        "assert captured_output == 'has a\\n'"
+      ],
+      "solution": "fruit = \"apple\"\nif \"a\" in fruit:\n    print(\"has a\")"
+    },
+    {
+      "id": "CH06-E-016",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断字符串是否为空。",
+      "code_template": "s = \"\"\nif s:\n    print(\"not empty\")\nelse:\n    print(___)",
+      "expected_output": "empty\n",
+      "hints": "填 \"empty\"。",
+      "test_cases": [
+        "assert captured_output == 'empty\\n'"
+      ],
+      "solution": "s = \"\"\nif s:\n    print(\"not empty\")\nelse:\n    print(\"empty\")"
+    },
+    {
+      "id": "CH06-E-017",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断名字是否为三个字母。",
+      "code_template": "name = \"Bob\"\nif len(name) == 3:\n    print(___)",
+      "expected_output": "three letters\n",
+      "hints": "填 \"three letters\"。",
+      "test_cases": [
+        "assert captured_output == 'three letters\\n'"
+      ],
+      "solution": "name = \"Bob\"\nif len(name) == 3:\n    print(\"three letters\")"
+    },
+    {
+      "id": "CH06-E-018",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断数字是否为 5 的倍数。",
+      "code_template": "n = 15\nif n % 5 == 0:\n    print(___)",
+      "expected_output": "multiple of 5\n",
+      "hints": "填 \"multiple of 5\"。",
+      "test_cases": [
+        "assert captured_output == 'multiple of 5\\n'"
+      ],
+      "solution": "n = 15\nif n % 5 == 0:\n    print(\"multiple of 5\")"
+    },
+    {
+      "id": "CH06-E-019",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "直接判断布尔变量。",
+      "code_template": "is_ready = True\nif is_ready:\n    print(___)",
+      "expected_output": "ready\n",
+      "hints": "填 \"ready\"。",
+      "test_cases": [
+        "assert captured_output == 'ready\\n'"
+      ],
+      "solution": "is_ready = True\nif is_ready:\n    print(\"ready\")"
+    },
+    {
+      "id": "CH06-E-020",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用嵌套 if 判断正且大。",
+      "code_template": "x = 6\nif x > 0:\n    if x > 5:\n        print(___)",
+      "expected_output": "positive and large\n",
+      "hints": "填 \"positive and large\"。",
+      "test_cases": [
+        "assert captured_output == 'positive and large\\n'"
+      ],
+      "solution": "x = 6\nif x > 0:\n    if x > 5:\n        print(\"positive and large\")"
+    },
+    {
+      "id": "CH06-E-021",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断单词首字母是否为 P。",
+      "code_template": "word = \"Python\"\nif word[0] == \"P\":\n    print(___)",
+      "expected_output": "starts with P\n",
+      "hints": "填 \"starts with P\"。",
+      "test_cases": [
+        "assert captured_output == 'starts with P\\n'"
+      ],
+      "solution": "word = \"Python\"\nif word[0] == \"P\":\n    print(\"starts with P\")"
+    },
+    {
+      "id": "CH06-E-022",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "比较两个字符串的大小。",
+      "code_template": "word = \"apple\"\nif word < \"banana\":\n    print(___)",
+      "expected_output": "apple first\n",
+      "hints": "填 \"apple first\"。",
+      "test_cases": [
+        "assert captured_output == 'apple first\\n'"
+      ],
+      "solution": "word = \"apple\"\nif word < \"banana\":\n    print(\"apple first\")"
+    },
+    {
+      "id": "CH06-E-023",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断数字是否为零。",
+      "code_template": "n = 0\nif n == 0:\n    print(___)",
+      "expected_output": "zero\n",
+      "hints": "填 \"zero\"。",
+      "test_cases": [
+        "assert captured_output == 'zero\\n'"
+      ],
+      "solution": "n = 0\nif n == 0:\n    print(\"zero\")"
+    },
+    {
+      "id": "CH06-E-024",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 and 组合两个条件。",
+      "code_template": "x = 4\ny = 6\nif x < y and x % 2 == 0:\n    print(___)",
+      "expected_output": "even and less\n",
+      "hints": "填 \"even and less\"。",
+      "test_cases": [
+        "assert captured_output == 'even and less\\n'"
+      ],
+      "solution": "x = 4\ny = 6\nif x < y and x % 2 == 0:\n    print(\"even and less\")"
+    },
+    {
+      "id": "CH06-E-025",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 elif 链判断温度。",
+      "code_template": "temp = 25\nif temp > 30:\n    weather = \"hot\"\nelif temp > 20:\n    weather = \"warm\"\nelse:\n    weather = \"cold\"\nprint(___)\n",
+      "expected_output": "warm\n",
+      "hints": "填 weather。",
+      "test_cases": [
+        "assert captured_output == 'warm\\n'"
+      ],
+      "solution": "temp = 25\nif temp > 30:\n    weather = \"hot\"\nelif temp > 20:\n    weather = \"warm\"\nelse:\n    weather = \"cold\"\nprint(weather)"
+    },
+    {
+      "id": "CH06-E-026",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 not 取反比较结果。",
+      "code_template": "x = 8\nif not (x < 5):\n    print(___)",
+      "expected_output": "not small\n",
+      "hints": "填 \"not small\"。",
+      "test_cases": [
+        "assert captured_output == 'not small\\n'"
+      ],
+      "solution": "x = 8\nif not (x < 5):\n    print(\"not small\")"
+    },
+    {
+      "id": "CH06-E-027",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断数字末位是否为 3。",
+      "code_template": "n = 23\nif n % 10 == 3:\n    print(___)",
+      "expected_output": "ends with 3\n",
+      "hints": "填 \"ends with 3\"。",
+      "test_cases": [
+        "assert captured_output == 'ends with 3\\n'"
+      ],
+      "solution": "n = 23\nif n % 10 == 3:\n    print(\"ends with 3\")"
+    },
+    {
+      "id": "CH06-E-028",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断数字是否在区间外。",
+      "code_template": "x = 25\nif x > 20 or x < 5:\n    print(___)",
+      "expected_output": "out of range\n",
+      "hints": "填 \"out of range\"。",
+      "test_cases": [
+        "assert captured_output == 'out of range\\n'"
+      ],
+      "solution": "x = 25\nif x > 20 or x < 5:\n    print(\"out of range\")"
+    },
+    {
+      "id": "CH06-E-029",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断变量是否为字符串类型。",
+      "code_template": "x = \"hi\"\nif type(x) == str:\n    print(___)",
+      "expected_output": "is string\n",
+      "hints": "填 \"is string\"。",
+      "test_cases": [
+        "assert captured_output == 'is string\\n'"
+      ],
+      "solution": "x = \"hi\"\nif type(x) == str:\n    print(\"is string\")"
+    },
+    {
+      "id": "CH06-E-030",
+      "topic": "条件语句",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用三元表达式判断是否及格。",
+      "code_template": "score = 85\nstatus = \"pass\" if score >= 60 else \"fail\"\nprint(___)",
+      "expected_output": "pass\n",
+      "hints": "填 status。",
+      "test_cases": [
+        "assert captured_output == 'pass\\n'"
+      ],
+      "solution": "score = 85\nstatus = \"pass\" if score >= 60 else \"fail\"\nprint(status)"
+    }
+  ]
+}

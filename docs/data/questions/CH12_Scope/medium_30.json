@@ -1,0 +1,427 @@
+{
+  "chapter": "CH12",
+  "title": "作用域与变量",
+  "difficulty": "简单",
+  "questions": [
+    {
+      "id": "CH12-M-001",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 global 实现计数器。",
+      "code_template": "count = 0\ndef increment():\n    global count\n    count += 1\n\nincrement()\nincrement()\nincrement()\nprint(___)",
+      "expected_output": "Count: 3\n",
+      "hints": "填空 global 计数。",
+      "test_cases": [
+        "assert captured_output == 'Count: 3\\n'"
+      ],
+      "solution": "count = 0\ndef increment():\n    global count\n    count += 1\n\nincrement()\nincrement()\nincrement()\nprint(f\"Count: {count}\")"
+    },
+    {
+      "id": "CH12-M-002",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "全局列表在函数内修改。",
+      "code_template": "nums = [1, 2, 3]\ndef add_item(n):\n    nums.append(n)\n\nadd_item(4)\nadd_item(5)\nprint(___)",
+      "expected_output": "[1, 2, 3, 4, 5]\n",
+      "hints": "填空全局列表修改。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3, 4, 5]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3]\ndef add_item(n):\n    nums.append(n)\n\nadd_item(4)\nadd_item(5)\nprint(nums)"
+    },
+    {
+      "id": "CH12-M-003",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "全局字典在函数内更新。",
+      "code_template": "config = {\"theme\": \"light\"}\ndef set_dark():\n    config[\"theme\"] = \"dark\"\n\nset_dark()\nprint(___)",
+      "expected_output": "{'theme': 'dark'}\n",
+      "hints": "填空全局字典更新。",
+      "test_cases": [
+        "assert captured_output == \"{'theme': 'dark'}\\n\""
+      ],
+      "solution": "config = {\"theme\": \"light\"}\ndef set_dark():\n    config[\"theme\"] = \"dark\"\n\nset_dark()\nprint(config)"
+    },
+    {
+      "id": "CH12-M-004",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "global 声明多个变量。",
+      "code_template": "a = 1\nb = 2\ndef swap():\n    global a, b\n    a, b = b, a\n\nswap()\nprint(___, b)",
+      "expected_output": "2 1\n",
+      "hints": "填空 global 交换。",
+      "test_cases": [
+        "assert captured_output == '2 1\\n'"
+      ],
+      "solution": "a = 1\nb = 2\ndef swap():\n    global a, b\n    a, b = b, a\n\nswap()\nprint(a, b)"
+    },
+    {
+      "id": "CH12-M-005",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "函数内读写全局变量。",
+      "code_template": "total = 10\ndef adjust(n):\n    global total\n    total = total + n\n\nadjust(5)\nprint(___)",
+      "expected_output": "Total: 15\n",
+      "hints": "填空全局读写。",
+      "test_cases": [
+        "assert captured_output == 'Total: 15\\n'"
+      ],
+      "solution": "total = 10\ndef adjust(n):\n    global total\n    total = total + n\n\nadjust(5)\nprint(f\"Total: {total}\")"
+    },
+    {
+      "id": "CH12-M-006",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "局部变量遮蔽与恢复。",
+      "code_template": "x = 1\ndef f():\n    x = 10\n    print(f\"Inner: {x}\")\n\nf()\nprint(___)",
+      "expected_output": "Inner: 10\nOuter: 1\n",
+      "hints": "填空遮蔽恢复。",
+      "test_cases": [
+        "assert captured_output == 'Inner: 10\\nOuter: 1\\n'"
+      ],
+      "solution": "x = 1\ndef f():\n    x = 10\n    print(f\"Inner: {x}\")\n\nf()\nprint(f\"Outer: {x}\")"
+    },
+    {
+      "id": "CH12-M-007",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "嵌套函数修改外层（nonlocal）。",
+      "code_template": "def outer():\n    x = 1\n    def inner():\n        nonlocal x\n        x = 2\n    inner()\n    print('X:',___)\n\nouter()",
+      "expected_output": "X: 2\n",
+      "hints": "填空 nonlocal。",
+      "test_cases": [
+        "assert captured_output == 'X: 2\\n'"
+      ],
+      "solution": "def outer():\n    x = 1\n    def inner():\n        nonlocal x\n        x = 2\n    inner()\n    print('X:', x)\n\nouter()"
+    },
+    {
+      "id": "CH12-M-008",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "nonlocal 实现内层计数。",
+      "code_template": "def outer():\n    count = 0\n    def inner():\n        nonlocal count\n        count += 1\n    inner()\n    inner()\n    print('Count:',___)\n\nouter()",
+      "expected_output": "Count: 2\n",
+      "hints": "填空 nonlocal 计数。",
+      "test_cases": [
+        "assert captured_output == 'Count: 2\\n'"
+      ],
+      "solution": "def outer():\n    count = 0\n    def inner():\n        nonlocal count\n        count += 1\n    inner()\n    inner()\n    print('Count:', count)\n\nouter()"
+    },
+    {
+      "id": "CH12-M-009",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "全局变量与函数参数对比。",
+      "code_template": "x = 5\ndef f(y):\n    return x + y\n\nprint(___)",
+      "expected_output": "105\n",
+      "hints": "填空全局加参数。",
+      "test_cases": [
+        "assert captured_output == '105\\n'"
+      ],
+      "solution": "x = 5\ndef f(y):\n    return x + y\n\nprint(f(100))"
+    },
+    {
+      "id": "CH12-M-010",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "函数返回值修改全局变量。",
+      "code_template": "value = 0\ndef get_value():\n    return 42\n\nvalue = get_value()\nprint(___)",
+      "expected_output": "42\n",
+      "hints": "填空返回赋值。",
+      "test_cases": [
+        "assert captured_output == '42\\n'"
+      ],
+      "solution": "value = 0\ndef get_value():\n    return 42\n\nvalue = get_value()\nprint(value)"
+    },
+    {
+      "id": "CH12-M-011",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "闭包访问外层变量。",
+      "code_template": "def make_multiplier(n):\n    def multiplier(x):\n        return x * n\n    return multiplier\n\ntimes3 = make_multiplier(3)\nprint(___)",
+      "expected_output": "24\n",
+      "hints": "填空闭包。",
+      "test_cases": [
+        "assert captured_output == '24\\n'"
+      ],
+      "solution": "def make_multiplier(n):\n    def multiplier(x):\n        return x * n\n    return multiplier\n\ntimes3 = make_multiplier(3)\nprint(times3(8))"
+    },
+    {
+      "id": "CH12-M-012",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "全局字符串在函数内读取。",
+      "code_template": "title = \"PyQuest\"\ndef show():\n    print(___)\n\nshow()",
+      "expected_output": "PYQUEST\n",
+      "hints": "填空全局字符串。",
+      "test_cases": [
+        "assert captured_output == 'PYQUEST\\n'"
+      ],
+      "solution": "title = \"PyQuest\"\ndef show():\n    print(title.upper())\n\nshow()"
+    },
+    {
+      "id": "CH12-M-013",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "函数内建局部列表。",
+      "code_template": "def make_list():\n    data = [4, 5, 6]\n    return data\n\nprint(___)",
+      "expected_output": "[4, 5, 6]\n",
+      "hints": "填空局部列表返回。",
+      "test_cases": [
+        "assert captured_output == '[4, 5, 6]\\n'"
+      ],
+      "solution": "def make_list():\n    data = [4, 5, 6]\n    return data\n\nprint(make_list())"
+    },
+    {
+      "id": "CH12-M-014",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "global 变量参与运算。",
+      "code_template": "base = 100\ndef add_tax():\n    global base\n    base = base * 1.1\n\nadd_tax()\nprint(___)",
+      "expected_output": "Base: 110.00000000000001\n",
+      "hints": "填空 global 运算。",
+      "test_cases": [
+        "assert captured_output == 'Base: 110.00000000000001\\n'"
+      ],
+      "solution": "base = 100\ndef add_tax():\n    global base\n    base = base * 1.1\n\nadd_tax()\nprint(f\"Base: {base}\")"
+    },
+    {
+      "id": "CH12-M-015",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "局部变量在循环中更新。",
+      "code_template": "def f():\n    total = 0\n    for i in range(1, 4):\n        total += i\n    return total\n\nprint(___)",
+      "expected_output": "Sum: 6\n",
+      "hints": "填空局部累加。",
+      "test_cases": [
+        "assert captured_output == 'Sum: 6\\n'"
+      ],
+      "solution": "def f():\n    total = 0\n    for i in range(1, 4):\n        total += i\n    return total\n\nprint(f\"Sum: {f()}\")"
+    },
+    {
+      "id": "CH12-M-016",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "作用域内变量数量统计。",
+      "code_template": "g = 1\ndef f():\n    a = 2\n    b = 3\n    return a + b\n\nprint('Total:',___)",
+      "expected_output": "Total: 6\n",
+      "hints": "填空混合作用域。",
+      "test_cases": [
+        "assert captured_output == 'Total: 6\\n'"
+      ],
+      "solution": "g = 1\ndef f():\n    a = 2\n    b = 3\n    return a + b\n\nprint('Total:', f() + g)"
+    },
+    {
+      "id": "CH12-M-017",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "全局列表重新赋值需 global。",
+      "code_template": "items = []\ndef reset():\n    global items\n    items = [9]\n\nreset()\nprint(___)",
+      "expected_output": "[9]\n",
+      "hints": "填空 global 重赋值。",
+      "test_cases": [
+        "assert captured_output == '[9]\\n'"
+      ],
+      "solution": "items = []\ndef reset():\n    global items\n    items = [9]\n\nreset()\nprint(items)"
+    },
+    {
+      "id": "CH12-M-018",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "函数参数默认值引用全局。",
+      "code_template": "rate = 0.1\ndef cost(price, tax=rate):\n    return price * (1 + tax)\n\nprint(___)",
+      "expected_output": "Cost: 110.00000000000001\n",
+      "hints": "填空默认引用。",
+      "test_cases": [
+        "assert captured_output == 'Cost: 110.00000000000001\\n'"
+      ],
+      "solution": "rate = 0.1\ndef cost(price, tax=rate):\n    return price * (1 + tax)\n\nprint(f\"Cost: {cost(100)}\")"
+    },
+    {
+      "id": "CH12-M-019",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "内层函数读取外层与全局。",
+      "code_template": "g = 11\ndef outer():\n    x = 5\n    def inner():\n        return x + g\n    return inner()\n\nprint(___)",
+      "expected_output": "16\n",
+      "hints": "填空作用域链相加。",
+      "test_cases": [
+        "assert captured_output == '16\\n'"
+      ],
+      "solution": "g = 11\ndef outer():\n    x = 5\n    def inner():\n        return x + g\n    return inner()\n\nprint(outer())"
+    },
+    {
+      "id": "CH12-M-020",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "全局变量被局部覆盖后恢复。",
+      "code_template": "level = 1\ndef play():\n    level = 2\n    print(f\"Level {level}\")\n\nplay()\nprint(___)",
+      "expected_output": "Level 2\nLevel 1\n",
+      "hints": "填空覆盖恢复。",
+      "test_cases": [
+        "assert captured_output == 'Level 2\\nLevel 1\\n'"
+      ],
+      "solution": "level = 1\ndef play():\n    level = 2\n    print(f\"Level {level}\")\n\nplay()\nprint(f\"Level {level}\")"
+    },
+    {
+      "id": "CH12-M-021",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "函数修改全局字符串需 global。",
+      "code_template": "msg = \"old\"\ndef change():\n    global msg\n    msg = \"new\"\n\nchange()\nprint(___)",
+      "expected_output": "new\n",
+      "hints": "填空 global 字符串。",
+      "test_cases": [
+        "assert captured_output == 'new\\n'"
+      ],
+      "solution": "msg = \"old\"\ndef change():\n    global msg\n    msg = \"new\"\n\nchange()\nprint(msg)"
+    },
+    {
+      "id": "CH12-M-022",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "闭包多次调用保持状态。",
+      "code_template": "def counter():\n    count = 0\n    def inc():\n        nonlocal count\n        count += 1\n        return count\n    return inc\n\nc = counter()\nprint(c())\nprint(c())\nprint(___)",
+      "expected_output": "1\n2\n3\n",
+      "hints": "填空闭包状态。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n3\\n'"
+      ],
+      "solution": "def counter():\n    count = 0\n    def inc():\n        nonlocal count\n        count += 1\n        return count\n    return inc\n\nc = counter()\nprint(c())\nprint(c())\nprint(c())"
+    },
+    {
+      "id": "CH12-M-023",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "全局与局部变量同名时优先局部。",
+      "code_template": "name = \"Global\"\ndef show():\n    name = \"Local\"\n    print(___)\n\nshow()",
+      "expected_output": "Local\n",
+      "hints": "填空局部优先。",
+      "test_cases": [
+        "assert captured_output == 'Local\\n'"
+      ],
+      "solution": "name = \"Global\"\ndef show():\n    name = \"Local\"\n    print(name)\n\nshow()"
+    },
+    {
+      "id": "CH12-M-024",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "函数内定义并返回字典。",
+      "code_template": "def make_config():\n    settings = {\"debug\": True}\n    return settings\n\nprint(___)",
+      "expected_output": "{'debug': True}\n",
+      "hints": "填空局部字典返回。",
+      "test_cases": [
+        "assert captured_output == \"{'debug': True}\\n\""
+      ],
+      "solution": "def make_config():\n    settings = {\"debug\": True}\n    return settings\n\nprint(make_config())"
+    },
+    {
+      "id": "CH12-M-025",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "global 变量多次累加。",
+      "code_template": "score = 0\ndef add(points):\n    global score\n    score += points\n\nadd(10)\nadd(20)\nprint(___)",
+      "expected_output": "Score: 30\n",
+      "hints": "填空多次累加。",
+      "test_cases": [
+        "assert captured_output == 'Score: 30\\n'"
+      ],
+      "solution": "score = 0\ndef add(points):\n    global score\n    score += points\n\nadd(10)\nadd(20)\nprint(f\"Score: {score}\")"
+    },
+    {
+      "id": "CH12-M-026",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "全局变量在推导式中读取。",
+      "code_template": "factor = 2\ndef squares():\n    return [n * factor for n in range(1, 4)]\n\nprint(___)",
+      "expected_output": "[2, 4, 6]\n",
+      "hints": "填空推导读全局。",
+      "test_cases": [
+        "assert captured_output == '[2, 4, 6]\\n'"
+      ],
+      "solution": "factor = 2\ndef squares():\n    return [n * factor for n in range(1, 4)]\n\nprint(squares())"
+    },
+    {
+      "id": "CH12-M-027",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "函数内局部变量生命周期。",
+      "code_template": "def f():\n    x = 1\n    return x\n\ndef g():\n    x = 2\n    return x\n\nprint(f())\nprint(___)",
+      "expected_output": "1\n2\n",
+      "hints": "填空局部独立。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n'"
+      ],
+      "solution": "def f():\n    x = 1\n    return x\n\ndef g():\n    x = 2\n    return x\n\nprint(f())\nprint(g())"
+    },
+    {
+      "id": "CH12-M-028",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "global 与参数组合。",
+      "code_template": "base = 10\ndef apply(n):\n    global base\n    base = base + n\n    return base\n\nprint(___)",
+      "expected_output": "17\n",
+      "hints": "填空组合。",
+      "test_cases": [
+        "assert captured_output == '17\\n'"
+      ],
+      "solution": "base = 10\ndef apply(n):\n    global base\n    base = base + n\n    return base\n\nprint(apply(7))"
+    },
+    {
+      "id": "CH12-M-029",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "嵌套作用域变量遮蔽。",
+      "code_template": "def outer():\n    x = \"outer\"\n    def inner():\n        x = \"inner\"\n        return x\n    return inner()\n\nprint(___)",
+      "expected_output": "inner\n",
+      "hints": "填空嵌套遮蔽。",
+      "test_cases": [
+        "assert captured_output == 'inner\\n'"
+      ],
+      "solution": "def outer():\n    x = \"outer\"\n    def inner():\n        x = \"inner\"\n        return x\n    return inner()\n\nprint(outer())"
+    },
+    {
+      "id": "CH12-M-030",
+      "topic": "作用域与变量",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "综合：作用域链完整演示。",
+      "code_template": "x = 1\ndef outer():\n    x = 2\n    def inner():\n        nonlocal x\n        x = 4\n        return x\n    return inner()\n\nprint(outer())\nprint(___)",
+      "expected_output": "4\n1\n",
+      "hints": "填空作用域链修改。",
+      "test_cases": [
+        "assert captured_output == '4\\n1\\n'"
+      ],
+      "solution": "x = 1\ndef outer():\n    x = 2\n    def inner():\n        nonlocal x\n        x = 4\n        return x\n    return inner()\n\nprint(outer())\nprint(x)"
+    }
+  ]
+}

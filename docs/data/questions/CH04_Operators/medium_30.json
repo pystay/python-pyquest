@@ -1,0 +1,427 @@
+{
+  "chapter": "CH04",
+  "title": "基础运算符",
+  "difficulty": "简单",
+  "questions": [
+    {
+      "id": "CH04-M-001",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用复合赋值链更新变量。",
+      "code_template": "x = 5\nx += 4\nx *= 2\nprint(___)",
+      "expected_output": "18\n",
+      "hints": "填空复合赋值。",
+      "test_cases": [
+        "assert captured_output == '18\\n'"
+      ],
+      "solution": "x = 5\nx += 4\nx *= 2\nprint(x)"
+    },
+    {
+      "id": "CH04-M-002",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "同时输出整除商和余数。",
+      "code_template": "print(___, 20 % 3)",
+      "expected_output": "6 2\n",
+      "hints": "填空 // 与 %。",
+      "test_cases": [
+        "assert captured_output == '6 2\\n'"
+      ],
+      "solution": "print(20 // 3, 20 % 3)"
+    },
+    {
+      "id": "CH04-M-003",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "输出三个值的布尔转换。",
+      "code_template": "print(___, bool(1), bool(-1))",
+      "expected_output": "False True True\n",
+      "hints": "填空 bool()。",
+      "test_cases": [
+        "assert captured_output == 'False True True\\n'"
+      ],
+      "solution": "print(bool(0), bool(1), bool(-1))"
+    },
+    {
+      "id": "CH04-M-004",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用取余判断奇偶余数。",
+      "code_template": "print(___, 16 % 2)",
+      "expected_output": "1 0\n",
+      "hints": "填空两处取余。",
+      "test_cases": [
+        "assert captured_output == '1 0\\n'"
+      ],
+      "solution": "print(15 % 2, 16 % 2)"
+    },
+    {
+      "id": "CH04-M-005",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "判断数字是否在区间内。",
+      "code_template": "x = 7\nprint(\"in range:\",___)",
+      "expected_output": "in range: True\n",
+      "hints": "填空链式比较。",
+      "test_cases": [
+        "assert captured_output == 'in range: True\\n'"
+      ],
+      "solution": "x = 7\nprint(\"in range:\", 3 < x <= 10)"
+    },
+    {
+      "id": "CH04-M-006",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "对比括号前后的运算结果。",
+      "code_template": "print(___, (2 + 3) * 4)",
+      "expected_output": "14 20\n",
+      "hints": "填空两个表达式。",
+      "test_cases": [
+        "assert captured_output == '14 20\\n'"
+      ],
+      "solution": "print(2 + 3 * 4, (2 + 3) * 4)"
+    },
+    {
+      "id": "CH04-M-007",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 //= 复合赋值。",
+      "code_template": "a = 17\na //= 3\nprint(___)",
+      "expected_output": "5\n",
+      "hints": "填空 //=。",
+      "test_cases": [
+        "assert captured_output == '5\\n'"
+      ],
+      "solution": "a = 17\na //= 3\nprint(a)"
+    },
+    {
+      "id": "CH04-M-008",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用取余判断输出奇数提示。",
+      "code_template": "n = 9\nprint(___)",
+      "expected_output": "odd\n",
+      "hints": "填空条件表达式。",
+      "test_cases": [
+        "assert captured_output == 'odd\\n'"
+      ],
+      "solution": "n = 9\nprint(\"odd\" if n % 2 else \"even\")"
+    },
+    {
+      "id": "CH04-M-009",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "同时输出幂和开方结果。",
+      "code_template": "print(___, 9 ** 0.5)",
+      "expected_output": "9 3.0\n",
+      "hints": "填空两处运算。",
+      "test_cases": [
+        "assert captured_output == '9 3.0\\n'"
+      ],
+      "solution": "print(3 ** 2, 9 ** 0.5)"
+    },
+    {
+      "id": "CH04-M-010",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "比较年龄是否成年。",
+      "code_template": "age = 17\nprint(___, age == 18)",
+      "expected_output": "False False\n",
+      "hints": "填空两个比较。",
+      "test_cases": [
+        "assert captured_output == 'False False\\n'"
+      ],
+      "solution": "age = 17\nprint(age >= 18, age == 18)"
+    },
+    {
+      "id": "CH04-M-011",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 and/or 组合判断并输出。",
+      "code_template": "a = 5\nb = 3\nprint(\"both:\",___, \"either:\", a < b or a > 0)",
+      "expected_output": "both: True either: True\n",
+      "hints": "填空逻辑组合。",
+      "test_cases": [
+        "assert captured_output == 'both: True either: True\\n'"
+      ],
+      "solution": "a = 5\nb = 3\nprint(\"both:\", a > b and b > 0, \"either:\", a < b or a > 0)"
+    },
+    {
+      "id": "CH04-M-012",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字符串乘法与加法组合。",
+      "code_template": "print(___)",
+      "expected_output": "ababcd\n",
+      "hints": "填空组合运算。",
+      "test_cases": [
+        "assert captured_output == 'ababcd\\n'"
+      ],
+      "solution": "print(\"ab\" * 2 + \"cd\")"
+    },
+    {
+      "id": "CH04-M-013",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 round 处理浮点误差。",
+      "code_template": "print(___)",
+      "expected_output": "0.3\n",
+      "hints": "填空 round。",
+      "test_cases": [
+        "assert captured_output == '0.3\\n'"
+      ],
+      "solution": "print(round(0.1 + 0.2, 2))"
+    },
+    {
+      "id": "CH04-M-014",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 += 依次累加。",
+      "code_template": "count = 0\ncount += 1\ncount += 2\ncount += 3\ncount += 4\nprint(___)",
+      "expected_output": "10\n",
+      "hints": "填空累加链。",
+      "test_cases": [
+        "assert captured_output == '10\\n'"
+      ],
+      "solution": "count = 0\ncount += 1\ncount += 2\ncount += 3\ncount += 4\nprint(count)"
+    },
+    {
+      "id": "CH04-M-015",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把布尔结果转成数字。",
+      "code_template": "print(\"bool to int:\",___, int(False))",
+      "expected_output": "bool to int: 1 0\n",
+      "hints": "填空 int()。",
+      "test_cases": [
+        "assert captured_output == 'bool to int: 1 0\\n'"
+      ],
+      "solution": "print(\"bool to int:\", int(True), int(False))"
+    },
+    {
+      "id": "CH04-M-016",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用取模模拟时钟。",
+      "code_template": "print(___)",
+      "expected_output": "11\n",
+      "hints": "填空取模。",
+      "test_cases": [
+        "assert captured_output == '11\\n'"
+      ],
+      "solution": "print(23 % 12)"
+    },
+    {
+      "id": "CH04-M-017",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 divmod 同时得商和余。",
+      "code_template": "print(___)",
+      "expected_output": "(3, 2)\n",
+      "hints": "填空 divmod。",
+      "test_cases": [
+        "assert captured_output == '(3, 2)\\n'"
+      ],
+      "solution": "print(divmod(17, 5))"
+    },
+    {
+      "id": "CH04-M-018",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "负号与减法组合。",
+      "code_template": "print(___)",
+      "expected_output": "-8\n",
+      "hints": "填空表达式。",
+      "test_cases": [
+        "assert captured_output == '-8\\n'"
+      ],
+      "solution": "print(-5 - 3)"
+    },
+    {
+      "id": "CH04-M-019",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "观察逻辑运算符优先级。",
+      "code_template": "print(\"precedence:\",___)",
+      "expected_output": "precedence: True\n",
+      "hints": "填空 or/and。",
+      "test_cases": [
+        "assert captured_output == 'precedence: True\\n'"
+      ],
+      "solution": "print(\"precedence:\", True or False and False)"
+    },
+    {
+      "id": "CH04-M-020",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "一个变量参与多个比较。",
+      "code_template": "a = 10\nprint(___, a == 10, a < 5)",
+      "expected_output": "True True False\n",
+      "hints": "填空三个比较。",
+      "test_cases": [
+        "assert captured_output == 'True True False\\n'"
+      ],
+      "solution": "a = 10\nprint(a > 5, a == 10, a < 5)"
+    },
+    {
+      "id": "CH04-M-021",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "输出运算结果的类型。",
+      "code_template": "print(___, type(3 / 4))",
+      "expected_output": "<class 'int'> <class 'float'>\n",
+      "hints": "填空两个 type。",
+      "test_cases": [
+        "assert captured_output == \"<class 'int'> <class 'float'>\\n\""
+      ],
+      "solution": "print(type(3 + 4), type(3 / 4))"
+    },
+    {
+      "id": "CH04-M-022",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "比较两个字符串的大小。",
+      "code_template": "print(___, \"apple\" < \"banana\")",
+      "expected_output": "compare: True\n",
+      "hints": "填空字符串比较。",
+      "test_cases": [
+        "assert captured_output == 'compare: True\\n'"
+      ],
+      "solution": "print(\"compare:\", \"apple\" < \"banana\")"
+    },
+    {
+      "id": "CH04-M-023",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把比较结果赋给变量。",
+      "code_template": "x = 5 == 5\nprint(\"x =\",___)",
+      "expected_output": "x = True\n",
+      "hints": "填空比较赋值。",
+      "test_cases": [
+        "assert captured_output == 'x = True\\n'"
+      ],
+      "solution": "x = 5 == 5\nprint(\"x =\", x)"
+    },
+    {
+      "id": "CH04-M-024",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "计算 5 的三次方。",
+      "code_template": "print(___)",
+      "expected_output": "125\n",
+      "hints": "填空幂运算。",
+      "test_cases": [
+        "assert captured_output == '125\\n'"
+      ],
+      "solution": "print(5 ** 3)"
+    },
+    {
+      "id": "CH04-M-025",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "负数整除的向下取整。",
+      "code_template": "print(___)",
+      "expected_output": "-4\n",
+      "hints": "填空整除。",
+      "test_cases": [
+        "assert captured_output == '-4\\n'"
+      ],
+      "solution": "print(-7 // 2)"
+    },
+    {
+      "id": "CH04-M-026",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "负数取余的结果。",
+      "code_template": "print(___)",
+      "expected_output": "-2\n",
+      "hints": "填空取余。",
+      "test_cases": [
+        "assert captured_output == '-2\\n'"
+      ],
+      "solution": "print(7 % -3)"
+    },
+    {
+      "id": "CH04-M-027",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "多种运算符混合运算。",
+      "code_template": "print(___)",
+      "expected_output": "16\n",
+      "hints": "填空混合表达式。",
+      "test_cases": [
+        "assert captured_output == '16\\n'"
+      ],
+      "solution": "print(10 + 4 * 3 // 2)"
+    },
+    {
+      "id": "CH04-M-028",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "浮点数取余。",
+      "code_template": "print(___)",
+      "expected_output": "1.5\n",
+      "hints": "填空浮点取余。",
+      "test_cases": [
+        "assert captured_output == '1.5\\n'"
+      ],
+      "solution": "print(7.5 % 2)"
+    },
+    {
+      "id": "CH04-M-029",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "比较不同类型是否相等。",
+      "code_template": "print(\"equal:\",___)",
+      "expected_output": "equal: True\n",
+      "hints": "填空 ==。",
+      "test_cases": [
+        "assert captured_output == 'equal: True\\n'"
+      ],
+      "solution": "print(\"equal:\", 3 == 3.0)"
+    },
+    {
+      "id": "CH04-M-030",
+      "topic": "基础运算符",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "输出求和结果。",
+      "code_template": "print(\"sum:\",___)",
+      "expected_output": "sum: 7\n",
+      "hints": "填空求和。",
+      "test_cases": [
+        "assert captured_output == 'sum: 7\\n'"
+      ],
+      "solution": "print(\"sum:\", 3 + 4)"
+    }
+  ]
+}

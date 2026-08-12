@@ -1,0 +1,427 @@
+{
+  "chapter": "CH15",
+  "title": "集合 (Sets)",
+  "difficulty": "超简单",
+  "questions": [
+    {
+      "id": "CH15-E-001",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "创建集合并输出。",
+      "code_template": "s = {1, 2, 3}\nprint(___)",
+      "expected_output": "{1, 2, 3}\n",
+      "hints": "print 内填 s。",
+      "test_cases": [
+        "assert captured_output == '{1, 2, 3}\\n'"
+      ],
+      "solution": "s = {1, 2, 3}\nprint(s)"
+    },
+    {
+      "id": "CH15-E-002",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "创建空集合。",
+      "code_template": "s = set()\nprint(___)",
+      "expected_output": "0\n",
+      "hints": "len 内填 s。",
+      "test_cases": [
+        "assert captured_output == '0\\n'"
+      ],
+      "solution": "s = set()\nprint(len(s))"
+    },
+    {
+      "id": "CH15-E-003",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 add() 添加元素。",
+      "code_template": "s = {1, 2}\ns.add(4)\nprint(___)",
+      "expected_output": "{1, 2, 4}\n",
+      "hints": "填空 add。",
+      "test_cases": [
+        "assert captured_output == '{1, 2, 4}\\n'"
+      ],
+      "solution": "s = {1, 2}\ns.add(4)\nprint(s)"
+    },
+    {
+      "id": "CH15-E-004",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 remove() 删除元素。",
+      "code_template": "s = {1, 2, 3}\ns.remove(2)\nprint(___)",
+      "expected_output": "{1, 3}\n",
+      "hints": "填空 remove。",
+      "test_cases": [
+        "assert captured_output == '{1, 3}\\n'"
+      ],
+      "solution": "s = {1, 2, 3}\ns.remove(2)\nprint(s)"
+    },
+    {
+      "id": "CH15-E-005",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 discard() 删除不存在的元素。",
+      "code_template": "s = {1, 2}\ns.discard(9)\nprint(___)",
+      "expected_output": "{1, 2}\n",
+      "hints": "填空 discard。",
+      "test_cases": [
+        "assert captured_output == '{1, 2}\\n'"
+      ],
+      "solution": "s = {1, 2}\ns.discard(9)\nprint(s)"
+    },
+    {
+      "id": "CH15-E-006",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "求集合长度。",
+      "code_template": "s = {1, 2, 3, 4}\nprint(___)",
+      "expected_output": "4\n",
+      "hints": "len 内填 s。",
+      "test_cases": [
+        "assert captured_output == '4\\n'"
+      ],
+      "solution": "s = {1, 2, 3, 4}\nprint(len(s))"
+    },
+    {
+      "id": "CH15-E-007",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "集合自动去重。",
+      "code_template": "s = {1, 2, 2, 3, 4}\nprint(___)",
+      "expected_output": "{1, 2, 3, 4}\n",
+      "hints": "填空去重。",
+      "test_cases": [
+        "assert captured_output == '{1, 2, 3, 4}\\n'"
+      ],
+      "solution": "s = {1, 2, 2, 3, 4}\nprint(s)"
+    },
+    {
+      "id": "CH15-E-008",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 in 判断成员。",
+      "code_template": "s = {1, 2, 3}\nprint(___)",
+      "expected_output": "True\n",
+      "hints": "填 s。",
+      "test_cases": [
+        "assert captured_output == 'True\\n'"
+      ],
+      "solution": "s = {1, 2, 3}\nprint(2 in s)"
+    },
+    {
+      "id": "CH15-E-009",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "遍历集合。",
+      "code_template": "for v in {1, 2, 3}:\n    print(___)\n",
+      "expected_output": "1\n2\n3\n",
+      "hints": "输出变量 v。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n3\\n'"
+      ],
+      "solution": "for v in {1, 2, 3}:\n    print(v)"
+    },
+    {
+      "id": "CH15-E-010",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "求集合并集。",
+      "code_template": "a = {1, 2}\nb = {3, 4, 5}\nprint(___)",
+      "expected_output": "{1, 2, 3, 4, 5}\n",
+      "hints": "填空并集。",
+      "test_cases": [
+        "assert captured_output == '{1, 2, 3, 4, 5}\\n'"
+      ],
+      "solution": "a = {1, 2}\nb = {3, 4, 5}\nprint(a | b)"
+    },
+    {
+      "id": "CH15-E-011",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "求集合交集。",
+      "code_template": "a = {1, 2}\nb = {2, 3}\nprint(___)",
+      "expected_output": "{2}\n",
+      "hints": "填空交集。",
+      "test_cases": [
+        "assert captured_output == '{2}\\n'"
+      ],
+      "solution": "a = {1, 2}\nb = {2, 3}\nprint(a & b)"
+    },
+    {
+      "id": "CH15-E-012",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "求集合差集。",
+      "code_template": "a = {1, 2, 3, 4}\nb = {2}\nprint(___)",
+      "expected_output": "{1, 3, 4}\n",
+      "hints": "填空差集。",
+      "test_cases": [
+        "assert captured_output == '{1, 3, 4}\\n'"
+      ],
+      "solution": "a = {1, 2, 3, 4}\nb = {2}\nprint(a - b)"
+    },
+    {
+      "id": "CH15-E-013",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "求集合对称差。",
+      "code_template": "a = {1, 2}\nb = {2, 3, 4, 5}\nprint(___)",
+      "expected_output": "{1, 3, 4, 5}\n",
+      "hints": "填空对称差。",
+      "test_cases": [
+        "assert captured_output == '{1, 3, 4, 5}\\n'"
+      ],
+      "solution": "a = {1, 2}\nb = {2, 3, 4, 5}\nprint(a ^ b)"
+    },
+    {
+      "id": "CH15-E-014",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "集合转列表。",
+      "code_template": "s = {3, 1, 2}\nprint(___)",
+      "expected_output": "[1, 2, 3]\n",
+      "hints": "填空转换。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3]\\n'"
+      ],
+      "solution": "s = {3, 1, 2}\nprint(list(s))"
+    },
+    {
+      "id": "CH15-E-015",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "列表转集合。",
+      "code_template": "nums = [1, 2, 2, 3, 7]\nprint(___)",
+      "expected_output": "{1, 2, 3, 7}\n",
+      "hints": "填空转换。",
+      "test_cases": [
+        "assert captured_output == '{1, 2, 3, 7}\\n'"
+      ],
+      "solution": "nums = [1, 2, 2, 3, 7]\nprint(set(nums))"
+    },
+    {
+      "id": "CH15-E-016",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "求集合最大值。",
+      "code_template": "s = {3, 9, 5}\nprint(___)",
+      "expected_output": "9\n",
+      "hints": "max 内填 s。",
+      "test_cases": [
+        "assert captured_output == '9\\n'"
+      ],
+      "solution": "s = {3, 9, 5}\nprint(max(s))"
+    },
+    {
+      "id": "CH15-E-017",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "求集合最小值。",
+      "code_template": "s = {3, 9, 5}\nprint(___)",
+      "expected_output": "3\n",
+      "hints": "min 内填 s。",
+      "test_cases": [
+        "assert captured_output == '3\\n'"
+      ],
+      "solution": "s = {3, 9, 5}\nprint(min(s))"
+    },
+    {
+      "id": "CH15-E-018",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "求集合总和。",
+      "code_template": "s = {1, 2, 3}\nprint(___)",
+      "expected_output": "6\n",
+      "hints": "sum 内填 s。",
+      "test_cases": [
+        "assert captured_output == '6\\n'"
+      ],
+      "solution": "s = {1, 2, 3}\nprint(sum(s))"
+    },
+    {
+      "id": "CH15-E-019",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 union() 求并集。",
+      "code_template": "a = {1, 2}\nb = {3, 4, 5, 6}\nprint(___)",
+      "expected_output": "{1, 2, 3, 4, 5, 6}\n",
+      "hints": "填空 union。",
+      "test_cases": [
+        "assert captured_output == '{1, 2, 3, 4, 5, 6}\\n'"
+      ],
+      "solution": "a = {1, 2}\nb = {3, 4, 5, 6}\nprint(a.union(b))"
+    },
+    {
+      "id": "CH15-E-020",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 intersection() 求交集。",
+      "code_template": "a = {1, 2, 3}\nb = {2, 3, 4}\nprint(___)",
+      "expected_output": "{2, 3}\n",
+      "hints": "填空 intersection。",
+      "test_cases": [
+        "assert captured_output == '{2, 3}\\n'"
+      ],
+      "solution": "a = {1, 2, 3}\nb = {2, 3, 4}\nprint(a.intersection(b))"
+    },
+    {
+      "id": "CH15-E-021",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断子集。",
+      "code_template": "a = {1, 2}\nb = {1, 2, 4}\nprint('Subset:',___)",
+      "expected_output": "Subset: True\n",
+      "hints": "填空 issubset。",
+      "test_cases": [
+        "assert captured_output == 'Subset: True\\n'"
+      ],
+      "solution": "a = {1, 2}\nb = {1, 2, 4}\nprint('Subset:', a.issubset(b))"
+    },
+    {
+      "id": "CH15-E-022",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "判断超集。",
+      "code_template": "a = {1, 2, 3}\nb = {1, 2}\nprint(___, b.issubset(a))",
+      "expected_output": "True True\n",
+      "hints": "填空 issuperset。",
+      "test_cases": [
+        "assert captured_output == 'True True\\n'"
+      ],
+      "solution": "a = {1, 2, 3}\nb = {1, 2}\nprint(a.issuperset(b), b.issubset(a))"
+    },
+    {
+      "id": "CH15-E-023",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "集合清空。",
+      "code_template": "s = {1, 2}\ns.clear()\nprint(___)",
+      "expected_output": "set()\n",
+      "hints": "len 内填 s。",
+      "test_cases": [
+        "assert captured_output == 'set()\\n'"
+      ],
+      "solution": "s = {1, 2}\ns.clear()\nprint(s)"
+    },
+    {
+      "id": "CH15-E-024",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "集合 pop() 删除。",
+      "code_template": "s = {5}\nprint(___)",
+      "expected_output": "5\n",
+      "hints": "填空 pop。",
+      "test_cases": [
+        "assert captured_output == '5\\n'"
+      ],
+      "solution": "s = {5}\nprint(s.pop())"
+    },
+    {
+      "id": "CH15-E-025",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "字符串集合去重。",
+      "code_template": "s = set(\"programming\")\nprint(___)",
+      "expected_output": "8\n",
+      "hints": "填空字符去重。",
+      "test_cases": [
+        "assert captured_output == '8\\n'"
+      ],
+      "solution": "s = set(\"programming\")\nprint(len(s))"
+    },
+    {
+      "id": "CH15-E-026",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "布尔值集合。",
+      "code_template": "s = {True, False}\nprint(___)",
+      "expected_output": "2\n",
+      "hints": "填空布尔集合。",
+      "test_cases": [
+        "assert captured_output == '2\\n'"
+      ],
+      "solution": "s = {True, False}\nprint(len(s))"
+    },
+    {
+      "id": "CH15-E-027",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "浮点数集合。",
+      "code_template": "s = {1.5, 2.5}\nprint(___)",
+      "expected_output": "4.0\n",
+      "hints": "填空浮点集合。",
+      "test_cases": [
+        "assert captured_output == '4.0\\n'"
+      ],
+      "solution": "s = {1.5, 2.5}\nprint(sum(s))"
+    },
+    {
+      "id": "CH15-E-028",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "集合运算组合。",
+      "code_template": "a = {1, 2}\nb = {2, 3}\nprint(___, len(a & b))",
+      "expected_output": "3 1\n",
+      "hints": "填空运算长度。",
+      "test_cases": [
+        "assert captured_output == '3 1\\n'"
+      ],
+      "solution": "a = {1, 2}\nb = {2, 3}\nprint(len(a | b), len(a & b))"
+    },
+    {
+      "id": "CH15-E-029",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "集合添加多个。",
+      "code_template": "s = {1}\ns.update({2, 4, 5})\nprint(___)",
+      "expected_output": "{1, 2, 4, 5}\n",
+      "hints": "填空 update。",
+      "test_cases": [
+        "assert captured_output == '{1, 2, 4, 5}\\n'"
+      ],
+      "solution": "s = {1}\ns.update({2, 4, 5})\nprint(s)"
+    },
+    {
+      "id": "CH15-E-030",
+      "topic": "集合 (Sets)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "综合：集合基本操作。",
+      "code_template": "s = {1, 2, 3}\ns.add(4)\ns.discard(1)\nprint('Size:',___)",
+      "expected_output": "Size: 3\n",
+      "hints": "填空操作后长度。",
+      "test_cases": [
+        "assert captured_output == 'Size: 3\\n'"
+      ],
+      "solution": "s = {1, 2, 3}\ns.add(4)\ns.discard(1)\nprint('Size:', len(s))"
+    }
+  ]
+}

@@ -1,0 +1,517 @@
+{
+  "chapter": "CH01",
+  "title": "Hello, World!",
+  "difficulty": "较难",
+  "questions": [
+    {
+      "id": "CH01-X-001",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定学生姓名列表 students = ['Alice', 'Bob', 'Charlie', 'David', 'Eva']，遍历输出 '序号. 姓名'，序号从 1 开始，共 5 行。",
+      "code_template": "students = ['Alice', 'Bob', 'Charlie', 'David', 'Eva']\n# 请在此处编写代码：遍历列表并用 enumerate 输出带序号\nfor ___ in enumerate(___, start=1):\n    print(f\"___. {name}\")",
+      "expected_output": "1. Alice\n2. Bob\n3. Charlie\n4. David\n5. Eva\n",
+      "hints": "用 enumerate(students, start=1) 同时取索引和姓名。",
+      "test_cases": [
+        "assert captured_output == '1. Alice\\n2. Bob\\n3. Charlie\\n4. David\\n5. Eva\\n'",
+        "assert captured_output.count(chr(10)) == 5",
+        "assert captured_output.strip() == '1. Alice\\n2. Bob\\n3. Charlie\\n4. David\\n5. Eva'",
+        "assert captured_output.startswith('1. Alice')"
+      ],
+      "solution": "# 遍历学生列表，输出带序号的姓名\nstudents = ['Alice', 'Bob', 'Charlie', 'David', 'Eva']\nfor idx, name in enumerate(students, start=1):\n    print(f'{idx}. {name}')"
+    },
+    {
+      "id": "CH01-X-002",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定元组列表 data = [('Tom', 25), ('Ada', 36)]，遍历输出 '姓名 - 年龄' 两行。",
+      "code_template": "data = [('Tom', 25), ('Ada', 36)]\n# 请遍历元组列表并格式化输出\nfor name, age in ___:\n    print(f\"{___} - {___}\")",
+      "expected_output": "Tom - 25\nAda - 36\n",
+      "hints": "用 for name, age in data 解包元组。",
+      "test_cases": [
+        "assert captured_output == 'Tom - 25\\nAda - 36\\n'",
+        "assert captured_output.count(chr(10)) == 2",
+        "assert captured_output.strip() == 'Tom - 25\\nAda - 36'",
+        "assert captured_output.startswith('Tom - 25')"
+      ],
+      "solution": "# 遍历元组列表，输出姓名与年龄\ndata = [('Tom', 25), ('Ada', 36)]\nfor name, age in data:\n    print(f'{name} - {age}')"
+    },
+    {
+      "id": "CH01-X-003",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定字典 scores = {'Alice': 90, 'Bob': 85, 'Cara': 88}，遍历输出 '姓名: 分数' 三行。",
+      "code_template": "scores = {'Alice': 90, 'Bob': 85, 'Cara': 88}\n# 请遍历字典的键值对\nfor name, score in ___.items():\n    print(f\"{___}: {___}\")",
+      "expected_output": "Alice: 90\nBob: 85\nCara: 88\n",
+      "hints": "用 scores.items() 同时取键和值。",
+      "test_cases": [
+        "assert captured_output == 'Alice: 90\\nBob: 85\\nCara: 88\\n'",
+        "assert captured_output.count(chr(10)) == 3",
+        "assert captured_output.strip() == 'Alice: 90\\nBob: 85\\nCara: 88'",
+        "assert captured_output.startswith('Alice: 90')"
+      ],
+      "solution": "# 遍历成绩字典，输出姓名与分数\nscores = {'Alice': 90, 'Bob': 85, 'Cara': 88}\nfor name, score in scores.items():\n    print(f'{name}: {score}')"
+    },
+    {
+      "id": "CH01-X-004",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定字典 prices = {'apple': 3.5, 'milk': 5.0}，遍历输出 '商品 $价格' 两行，价格保留两位小数。",
+      "code_template": "prices = {'apple': 3.5, 'milk': 5.0}\n# 请遍历字典并格式化价格\nfor item, price in ___.items():\n    print(f\"{___} ${___:.2f}\")",
+      "expected_output": "apple $3.50\nmilk $5.00\n",
+      "hints": "用 items() 遍历，价格用 :.2f 保留两位小数。",
+      "test_cases": [
+        "assert captured_output == 'apple $3.50\\nmilk $5.00\\n'",
+        "assert captured_output.count(chr(10)) == 2",
+        "assert captured_output.strip() == 'apple $3.50\\nmilk $5.00'",
+        "assert captured_output.startswith('apple $3.50')"
+      ],
+      "solution": "# 遍历价格字典，输出商品与价格\nprices = {'apple': 3.5, 'milk': 5.0}\nfor item, price in prices.items():\n    print(f'{item} ${price:.2f}')"
+    },
+    {
+      "id": "CH01-X-005",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用循环打印 5 行数字三角形（第 i 行有 i 个数字 i）。",
+      "code_template": "n = 5\n# 请用循环打印数字三角形\nfor i in range(1, ___ + 1):\n    print(___ * i)",
+      "expected_output": "1\n22\n333\n4444\n55555\n",
+      "hints": "把数字 i 转成字符串再乘以行号。",
+      "test_cases": [
+        "assert captured_output == '1\\n22\\n333\\n4444\\n55555\\n'",
+        "assert captured_output.count(chr(10)) == 5",
+        "assert captured_output.strip() == '1\\n22\\n333\\n4444\\n55555'",
+        "assert captured_output.startswith('1')"
+      ],
+      "solution": "# 打印数字三角形\nn = 5\nfor i in range(1, n + 1):\n    print(str(i) * i)"
+    },
+    {
+      "id": "CH01-X-006",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用循环打印 3 行宽的星号菱形（对称）。",
+      "code_template": "n = 3\n# 请打印上下对称的菱形：上半部分递增，下半部分递减\nfor i in range(1, n + 1):\n    print(' ' * (n - i) + '*' * (2 * i - 1))\nfor i in range(n - 1, 0, -1):\n    print(' ' * (n - i) + '*' * (2 * ___ - 1))",
+      "expected_output": "  *\n ***\n*****\n ***\n  *\n",
+      "hints": "下半部分用 range(n-1, 0, -1) 递减行号。",
+      "test_cases": [
+        "assert captured_output == '  *\\n ***\\n*****\\n ***\\n  *\\n'",
+        "assert captured_output.count(chr(10)) == 5",
+        "assert captured_output.strip() == '*\\n ***\\n*****\\n ***\\n  *'",
+        "assert captured_output.startswith('  *')"
+      ],
+      "solution": "# 打印星号菱形\nn = 3\nfor i in range(1, n + 1):\n    print(' ' * (n - i) + '*' * (2 * i - 1))\nfor i in range(n - 1, 0, -1):\n    print(' ' * (n - i) + '*' * (2 * i - 1))"
+    },
+    {
+      "id": "CH01-X-007",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "打印 1 到 9 的九九乘法表（每行到 i 列，结果右对齐宽度 2）。",
+      "code_template": "# 请打印九九乘法表\nfor i in range(1, ___):\n    for j in range(1, i + 1):\n        print(f\"{j}x{i}={i * j:___}\", end='  ')\n    print()",
+      "expected_output": "1x1= 1  \n1x2= 2  2x2= 4  \n1x3= 3  2x3= 6  3x3= 9  \n1x4= 4  2x4= 8  3x4=12  4x4=16  \n1x5= 5  2x5=10  3x5=15  4x5=20  5x5=25  \n1x6= 6  2x6=12  3x6=18  4x6=24  5x6=30  6x6=36  \n1x7= 7  2x7=14  3x7=21  4x7=28  5x7=35  6x7=42  7x7=49  \n1x8= 8  2x8=16  3x8=24  4x8=32  5x8=40  6x8=48  7x8=56  8x8=64  \n1x9= 9  2x9=18  3x9=27  4x9=36  5x9=45  6x9=54  7x9=63  8x9=72  9x9=81  \n",
+      "hints": "外层 1..9，内层 1..i，结果用 :2d 对齐。",
+      "test_cases": [
+        "assert captured_output == '1x1= 1  \\n1x2= 2  2x2= 4  \\n1x3= 3  2x3= 6  3x3= 9  \\n1x4= 4  2x4= 8  3x4=12  4x4=16  \\n1x5= 5  2x5=10  3x5=15  4x5=20  5x5=25  \\n1x6= 6  2x6=12  3x6=18  4x6=24  5x6=30  6x6=36  \\n1x7= 7  2x7=14  3x7=21  4x7=28  5x7=35  6x7=42  7x7=49  \\n1x8= 8  2x8=16  3x8=24  4x8=32  5x8=40  6x8=48  7x8=56  8x8=64  \\n1x9= 9  2x9=18  3x9=27  4x9=36  5x9=45  6x9=54  7x9=63  8x9=72  9x9=81  \\n'",
+        "assert captured_output.count(chr(10)) == 9",
+        "assert captured_output.strip() == '1x1= 1  \\n1x2= 2  2x2= 4  \\n1x3= 3  2x3= 6  3x3= 9  \\n1x4= 4  2x4= 8  3x4=12  4x4=16  \\n1x5= 5  2x5=10  3x5=15  4x5=20  5x5=25  \\n1x6= 6  2x6=12  3x6=18  4x6=24  5x6=30  6x6=36  \\n1x7= 7  2x7=14  3x7=21  4x7=28  5x7=35  6x7=42  7x7=49  \\n1x8= 8  2x8=16  3x8=24  4x8=32  5x8=40  6x8=48  7x8=56  8x8=64  \\n1x9= 9  2x9=18  3x9=27  4x9=36  5x9=45  6x9=54  7x9=63  8x9=72  9x9=81'",
+        "assert captured_output.startswith('1x1= 1  ')"
+      ],
+      "solution": "# 打印九九乘法表\nfor i in range(1, 10):\n    for j in range(1, i + 1):\n        print(f'{j}x{i}={i * j:2d}', end='  ')\n    print()"
+    },
+    {
+      "id": "CH01-X-008",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定 nums = [88, 92, 76, 95, 84]，输出总和、平均值（1 位小数）、最大值、最小值四行。",
+      "code_template": "nums = [88, 92, 76, 95, 84]\n# 请计算并输出汇总统计\ntotal = sum(___)\navg = total / len(___)\nprint(f\"Sum: {___}\")\nprint(f\"Average: {___:.1f}\")\nprint(f\"Max: {max(nums)}\")\nprint(f\"Min: {min(nums)}\")",
+      "expected_output": "Sum: 435\nAverage: 87.0\nMax: 95\nMin: 76\n",
+      "hints": "sum/len/max/min 四个内置函数。",
+      "test_cases": [
+        "assert captured_output == 'Sum: 435\\nAverage: 87.0\\nMax: 95\\nMin: 76\\n'",
+        "assert captured_output.count(chr(10)) == 4",
+        "assert captured_output.strip() == 'Sum: 435\\nAverage: 87.0\\nMax: 95\\nMin: 76'",
+        "assert captured_output.startswith('Sum: 435')"
+      ],
+      "solution": "# 统计列表的总和、平均值、最大最小值\nnums = [88, 92, 76, 95, 84]\ntotal = sum(nums)\navg = total / len(nums)\nprint(f'Sum: {total}')\nprint(f'Average: {avg:.1f}')\nprint(f'Max: {max(nums)}')\nprint(f'Min: {min(nums)}')"
+    },
+    {
+      "id": "CH01-X-009",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定空列表 nums = []，处理空列表并输出 'No data'，否则输出总和。",
+      "code_template": "nums = []\n# 请处理空列表边界情况\nif ___:\n    print(f\"Sum: {sum(nums)}\")\nelse:\n    print(___)\n",
+      "expected_output": "No data\n",
+      "hints": "空列表为假值，用 if nums 判断。",
+      "test_cases": [
+        "assert captured_output == 'No data\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'No data'",
+        "assert captured_output.startswith('No data')"
+      ],
+      "solution": "# 空列表边界处理\nnums = []\nif nums:\n    print(f'Sum: {sum(nums)}')\nelse:\n    print('No data')"
+    },
+    {
+      "id": "CH01-X-010",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定 score = 96，按 90/80/70/60 分档输出等级（A/B/C/D/F），考虑边界值。",
+      "code_template": "score = ___\n# 请用多条件分支输出成绩等级\nif score >= 90:\n    grade = 'A'\nelif score >= ___:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelif score >= 60:\n    grade = 'D'\nelse:\n    grade = 'F'\nprint(f\"Grade: {___}\")",
+      "expected_output": "Grade: A\n",
+      "hints": "按分数区间逐级判断，边界值用 >=。",
+      "test_cases": [
+        "assert captured_output == 'Grade: A\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'Grade: A'",
+        "assert captured_output.startswith('Grade: A')"
+      ],
+      "solution": "# 按分数输出成绩等级\nscore = 96\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelif score >= 60:\n    grade = 'D'\nelse:\n    grade = 'F'\nprint(f'Grade: {grade}')"
+    },
+    {
+      "id": "CH01-X-011",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "对 n 取 -1、0、1 三个边界值，输出正/负/零判断。",
+      "code_template": "# 请对边界值 -1、0、1 分类输出\ndef classify(n):\n    if n < ___:\n        return 'negative'\n    elif n == 0:\n        return 'zero'\n    else:\n        return 'positive'\nfor n in [___]:\n    print(n, classify(n))",
+      "expected_output": "-1 negative\n0 zero\n1 positive\n",
+      "hints": "负数/零/正数三个分支，测试 -1、0、1。",
+      "test_cases": [
+        "assert captured_output == '-1 negative\\n0 zero\\n1 positive\\n'",
+        "assert captured_output.count(chr(10)) == 3",
+        "assert captured_output.strip() == '-1 negative\\n0 zero\\n1 positive'",
+        "assert captured_output.startswith('-1 negative')"
+      ],
+      "solution": "# 边界值分类\ndef classify(n):\n    if n < 0:\n        return 'negative'\n    elif n == 0:\n        return 'zero'\n    else:\n        return 'positive'\nfor n in [-1, 0, 1]:\n    print(n, classify(n))"
+    },
+    {
+      "id": "CH01-X-012",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定密码 'abc123'，按长度、字母/数字组合输出密码强度。",
+      "code_template": "password = 'abc123'\n# 请按规则判断密码强度并输出\nif len(password) < 6:\n    strength = 'Weak: too short'\nelif password.isalpha():\n    strength = 'Weak: no digits'\nelif password.isdigit():\n    strength = 'Medium: no letters'\nelse:\n    strength = 'Strong'\nprint(f\"{password}: {___}\")",
+      "expected_output": "abc123: Strong\n",
+      "hints": "先判断长度边界，再判断是否含字母/数字。",
+      "test_cases": [
+        "assert captured_output == 'abc123: Strong\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'abc123: Strong'",
+        "assert captured_output.startswith('abc123: Strong')"
+      ],
+      "solution": "# 密码强度判断\npassword = 'abc123'\nif len(password) < 6:\n    strength = 'Weak: too short'\nelif password.isalpha():\n    strength = 'Weak: no digits'\nelif password.isdigit():\n    strength = 'Medium: no letters'\nelse:\n    strength = 'Strong'\nprint(f'{password}: {strength}')"
+    },
+    {
+      "id": "CH01-X-013",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定 data = ['10', 'abc', '20']，逐个转 int 输出两倍值，转换失败输出 'Invalid: 原值'。",
+      "code_template": "data = ['10', 'abc', '20']\n# 请用 try-except 处理类型转换异常\nfor s in ___:\n    try:\n        print(int(___ ) * 2)\n    except ValueError:\n        print(f\"Invalid: {___}\")",
+      "expected_output": "20\nInvalid: abc\n40\n",
+      "hints": "int(s) 可能抛 ValueError，用 except 捕获。",
+      "test_cases": [
+        "assert captured_output == '20\\nInvalid: abc\\n40\\n'",
+        "assert captured_output.count(chr(10)) == 3",
+        "assert captured_output.strip() == '20\\nInvalid: abc\\n40'",
+        "assert captured_output.startswith('20')"
+      ],
+      "solution": "# 异常处理：类型转换失败时提示\ndata = ['10', 'abc', '20']\nfor s in data:\n    try:\n        print(int(s) * 2)\n    except ValueError:\n        print(f'Invalid: {s}')"
+    },
+    {
+      "id": "CH01-X-014",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "定义 safe_divide(a, b)，除数为 0 时返回错误提示，测试 (10,2)、(10,0)、(7,3)。",
+      "code_template": "# 请实现安全的除法并输出三组结果\ndef safe_divide(a, b):\n    if b == 0:\n        return 'Error: division by zero'\n    return ___ / b\nfor pair in [(10, 2), (10, 0), (7, 3)]:\n    print(f\"{pair[0]} / {pair[1]} = {safe_divide(pair[0], pair[1])}\")",
+      "expected_output": "10 / 2 = 5.0\n10 / 0 = Error: division by zero\n7 / 3 = 2.3333333333333335\n",
+      "hints": "先判断除零边界，再执行除法。",
+      "test_cases": [
+        "assert captured_output == '10 / 2 = 5.0\\n10 / 0 = Error: division by zero\\n7 / 3 = 2.3333333333333335\\n'",
+        "assert captured_output.count(chr(10)) == 3",
+        "assert captured_output.strip() == '10 / 2 = 5.0\\n10 / 0 = Error: division by zero\\n7 / 3 = 2.3333333333333335'",
+        "assert captured_output.startswith('10 / 2 = 5.0')"
+      ],
+      "solution": "# 安全的除法（处理除零）\ndef safe_divide(a, b):\n    if b == 0:\n        return 'Error: division by zero'\n    return a / b\nfor pair in [(10, 2), (10, 0), (7, 3)]:\n    print(f'{pair[0]} / {pair[1]} = {safe_divide(pair[0], pair[1])}')"
+    },
+    {
+      "id": "CH01-X-015",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定 mixed = [1, '2', 3.5, '4', 'x']，累加可转 float 的值，失败时输出 'Skipped: 原值'。",
+      "code_template": "mixed = [1, '2', 3.5, '4', 'x']\ntotal = 0.0\n# 请用 try-except 跳过无法转换的值\nfor m in ___:\n    try:\n        total += float(___)\n    except ValueError:\n        print(f\"Skipped: {___}\")\nprint(f\"Total: {total}\")",
+      "expected_output": "Skipped: x\nTotal: 10.5\n",
+      "hints": "float() 转换失败抛 ValueError。",
+      "test_cases": [
+        "assert captured_output == 'Skipped: x\\nTotal: 10.5\\n'",
+        "assert captured_output.count(chr(10)) == 2",
+        "assert captured_output.strip() == 'Skipped: x\\nTotal: 10.5'",
+        "assert captured_output.startswith('Skipped: x')"
+      ],
+      "solution": "# 类型转换 + 异常处理\nmixed = [1, '2', 3.5, '4', 'x']\ntotal = 0.0\nfor m in mixed:\n    try:\n        total += float(m)\n    except ValueError:\n        print(f'Skipped: {m}')\nprint(f'Total: {total}')"
+    },
+    {
+      "id": "CH01-X-016",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定配置行 lines = ['# config', 'name=PyQuest', 'version=1.0', '']，过滤注释和空行后输出有效行。",
+      "code_template": "lines = ['# config', 'name=PyQuest', 'version=1.0', '']\n# 请过滤以 # 开头的注释行和空行\nfor line in ___:\n    if line and not line.___('#'):\n        print(line)",
+      "expected_output": "name=PyQuest\nversion=1.0\n",
+      "hints": "空字符串为假值，用 startswith('#') 判断注释。",
+      "test_cases": [
+        "assert captured_output == 'name=PyQuest\\nversion=1.0\\n'",
+        "assert captured_output.count(chr(10)) == 2",
+        "assert captured_output.strip() == 'name=PyQuest\\nversion=1.0'",
+        "assert captured_output.startswith('name=PyQuest')"
+      ],
+      "solution": "# 模拟读取配置文件并过滤注释\nlines = ['# config', 'name=PyQuest', 'version=1.0', '']\nfor line in lines:\n    if line and not line.startswith('#'):\n        print(line)"
+    },
+    {
+      "id": "CH01-X-017",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定日志 logs 列表，包含 INFO/ERROR/DEBUG，只输出含 ERROR 或 INFO 的行。",
+      "code_template": "logs = ['INFO: start', 'ERROR: crash', 'INFO: done', 'DEBUG: x=1']\n# 请过滤日志，ERROR 加 [ALERT] 前缀\nfor log in ___:\n    if 'ERROR' in log:\n        print(f\"[ALERT] {___}\")\n    elif 'INFO' in log:\n        print(___)\n",
+      "expected_output": "INFO: start\n[ALERT] ERROR: crash\nINFO: done\n",
+      "hints": "用 in 判断日志级别关键字。",
+      "test_cases": [
+        "assert captured_output == 'INFO: start\\n[ALERT] ERROR: crash\\nINFO: done\\n'",
+        "assert captured_output.count(chr(10)) == 3",
+        "assert captured_output.strip() == 'INFO: start\\n[ALERT] ERROR: crash\\nINFO: done'",
+        "assert captured_output.startswith('INFO: start')"
+      ],
+      "solution": "# 日志过滤器\nlogs = ['INFO: start', 'ERROR: crash', 'INFO: done', 'DEBUG: x=1']\nfor log in logs:\n    if 'ERROR' in log:\n        print(f'[ALERT] {log}')\n    elif 'INFO' in log:\n        print(log)"
+    },
+    {
+      "id": "CH01-X-018",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "模拟输入姓名 'Tom' 和年龄 17，处理空姓名边界，非空时输出问候并按年龄输出 Adult 或 Minor。",
+      "code_template": "name = 'Tom'  # 模拟 input()\nage = 17       # 模拟 input() 转 int\n# 请处理空姓名边界并输出问候与年龄判断\nif not ___:\n    print('Empty name')\nelse:\n    print(f\"Hello {___}!\")\n    if age >= 18:\n        print('Adult')\n    else:\n        print('Minor')",
+      "expected_output": "Hello Tom!\nMinor\n",
+      "hints": "空字符串为假值；年龄边界 18 用 >= 判断。",
+      "test_cases": [
+        "assert captured_output == 'Hello Tom!\\nMinor\\n'",
+        "assert captured_output.count(chr(10)) == 2",
+        "assert captured_output.strip() == 'Hello Tom!\\nMinor'",
+        "assert captured_output.startswith('Hello Tom!')"
+      ],
+      "solution": "# 模拟用户输入（含空值边界）\nname = 'Tom'  # 模拟 input()\nage = 17       # 模拟 input() 转 int\nif not name:\n    print('Empty name')\nelse:\n    print(f'Hello {name}!')\n    if age >= 18:\n        print('Adult')\n    else:\n        print('Minor')"
+    },
+    {
+      "id": "CH01-X-019",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "模拟猜数字：secret = 7，猜测序列 [3, 5, 7]，每次输出高低或正确提示。",
+      "code_template": "secret = 7\nguesses = [3, 5, 7]\n# 请逐次比较猜测并提示\nfor i, guess in enumerate(___, start=1):\n    if guess < ___:\n        print(f\"Guess {i}: too low\")\n    elif guess > secret:\n        print(f\"Guess {i}: too high\")\n    else:\n        print(f\"Guess {i}: correct!\")\n        break",
+      "expected_output": "Guess 1: too low\nGuess 2: too low\nGuess 3: correct!\n",
+      "hints": "enumerate 带序号，猜中后 break。",
+      "test_cases": [
+        "assert captured_output == 'Guess 1: too low\\nGuess 2: too low\\nGuess 3: correct!\\n'",
+        "assert captured_output.count(chr(10)) == 3",
+        "assert captured_output.strip() == 'Guess 1: too low\\nGuess 2: too low\\nGuess 3: correct!'",
+        "assert captured_output.startswith('Guess 1: too low')"
+      ],
+      "solution": "# 猜数字游戏（模拟输入）\nsecret = 7\nguesses = [3, 5, 7]\nfor i, guess in enumerate(guesses, start=1):\n    if guess < secret:\n        print(f'Guess {i}: too low')\n    elif guess > secret:\n        print(f'Guess {i}: too high')\n    else:\n        print(f'Guess {i}: correct!')\n        break"
+    },
+    {
+      "id": "CH01-X-020",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定 nums = [1..6]，用列表推导式筛选偶数并求平方，输出结果列表。",
+      "code_template": "nums = [1, 2, 3, 4, 5, 6]\n# 请用列表推导式筛选偶数并平方\nsquares = [n * n for n in ___ if ___ % 2 == 0]\nprint(___)",
+      "expected_output": "[4, 16, 36]\n",
+      "hints": "推导式格式：[表达式 for n in 列表 if 条件]。",
+      "test_cases": [
+        "assert captured_output == '[4, 16, 36]\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '[4, 16, 36]'",
+        "assert captured_output.startswith('[4, 16, 36]')"
+      ],
+      "solution": "# 列表推导式：偶数平方\nnums = [1, 2, 3, 4, 5, 6]\nsquares = [n * n for n in nums if n % 2 == 0]\nprint(squares)"
+    },
+    {
+      "id": "CH01-X-021",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定字符串 '1,2,3,4,5'，split 后转 int 列表，输出总和与 '-' 连接的结果。",
+      "code_template": "s = '1,2,3,4,5'\n# 请拆分、类型转换并汇总\nnums = [int(x) for x in s.___(',')]\nprint(f\"Sum: {sum(___ )}\")\nprint(f\"Joined: {'-'.join(map(str, nums))}\")",
+      "expected_output": "Sum: 15\nJoined: 1-2-3-4-5\n",
+      "hints": "split(',') 后 int() 转换，join 前要 map(str)。",
+      "test_cases": [
+        "assert captured_output == 'Sum: 15\\nJoined: 1-2-3-4-5\\n'",
+        "assert captured_output.count(chr(10)) == 2",
+        "assert captured_output.strip() == 'Sum: 15\\nJoined: 1-2-3-4-5'",
+        "assert captured_output.startswith('Sum: 15')"
+      ],
+      "solution": "# 字符串拆分、类型转换与汇总\ns = '1,2,3,4,5'\nnums = [int(x) for x in s.split(',')]\nprint(f'Sum: {sum(nums)}')\nprint(f'Joined: {\"-\".join(map(str, nums))}')"
+    },
+    {
+      "id": "CH01-X-022",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "定义 format_student(name, score) 返回 '姓名: 分数'，处理空列表边界，对两名学生调用并输出。",
+      "code_template": "# 请定义格式化函数，处理空列表并调用\ndef format_student(name, score):\n    return f\"{___}: {___}\"\nstudents = [('Alice', 90), ('Bob', 85)]\nif not ___:\n    print('No students')\nelse:\n    for name, score in students:\n        print(format_student(name, score))",
+      "expected_output": "Alice: 90\nBob: 85\n",
+      "hints": "空列表先判断；函数返回格式化字符串，循环调用。",
+      "test_cases": [
+        "assert captured_output == 'Alice: 90\\nBob: 85\\n'",
+        "assert captured_output.count(chr(10)) == 2",
+        "assert captured_output.strip() == 'Alice: 90\\nBob: 85'",
+        "assert captured_output.startswith('Alice: 90')"
+      ],
+      "solution": "# 自定义函数封装输出逻辑（含空列表边界）\ndef format_student(name, score):\n    return f'{name}: {score}'\nstudents = [('Alice', 90), ('Bob', 85)]\nif not students:\n    print('No students')\nelse:\n    for name, score in students:\n        print(format_student(name, score))"
+    },
+    {
+      "id": "CH01-X-023",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "定义 process_numbers(nums) 返回偶数个数与偶数和，对 1..8 调用并输出。",
+      "code_template": "# 请定义统计函数并调用\ndef process_numbers(nums):\n    evens = [n for n in ___ if n % 2 == 0]\n    return len(___), sum(evens)\nnums = [1, 2, 3, 4, 5, 6, 7, 8]\ncount, total = process_numbers(___)\nprint(f\"Even count: {___}, Even sum: {___}\")",
+      "expected_output": "Even count: 4, Even sum: 20\n",
+      "hints": "函数返回元组，调用时解包。",
+      "test_cases": [
+        "assert captured_output == 'Even count: 4, Even sum: 20\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'Even count: 4, Even sum: 20'",
+        "assert captured_output.startswith('Even count: 4, Even sum: 20')"
+      ],
+      "solution": "# 自定义函数：统计偶数\ndef process_numbers(nums):\n    evens = [n for n in nums if n % 2 == 0]\n    return len(evens), sum(evens)\nnums = [1, 2, 3, 4, 5, 6, 7, 8]\ncount, total = process_numbers(nums)\nprint(f'Even count: {count}, Even sum: {total}')"
+    },
+    {
+      "id": "CH01-X-024",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "定义 fib(n) 生成斐波那契前 n 项，调用 fib(10) 输出列表。",
+      "code_template": "# 请定义斐波那契函数\ndef fib(n):\n    seq = [0, 1]\n    while len(seq) < ___:\n        seq.append(seq[___] + seq[-2])\n    return seq[:n]\nprint(fib(___))",
+      "expected_output": "[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n",
+      "hints": "递推 seq[-1] + seq[-2]，切片取前 n 项。",
+      "test_cases": [
+        "assert captured_output == '[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]'",
+        "assert captured_output.startswith('[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]')"
+      ],
+      "solution": "# 自定义函数：斐波那契序列\ndef fib(n):\n    seq = [0, 1]\n    while len(seq) < n:\n        seq.append(seq[-1] + seq[-2])\n    return seq[:n]\nprint(fib(10))"
+    },
+    {
+      "id": "CH01-X-025",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定成绩字典，按分数降序输出排行榜 '名次. 姓名 - 分数'，空字典输出 'No data'。",
+      "code_template": "scores = {'Alice': 90, 'Bob': 85, 'Cara': 95, 'Dan': 88}\n# 请按分数降序输出排行榜\nif not ___:\n    print('No data')\nelse:\n    ranking = sorted(scores.items(), key=lambda x: x[1], reverse=___)\n    for i, (name, score) in enumerate(ranking, ___):\n        print(f\"{i}. {name} - {score}\")",
+      "expected_output": "1. Cara - 95\n2. Alice - 90\n3. Dan - 88\n4. Bob - 85\n",
+      "hints": "sorted 按分数降序，enumerate 加名次，空字典先判断。",
+      "test_cases": [
+        "assert captured_output == '1. Cara - 95\\n2. Alice - 90\\n3. Dan - 88\\n4. Bob - 85\\n'",
+        "assert captured_output.count(chr(10)) == 4",
+        "assert captured_output.strip() == '1. Cara - 95\\n2. Alice - 90\\n3. Dan - 88\\n4. Bob - 85'",
+        "assert captured_output.startswith('1. Cara - 95')"
+      ],
+      "solution": "# 成绩排行榜（降序 + 空处理）\nscores = {'Alice': 90, 'Bob': 85, 'Cara': 95, 'Dan': 88}\nif not scores:\n    print('No data')\nelse:\n    ranking = sorted(scores.items(), key=lambda x: x[1], reverse=True)\n    for i, (name, score) in enumerate(ranking, 1):\n        print(f'{i}. {name} - {score}')"
+    },
+    {
+      "id": "CH01-X-026",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定商品列表 [(名称, 单价)]，输出对齐清单与总价，空列表输出 'Empty cart'。",
+      "code_template": "products = [('apple', 3.5), ('milk', 5.0), ('bread', 4.5)]\n# 请输出商品清单与总价\nif not ___:\n    print('Empty cart')\nelse:\n    print(f\"{'Item':<8}{'Price':>8}\")\n    total = 0\n    for name, price in products:\n        print(f\"{name:<8}{price:>8.2f}\")\n        total += ___\n    print(f\"Total: {___:.2f}\")",
+      "expected_output": "Item       Price\napple       3.50\nmilk        5.00\nbread       4.50\nTotal: 13.00\n",
+      "hints": "空列表先判断；对齐用 <8 和 >8.2f。",
+      "test_cases": [
+        "assert captured_output == 'Item       Price\\napple       3.50\\nmilk        5.00\\nbread       4.50\\nTotal: 13.00\\n'",
+        "assert captured_output.count(chr(10)) == 5",
+        "assert captured_output.strip() == 'Item       Price\\napple       3.50\\nmilk        5.00\\nbread       4.50\\nTotal: 13.00'",
+        "assert captured_output.startswith('Item       Price')"
+      ],
+      "solution": "# 商品清单（对齐 + 空处理）\nproducts = [('apple', 3.5), ('milk', 5.0), ('bread', 4.5)]\nif not products:\n    print('Empty cart')\nelse:\n    print(f\"{'Item':<8}{'Price':>8}\")\n    total = 0\n    for name, price in products:\n        print(f'{name:<8}{price:>8.2f}')\n        total += price\n    print(f'Total: {total:.2f}')"
+    },
+    {
+      "id": "CH01-X-027",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定成绩列表，统计 A/B/C/D/F 各档人数并输出 '等级: 柱条 (人数)'，空列表输出 'No scores'。",
+      "code_template": "scores = [55, 72, 88, 91, 63, 77, 85, 95, 68, 80]\n# 请统计各等级人数并绘制柱条\nif not ___:\n    print('No scores')\nelse:\n    grades = {'A': 0, 'B': 0, 'C': 0, 'D': 0, 'F': 0}\n    for s in scores:\n        if s >= 90:\n            grades['A'] += 1\n        elif s >= 80:\n            grades['B'] += 1\n        elif s >= 70:\n            grades['C'] += 1\n        elif s >= 60:\n            grades['D'] += 1\n        else:\n            grades['F'] += 1\n    for grade, count in grades.items():\n        print(f\"{grade}: {'#' * count} ({count})\")",
+      "expected_output": "A: ## (2)\nB: ### (3)\nC: ## (2)\nD: ## (2)\nF: # (1)\n",
+      "hints": "多条件分档计数，用 '#' * count 画柱条。",
+      "test_cases": [
+        "assert captured_output == 'A: ## (2)\\nB: ### (3)\\nC: ## (2)\\nD: ## (2)\\nF: # (1)\\n'",
+        "assert captured_output.count(chr(10)) == 5",
+        "assert captured_output.strip() == 'A: ## (2)\\nB: ### (3)\\nC: ## (2)\\nD: ## (2)\\nF: # (1)'",
+        "assert captured_output.startswith('A: ## (2)')"
+      ],
+      "solution": "# 成绩等级分布（多条件 + 空处理）\nscores = [55, 72, 88, 91, 63, 77, 85, 95, 68, 80]\nif not scores:\n    print('No scores')\nelse:\n    grades = {'A': 0, 'B': 0, 'C': 0, 'D': 0, 'F': 0}\n    for s in scores:\n        if s >= 90:\n            grades['A'] += 1\n        elif s >= 80:\n            grades['B'] += 1\n        elif s >= 70:\n            grades['C'] += 1\n        elif s >= 60:\n            grades['D'] += 1\n        else:\n            grades['F'] += 1\n    for grade, count in grades.items():\n        print(f'{grade}: {\"#\" * count} ({count})')"
+    },
+    {
+      "id": "CH01-X-028",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定文本，统计单词数、字符数、唯一单词数并输出三行报告。",
+      "code_template": "text = 'the quick brown fox jumps over the lazy dog'\n# 请统计并输出文本报告\nwords = text.___()\nprint(f\"Words: {len(words)}\")\nprint(f\"Characters: {len(text)}\")\nprint(f\"Unique words: {len(set(words))}\")",
+      "expected_output": "Words: 9\nCharacters: 43\nUnique words: 8\n",
+      "hints": "split() 分词，set 去重求唯一单词数。",
+      "test_cases": [
+        "assert captured_output == 'Words: 9\\nCharacters: 43\\nUnique words: 8\\n'",
+        "assert captured_output.count(chr(10)) == 3",
+        "assert captured_output.strip() == 'Words: 9\\nCharacters: 43\\nUnique words: 8'",
+        "assert captured_output.startswith('Words: 9')"
+      ],
+      "solution": "# 文本统计报告\ntext = 'the quick brown fox jumps over the lazy dog'\nwords = text.split()\nprint(f'Words: {len(words)}')\nprint(f'Characters: {len(text)}')\nprint(f'Unique words: {len(set(words))}')"
+    },
+    {
+      "id": "CH01-X-029",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定购物车 [(商品, 单价, 数量)]，输出小计与总计，总价超 20 输出 'Free shipping!'。",
+      "code_template": "cart = [('apple', 3.5, 2), ('milk', 5.0, 1), ('bread', 4.5, 3)]\n# 请计算购物车小计与总计\ntotal = 0\nprint(f\"{'Item':<10}{'Qty':>4}{'Subtotal':>10}\")\nfor name, price, qty in ___:\n    subtotal = price * qty\n    total += ___\n    print(f\"{name:<10}{qty:>4}{subtotal:>10.2f}\")\nprint(f\"Grand total: {___:.2f}\")\nif total > 20:\n    print('Free shipping!')\nelse:\n    print('Shipping: $5')",
+      "expected_output": "Item       Qty  Subtotal\napple        2      7.00\nmilk         1      5.00\nbread        3     13.50\nGrand total: 25.50\nFree shipping!\n",
+      "hints": "元组解包 (name, price, qty)，累计小计。",
+      "test_cases": [
+        "assert captured_output == 'Item       Qty  Subtotal\\napple        2      7.00\\nmilk         1      5.00\\nbread        3     13.50\\nGrand total: 25.50\\nFree shipping!\\n'",
+        "assert captured_output.count(chr(10)) == 6",
+        "assert captured_output.strip() == 'Item       Qty  Subtotal\\napple        2      7.00\\nmilk         1      5.00\\nbread        3     13.50\\nGrand total: 25.50\\nFree shipping!'",
+        "assert captured_output.startswith('Item       Qty  Subtotal')"
+      ],
+      "solution": "# 购物车结算（含运费判断）\ncart = [('apple', 3.5, 2), ('milk', 5.0, 1), ('bread', 4.5, 3)]\ntotal = 0\nprint(f\"{'Item':<10}{'Qty':>4}{'Subtotal':>10}\")\nfor name, price, qty in cart:\n    subtotal = price * qty\n    total += subtotal\n    print(f'{name:<10}{qty:>4}{subtotal:>10.2f}')\nprint(f'Grand total: {total:.2f}')\nif total > 20:\n    print('Free shipping!')\nelse:\n    print('Shipping: $5')"
+    },
+    {
+      "id": "CH01-X-030",
+      "topic": "print() 函数在复杂场景下的综合运用",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "定义 print_bar(value, max_value) 返回条形图，对字典 {'A':8,'B':5,'C':3} 输出每项的条形与数值。",
+      "code_template": "# 请定义条形图函数并输出\ndef print_bar(value, max_value, width=10):\n    filled = int(value / max_value * width)\n    return '#' * filled + '.' * (width - filled)\ndata = {'A': 8, 'B': 5, 'C': 3}\nmax_v = max(data.___())\nfor key, value in data.items():\n    print(f\"{key}: {print_bar(value, max_v)} ({___})\")",
+      "expected_output": "A: ########## (8)\nB: ######.... (5)\nC: ###....... (3)\n",
+      "hints": "按占比填充 '#' 与 '.'，max() 取最大值。",
+      "test_cases": [
+        "assert captured_output == 'A: ########## (8)\\nB: ######.... (5)\\nC: ###....... (3)\\n'",
+        "assert captured_output.count(chr(10)) == 3",
+        "assert captured_output.strip() == 'A: ########## (8)\\nB: ######.... (5)\\nC: ###....... (3)'",
+        "assert captured_output.startswith('A: ########## (8)')"
+      ],
+      "solution": "# 横向条形图（自定义函数 + 字典遍历）\ndef print_bar(value, max_value, width=10):\n    filled = int(value / max_value * width)\n    return '#' * filled + '.' * (width - filled)\ndata = {'A': 8, 'B': 5, 'C': 3}\nmax_v = max(data.values())\nfor key, value in data.items():\n    print(f'{key}: {print_bar(value, max_v)} ({value})')"
+    }
+  ]
+}

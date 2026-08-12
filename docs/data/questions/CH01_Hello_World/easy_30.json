@@ -1,0 +1,427 @@
+{
+  "chapter": "CH01",
+  "title": "Hello, World!",
+  "difficulty": "超简单",
+  "questions": [
+    {
+      "id": "CH01-E-001",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出单引号字符串 'Hello, Python!'。",
+      "code_template": "print(___)",
+      "expected_output": "Hello, Python!\n",
+      "hints": "在括号内填入 'Hello, Python!'，字符串要用引号包裹。",
+      "test_cases": [
+        "assert captured_output == 'Hello, Python!\\n'"
+      ],
+      "solution": "print('Hello, Python!')"
+    },
+    {
+      "id": "CH01-E-002",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出双引号字符串 \"Hello, World!\"。",
+      "code_template": "print(___)",
+      "expected_output": "Hello, World!\n",
+      "hints": "在括号内填入 \"Hello, World!\"，双引号同样能包裹字符串。",
+      "test_cases": [
+        "assert captured_output == 'Hello, World!\\n'"
+      ],
+      "solution": "print(\"Hello, World!\")"
+    },
+    {
+      "id": "CH01-E-003",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出整数 42。",
+      "code_template": "print(___)",
+      "expected_output": "42\n",
+      "hints": "数字不需要引号，直接填入 42。",
+      "test_cases": [
+        "assert captured_output == '42\\n'"
+      ],
+      "solution": "print(42)"
+    },
+    {
+      "id": "CH01-E-004",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出浮点数 3.14。",
+      "code_template": "print(___)",
+      "expected_output": "3.14\n",
+      "hints": "小数直接填入 3.14 即可。",
+      "test_cases": [
+        "assert captured_output == '3.14\\n'"
+      ],
+      "solution": "print(3.14)"
+    },
+    {
+      "id": "CH01-E-005",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出布尔值 True。",
+      "code_template": "print(___)",
+      "expected_output": "True\n",
+      "hints": "布尔值 True 首字母大写，且不加引号。",
+      "test_cases": [
+        "assert captured_output == 'True\\n'"
+      ],
+      "solution": "print(True)"
+    },
+    {
+      "id": "CH01-E-006",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出带双引号的字符串。",
+      "code_template": "print(___)",
+      "expected_output": "He said \"hi\"\n",
+      "hints": "外层用单引号，内层的双引号就能直接显示。",
+      "test_cases": [
+        "assert captured_output == 'He said \"hi\"\\n'"
+      ],
+      "solution": "print('He said \"hi\"')"
+    },
+    {
+      "id": "CH01-E-007",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义字符串变量 name 并输出它。",
+      "code_template": "name = \"Alice\"\nprint(___)",
+      "expected_output": "Alice\n",
+      "hints": "在 print 括号内填入变量名 name，不要加引号。",
+      "test_cases": [
+        "assert captured_output == 'Alice\\n'"
+      ],
+      "solution": "name = \"Alice\"\nprint(name)"
+    },
+    {
+      "id": "CH01-E-008",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义数字变量 age 并输出它。",
+      "code_template": "age = 25\nprint(___)",
+      "expected_output": "25\n",
+      "hints": "在 print 括号内填入变量名 age。",
+      "test_cases": [
+        "assert captured_output == '25\\n'"
+      ],
+      "solution": "age = 25\nprint(age)"
+    },
+    {
+      "id": "CH01-E-009",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 同时输出两个字符串。",
+      "code_template": "print(\"Hello\", ___)",
+      "expected_output": "Hello World\n",
+      "hints": "在第二个参数位置填入 \"World\"，多个参数用逗号分隔。",
+      "test_cases": [
+        "assert captured_output == 'Hello World\\n'"
+      ],
+      "solution": "print(\"Hello\", \"World\")"
+    },
+    {
+      "id": "CH01-E-010",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 \\n 让字符串在中间换行。",
+      "code_template": "print(___)",
+      "expected_output": "Line1\nLine2\n",
+      "hints": "在字符串中写 \\n 表示换行，注意要写在引号内。",
+      "test_cases": [
+        "assert captured_output == 'Line1\\nLine2\\n'"
+      ],
+      "solution": "print(\"Line1\\nLine2\")"
+    },
+    {
+      "id": "CH01-E-011",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "在两次输出之间打印一个空行。",
+      "code_template": "print(\"A\")\nprint(___)\nprint(\"B\")",
+      "expected_output": "A\n\nB\n",
+      "hints": "让 print() 不带任何参数，就会输出一个空行。",
+      "test_cases": [
+        "assert captured_output == 'A\\n\\nB\\n'"
+      ],
+      "solution": "print(\"A\")\nprint()\nprint(\"B\")"
+    },
+    {
+      "id": "CH01-E-012",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 sep 参数把三个词用 - 连接输出。",
+      "code_template": "print(\"a\", \"b\", \"c\", sep=___)",
+      "expected_output": "a-b-c\n",
+      "hints": "在 sep= 后面填入 \"-\"，注意要用引号。",
+      "test_cases": [
+        "assert captured_output == 'a-b-c\\n'"
+      ],
+      "solution": "print(\"a\", \"b\", \"c\", sep=\"-\")"
+    },
+    {
+      "id": "CH01-E-013",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 end 参数把结尾的换行改成 !。",
+      "code_template": "print(\"Hi\", end=___)",
+      "expected_output": "Hi!",
+      "hints": "在 end= 后面填入 \"!\"，输出就不会换行了。",
+      "test_cases": [
+        "assert captured_output == 'Hi!'"
+      ],
+      "solution": "print(\"Hi\", end=\"!\")"
+    },
+    {
+      "id": "CH01-E-014",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出包含 @ 的邮箱字符串。",
+      "code_template": "print(___)",
+      "expected_output": "Email: user@example.com\n",
+      "hints": "直接填入 \"Email: user@example.com\" 即可。",
+      "test_cases": [
+        "assert captured_output == 'Email: user@example.com\\n'"
+      ],
+      "solution": "print(\"Email: user@example.com\")"
+    },
+    {
+      "id": "CH01-E-015",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出 1 + 2 的计算结果。",
+      "code_template": "print(___)",
+      "expected_output": "3\n",
+      "hints": "在括号内填入表达式 1 + 2，print 会先算出结果。",
+      "test_cases": [
+        "assert captured_output == '3\\n'"
+      ],
+      "solution": "print(1 + 2)"
+    },
+    {
+      "id": "CH01-E-016",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出 3 < 2 的比较结果。",
+      "code_template": "print(___)",
+      "expected_output": "False\n",
+      "hints": "在括号内填入 3 < 2，结果为 False。",
+      "test_cases": [
+        "assert captured_output == 'False\\n'"
+      ],
+      "solution": "print(3 < 2)"
+    },
+    {
+      "id": "CH01-E-017",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出字符串和数字混合内容。",
+      "code_template": "print(___, 25)",
+      "expected_output": "Age: 25\n",
+      "hints": "第一个参数填 \"Age:\"，与数字 25 用逗号分隔。",
+      "test_cases": [
+        "assert captured_output == 'Age: 25\\n'"
+      ],
+      "solution": "print(\"Age:\", 25)"
+    },
+    {
+      "id": "CH01-E-018",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "连续调用两次 print() 输出两行。",
+      "code_template": "print(\"One\")\nprint(___)",
+      "expected_output": "One\nTwo\n",
+      "hints": "第二次调用时填入 \"Two\"，观察每次 print 自动换行。",
+      "test_cases": [
+        "assert captured_output == 'One\\nTwo\\n'"
+      ],
+      "solution": "print(\"One\")\nprint(\"Two\")"
+    },
+    {
+      "id": "CH01-E-019",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用三引号字符串一次输出三行。",
+      "code_template": "print(___)",
+      "expected_output": "Line1\nLine2\nLine3\n",
+      "hints": "用三引号包裹，字符串内用 \\n 换行。",
+      "test_cases": [
+        "assert captured_output == 'Line1\\nLine2\\nLine3\\n'"
+      ],
+      "solution": "print(\"\"\"Line1\\nLine2\\nLine3\"\"\")"
+    },
+    {
+      "id": "CH01-E-020",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 \\t 在字符串中间插入制表符。",
+      "code_template": "print(___)",
+      "expected_output": "A\tB\n",
+      "hints": "在字符串中写 \\t 表示制表符。",
+      "test_cases": [
+        "assert captured_output == 'A\\tB\\n'"
+      ],
+      "solution": "print(\"A\\tB\")"
+    },
+    {
+      "id": "CH01-E-021",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 + 拼接两个字符串后输出。",
+      "code_template": "print(\"Python\" + ___)",
+      "expected_output": "Python is fun\n",
+      "hints": "第二个字符串是 \" is fun\"，注意前面有空格。",
+      "test_cases": [
+        "assert captured_output == 'Python is fun\\n'"
+      ],
+      "solution": "print(\"Python\" + \" is fun\")"
+    },
+    {
+      "id": "CH01-E-022",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义 age 后输出 age + 1 的结果。",
+      "code_template": "age = 25\nprint(___)",
+      "expected_output": "26\n",
+      "hints": "在 print 括号内填入 age + 1。",
+      "test_cases": [
+        "assert captured_output == '26\\n'"
+      ],
+      "solution": "age = 25\nprint(age + 1)"
+    },
+    {
+      "id": "CH01-E-023",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出 7 * 8 的计算结果。",
+      "code_template": "print(___)",
+      "expected_output": "56\n",
+      "hints": "填入乘法表达式 7 * 8。",
+      "test_cases": [
+        "assert captured_output == '56\\n'"
+      ],
+      "solution": "print(7 * 8)"
+    },
+    {
+      "id": "CH01-E-024",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出 2 的 3 次方。",
+      "code_template": "print(___)",
+      "expected_output": "8\n",
+      "hints": "Python 中用 ** 表示幂运算，填入 2 ** 3。",
+      "test_cases": [
+        "assert captured_output == '8\\n'"
+      ],
+      "solution": "print(2 ** 3)"
+    },
+    {
+      "id": "CH01-E-025",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出 9 / 3 的结果。",
+      "code_template": "print(___)",
+      "expected_output": "3.0\n",
+      "hints": "填入 9 / 3，注意除法的结果是浮点数。",
+      "test_cases": [
+        "assert captured_output == '3.0\\n'"
+      ],
+      "solution": "print(9 / 3)"
+    },
+    {
+      "id": "CH01-E-026",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出负数 -7。",
+      "code_template": "print(___)",
+      "expected_output": "-7\n",
+      "hints": "直接在括号内填入 -7。",
+      "test_cases": [
+        "assert captured_output == '-7\\n'"
+      ],
+      "solution": "print(-7)"
+    },
+    {
+      "id": "CH01-E-027",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义 name 后与字符串一起输出。",
+      "code_template": "name = \"Bob\"\nprint(___, name)",
+      "expected_output": "Hi Bob\n",
+      "hints": "第一个参数填 \"Hi\"，与变量 name 用逗号分隔。",
+      "test_cases": [
+        "assert captured_output == 'Hi Bob\\n'"
+      ],
+      "solution": "name = \"Bob\"\nprint(\"Hi\", name)"
+    },
+    {
+      "id": "CH01-E-028",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 sep 参数把日期用 / 连接输出。",
+      "code_template": "print(\"2024\", \"08\", \"12\", sep=___)",
+      "expected_output": "2024/08/12\n",
+      "hints": "在 sep= 后面填入 \"/\"。",
+      "test_cases": [
+        "assert captured_output == '2024/08/12\\n'"
+      ],
+      "solution": "print(\"2024\", \"08\", \"12\", sep=\"/\")"
+    },
+    {
+      "id": "CH01-E-029",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 end 参数在末尾追加省略号。",
+      "code_template": "print(\"Loading\", end=___)",
+      "expected_output": "Loading...",
+      "hints": "在 end= 后面填入 \"...\"。",
+      "test_cases": [
+        "assert captured_output == 'Loading...'"
+      ],
+      "solution": "print(\"Loading\", end=\"...\")"
+    },
+    {
+      "id": "CH01-E-030",
+      "topic": "print() 函数的基本使用",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 print() 输出字符串、字符串和数字的混合。",
+      "code_template": "print(\"I love\", ___, 3)",
+      "expected_output": "I love Python 3\n",
+      "hints": "第二个参数填 \"Python\"，三个参数用逗号分隔。",
+      "test_cases": [
+        "assert captured_output == 'I love Python 3\\n'"
+      ],
+      "solution": "print(\"I love\", \"Python\", 3)"
+    }
+  ]
+}

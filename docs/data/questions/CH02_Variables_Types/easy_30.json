@@ -1,0 +1,427 @@
+{
+  "chapter": "CH02",
+  "title": "变量和类型",
+  "difficulty": "超简单",
+  "questions": [
+    {
+      "id": "CH02-E-001",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义变量 name 并赋值为 'Alice'，输出该变量。",
+      "code_template": "___ = 'Alice'\nprint(___)",
+      "expected_output": "Alice\n",
+      "hints": "变量名写在左侧，print 内填变量名。",
+      "test_cases": [
+        "assert captured_output == 'Alice\\n'"
+      ],
+      "solution": "name = 'Alice'\nprint(name)"
+    },
+    {
+      "id": "CH02-E-002",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义变量 city 为 'Beijing' 并输出。",
+      "code_template": "___ = 'Beijing'\nprint(___)",
+      "expected_output": "Beijing\n",
+      "hints": "变量名填 city。",
+      "test_cases": [
+        "assert captured_output == 'Beijing\\n'"
+      ],
+      "solution": "city = 'Beijing'\nprint(city)"
+    },
+    {
+      "id": "CH02-E-003",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义变量 age 为 25 并输出。",
+      "code_template": "___ = 25\nprint(___)",
+      "expected_output": "25\n",
+      "hints": "变量名填 age。",
+      "test_cases": [
+        "assert captured_output == '25\\n'"
+      ],
+      "solution": "age = 25\nprint(age)"
+    },
+    {
+      "id": "CH02-E-004",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义变量 score 为 92 并输出。",
+      "code_template": "___ = 92\nprint(___)",
+      "expected_output": "92\n",
+      "hints": "变量名填 score。",
+      "test_cases": [
+        "assert captured_output == '92\\n'"
+      ],
+      "solution": "score = 92\nprint(score)"
+    },
+    {
+      "id": "CH02-E-005",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义变量 price 为 19.99 并输出。",
+      "code_template": "___ = 19.99\nprint(___)",
+      "expected_output": "19.99\n",
+      "hints": "变量名填 price。",
+      "test_cases": [
+        "assert captured_output == '19.99\\n'"
+      ],
+      "solution": "price = 19.99\nprint(price)"
+    },
+    {
+      "id": "CH02-E-006",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义变量 height 为 1.75 并输出。",
+      "code_template": "___ = 1.75\nprint(___)",
+      "expected_output": "1.75\n",
+      "hints": "变量名填 height。",
+      "test_cases": [
+        "assert captured_output == '1.75\\n'"
+      ],
+      "solution": "height = 1.75\nprint(height)"
+    },
+    {
+      "id": "CH02-E-007",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义变量 is_student 为 True 并输出。",
+      "code_template": "___ = True\nprint(___)",
+      "expected_output": "True\n",
+      "hints": "变量名填 is_student。",
+      "test_cases": [
+        "assert captured_output == 'True\\n'"
+      ],
+      "solution": "is_student = True\nprint(is_student)"
+    },
+    {
+      "id": "CH02-E-008",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义变量 is_active 为 False 并输出。",
+      "code_template": "___ = False\nprint(___)",
+      "expected_output": "False\n",
+      "hints": "变量名填 is_active。",
+      "test_cases": [
+        "assert captured_output == 'False\\n'"
+      ],
+      "solution": "is_active = False\nprint(is_active)"
+    },
+    {
+      "id": "CH02-E-009",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义 name 和 age 两个变量并分别输出。",
+      "code_template": "name = 'Bob'\nage = 30\nprint(___)\nprint(age)",
+      "expected_output": "Bob\n30\n",
+      "hints": "第一处填 name。",
+      "test_cases": [
+        "assert captured_output == 'Bob\\n30\\n'"
+      ],
+      "solution": "name = 'Bob'\nage = 30\nprint(name)\nprint(age)"
+    },
+    {
+      "id": "CH02-E-010",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义 x 和 y 两个变量并分别输出。",
+      "code_template": "x = 1\ny = 2\nprint(___)\nprint(y)",
+      "expected_output": "1\n2\n",
+      "hints": "第一处填 x。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n'"
+      ],
+      "solution": "x = 1\ny = 2\nprint(x)\nprint(y)"
+    },
+    {
+      "id": "CH02-E-011",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用一行同时定义 a 和 b 并输出。",
+      "code_template": "a, b = 1, 2\nprint(___, ___)",
+      "expected_output": "1 2\n",
+      "hints": "依次填 a、b。",
+      "test_cases": [
+        "assert captured_output == '1 2\\n'"
+      ],
+      "solution": "a, b = 1, 2\nprint(a, b)"
+    },
+    {
+      "id": "CH02-E-012",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用一行定义 first 和 last 并输出。",
+      "code_template": "first, last = 'Tom', 'Smith'\nprint(___, ___)",
+      "expected_output": "Tom Smith\n",
+      "hints": "依次填 first、last。",
+      "test_cases": [
+        "assert captured_output == 'Tom Smith\\n'"
+      ],
+      "solution": "first, last = 'Tom', 'Smith'\nprint(first, last)"
+    },
+    {
+      "id": "CH02-E-013",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "把 x 重新赋值为 2 后输出。",
+      "code_template": "x = 1\nx = 2\nprint(___)",
+      "expected_output": "2\n",
+      "hints": "print 内填 x。",
+      "test_cases": [
+        "assert captured_output == '2\\n'"
+      ],
+      "solution": "x = 1\nx = 2\nprint(x)"
+    },
+    {
+      "id": "CH02-E-014",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "把 msg 重新赋值为 'hello' 后输出。",
+      "code_template": "msg = 'hi'\nmsg = 'hello'\nprint(___)",
+      "expected_output": "hello\n",
+      "hints": "print 内填 msg。",
+      "test_cases": [
+        "assert captured_output == 'hello\\n'"
+      ],
+      "solution": "msg = 'hi'\nmsg = 'hello'\nprint(msg)"
+    },
+    {
+      "id": "CH02-E-015",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "把 a 的值赋给 b 并输出 b。",
+      "code_template": "a = 5\nb = a\nprint(___)",
+      "expected_output": "5\n",
+      "hints": "print 内填 b。",
+      "test_cases": [
+        "assert captured_output == '5\\n'"
+      ],
+      "solution": "a = 5\nb = a\nprint(b)"
+    },
+    {
+      "id": "CH02-E-016",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "把 name 的值赋给 person 并输出。",
+      "code_template": "name = 'Ada'\nperson = name\nprint(___)",
+      "expected_output": "Ada\n",
+      "hints": "print 内填 person。",
+      "test_cases": [
+        "assert captured_output == 'Ada\\n'"
+      ],
+      "solution": "name = 'Ada'\nperson = name\nprint(person)"
+    },
+    {
+      "id": "CH02-E-017",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 type() 查看整数 42 的类型。",
+      "code_template": "n = 42\nprint(type(___))",
+      "expected_output": "<class 'int'>\n",
+      "hints": "type 括号内填 n。",
+      "test_cases": [
+        "assert captured_output == \"<class 'int'>\\n\""
+      ],
+      "solution": "n = 42\nprint(type(n))"
+    },
+    {
+      "id": "CH02-E-018",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 type() 查看字符串 'hi' 的类型。",
+      "code_template": "s = 'hi'\nprint(type(___))",
+      "expected_output": "<class 'str'>\n",
+      "hints": "type 括号内填 s。",
+      "test_cases": [
+        "assert captured_output == \"<class 'str'>\\n\""
+      ],
+      "solution": "s = 'hi'\nprint(type(s))"
+    },
+    {
+      "id": "CH02-E-019",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义空变量 x 为 None 并输出。",
+      "code_template": "x = None\nprint(___)",
+      "expected_output": "None\n",
+      "hints": "print 内填 x。",
+      "test_cases": [
+        "assert captured_output == 'None\\n'"
+      ],
+      "solution": "x = None\nprint(x)"
+    },
+    {
+      "id": "CH02-E-020",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义空变量 x 并用 type() 查看类型。",
+      "code_template": "x = None\nprint(type(___))",
+      "expected_output": "<class 'NoneType'>\n",
+      "hints": "type 括号内填 x。",
+      "test_cases": [
+        "assert captured_output == \"<class 'NoneType'>\\n\""
+      ],
+      "solution": "x = None\nprint(type(x))"
+    },
+    {
+      "id": "CH02-E-021",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "Name 和 name 是不同变量，输出小写 name。",
+      "code_template": "Name = 'Alice'\nname = 'alice'\nprint(___)",
+      "expected_output": "alice\n",
+      "hints": "print 内填 name。",
+      "test_cases": [
+        "assert captured_output == 'alice\\n'"
+      ],
+      "solution": "Name = 'Alice'\nname = 'alice'\nprint(name)"
+    },
+    {
+      "id": "CH02-E-022",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "X 和 x 是不同变量，输出小写 x。",
+      "code_template": "X = 10\nx = 40\nprint(___)",
+      "expected_output": "40\n",
+      "hints": "print 内填 x。",
+      "test_cases": [
+        "assert captured_output == '40\\n'"
+      ],
+      "solution": "X = 10\nx = 40\nprint(x)"
+    },
+    {
+      "id": "CH02-E-023",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用有意义的变量名 student_name 存储姓名并输出。",
+      "code_template": "student_name = 'Ann'\nprint(___)",
+      "expected_output": "Ann\n",
+      "hints": "print 内填 student_name。",
+      "test_cases": [
+        "assert captured_output == 'Ann\\n'"
+      ],
+      "solution": "student_name = 'Ann'\nprint(student_name)"
+    },
+    {
+      "id": "CH02-E-024",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用有意义的变量名 total_score 存储分数并输出。",
+      "code_template": "total_score = 96\nprint(___)",
+      "expected_output": "96\n",
+      "hints": "print 内填 total_score。",
+      "test_cases": [
+        "assert captured_output == '96\\n'"
+      ],
+      "solution": "total_score = 96\nprint(total_score)"
+    },
+    {
+      "id": "CH02-E-025",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "拼接两个字符串变量并输出。",
+      "code_template": "first = 'Py'\nsecond = 'Quest'\nprint(___ + ___)",
+      "expected_output": "PyQuest\n",
+      "hints": "依次填 first、second。",
+      "test_cases": [
+        "assert captured_output == 'PyQuest\\n'"
+      ],
+      "solution": "first = 'Py'\nsecond = 'Quest'\nprint(first + second)"
+    },
+    {
+      "id": "CH02-E-026",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "两个数字变量相加并输出。",
+      "code_template": "x = 7\ny = 8\nprint(___ + ___)",
+      "expected_output": "15\n",
+      "hints": "依次填 x、y。",
+      "test_cases": [
+        "assert captured_output == '15\\n'"
+      ],
+      "solution": "x = 7\ny = 8\nprint(x + y)"
+    },
+    {
+      "id": "CH02-E-027",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "同时输出整数和字符串变量。",
+      "code_template": "n = 5\ns = 'five'\nprint(___, ___)",
+      "expected_output": "5 five\n",
+      "hints": "依次填 n、s。",
+      "test_cases": [
+        "assert captured_output == '5 five\\n'"
+      ],
+      "solution": "n = 5\ns = 'five'\nprint(n, s)"
+    },
+    {
+      "id": "CH02-E-028",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用含下划线的变量名 user_name 并输出。",
+      "code_template": "user_name = 'Sam'\nprint(___)",
+      "expected_output": "Sam\n",
+      "hints": "print 内填 user_name。",
+      "test_cases": [
+        "assert captured_output == 'Sam\\n'"
+      ],
+      "solution": "user_name = 'Sam'\nprint(user_name)"
+    },
+    {
+      "id": "CH02-E-029",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "同时输出布尔和整数变量。",
+      "code_template": "flag = True\ncount = 1\nprint(___, ___)",
+      "expected_output": "True 1\n",
+      "hints": "依次填 flag、count。",
+      "test_cases": [
+        "assert captured_output == 'True 1\\n'"
+      ],
+      "solution": "flag = True\ncount = 1\nprint(flag, count)"
+    },
+    {
+      "id": "CH02-E-030",
+      "topic": "变量的定义与基本数据类型",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义温度变量 temperature 并输出。",
+      "code_template": "temperature = 36.5\nprint(___)",
+      "expected_output": "36.5\n",
+      "hints": "print 内填 temperature。",
+      "test_cases": [
+        "assert captured_output == '36.5\\n'"
+      ],
+      "solution": "temperature = 36.5\nprint(temperature)"
+    }
+  ]
+}

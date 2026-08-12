@@ -1,0 +1,427 @@
+{
+  "chapter": "CH02",
+  "title": "变量和类型",
+  "difficulty": "简单",
+  "questions": [
+    {
+      "id": "CH02-M-001",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把字符串 '123' 转成整数并赋值给 num_int 后输出。",
+      "code_template": "num_str = '123'\n___ = int(num_str)\nprint(___)",
+      "expected_output": "123\n",
+      "hints": "定义变量 num_int 接收 int() 结果。",
+      "test_cases": [
+        "assert captured_output == '123\\n'"
+      ],
+      "solution": "num_str = '123'\nnum_int = int(num_str)\nprint(num_int)"
+    },
+    {
+      "id": "CH02-M-002",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把字符串 '22' 转成整数 age，输出 age + 5。",
+      "code_template": "age_str = '22'\n___ = int(age_str)\nprint(___ + 5)",
+      "expected_output": "27\n",
+      "hints": "用 int() 转换后参与运算。",
+      "test_cases": [
+        "assert captured_output == '27\\n'"
+      ],
+      "solution": "age_str = '22'\nage = int(age_str)\nprint(age + 5)"
+    },
+    {
+      "id": "CH02-M-003",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把字符串 '3.14' 转成浮点数 pi 并输出。",
+      "code_template": "pi_str = '3.14'\n___ = float(pi_str)\nprint(___)",
+      "expected_output": "3.14\n",
+      "hints": "用 float() 转换。",
+      "test_cases": [
+        "assert captured_output == '3.14\\n'"
+      ],
+      "solution": "pi_str = '3.14'\npi = float(pi_str)\nprint(pi)"
+    },
+    {
+      "id": "CH02-M-004",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把字符串 '92.5' 转成浮点数 score，输出两倍。",
+      "code_template": "score_str = '92.5'\n___ = float(score_str)\nprint(___ * 2)",
+      "expected_output": "185.0\n",
+      "hints": "用 float() 转换后乘 2。",
+      "test_cases": [
+        "assert captured_output == '185.0\\n'"
+      ],
+      "solution": "score_str = '92.5'\nscore = float(score_str)\nprint(score * 2)"
+    },
+    {
+      "id": "CH02-M-005",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把整数 42 转成字符串 s 并输出。",
+      "code_template": "n = 42\n___ = str(n)\nprint(___)",
+      "expected_output": "42\n",
+      "hints": "用 str() 转换。",
+      "test_cases": [
+        "assert captured_output == '42\\n'"
+      ],
+      "solution": "n = 42\ns = str(n)\nprint(s)"
+    },
+    {
+      "id": "CH02-M-006",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把整数 count 转成字符串拼接进消息。",
+      "code_template": "count = 7\nmsg = \"Count: \" + ___(count)\nprint(___)",
+      "expected_output": "Count: 7\n",
+      "hints": "str() 转换后才能与字符串拼接。",
+      "test_cases": [
+        "assert captured_output == 'Count: 7\\n'"
+      ],
+      "solution": "count = 7\nmsg = \"Count: \" + str(count)\nprint(msg)"
+    },
+    {
+      "id": "CH02-M-007",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把浮点数 9.99 转成字符串 s 并输出。",
+      "code_template": "price = 9.99\n___ = str(price)\nprint(___)",
+      "expected_output": "9.99\n",
+      "hints": "用 str() 转换。",
+      "test_cases": [
+        "assert captured_output == '9.99\\n'"
+      ],
+      "solution": "price = 9.99\ns = str(price)\nprint(s)"
+    },
+    {
+      "id": "CH02-M-008",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把浮点数 pi 转成字符串拼接输出。",
+      "code_template": "pi = 3.14\nmsg = \"Pi is \" + ___(pi)\nprint(___)",
+      "expected_output": "Pi is 3.14\n",
+      "hints": "str() 转换后拼接。",
+      "test_cases": [
+        "assert captured_output == 'Pi is 3.14\\n'"
+      ],
+      "solution": "pi = 3.14\nmsg = \"Pi is \" + str(pi)\nprint(msg)"
+    },
+    {
+      "id": "CH02-M-009",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把整数 5 转成浮点数 f 并输出。",
+      "code_template": "n = 5\n___ = float(n)\nprint(___)",
+      "expected_output": "5.0\n",
+      "hints": "用 float() 转换。",
+      "test_cases": [
+        "assert captured_output == '5.0\\n'"
+      ],
+      "solution": "n = 5\nf = float(n)\nprint(f)"
+    },
+    {
+      "id": "CH02-M-010",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把整数 x 转成浮点数参与除法。",
+      "code_template": "x = 10\n___ = float(x)\nprint(___ / 4)",
+      "expected_output": "2.5\n",
+      "hints": "float(x) 转换后除以 4。",
+      "test_cases": [
+        "assert captured_output == '2.5\\n'"
+      ],
+      "solution": "x = 10\nf = float(x)\nprint(f / 4)"
+    },
+    {
+      "id": "CH02-M-011",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把浮点数 3.99 转成整数 n（截断）并输出。",
+      "code_template": "f = 3.99\n___ = int(f)\nprint(___)",
+      "expected_output": "3\n",
+      "hints": "int() 截断小数部分。",
+      "test_cases": [
+        "assert captured_output == '3\\n'"
+      ],
+      "solution": "f = 3.99\nn = int(f)\nprint(n)"
+    },
+    {
+      "id": "CH02-M-012",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把负数 -2.7 转成整数（截断）并输出。",
+      "code_template": "f = -2.7\n___ = int(f)\nprint(___)",
+      "expected_output": "-2\n",
+      "hints": "int() 向零截断。",
+      "test_cases": [
+        "assert captured_output == '-2\\n'"
+      ],
+      "solution": "f = -2.7\nn = int(f)\nprint(n)"
+    },
+    {
+      "id": "CH02-M-013",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把非空字符串 'hi' 转成布尔并输出。",
+      "code_template": "s = \"hi\"\nb = ___(s)\nprint(\"str truthy:\", ___)",
+      "expected_output": "str truthy: True\n",
+      "hints": "非空字符串 bool() 为 True。",
+      "test_cases": [
+        "assert captured_output == 'str truthy: True\\n'"
+      ],
+      "solution": "s = \"hi\"\nb = bool(s)\nprint(\"str truthy:\", b)"
+    },
+    {
+      "id": "CH02-M-014",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把空字符串转成布尔并输出。",
+      "code_template": "empty = \"\"\nb = ___(empty)\nprint(\"str falsy:\", ___)",
+      "expected_output": "str falsy: False\n",
+      "hints": "空字符串 bool() 为 False。",
+      "test_cases": [
+        "assert captured_output == 'str falsy: False\\n'"
+      ],
+      "solution": "empty = \"\"\nb = bool(empty)\nprint(\"str falsy:\", b)"
+    },
+    {
+      "id": "CH02-M-015",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把非零数字 5 转成布尔并输出。",
+      "code_template": "n = 5\nb = ___(n)\nprint(\"num truthy:\", ___)",
+      "expected_output": "num truthy: True\n",
+      "hints": "非零数字 bool() 为 True。",
+      "test_cases": [
+        "assert captured_output == 'num truthy: True\\n'"
+      ],
+      "solution": "n = 5\nb = bool(n)\nprint(\"num truthy:\", b)"
+    },
+    {
+      "id": "CH02-M-016",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把数字 0 转成布尔并输出。",
+      "code_template": "zero = 0\nb = ___(zero)\nprint(\"num falsy:\", ___)",
+      "expected_output": "num falsy: False\n",
+      "hints": "数字 0 bool() 为 False。",
+      "test_cases": [
+        "assert captured_output == 'num falsy: False\\n'"
+      ],
+      "solution": "zero = 0\nb = bool(zero)\nprint(\"num falsy:\", b)"
+    },
+    {
+      "id": "CH02-M-017",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把字符串 '42' 转整数后用 type() 查看类型。",
+      "code_template": "s = \"42\"\n___ = int(s)\nprint(\"converted type:\", ___(n))",
+      "expected_output": "converted type: <class 'int'>\n",
+      "hints": "type() 查看转换后的类型。",
+      "test_cases": [
+        "assert captured_output == \"converted type: <class 'int'>\\n\""
+      ],
+      "solution": "s = \"42\"\nn = int(s)\nprint(\"converted type:\", type(n))"
+    },
+    {
+      "id": "CH02-M-018",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把字符串 '3.5' 转浮点数后用 type() 查看类型。",
+      "code_template": "s = \"3.5\"\n___ = float(s)\nprint(___(f))",
+      "expected_output": "<class 'float'>\n",
+      "hints": "type() 查看转换后的类型。",
+      "test_cases": [
+        "assert captured_output == \"<class 'float'>\\n\""
+      ],
+      "solution": "s = \"3.5\"\nf = float(s)\nprint(type(f))"
+    },
+    {
+      "id": "CH02-M-019",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "整数与浮点数相加，观察自动转换。",
+      "code_template": "a = 3\nb = 2.5\nprint(___ + ___)",
+      "expected_output": "5.5\n",
+      "hints": "int + float 结果为 float。",
+      "test_cases": [
+        "assert captured_output == '5.5\\n'"
+      ],
+      "solution": "a = 3\nb = 2.5\nprint(a + b)"
+    },
+    {
+      "id": "CH02-M-020",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "整数与浮点数相乘，观察自动转换。",
+      "code_template": "x = 10\ny = 3.0\nprint(___ * ___)",
+      "expected_output": "30.0\n",
+      "hints": "int * float 结果为 float。",
+      "test_cases": [
+        "assert captured_output == '30.0\\n'"
+      ],
+      "solution": "x = 10\ny = 3.0\nprint(x * y)"
+    },
+    {
+      "id": "CH02-M-021",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "模拟 input 得到字符串 '1.8'，转浮点数后输出。",
+      "code_template": "height_str = '1.8'  # 模拟 input()\n___ = float(height_str)\nprint(___)",
+      "expected_output": "1.8\n",
+      "hints": "把字符串转成浮点数。",
+      "test_cases": [
+        "assert captured_output == '1.8\\n'"
+      ],
+      "solution": "height_str = '1.8'  # 模拟 input()\nheight = float(height_str)\nprint(height)"
+    },
+    {
+      "id": "CH02-M-022",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "模拟 input 得到字符串 '8'，转整数后输出平方。",
+      "code_template": "num_str = '8'  # 模拟 input()\n___ = int(num_str)\nprint(___ ** 2)",
+      "expected_output": "64\n",
+      "hints": "int() 转换后求平方。",
+      "test_cases": [
+        "assert captured_output == '64\\n'"
+      ],
+      "solution": "num_str = '8'  # 模拟 input()\nnum = int(num_str)\nprint(num ** 2)"
+    },
+    {
+      "id": "CH02-M-023",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "对比字符串 '123' 转换前后的类型。",
+      "code_template": "s = \"123\"\n___ = int(s)\nprint(type(s), ___(n))",
+      "expected_output": "<class 'str'> <class 'int'>\n",
+      "hints": "type() 对比 str 与 int。",
+      "test_cases": [
+        "assert captured_output == \"<class 'str'> <class 'int'>\\n\""
+      ],
+      "solution": "s = \"123\"\nprint(type(s), type(int(s)))"
+    },
+    {
+      "id": "CH02-M-024",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "对比浮点数 3.14 转换前后的类型。",
+      "code_template": "n = 3.14\n___ = str(n)\nprint(type(n), ___(s))",
+      "expected_output": "<class 'float'> <class 'str'>\n",
+      "hints": "type() 对比 float 与 str。",
+      "test_cases": [
+        "assert captured_output == \"<class 'float'> <class 'str'>\\n\""
+      ],
+      "solution": "n = 3.14\nprint(type(n), type(str(n)))"
+    },
+    {
+      "id": "CH02-M-025",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把 None 转成布尔并输出。",
+      "code_template": "n = None\nb = ___(n)\nprint(\"None is falsy:\", ___)",
+      "expected_output": "None is falsy: False\n",
+      "hints": "None 的 bool() 为 False。",
+      "test_cases": [
+        "assert captured_output == 'None is falsy: False\\n'"
+      ],
+      "solution": "n = None\nb = bool(n)\nprint(\"None is falsy:\", b)"
+    },
+    {
+      "id": "CH02-M-026",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把整数 25 转成字符串拼接输出。",
+      "code_template": "value = 25\nmsg = \"Value: \" + ___(value)\nprint(___)",
+      "expected_output": "Value: 25\n",
+      "hints": "str() 转换后拼接。",
+      "test_cases": [
+        "assert captured_output == 'Value: 25\\n'"
+      ],
+      "solution": "value = 25\nmsg = \"Value: \" + str(value)\nprint(msg)"
+    },
+    {
+      "id": "CH02-M-027",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "输出混合运算结果及其类型。",
+      "code_template": "a = 3\nb = 4.0\n___ = a + b\nprint(___(result), result)",
+      "expected_output": "<class 'float'> 7.0\n",
+      "hints": "type() 查看 int+float 的结果类型。",
+      "test_cases": [
+        "assert captured_output == \"<class 'float'> 7.0\\n\""
+      ],
+      "solution": "a = 3\nb = 4.0\nresult = a + b\nprint(type(result), result)"
+    },
+    {
+      "id": "CH02-M-028",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把 7.9 转整数后加 1 并输出。",
+      "code_template": "f = 7.9\n___ = int(f)\nprint(___ + 1)",
+      "expected_output": "8\n",
+      "hints": "int() 截断后加 1。",
+      "test_cases": [
+        "assert captured_output == '8\\n'"
+      ],
+      "solution": "f = 7.9\nn = int(f)\nprint(n + 1)"
+    },
+    {
+      "id": "CH02-M-029",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字符串转整数再转回字符串并重复。",
+      "code_template": "s = \"123\"\n___ = int(s)\ns2 = ___(n)\nprint(s2 * 2)",
+      "expected_output": "123123\n",
+      "hints": "str() 转回字符串后可重复。",
+      "test_cases": [
+        "assert captured_output == '123123\\n'"
+      ],
+      "solution": "s = \"123\"\nn = int(s)\ns2 = str(n)\nprint(s2 * 2)"
+    },
+    {
+      "id": "CH02-M-030",
+      "topic": "变量赋值与数据类型转换",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把两个数字字符串转整数后求和。",
+      "code_template": "a = \"15\"\nb = \"26\"\nprint(___ + ___)",
+      "expected_output": "41\n",
+      "hints": "int() 转换两个字符串后相加。",
+      "test_cases": [
+        "assert captured_output == '41\\n'"
+      ],
+      "solution": "a = \"15\"\nb = \"26\"\nprint(int(a) + int(b))"
+    }
+  ]
+}

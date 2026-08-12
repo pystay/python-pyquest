@@ -1,0 +1,427 @@
+{
+  "chapter": "CH06",
+  "title": "条件语句",
+  "difficulty": "简单",
+  "questions": [
+    {
+      "id": "CH06-M-001",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "按分数 83 输出 A-E 五档等级。",
+      "code_template": "score = 83\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelif score >= 60:\n    grade = \"D\"\nelse:\n    grade = \"E\"\nprint(___)",
+      "expected_output": "Grade: B\n",
+      "hints": "填空多分支判断。",
+      "test_cases": [
+        "assert captured_output == 'Grade: B\\n'"
+      ],
+      "solution": "score = 83\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelif score >= 60:\n    grade = \"D\"\nelse:\n    grade = \"E\"\nprint(f\"Grade: {grade}\")"
+    },
+    {
+      "id": "CH06-M-002",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "统计列表中的正数、负数和零。",
+      "code_template": "nums = [3, -1, 0, 5, -2]\npos = neg = zero = 0\nfor n in nums:\n    if n > 0:\n        pos += 1\n    elif n < 0:\n        neg += 1\n    else:\n        zero += 1\nprint(___)",
+      "expected_output": "Positive: 2, Negative: 2, Zero: 1\n",
+      "hints": "填空三路计数。",
+      "test_cases": [
+        "assert captured_output == 'Positive: 2, Negative: 2, Zero: 1\\n'"
+      ],
+      "solution": "nums = [3, -1, 0, 5, -2]\npos = neg = zero = 0\nfor n in nums:\n    if n > 0:\n        pos += 1\n    elif n < 0:\n        neg += 1\n    else:\n        zero += 1\nprint(f\"Positive: {pos}, Negative: {neg}, Zero: {zero}\")"
+    },
+    {
+      "id": "CH06-M-003",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 if-else 求两个数的最大值。",
+      "code_template": "a, b = 7, 9\nif a > b:\n    larger = a\nelse:\n    larger = b\nprint(___)",
+      "expected_output": "Larger: 9\n",
+      "hints": "填空比较与赋值。",
+      "test_cases": [
+        "assert captured_output == 'Larger: 9\\n'"
+      ],
+      "solution": "a, b = 7, 9\nif a > b:\n    larger = a\nelse:\n    larger = b\nprint(f\"Larger: {larger}\")"
+    },
+    {
+      "id": "CH06-M-004",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "判断年份 2024 是否为闰年。",
+      "code_template": "year = 2024\nif (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:\n    print(\"leap\")\nelse:\n    print(___)",
+      "expected_output": "leap\n",
+      "hints": "填空闰年条件。",
+      "test_cases": [
+        "assert captured_output == 'leap\\n'"
+      ],
+      "solution": "year = 2024\nif (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:\n    print(\"leap\")\nelse:\n    print(\"common\")"
+    },
+    {
+      "id": "CH06-M-005",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "根据月份输出天数（简化）。",
+      "code_template": "month = 2\nif month in (1, 3, 5, 7, 8, 10, 12):\n    days = 31\nelif month in (4, 6, 9, 11):\n    days = 30\nelse:\n    days = 28\nprint(___)",
+      "expected_output": "2月有28天\n",
+      "hints": "填空月份分组。",
+      "test_cases": [
+        "assert captured_output == '2月有28天\\n'"
+      ],
+      "solution": "month = 2\nif month in (1, 3, 5, 7, 8, 10, 12):\n    days = 31\nelif month in (4, 6, 9, 11):\n    days = 30\nelse:\n    days = 28\nprint(f\"{month}月有{days}天\")"
+    },
+    {
+      "id": "CH06-M-006",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "分类字符：字母、数字或其他。",
+      "code_template": "ch = '7'\nif ch.isalpha():\n    kind = \"letter\"\nelif ch.isdigit():\n    kind = \"digit\"\nelse:\n    kind = \"other\"\nprint(___)",
+      "expected_output": "7 is digit\n",
+      "hints": "填空字符分类。",
+      "test_cases": [
+        "assert captured_output == '7 is digit\\n'"
+      ],
+      "solution": "ch = '7'\nif ch.isalpha():\n    kind = \"letter\"\nelif ch.isdigit():\n    kind = \"digit\"\nelse:\n    kind = \"other\"\nprint(f\"{ch} is {kind}\")"
+    },
+    {
+      "id": "CH06-M-007",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "判断密码强度（含长度与字符组合）。",
+      "code_template": "password = \"abc123\"\nif len(password) < 6:\n    strength = \"weak\"\nelif password.isalpha() or password.isdigit():\n    strength = \"medium\"\nelse:\n    strength = \"strong\"\nprint(___)",
+      "expected_output": "Strength: strong\n",
+      "hints": "填空强度判断。",
+      "test_cases": [
+        "assert captured_output == 'Strength: strong\\n'"
+      ],
+      "solution": "password = \"abc123\"\nif len(password) < 6:\n    strength = \"weak\"\nelif password.isalpha() or password.isdigit():\n    strength = \"medium\"\nelse:\n    strength = \"strong\"\nprint(f\"Strength: {strength}\")"
+    },
+    {
+      "id": "CH06-M-008",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "根据温度输出天气提示。",
+      "code_template": "temp = 12\nif temp >= 30:\n    weather = \"hot\"\nelif temp >= 15:\n    weather = \"mild\"\nelif temp >= 0:\n    weather = \"cool\"\nelse:\n    weather = \"freezing\"\nprint(___)",
+      "expected_output": "cool\n",
+      "hints": "填空温度分档。",
+      "test_cases": [
+        "assert captured_output == 'cool\\n'"
+      ],
+      "solution": "temp = 12\nif temp >= 30:\n    weather = \"hot\"\nelif temp >= 15:\n    weather = \"mild\"\nelif temp >= 0:\n    weather = \"cool\"\nelse:\n    weather = \"freezing\"\nprint(weather)"
+    },
+    {
+      "id": "CH06-M-009",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "成绩评级并附加评语。",
+      "code_template": "score = 88\nif score >= 90:\n    comment = \"excellent\"\nelif score >= 80:\n    comment = \"good\"\nelif score >= 70:\n    comment = \"average\"\nelse:\n    comment = \"needs work\"\nprint(___)",
+      "expected_output": "Score 88: good\n",
+      "hints": "填空评语分支。",
+      "test_cases": [
+        "assert captured_output == 'Score 88: good\\n'"
+      ],
+      "solution": "score = 88\nif score >= 90:\n    comment = \"excellent\"\nelif score >= 80:\n    comment = \"good\"\nelif score >= 70:\n    comment = \"average\"\nelse:\n    comment = \"needs work\"\nprint(f\"Score {score}: {comment}\")"
+    },
+    {
+      "id": "CH06-M-010",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "石头剪刀布模拟（固定出招）。",
+      "code_template": "player = \"rock\"\ncomputer = \"scissors\"\nif player == computer:\n    result = \"draw\"\nelif (player == \"rock\" and computer == \"scissors\") or \\\n     (player == \"scissors\" and computer == \"paper\") or \\\n     (player == \"paper\" and computer == \"rock\"):\n    result = \"win\"\nelse:\n    result = \"lose\"\nprint(___)",
+      "expected_output": "win\n",
+      "hints": "填空胜负判断。",
+      "test_cases": [
+        "assert captured_output == 'win\\n'"
+      ],
+      "solution": "player = \"rock\"\ncomputer = \"scissors\"\nif player == computer:\n    result = \"draw\"\nelif (player == \"rock\" and computer == \"scissors\") or \\\n     (player == \"scissors\" and computer == \"paper\") or \\\n     (player == \"paper\" and computer == \"rock\"):\n    result = \"win\"\nelse:\n    result = \"lose\"\nprint(result)"
+    },
+    {
+      "id": "CH06-M-011",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "判断三边能否构成三角形。",
+      "code_template": "a, b, c = 3, 4, 5\nif a + b > c and a + c > b and b + c > a:\n    print(\"valid triangle\")\nelse:\n    print(___)",
+      "expected_output": "valid triangle\n",
+      "hints": "填空三角不等式。",
+      "test_cases": [
+        "assert captured_output == 'valid triangle\\n'"
+      ],
+      "solution": "a, b, c = 3, 4, 5\nif a + b > c and a + c > b and b + c > a:\n    print(\"valid triangle\")\nelse:\n    print(\"invalid triangle\")"
+    },
+    {
+      "id": "CH06-M-012",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 if-elif 实现简易四则计算器。",
+      "code_template": "op = \"+\"\na, b = 8, 3\nif op == \"+\":\n    result = a + b\nelif op == \"-\":\n    result = a - b\nelif op == \"*\":\n    result = a * b\nelse:\n    result = a / b\nprint(___)",
+      "expected_output": "8 + 3 = 11\n",
+      "hints": "填空运算分发。",
+      "test_cases": [
+        "assert captured_output == '8 + 3 = 11\\n'"
+      ],
+      "solution": "op = \"+\"\na, b = 8, 3\nif op == \"+\":\n    result = a + b\nelif op == \"-\":\n    result = a - b\nelif op == \"*\":\n    result = a * b\nelse:\n    result = a / b\nprint(f\"{a} {op} {b} = {result}\")"
+    },
+    {
+      "id": "CH06-M-013",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "统计及格与不及格人数。",
+      "code_template": "scores = [55, 72, 88, 45, 90]\npassed = 0\nfor s in scores:\n    if s >= 60:\n        passed += 1\nfailed = len(scores) - passed\nprint(___)",
+      "expected_output": "Passed: 3, Failed: 2\n",
+      "hints": "填空计数。",
+      "test_cases": [
+        "assert captured_output == 'Passed: 3, Failed: 2\\n'"
+      ],
+      "solution": "scores = [55, 72, 88, 45, 90]\npassed = 0\nfor s in scores:\n    if s >= 60:\n        passed += 1\nfailed = len(scores) - passed\nprint(f\"Passed: {passed}, Failed: {failed}\")"
+    },
+    {
+      "id": "CH06-M-014",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "根据年龄判断购票类型。",
+      "code_template": "age = 65\nif age < 6:\n    ticket = \"free\"\nelif age < 18:\n    ticket = \"child\"\nelif age < 60:\n    ticket = \"adult\"\nelse:\n    ticket = \"senior\"\nprint(___)",
+      "expected_output": "Ticket: senior\n",
+      "hints": "填空年龄分档。",
+      "test_cases": [
+        "assert captured_output == 'Ticket: senior\\n'"
+      ],
+      "solution": "age = 65\nif age < 6:\n    ticket = \"free\"\nelif age < 18:\n    ticket = \"child\"\nelif age < 60:\n    ticket = \"adult\"\nelse:\n    ticket = \"senior\"\nprint(f\"Ticket: {ticket}\")"
+    },
+    {
+      "id": "CH06-M-015",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "实现符号函数 sign。",
+      "code_template": "def sign(n):\n    if n > 0:\n        return 1\n    elif n < 0:\n        return -1\n    else:\n        return 0\nfor n in [-3, 0, 4]:\n    print(___, sign(n))",
+      "expected_output": "-3 -1\n0 0\n4 1\n",
+      "hints": "填空三分支函数。",
+      "test_cases": [
+        "assert captured_output == '-3 -1\\n0 0\\n4 1\\n'"
+      ],
+      "solution": "def sign(n):\n    if n > 0:\n        return 1\n    elif n < 0:\n        return -1\n    else:\n        return 0\nfor n in [-3, 0, 4]:\n    print(n, sign(n))"
+    },
+    {
+      "id": "CH06-M-016",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "判断字符串是否为回文。",
+      "code_template": "word = \"radar\"\nif word == word[::-1]:\n    print(\"palindrome\")\nelse:\n    print(___)",
+      "expected_output": "palindrome\n",
+      "hints": "填空反转比较。",
+      "test_cases": [
+        "assert captured_output == 'palindrome\\n'"
+      ],
+      "solution": "word = \"radar\"\nif word == word[::-1]:\n    print(\"palindrome\")\nelse:\n    print(\"not palindrome\")"
+    },
+    {
+      "id": "CH06-M-017",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "判断 17 是否为质数。",
+      "code_template": "n = 17\nis_prime = True\nif n < 2:\n    is_prime = False\nelse:\n    for d in range(2, n):\n        if n % d == 0:\n            is_prime = False\n            break\nprint(___)",
+      "expected_output": "17 is prime: True\n",
+      "hints": "填空质数判断。",
+      "test_cases": [
+        "assert captured_output == '17 is prime: True\\n'"
+      ],
+      "solution": "n = 17\nis_prime = True\nif n < 2:\n    is_prime = False\nelse:\n    for d in range(2, n):\n        if n % d == 0:\n            is_prime = False\n            break\nprint(f\"{n} is prime: {is_prime}\")"
+    },
+    {
+      "id": "CH06-M-018",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "数字转星期名称。",
+      "code_template": "day = 3\nif day == 1:\n    name = \"Monday\"\nelif day == 2:\n    name = \"Tuesday\"\nelif day == 3:\n    name = \"Wednesday\"\nelif day == 4:\n    name = \"Thursday\"\nelif day == 5:\n    name = \"Friday\"\nelif day == 6:\n    name = \"Saturday\"\nelse:\n    name = \"Sunday\"\nprint(___)",
+      "expected_output": "Wednesday\n",
+      "hints": "填空星期映射。",
+      "test_cases": [
+        "assert captured_output == 'Wednesday\\n'"
+      ],
+      "solution": "day = 3\nif day == 1:\n    name = \"Monday\"\nelif day == 2:\n    name = \"Tuesday\"\nelif day == 3:\n    name = \"Wednesday\"\nelif day == 4:\n    name = \"Thursday\"\nelif day == 5:\n    name = \"Friday\"\nelif day == 6:\n    name = \"Saturday\"\nelse:\n    name = \"Sunday\"\nprint(name)"
+    },
+    {
+      "id": "CH06-M-019",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "计算两数的绝对差。",
+      "code_template": "a, b = 10, 3\nif a > b:\n    diff = a - b\nelse:\n    diff = b - a\nprint(___)",
+      "expected_output": "Absolute diff: 7\n",
+      "hints": "填空绝对差。",
+      "test_cases": [
+        "assert captured_output == 'Absolute diff: 7\\n'"
+      ],
+      "solution": "a, b = 10, 3\nif a > b:\n    diff = a - b\nelse:\n    diff = b - a\nprint(f\"Absolute diff: {diff}\")"
+    },
+    {
+      "id": "CH06-M-020",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "根据总价计算折扣。",
+      "code_template": "total = 150\nif total >= 200:\n    discount = 0.2\nelif total >= 100:\n    discount = 0.1\nelse:\n    discount = 0\nfinal = total * (1 - discount)\nprint(___)",
+      "expected_output": "Final: 135.0\n",
+      "hints": "填空折扣档位。",
+      "test_cases": [
+        "assert captured_output == 'Final: 135.0\\n'"
+      ],
+      "solution": "total = 150\nif total >= 200:\n    discount = 0.2\nelif total >= 100:\n    discount = 0.1\nelse:\n    discount = 0\nfinal = total * (1 - discount)\nprint(f\"Final: {final}\")"
+    },
+    {
+      "id": "CH06-M-021",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "根据身高体重计算 BMI 分类。",
+      "code_template": "bmi = 26.5\nif bmi < 18.5:\n    category = \"underweight\"\nelif bmi < 24:\n    category = \"normal\"\nelif bmi < 28:\n    category = \"overweight\"\nelse:\n    category = \"obese\"\nprint(___)",
+      "expected_output": "BMI 26.5: overweight\n",
+      "hints": "填空 BMI 分档。",
+      "test_cases": [
+        "assert captured_output == 'BMI 26.5: overweight\\n'"
+      ],
+      "solution": "bmi = 26.5\nif bmi < 18.5:\n    category = \"underweight\"\nelif bmi < 24:\n    category = \"normal\"\nelif bmi < 28:\n    category = \"overweight\"\nelse:\n    category = \"obese\"\nprint(f\"BMI {bmi}: {category}\")"
+    },
+    {
+      "id": "CH06-M-022",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "判断数字所在区间并输出。",
+      "code_template": "x = 42\nif x < 0:\n    zone = \"negative\"\nelif x <= 10:\n    zone = \"0-10\"\nelif x <= 50:\n    zone = \"11-50\"\nelse:\n    zone = \"50+\"\nprint(___)",
+      "expected_output": "42 in 11-50\n",
+      "hints": "填空区间判断。",
+      "test_cases": [
+        "assert captured_output == '42 in 11-50\\n'"
+      ],
+      "solution": "x = 42\nif x < 0:\n    zone = \"negative\"\nelif x <= 10:\n    zone = \"0-10\"\nelif x <= 50:\n    zone = \"11-50\"\nelse:\n    zone = \"50+\"\nprint(f\"{x} in {zone}\")"
+    },
+    {
+      "id": "CH06-M-023",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "判断两个字符串是否互为反转。",
+      "code_template": "a = \"abc\"\nb = \"cba\"\nif a == b[::-1]:\n    print(\"reversed\")\nelse:\n    print(___)",
+      "expected_output": "reversed\n",
+      "hints": "填空反转比较。",
+      "test_cases": [
+        "assert captured_output == 'reversed\\n'"
+      ],
+      "solution": "a = \"abc\"\nb = \"cba\"\nif a == b[::-1]:\n    print(\"reversed\")\nelse:\n    print(\"not reversed\")"
+    },
+    {
+      "id": "CH06-M-024",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "找出三个数中的最大值。",
+      "code_template": "a, b, c = 3, 9, 5\nif a >= b and a >= c:\n    maximum = a\nelif b >= a and b >= c:\n    maximum = b\nelse:\n    maximum = c\nprint(___)",
+      "expected_output": "Max: 9\n",
+      "hints": "填空三数比较。",
+      "test_cases": [
+        "assert captured_output == 'Max: 9\\n'"
+      ],
+      "solution": "a, b, c = 3, 9, 5\nif a >= b and a >= c:\n    maximum = a\nelif b >= a and b >= c:\n    maximum = b\nelse:\n    maximum = c\nprint(f\"Max: {maximum}\")"
+    },
+    {
+      "id": "CH06-M-025",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "判断数字是否为完全平方数。",
+      "code_template": "n = 81\nroot = int(n ** 0.5)\nif root * root == n:\n    print(\"perfect square\")\nelse:\n    print(___)",
+      "expected_output": "perfect square\n",
+      "hints": "填空开方判断。",
+      "test_cases": [
+        "assert captured_output == 'perfect square\\n'"
+      ],
+      "solution": "n = 81\nroot = int(n ** 0.5)\nif root * root == n:\n    print(\"perfect square\")\nelse:\n    print(\"not perfect square\")"
+    },
+    {
+      "id": "CH06-M-026",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "根据分数判断是否需补考。",
+      "code_template": "score = 58\nif score >= 60:\n    result = \"pass\"\nelif score >= 50:\n    result = \"makeup\"\nelse:\n    result = \"fail\"\nprint(___)",
+      "expected_output": "Result: makeup\n",
+      "hints": "填空补考判断。",
+      "test_cases": [
+        "assert captured_output == 'Result: makeup\\n'"
+      ],
+      "solution": "score = 58\nif score >= 60:\n    result = \"pass\"\nelif score >= 50:\n    result = \"makeup\"\nelse:\n    result = \"fail\"\nprint(f\"Result: {result}\")"
+    },
+    {
+      "id": "CH06-M-027",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "判断年份是否为本世纪。",
+      "code_template": "year = 2026\nif 2000 <= year < 2100:\n    print(\"21st century\")\nelse:\n    print(___)",
+      "expected_output": "21st century\n",
+      "hints": "填空世纪判断。",
+      "test_cases": [
+        "assert captured_output == '21st century\\n'"
+      ],
+      "solution": "year = 2026\nif 2000 <= year < 2100:\n    print(\"21st century\")\nelse:\n    print(\"other century\")"
+    },
+    {
+      "id": "CH06-M-028",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "根据登录状态输出提示。",
+      "code_template": "logged_in = True\nrole = \"admin\"\nif logged_in and role == \"admin\":\n    print(\"Welcome, admin!\")\nelif logged_in:\n    print(\"Welcome, user!\")\nelse:\n    print(___)",
+      "expected_output": "Welcome, admin!\n",
+      "hints": "填空登录判断。",
+      "test_cases": [
+        "assert captured_output == 'Welcome, admin!\\n'"
+      ],
+      "solution": "logged_in = True\nrole = \"admin\"\nif logged_in and role == \"admin\":\n    print(\"Welcome, admin!\")\nelif logged_in:\n    print(\"Welcome, user!\")\nelse:\n    print(\"Please log in\")"
+    },
+    {
+      "id": "CH06-M-029",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "判断文件名是否为 Python 文件。",
+      "code_template": "filename = \"main.py\"\nif filename.endswith(\".py\"):\n    print(\"Python file\")\nelse:\n    print(___)",
+      "expected_output": "Python file\n",
+      "hints": "填空后缀判断。",
+      "test_cases": [
+        "assert captured_output == 'Python file\\n'"
+      ],
+      "solution": "filename = \"main.py\"\nif filename.endswith(\".py\"):\n    print(\"Python file\")\nelse:\n    print(\"other file\")"
+    },
+    {
+      "id": "CH06-M-030",
+      "topic": "条件语句",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "综合：判断整数奇偶并输出说明。",
+      "code_template": "n = 14\nif n % 2 == 0:\n    desc = \"even number\"\nelse:\n    desc = \"odd number\"\nprint(___)",
+      "expected_output": "14 is an even number\n",
+      "hints": "填空奇偶说明。",
+      "test_cases": [
+        "assert captured_output == '14 is an even number\\n'"
+      ],
+      "solution": "n = 14\nif n % 2 == 0:\n    desc = \"even number\"\nelse:\n    desc = \"odd number\"\nprint(f\"{n} is an {desc}\")"
+    }
+  ]
+}

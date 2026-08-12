@@ -1,0 +1,425 @@
+{
+  "generated_at": "static",
+  "chapters": [
+    {
+      "id": "CH01",
+      "dir": "CH01_Hello_World",
+      "title": "CH01 Hello, World!",
+      "count": 120,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 30
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 30
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "id": "CH02",
+      "dir": "CH02_Variables_Types",
+      "title": "CH02 变量和类型",
+      "count": 100,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 20
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 20
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "id": "CH03",
+      "dir": "CH03_Lists",
+      "title": "CH03 列表 (Lists)",
+      "count": 120,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 30
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 30
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "id": "CH04",
+      "dir": "CH04_Operators",
+      "title": "CH04 基础运算符",
+      "count": 120,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 30
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 30
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "id": "CH05",
+      "dir": "CH05_String_Formatting",
+      "title": "CH05 字符串格式化",
+      "count": 120,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 30
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 30
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "id": "CH06",
+      "dir": "CH06_Conditionals",
+      "title": "CH06 条件语句",
+      "count": 120,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 30
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 30
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "id": "CH07",
+      "dir": "CH07_For_Loops",
+      "title": "CH07 循环 (for)",
+      "count": 120,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 30
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 30
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "id": "CH08",
+      "dir": "CH08_While_Loops",
+      "title": "CH08 循环 (while)",
+      "count": 120,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 30
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 30
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "id": "CH09",
+      "dir": "CH09_Functions",
+      "title": "CH09 函数 (基础)",
+      "count": 120,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 30
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 30
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "id": "CH10",
+      "dir": "CH10_Function_Params",
+      "title": "CH10 函数 (参数)",
+      "count": 120,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 30
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 30
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "id": "CH11",
+      "dir": "CH11_Function_Returns",
+      "title": "CH11 函数 (返回值)",
+      "count": 120,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 30
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 30
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "id": "CH12",
+      "dir": "CH12_Scope",
+      "title": "CH12 作用域与变量",
+      "count": 120,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 30
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 30
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "id": "CH13",
+      "dir": "CH13_Tuples",
+      "title": "CH13 元组 (Tuples)",
+      "count": 120,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 30
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 30
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "id": "CH14",
+      "dir": "CH14_Dictionaries",
+      "title": "CH14 字典 (Dictionaries)",
+      "count": 120,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 30
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 30
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    },
+    {
+      "id": "CH15",
+      "dir": "CH15_Sets",
+      "title": "CH15 集合 (Sets)",
+      "count": 120,
+      "files": [
+        {
+          "diff": "E",
+          "file": "easy_30.json",
+          "n": 30
+        },
+        {
+          "diff": "X",
+          "file": "expert_30.json",
+          "n": 30
+        },
+        {
+          "diff": "H",
+          "file": "hard_30.json",
+          "n": 30
+        },
+        {
+          "diff": "M",
+          "file": "medium_30.json",
+          "n": 30
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,427 @@
+{
+  "chapter": "CH08",
+  "title": "循环 (while)",
+  "difficulty": "简单",
+  "questions": [
+    {
+      "id": "CH08-M-001",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 求 1 到 100 的和。",
+      "code_template": "total = 0\ni = 1\nwhile i <= 100:\n    total += i\n    i += 1\nprint(___)",
+      "expected_output": "Sum: 5050\n",
+      "hints": "填空累加。",
+      "test_cases": [
+        "assert captured_output == 'Sum: 5050\\n'"
+      ],
+      "solution": "total = 0\ni = 1\nwhile i <= 100:\n    total += i\n    i += 1\nprint(f\"Sum: {total}\")"
+    },
+    {
+      "id": "CH08-M-002",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 求 1 到 10 的平方和。",
+      "code_template": "total = 0\ni = 1\nwhile i <= 10:\n    total += i * i\n    i += 1\nprint(___)",
+      "expected_output": "Sum of squares: 385\n",
+      "hints": "填空平方累加。",
+      "test_cases": [
+        "assert captured_output == 'Sum of squares: 385\\n'"
+      ],
+      "solution": "total = 0\ni = 1\nwhile i <= 10:\n    total += i * i\n    i += 1\nprint(f\"Sum of squares: {total}\")"
+    },
+    {
+      "id": "CH08-M-003",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 实现猜数字（固定答案）。",
+      "code_template": "secret = 7\nguess = 5\nwhile guess != secret:\n    if guess < secret:\n        print(\"too low\")\n    guess += 1\nprint(\"found:\",___)",
+      "expected_output": "too low\ntoo low\nfound: 7\n",
+      "hints": "填空循环条件。",
+      "test_cases": [
+        "assert captured_output == 'too low\\ntoo low\\nfound: 7\\n'"
+      ],
+      "solution": "secret = 7\nguess = 5\nwhile guess != secret:\n    if guess < secret:\n        print(\"too low\")\n    guess += 1\nprint(\"found:\", guess)"
+    },
+    {
+      "id": "CH08-M-004",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 输出 1 到 9 的乘法表行。",
+      "code_template": "i = 1\nwhile i <= 9:\n    print(___)\n    i += 1",
+      "expected_output": "3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n",
+      "hints": "填空乘法行。",
+      "test_cases": [
+        "assert captured_output == '3 x 1 = 3\\n3 x 2 = 6\\n3 x 3 = 9\\n3 x 4 = 12\\n3 x 5 = 15\\n3 x 6 = 18\\n3 x 7 = 21\\n3 x 8 = 24\\n3 x 9 = 27\\n'"
+      ],
+      "solution": "i = 1\nwhile i <= 9:\n    print(f\"3 x {i} = {3 * i}\")\n    i += 1"
+    },
+    {
+      "id": "CH08-M-005",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 统计字符串中元音个数。",
+      "code_template": "text = \"hello\"\ni = 0\ncount = 0\nwhile i < len(text):\n    if text[i] in \"aeiou\":\n        count += 1\n    i += 1\nprint(___)",
+      "expected_output": "Vowels: 2\n",
+      "hints": "填空索引计数。",
+      "test_cases": [
+        "assert captured_output == 'Vowels: 2\\n'"
+      ],
+      "solution": "text = \"hello\"\ni = 0\ncount = 0\nwhile i < len(text):\n    if text[i] in \"aeiou\":\n        count += 1\n    i += 1\nprint(f\"Vowels: {count}\")"
+    },
+    {
+      "id": "CH08-M-006",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 求数字 1234 的反转。",
+      "code_template": "n = 1234\nrev = 0\nwhile n > 0:\n    rev = rev * 10 + n % 10\n    n //= 10\nprint(___)",
+      "expected_output": "Reversed: 4321\n",
+      "hints": "填空反转算法。",
+      "test_cases": [
+        "assert captured_output == 'Reversed: 4321\\n'"
+      ],
+      "solution": "n = 1234\nrev = 0\nwhile n > 0:\n    rev = rev * 10 + n % 10\n    n //= 10\nprint(f\"Reversed: {rev}\")"
+    },
+    {
+      "id": "CH08-M-007",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 求最大公约数（递减试探）。",
+      "code_template": "a, b = 12, 18\ng = min(a, b)\nwhile a % g != 0 or b % g != 0:\n    g -= 1\nprint(___)",
+      "expected_output": "GCD: 6\n",
+      "hints": "填空试探递减。",
+      "test_cases": [
+        "assert captured_output == 'GCD: 6\\n'"
+      ],
+      "solution": "a, b = 12, 18\ng = min(a, b)\nwhile a % g != 0 or b % g != 0:\n    g -= 1\nprint(f\"GCD: {g}\")"
+    },
+    {
+      "id": "CH08-M-008",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 生成斐波那契前 8 项。",
+      "code_template": "a, b = 0, 1\ncount = 0\nwhile count < 8:\n    print(___, end=\" \")\n    a, b = b, a + b\n    count += 1",
+      "expected_output": "0 1 1 2 3 5 8 13 ",
+      "hints": "填空递推。",
+      "test_cases": [
+        "assert captured_output == '0 1 1 2 3 5 8 13 '"
+      ],
+      "solution": "a, b = 0, 1\ncount = 0\nwhile count < 8:\n    print(a, end=\" \")\n    a, b = b, a + b\n    count += 1"
+    },
+    {
+      "id": "CH08-M-009",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 判断 17 是否为质数。",
+      "code_template": "n = 17\nis_prime = True\nd = 2\nwhile d * d <= n:\n    if n % d == 0:\n        is_prime = False\n        break\n    d += 1\nprint(___)",
+      "expected_output": "17 prime: True\n",
+      "hints": "填空试除。",
+      "test_cases": [
+        "assert captured_output == '17 prime: True\\n'"
+      ],
+      "solution": "n = 17\nis_prime = True\nd = 2\nwhile d * d <= n:\n    if n % d == 0:\n        is_prime = False\n        break\n    d += 1\nprint(f\"{n} prime: {is_prime}\")"
+    },
+    {
+      "id": "CH08-M-010",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 统计列表中大于 3 的个数。",
+      "code_template": "nums = [2, 5, 4, 1, 6]\ni = 0\ncount = 0\nwhile i < len(nums):\n    if nums[i] > 3:\n        count += 1\n    i += 1\nprint(___)",
+      "expected_output": "Count: 3\n",
+      "hints": "填空索引遍历。",
+      "test_cases": [
+        "assert captured_output == 'Count: 3\\n'"
+      ],
+      "solution": "nums = [2, 5, 4, 1, 6]\ni = 0\ncount = 0\nwhile i < len(nums):\n    if nums[i] > 3:\n        count += 1\n    i += 1\nprint(f\"Count: {count}\")"
+    },
+    {
+      "id": "CH08-M-011",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 计算平均分。",
+      "code_template": "scores = [88, 92, 76]\ntotal = 0\ni = 0\nwhile i < len(scores):\n    total += scores[i]\n    i += 1\nprint(___)",
+      "expected_output": "Average: 85.33333333333333\n",
+      "hints": "填空累加与平均。",
+      "test_cases": [
+        "assert captured_output == 'Average: 85.33333333333333\\n'"
+      ],
+      "solution": "scores = [88, 92, 76]\ntotal = 0\ni = 0\nwhile i < len(scores):\n    total += scores[i]\n    i += 1\nprint(f\"Average: {total / len(scores)}\")"
+    },
+    {
+      "id": "CH08-M-012",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 输出 1 到 20 的偶数列表。",
+      "code_template": "i = 1\nevens = []\nwhile i <= 20:\n    if i % 2 == 0:\n        evens.append(i)\n    i += 1\nprint(___)",
+      "expected_output": "[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]\n",
+      "hints": "填空筛选添加。",
+      "test_cases": [
+        "assert captured_output == '[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]\\n'"
+      ],
+      "solution": "i = 1\nevens = []\nwhile i <= 20:\n    if i % 2 == 0:\n        evens.append(i)\n    i += 1\nprint(evens)"
+    },
+    {
+      "id": "CH08-M-013",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 求 n 的阶乘。",
+      "code_template": "n = 6\nfact = 1\ni = 1\nwhile i <= n:\n    fact *= i\n    i += 1\nprint(___)",
+      "expected_output": "6! = 720\n",
+      "hints": "填空累乘。",
+      "test_cases": [
+        "assert captured_output == '6! = 720\\n'"
+      ],
+      "solution": "n = 6\nfact = 1\ni = 1\nwhile i <= n:\n    fact *= i\n    i += 1\nprint(f\"6! = {fact}\")"
+    },
+    {
+      "id": "CH08-M-014",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 求 2 的 1 到 5 次幂。",
+      "code_template": "i = 1\nwhile i <= 5:\n    print(___)\n    i += 1",
+      "expected_output": "2^1 = 2\n2^2 = 4\n2^3 = 8\n2^4 = 16\n2^5 = 32\n",
+      "hints": "填空幂表。",
+      "test_cases": [
+        "assert captured_output == '2^1 = 2\\n2^2 = 4\\n2^3 = 8\\n2^4 = 16\\n2^5 = 32\\n'"
+      ],
+      "solution": "i = 1\nwhile i <= 5:\n    print(f\"2^{i} = {2 ** i}\")\n    i += 1"
+    },
+    {
+      "id": "CH08-M-015",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 找到列表中第一个偶数。",
+      "code_template": "nums = [1, 3, 4, 5]\ni = 0\nwhile i < len(nums):\n    if nums[i] % 2 == 0:\n        print(___)\n        break\n    i += 1",
+      "expected_output": "Found: 4\n",
+      "hints": "填空查找。",
+      "test_cases": [
+        "assert captured_output == 'Found: 4\\n'"
+      ],
+      "solution": "nums = [1, 3, 4, 5]\ni = 0\nwhile i < len(nums):\n    if nums[i] % 2 == 0:\n        print(f\"Found: {nums[i]}\")\n        break\n    i += 1"
+    },
+    {
+      "id": "CH08-M-016",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 求字符串长度（不用 len）。",
+      "code_template": "s = \"hello\"\ncount = 0\nwhile count < len(s):\n    count += 1\nprint(___)",
+      "expected_output": "Length: 5\n",
+      "hints": "填空计数。",
+      "test_cases": [
+        "assert captured_output == 'Length: 5\\n'"
+      ],
+      "solution": "s = \"hello\"\ncount = 0\nwhile count < len(s):\n    count += 1\nprint(f\"Length: {count}\")"
+    },
+    {
+      "id": "CH08-M-017",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 判断回文数。",
+      "code_template": "n = 121\ntemp = n\nrev = 0\nwhile temp > 0:\n    rev = rev * 10 + temp % 10\n    temp //= 10\nif rev == n:\n    print(\"palindrome\")\nelse:\n    print(___)",
+      "expected_output": "palindrome\n",
+      "hints": "填空反转比较。",
+      "test_cases": [
+        "assert captured_output == 'palindrome\\n'"
+      ],
+      "solution": "n = 121\ntemp = n\nrev = 0\nwhile temp > 0:\n    rev = rev * 10 + temp % 10\n    temp //= 10\nif rev == n:\n    print(\"palindrome\")\nelse:\n    print(\"not palindrome\")"
+    },
+    {
+      "id": "CH08-M-018",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 输出乘法表。",
+      "code_template": "i = 1\nwhile i <= 3:\n    j = 1\n    while j <= 3:\n        print(i * j, end=\" \")\n        j += 1\n    print(___)\n    i += 1",
+      "expected_output": "1 2 3 \n2 4 6 \n3 6 9 \n",
+      "hints": "填空嵌套 while。",
+      "test_cases": [
+        "assert captured_output == '1 2 3 \\n2 4 6 \\n3 6 9 \\n'"
+      ],
+      "solution": "i = 1\nwhile i <= 3:\n    j = 1\n    while j <= 3:\n        print(i * j, end=\" \")\n        j += 1\n    print()\n    i += 1"
+    },
+    {
+      "id": "CH08-M-019",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 累加直到和大于 20。",
+      "code_template": "total = 0\ni = 1\nwhile total <= 20:\n    total += i\n    i += 1\nprint(___)",
+      "expected_output": "Total: 21\n",
+      "hints": "填空累加条件。",
+      "test_cases": [
+        "assert captured_output == 'Total: 21\\n'"
+      ],
+      "solution": "total = 0\ni = 1\nwhile total <= 20:\n    total += i\n    i += 1\nprint(f\"Total: {total}\")"
+    },
+    {
+      "id": "CH08-M-020",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 求 1 到 50 的奇数之和。",
+      "code_template": "total = 0\ni = 1\nwhile i <= 50:\n    if i % 2 == 1:\n        total += i\n    i += 1\nprint(___)",
+      "expected_output": "Odd sum: 625\n",
+      "hints": "填空奇数累加。",
+      "test_cases": [
+        "assert captured_output == 'Odd sum: 625\\n'"
+      ],
+      "solution": "total = 0\ni = 1\nwhile i <= 50:\n    if i % 2 == 1:\n        total += i\n    i += 1\nprint(f\"Odd sum: {total}\")"
+    },
+    {
+      "id": "CH08-M-021",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 逐字符反转字符串。",
+      "code_template": "s = \"abc\"\nreversed_s = \"\"\ni = len(s) - 1\nwhile i >= 0:\n    reversed_s += s[i]\n    i -= 1\nprint(___)",
+      "expected_output": "cba\n",
+      "hints": "填空倒序拼接。",
+      "test_cases": [
+        "assert captured_output == 'cba\\n'"
+      ],
+      "solution": "s = \"abc\"\nreversed_s = \"\"\ni = len(s) - 1\nwhile i >= 0:\n    reversed_s += s[i]\n    i -= 1\nprint(reversed_s)"
+    },
+    {
+      "id": "CH08-M-022",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 求列表最大值。",
+      "code_template": "nums = [3, 9, 5, 7]\nmaximum = nums[0]\ni = 1\nwhile i < len(nums):\n    if nums[i] > maximum:\n        maximum = nums[i]\n    i += 1\nprint(___)",
+      "expected_output": "Max: 9\n",
+      "hints": "填空比较更新。",
+      "test_cases": [
+        "assert captured_output == 'Max: 9\\n'"
+      ],
+      "solution": "nums = [3, 9, 5, 7]\nmaximum = nums[0]\ni = 1\nwhile i < len(nums):\n    if nums[i] > maximum:\n        maximum = nums[i]\n    i += 1\nprint(f\"Max: {maximum}\")"
+    },
+    {
+      "id": "CH08-M-023",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 统计单词个数。",
+      "code_template": "text = \"hello world python\"\nwords = text.split()\ni = 0\ncount = 0\nwhile i < len(words):\n    count += 1\n    i += 1\nprint(___)",
+      "expected_output": "Words: 3\n",
+      "hints": "填空遍历计数。",
+      "test_cases": [
+        "assert captured_output == 'Words: 3\\n'"
+      ],
+      "solution": "text = \"hello world python\"\nwords = text.split()\ni = 0\ncount = 0\nwhile i < len(words):\n    count += 1\n    i += 1\nprint(f\"Words: {count}\")"
+    },
+    {
+      "id": "CH08-M-024",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 求数字各位乘积。",
+      "code_template": "n = 234\ndigits = [int(d) for d in str(n)]\nproduct = 1\ni = 0\nwhile i < len(digits):\n    product *= digits[i]\n    i += 1\nprint(___)",
+      "expected_output": "Product: 24\n",
+      "hints": "填空累乘。",
+      "test_cases": [
+        "assert captured_output == 'Product: 24\\n'"
+      ],
+      "solution": "n = 234\ndigits = [int(d) for d in str(n)]\nproduct = 1\ni = 0\nwhile i < len(digits):\n    product *= digits[i]\n    i += 1\nprint(f\"Product: {product}\")"
+    },
+    {
+      "id": "CH08-M-025",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 输出右对齐三角形。",
+      "code_template": "i = 1\nwhile i <= 4:\n    print(___)\n    i += 1",
+      "expected_output": "   *\n  **\n ***\n****\n",
+      "hints": "填空对齐。",
+      "test_cases": [
+        "assert captured_output == '   *\\n  **\\n ***\\n****\\n'"
+      ],
+      "solution": "i = 1\nwhile i <= 4:\n    print(\" \" * (4 - i) + \"*\" * i)\n    i += 1"
+    },
+    {
+      "id": "CH08-M-026",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 模拟 7 的倍数表。",
+      "code_template": "i = 7\nwhile i <= 35:\n    print(___)\n    i += 7",
+      "expected_output": "7\n14\n21\n28\n35\n",
+      "hints": "填空步长 7。",
+      "test_cases": [
+        "assert captured_output == '7\\n14\\n21\\n28\\n35\\n'"
+      ],
+      "solution": "i = 7\nwhile i <= 35:\n    print(i)\n    i += 7"
+    },
+    {
+      "id": "CH08-M-027",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 求两个数的最大公约数（辗转相除）。",
+      "code_template": "a, b = 48, 36\nwhile b:\n    a, b = b, a % b\nprint(___)",
+      "expected_output": "GCD: 12\n",
+      "hints": "填空辗转相除。",
+      "test_cases": [
+        "assert captured_output == 'GCD: 12\\n'"
+      ],
+      "solution": "a, b = 48, 36\nwhile b:\n    a, b = b, a % b\nprint(f\"GCD: {a}\")"
+    },
+    {
+      "id": "CH08-M-028",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 输出数字三角形。",
+      "code_template": "i = 1\nwhile i <= 4:\n    print(___)\n    i += 1",
+      "expected_output": "1\n22\n333\n4444\n",
+      "hints": "填空重复。",
+      "test_cases": [
+        "assert captured_output == '1\\n22\\n333\\n4444\\n'"
+      ],
+      "solution": "i = 1\nwhile i <= 4:\n    print(str(i) * i)\n    i += 1"
+    },
+    {
+      "id": "CH08-M-029",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 判断完全平方数。",
+      "code_template": "n = 81\nroot = 1\nwhile root * root < n:\n    root += 1\nif root * root == n:\n    print(\"perfect square\")\nelse:\n    print(___)",
+      "expected_output": "perfect square\n",
+      "hints": "填空递增试探。",
+      "test_cases": [
+        "assert captured_output == 'perfect square\\n'"
+      ],
+      "solution": "n = 81\nroot = 1\nwhile root * root < n:\n    root += 1\nif root * root == n:\n    print(\"perfect square\")\nelse:\n    print(\"not\")"
+    },
+    {
+      "id": "CH08-M-030",
+      "topic": "循环 (while)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 while 综合：求 1 到 10 偶数个数与和。",
+      "code_template": "i = 1\ncount = 0\ntotal = 0\nwhile i <= 10:\n    if i % 2 == 0:\n        count += 1\n        total += i\n    i += 1\nprint(___)",
+      "expected_output": "Evens: 5, Sum: 30\n",
+      "hints": "填空双统计。",
+      "test_cases": [
+        "assert captured_output == 'Evens: 5, Sum: 30\\n'"
+      ],
+      "solution": "i = 1\ncount = 0\ntotal = 0\nwhile i <= 10:\n    if i % 2 == 0:\n        count += 1\n        total += i\n    i += 1\nprint(f\"Evens: {count}, Sum: {total}\")"
+    }
+  ]
+}

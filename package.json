@@ -1,8 +1,8 @@
 {
   "name": "pyquest",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "private": true,
-  "description": "PyQuest — 互动式 Python 练习平台（闯关式题库）",
+  "description": "PyQuest — 互动式 Python 练习平台（闯关式题库 + 在线刷题）",
   "scripts": {
     "gen:ch01": "python generator/gen_ch01_easy.py && python generator/gen_ch01_rest.py && python generator/gen_ch01_hard.py && python generator/gen_ch01_expert.py",
     "gen:ch02": "python generator/gen_ch02_easy.py && python generator/gen_ch02_medium.py && python generator/gen_ch02_hard.py && python generator/gen_ch02_expert.py",
@@ -19,7 +19,9 @@
     "gen:ch13": "python generator/gen_ch13.py",
     "gen:ch14": "python generator/gen_ch14.py",
     "gen:ch15": "python generator/gen_ch15.py",
-    "validate": "python generator/validate.py"
+    "validate": "python generator/validate.py",
+    "sync:site": "python generator/sync_site.py",
+    "serve": "python -m http.server 8000 -d docs"
   },
   "license": "MIT"
 }

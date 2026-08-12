@@ -1,0 +1,427 @@
+{
+  "chapter": "CH14",
+  "title": "字典 (Dictionaries)",
+  "difficulty": "超简单",
+  "questions": [
+    {
+      "id": "CH14-E-001",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "创建字典并输出。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\nprint(___)",
+      "expected_output": "{'a': 1, 'b': 2}\n",
+      "hints": "print 内填 d。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 1, 'b': 2}\\n\""
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\nprint(d)"
+    },
+    {
+      "id": "CH14-E-002",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "按键访问字典值。",
+      "code_template": "d = {\"name\": \"Alice\"}\nprint(d[___])",
+      "expected_output": "Alice\n",
+      "hints": "键填 \"name\"。",
+      "test_cases": [
+        "assert captured_output == 'Alice\\n'"
+      ],
+      "solution": "d = {\"name\": \"Alice\"}\nprint(d[\"name\"])"
+    },
+    {
+      "id": "CH14-E-003",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 get() 访问字典值。",
+      "code_template": "d = {\"x\": 10}\nprint(d.get(___))",
+      "expected_output": "10\n",
+      "hints": "填 \"x\"。",
+      "test_cases": [
+        "assert captured_output == '10\\n'"
+      ],
+      "solution": "d = {\"x\": 10}\nprint(d.get(\"x\"))"
+    },
+    {
+      "id": "CH14-E-004",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "添加新键值对。",
+      "code_template": "d = {\"a\": 1}\nd[___] = 2\nprint(d)",
+      "expected_output": "{'a': 1, 'c': 2}\n",
+      "hints": "新键填 \"b\"。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 1, 'c': 2}\\n\""
+      ],
+      "solution": "d = {\"a\": 1}\nd[\"c\"] = 2\nprint(d)"
+    },
+    {
+      "id": "CH14-E-005",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "修改字典值。",
+      "code_template": "d = {\"a\": 1}\nd[___] = 100\nprint(d)",
+      "expected_output": "{'a': 100}\n",
+      "hints": "修改键填 \"a\"。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 100}\\n\""
+      ],
+      "solution": "d = {\"a\": 1}\nd[\"a\"] = 100\nprint(d)"
+    },
+    {
+      "id": "CH14-E-006",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "删除字典键。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\ndel d[___]\nprint(d)",
+      "expected_output": "{'b': 2}\n",
+      "hints": "删除键填 \"a\"。",
+      "test_cases": [
+        "assert captured_output == \"{'b': 2}\\n\""
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\ndel d[\"a\"]\nprint(d)"
+    },
+    {
+      "id": "CH14-E-007",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 len() 求字典长度。",
+      "code_template": "d = {\"a\": 1, \"b\": 2, \"c\": 3}\nprint(len(___))",
+      "expected_output": "3\n",
+      "hints": "len 内填 d。",
+      "test_cases": [
+        "assert captured_output == '3\\n'"
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2, \"c\": 3}\nprint(len(d))"
+    },
+    {
+      "id": "CH14-E-008",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "输出字典所有键。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\nprint(list(d.___()))",
+      "expected_output": "['a', 'b']\n",
+      "hints": "方法名填 keys。",
+      "test_cases": [
+        "assert captured_output == \"['a', 'b']\\n\""
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\nprint(list(d.keys()))"
+    },
+    {
+      "id": "CH14-E-009",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "输出字典所有值。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\nprint(list(d.___()))",
+      "expected_output": "[1, 2]\n",
+      "hints": "方法名填 values。",
+      "test_cases": [
+        "assert captured_output == '[1, 2]\\n'"
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\nprint(list(d.values()))"
+    },
+    {
+      "id": "CH14-E-010",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "输出字典键值对。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\nprint(list(d.___()))",
+      "expected_output": "[('a', 1), ('b', 2)]\n",
+      "hints": "方法名填 items。",
+      "test_cases": [
+        "assert captured_output == \"[('a', 1), ('b', 2)]\\n\""
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\nprint(list(d.items()))"
+    },
+    {
+      "id": "CH14-E-011",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 in 判断键是否存在。",
+      "code_template": "d = {\"a\": 1}\nprint(\"a\" in ___)",
+      "expected_output": "True\n",
+      "hints": "填 d。",
+      "test_cases": [
+        "assert captured_output == 'True\\n'"
+      ],
+      "solution": "d = {\"a\": 1}\nprint(\"a\" in d)"
+    },
+    {
+      "id": "CH14-E-012",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "遍历字典键。",
+      "code_template": "for k in {\"x\": 1, \"y\": 2}:\n    print(___)\n",
+      "expected_output": "x\ny\n",
+      "hints": "输出变量 k。",
+      "test_cases": [
+        "assert captured_output == 'x\\ny\\n'"
+      ],
+      "solution": "for k in {\"x\": 1, \"y\": 2}:\n    print(k)"
+    },
+    {
+      "id": "CH14-E-013",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "遍历字典值。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\nfor v in d.___():\n    print(v)",
+      "expected_output": "1\n2\n",
+      "hints": "方法名填 values。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n'"
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\nfor v in d.values():\n    print(v)"
+    },
+    {
+      "id": "CH14-E-014",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "遍历键值对。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\nfor k, v in d.___():\n    print(k, v)",
+      "expected_output": "a 1\nb 2\n",
+      "hints": "方法名填 items。",
+      "test_cases": [
+        "assert captured_output == 'a 1\\nb 2\\n'"
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\nfor k, v in d.items():\n    print(k, v)"
+    },
+    {
+      "id": "CH14-E-015",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 pop() 删除并返回。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\nprint(d.pop(___))\nprint(d)",
+      "expected_output": "1\n{'b': 2}\n",
+      "hints": "删除键填 \"a\"。",
+      "test_cases": [
+        "assert captured_output == \"1\\n{'b': 2}\\n\""
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\nprint(d.pop(\"a\"))\nprint(d)"
+    },
+    {
+      "id": "CH14-E-016",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "创建空字典。",
+      "code_template": "d = {}\nprint(len(___))",
+      "expected_output": "0\n",
+      "hints": "len 内填 d。",
+      "test_cases": [
+        "assert captured_output == '0\\n'"
+      ],
+      "solution": "d = {}\nprint(len(d))"
+    },
+    {
+      "id": "CH14-E-017",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "字典值参与运算。",
+      "code_template": "d = {\"a\": 3, \"b\": 4}\nprint(d[___] + d[___])",
+      "expected_output": "7\n",
+      "hints": "依次填 \"a\"、\"b\"。",
+      "test_cases": [
+        "assert captured_output == '7\\n'"
+      ],
+      "solution": "d = {\"a\": 3, \"b\": 4}\nprint(d[\"a\"] + d[\"b\"])"
+    },
+    {
+      "id": "CH14-E-018",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "get() 带默认值。",
+      "code_template": "d = {\"a\": 1}\nprint(___)",
+      "expected_output": "5\n",
+      "hints": "填空默认值。",
+      "test_cases": [
+        "assert captured_output == '5\\n'"
+      ],
+      "solution": "d = {\"a\": 1}\nprint(d.get(\"b\", 5))"
+    },
+    {
+      "id": "CH14-E-019",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "update() 更新字典。",
+      "code_template": "d = {\"a\": 1}\nd.update({\"b\": 5})\nprint(___)",
+      "expected_output": "{'a': 1, 'b': 5}\n",
+      "hints": "填空 update。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 1, 'b': 5}\\n\""
+      ],
+      "solution": "d = {\"a\": 1}\nd.update({\"b\": 5})\nprint(d)"
+    },
+    {
+      "id": "CH14-E-020",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "字典 setdefault。",
+      "code_template": "d = {\"a\": 1}\nd.setdefault(\"c\", 3)\nprint(___)",
+      "expected_output": "{'a': 1, 'c': 3}\n",
+      "hints": "填空 setdefault。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 1, 'c': 3}\\n\""
+      ],
+      "solution": "d = {\"a\": 1}\nd.setdefault(\"c\", 3)\nprint(d)"
+    },
+    {
+      "id": "CH14-E-021",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "布尔值作字典值。",
+      "code_template": "d = {\"ok\": False}\nprint(d[___])",
+      "expected_output": "False\n",
+      "hints": "键填 \"ok\"。",
+      "test_cases": [
+        "assert captured_output == 'False\\n'"
+      ],
+      "solution": "d = {\"ok\": False}\nprint(d[\"ok\"])"
+    },
+    {
+      "id": "CH14-E-022",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "字符串字典值拼接。",
+      "code_template": "d = {\"greet\": \"Hello\"}\nprint(d[___] + \"!\")",
+      "expected_output": "Hello!\n",
+      "hints": "键填 \"greet\"。",
+      "test_cases": [
+        "assert captured_output == 'Hello!\\n'"
+      ],
+      "solution": "d = {\"greet\": \"Hello\"}\nprint(d[\"greet\"] + \"!\")"
+    },
+    {
+      "id": "CH14-E-023",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "整数键的字典。",
+      "code_template": "d = {1: \"one\", 2: \"two\"}\nprint(d[___])",
+      "expected_output": "one\n",
+      "hints": "键填 1。",
+      "test_cases": [
+        "assert captured_output == 'one\\n'"
+      ],
+      "solution": "d = {1: \"one\", 2: \"two\"}\nprint(d[1])"
+    },
+    {
+      "id": "CH14-E-024",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "字典 keys 判断。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\nprint(\"b\" in d.___())",
+      "expected_output": "True False\n",
+      "hints": "方法名填 keys。",
+      "test_cases": [
+        "assert captured_output == 'True False\\n'"
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\nprint(\"a\" in d.keys(), \"c\" in d.keys())"
+    },
+    {
+      "id": "CH14-E-025",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "嵌套字典访问。",
+      "code_template": "d = {\"user\": {\"name\": \"Bob\"}}\nprint(d[\"user\"][___])",
+      "expected_output": "Bob\n",
+      "hints": "内层键填 \"name\"。",
+      "test_cases": [
+        "assert captured_output == 'Bob\\n'"
+      ],
+      "solution": "d = {\"user\": {\"name\": \"Bob\"}}\nprint(d[\"user\"][\"name\"])"
+    },
+    {
+      "id": "CH14-E-026",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "字典解包（**）。",
+      "code_template": "d = {\"a\": 1}\nprint(___)",
+      "expected_output": "{'a': 1, 'b': 9}\n",
+      "hints": "填空解包。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 1, 'b': 9}\\n\""
+      ],
+      "solution": "d = {\"a\": 1}\nprint({**d, \"b\": 9})"
+    },
+    {
+      "id": "CH14-E-027",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "字典值统计（sum）。",
+      "code_template": "d = {\"a\": 10, \"b\": 20}\nprint(sum(d.___()))",
+      "expected_output": "30\n",
+      "hints": "方法名填 values。",
+      "test_cases": [
+        "assert captured_output == '30\\n'"
+      ],
+      "solution": "d = {\"a\": 10, \"b\": 20}\nprint(sum(d.values()))"
+    },
+    {
+      "id": "CH14-E-028",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "字典最大值。",
+      "code_template": "d = {\"a\": 5, \"b\": 9}\nprint(max(d.___()))",
+      "expected_output": "9\n",
+      "hints": "方法名填 values。",
+      "test_cases": [
+        "assert captured_output == '9\\n'"
+      ],
+      "solution": "d = {\"a\": 5, \"b\": 9}\nprint(max(d.values()))"
+    },
+    {
+      "id": "CH14-E-029",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "字典清空。",
+      "code_template": "d = {\"a\": 1}\nd.clear()\nprint(___)",
+      "expected_output": "{}\n",
+      "hints": "填空 clear。",
+      "test_cases": [
+        "assert captured_output == '{}\\n'"
+      ],
+      "solution": "d = {\"a\": 1}\nd.clear()\nprint(d)"
+    },
+    {
+      "id": "CH14-E-030",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "综合：创建与访问。",
+      "code_template": "d = {\"name\": \"Ada\", \"age\": 36}\nprint(d[___], d[___])",
+      "expected_output": "Ada 36\n",
+      "hints": "依次填 \"name\"、\"age\"。",
+      "test_cases": [
+        "assert captured_output == 'Ada 36\\n'"
+      ],
+      "solution": "d = {\"name\": \"Ada\", \"age\": 36}\nprint(d[\"name\"], d[\"age\"])"
+    }
+  ]
+}

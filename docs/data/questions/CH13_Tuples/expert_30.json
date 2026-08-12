@@ -1,0 +1,427 @@
+{
+  "chapter": "CH13",
+  "title": "元组 (Tuples)",
+  "difficulty": "较难",
+  "questions": [
+    {
+      "id": "CH13-X-001",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现向量加法。",
+      "code_template": "def add_vectors(v1, v2):\n    return tuple(a + b for a, b in zip(v1, v2))\n\nprint(___)",
+      "expected_output": "(4, 6)\n",
+      "hints": "填空向量加法。",
+      "test_cases": [
+        "assert captured_output == '(4, 6)\\n'"
+      ],
+      "solution": "def add_vectors(v1, v2):\n    return tuple(a + b for a, b in zip(v1, v2))\n\nprint(add_vectors((1, 2), (3, 4)))"
+    },
+    {
+      "id": "CH13-X-002",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现点积。",
+      "code_template": "def dot(v1, v2):\n    return sum(a * b for a, b in zip(v1, v2))\n\nprint(___)",
+      "expected_output": "Dot: 32\n",
+      "hints": "填空点积。",
+      "test_cases": [
+        "assert captured_output == 'Dot: 32\\n'"
+      ],
+      "solution": "def dot(v1, v2):\n    return sum(a * b for a, b in zip(v1, v2))\n\nprint(f\"Dot: {dot((1, 2, 3), (4, 5, 6))}\")"
+    },
+    {
+      "id": "CH13-X-003",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现坐标旋转。",
+      "code_template": "def rotate90(p):\n    x, y = p\n    return (-y, x)\n\np = (1, 0)\nfor _ in range(3):\n    p = rotate90(p)\nprint(___)",
+      "expected_output": "(0, -1)\n",
+      "hints": "填空坐标旋转。",
+      "test_cases": [
+        "assert captured_output == '(0, -1)\\n'"
+      ],
+      "solution": "def rotate90(p):\n    x, y = p\n    return (-y, x)\n\np = (1, 0)\nfor _ in range(3):\n    p = rotate90(p)\nprint(p)"
+    },
+    {
+      "id": "CH13-X-004",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现分数表示。",
+      "code_template": "def simplify(f):\n    num, den = f\n    a, b = num, den\n    while b:\n        a, b = b, a % b\n    return (num // a, den // a)\n\nprint('Simplified:',___)",
+      "expected_output": "Simplified: (2, 3)\n",
+      "hints": "填空分数化简。",
+      "test_cases": [
+        "assert captured_output == 'Simplified: (2, 3)\\n'"
+      ],
+      "solution": "def simplify(f):\n    num, den = f\n    a, b = num, den\n    while b:\n        a, b = b, a % b\n    return (num // a, den // a)\n\nprint('Simplified:', simplify((12, 18)))"
+    },
+    {
+      "id": "CH13-X-005",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现日期比较。",
+      "code_template": "def compare(d1, d2):\n    if d1 > d2:\n        return \"later\"\n    elif d1 < d2:\n        return \"earlier\"\n    return \"same\"\n\nprint(___)",
+      "expected_output": "earlier\n",
+      "hints": "填空日期比较。",
+      "test_cases": [
+        "assert captured_output == 'earlier\\n'"
+      ],
+      "solution": "def compare(d1, d2):\n    if d1 > d2:\n        return \"later\"\n    elif d1 < d2:\n        return \"earlier\"\n    return \"same\"\n\nprint(compare((2026, 8, 12), (2026, 9, 1)))"
+    },
+    {
+      "id": "CH13-X-006",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现多项式表示。",
+      "code_template": "def poly_value(coeffs, x):\n    result = 0\n    for c in coeffs:\n        result = result * x + c\n    return result\n\nprint(___)",
+      "expected_output": "Value: 11\n",
+      "hints": "填空多项式求值。",
+      "test_cases": [
+        "assert captured_output == 'Value: 11\\n'"
+      ],
+      "solution": "def poly_value(coeffs, x):\n    result = 0\n    for c in coeffs:\n        result = result * x + c\n    return result\n\nprint(f\"Value: {poly_value((1, 2, 3), 2)}\")"
+    },
+    {
+      "id": "CH13-X-007",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现 LRU 键记录。",
+      "code_template": "def add_pair(pairs, key, value):\n    return pairs + ((key, value),)\n\npairs = ()\npairs = add_pair(pairs, \"a\", 1)\npairs = add_pair(pairs, \"b\", 2)\nprint(___)",
+      "expected_output": "(('a', 1), ('b', 2))\n",
+      "hints": "填空元组追加。",
+      "test_cases": [
+        "assert captured_output == \"(('a', 1), ('b', 2))\\n\""
+      ],
+      "solution": "def add_pair(pairs, key, value):\n    return pairs + ((key, value),)\n\npairs = ()\npairs = add_pair(pairs, \"a\", 1)\npairs = add_pair(pairs, \"b\", 2)\nprint(pairs)"
+    },
+    {
+      "id": "CH13-X-008",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现曼哈顿距离。",
+      "code_template": "def manhattan(p1, p2):\n    return abs(p1[0] - p2[0]) + abs(p1[1] - p2[1])\n\nprint(___)",
+      "expected_output": "Distance: 7\n",
+      "hints": "填空曼哈顿距离。",
+      "test_cases": [
+        "assert captured_output == 'Distance: 7\\n'"
+      ],
+      "solution": "def manhattan(p1, p2):\n    return abs(p1[0] - p2[0]) + abs(p1[1] - p2[1])\n\nprint(f\"Distance: {manhattan((1, 1), (4, 5))}\")"
+    },
+    {
+      "id": "CH13-X-009",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现二进制转十进制。",
+      "code_template": "def bin_tuple_to_dec(bits):\n    result = 0\n    for bit in bits:\n        result = result * 2 + bit\n    return result\n\nprint('Decimal:',___)",
+      "expected_output": "Decimal: 5\n",
+      "hints": "填空二进制转换。",
+      "test_cases": [
+        "assert captured_output == 'Decimal: 5\\n'"
+      ],
+      "solution": "def bin_tuple_to_dec(bits):\n    result = 0\n    for bit in bits:\n        result = result * 2 + bit\n    return result\n\nprint('Decimal:', bin_tuple_to_dec((1, 0, 1)))"
+    },
+    {
+      "id": "CH13-X-010",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现分组。",
+      "code_template": "def chunk_tuple(t, size):\n    return tuple(t[i:i + size] for i in range(0, len(t), size))\n\nprint(___)",
+      "expected_output": "((1, 2), (3, 4), (5,))\n",
+      "hints": "填空分块。",
+      "test_cases": [
+        "assert captured_output == '((1, 2), (3, 4), (5,))\\n'"
+      ],
+      "solution": "def chunk_tuple(t, size):\n    return tuple(t[i:i + size] for i in range(0, len(t), size))\n\nprint(chunk_tuple((1, 2, 3, 4, 5), 2))"
+    },
+    {
+      "id": "CH13-X-011",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现滑动窗口和。",
+      "code_template": "def window_sums(t, k):\n    return tuple(sum(t[i:i + k]) for i in range(len(t) - k + 1))\n\nprint(___)",
+      "expected_output": "(3, 5, 7)\n",
+      "hints": "填空窗口和。",
+      "test_cases": [
+        "assert captured_output == '(3, 5, 7)\\n'"
+      ],
+      "solution": "def window_sums(t, k):\n    return tuple(sum(t[i:i + k]) for i in range(len(t) - k + 1))\n\nprint(window_sums((1, 2, 3, 4), 2))"
+    },
+    {
+      "id": "CH13-X-012",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现排列对生成。",
+      "code_template": "def all_pairs(t):\n    return tuple((a, b) for i, a in enumerate(t) for b in t[i + 1:])\n\nprint(___)",
+      "expected_output": "((1, 2), (1, 3), (2, 3))\n",
+      "hints": "填空排列对。",
+      "test_cases": [
+        "assert captured_output == '((1, 2), (1, 3), (2, 3))\\n'"
+      ],
+      "solution": "def all_pairs(t):\n    return tuple((a, b) for i, a in enumerate(t) for b in t[i + 1:])\n\nprint(all_pairs((1, 2, 3)))"
+    },
+    {
+      "id": "CH13-X-013",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现字典键集合。",
+      "code_template": "def tuple_keys(d):\n    return tuple(sorted(d.keys()))\n\nprint(___)",
+      "expected_output": "((1, 2), (3, 4))\n",
+      "hints": "填空元组键。",
+      "test_cases": [
+        "assert captured_output == '((1, 2), (3, 4))\\n'"
+      ],
+      "solution": "def tuple_keys(d):\n    return tuple(sorted(d.keys()))\n\nprint(tuple_keys({(1, 2): \"a\", (3, 4): \"b\"}))"
+    },
+    {
+      "id": "CH13-X-014",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现矩阵行和。",
+      "code_template": "def row_sums(m):\n    return tuple(sum(row) for row in m)\n\nprint(___)",
+      "expected_output": "(3, 7, 11)\n",
+      "hints": "填空行和。",
+      "test_cases": [
+        "assert captured_output == '(3, 7, 11)\\n'"
+      ],
+      "solution": "def row_sums(m):\n    return tuple(sum(row) for row in m)\n\nprint(row_sums(((1, 2), (3, 4), (5, 6))))"
+    },
+    {
+      "id": "CH13-X-015",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现坐标最近点。",
+      "code_template": "def closest_point(points, target):\n    def dist(p):\n        return (p[0] - target[0]) ** 2 + (p[1] - target[1]) ** 2\n    return min(points, key=dist)\n\nprint(___)",
+      "expected_output": "(1, 1)\n",
+      "hints": "填空最近点。",
+      "test_cases": [
+        "assert captured_output == '(1, 1)\\n'"
+      ],
+      "solution": "def closest_point(points, target):\n    def dist(p):\n        return (p[0] - target[0]) ** 2 + (p[1] - target[1]) ** 2\n    return min(points, key=dist)\n\nprint(closest_point(((1, 1), (4, 5), (2, 2)), (0, 0)))"
+    },
+    {
+      "id": "CH13-X-016",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现数字位数拆分。",
+      "code_template": "def split_digits(n):\n    return tuple(int(d) for d in str(n))\n\nprint(___)",
+      "expected_output": "(1, 2, 3, 4, 5, 6)\n",
+      "hints": "填空位数拆分。",
+      "test_cases": [
+        "assert captured_output == '(1, 2, 3, 4, 5, 6)\\n'"
+      ],
+      "solution": "def split_digits(n):\n    return tuple(int(d) for d in str(n))\n\nprint(split_digits(123456))"
+    },
+    {
+      "id": "CH13-X-017",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现合并去重。",
+      "code_template": "def merge_tuple(t1, t2):\n    return tuple(sorted(set(t1 + t2)))\n\nprint(___)",
+      "expected_output": "(1, 2, 3, 5, 6, 7)\n",
+      "hints": "填空合并去重。",
+      "test_cases": [
+        "assert captured_output == '(1, 2, 3, 5, 6, 7)\\n'"
+      ],
+      "solution": "def merge_tuple(t1, t2):\n    return tuple(sorted(set(t1 + t2)))\n\nprint(merge_tuple((1, 2, 3), (5, 6, 7)))"
+    },
+    {
+      "id": "CH13-X-018",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现最大值索引。",
+      "code_template": "def max_index(t):\n    return t.index(max(t))\n\nprint('Index:',___)",
+      "expected_output": "Index: 1\n",
+      "hints": "填空最大索引。",
+      "test_cases": [
+        "assert captured_output == 'Index: 1\\n'"
+      ],
+      "solution": "def max_index(t):\n    return t.index(max(t))\n\nprint('Index:', max_index((4, 9, 2, 7)))"
+    },
+    {
+      "id": "CH13-X-019",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现分数加法。",
+      "code_template": "def add_fractions(f1, f2):\n    n1, d1 = f1\n    n2, d2 = f2\n    return (n1 * d2 + n2 * d1, d1 * d2)\n\nprint(___)",
+      "expected_output": "(5, 6)\n",
+      "hints": "填空分数加法。",
+      "test_cases": [
+        "assert captured_output == '(5, 6)\\n'"
+      ],
+      "solution": "def add_fractions(f1, f2):\n    n1, d1 = f1\n    n2, d2 = f2\n    return (n1 * d2 + n2 * d1, d1 * d2)\n\nprint(add_fractions((1, 2), (1, 3)))"
+    },
+    {
+      "id": "CH13-X-020",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现回文元组。",
+      "code_template": "def is_pal_tuple(t):\n    return t == t[::-1]\n\nprint(___, is_pal_tuple((1, 2, 3)))",
+      "expected_output": "True False\n",
+      "hints": "填空回文元组。",
+      "test_cases": [
+        "assert captured_output == 'True False\\n'"
+      ],
+      "solution": "def is_pal_tuple(t):\n    return t == t[::-1]\n\nprint(is_pal_tuple((1, 2, 2, 1)), is_pal_tuple((1, 2, 3)))"
+    },
+    {
+      "id": "CH13-X-021",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现累计和。",
+      "code_template": "def cumulative(t):\n    result = []\n    total = 0\n    for n in t:\n        total += n\n        result.append(total)\n    return tuple(result)\n\nprint(___)",
+      "expected_output": "(1, 3, 6, 10)\n",
+      "hints": "填空累计和。",
+      "test_cases": [
+        "assert captured_output == '(1, 3, 6, 10)\\n'"
+      ],
+      "solution": "def cumulative(t):\n    result = []\n    total = 0\n    for n in t:\n        total += n\n        result.append(total)\n    return tuple(result)\n\nprint(cumulative((1, 2, 3, 4)))"
+    },
+    {
+      "id": "CH13-X-022",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现交集。",
+      "code_template": "def tuple_intersect(t1, t2):\n    return tuple(sorted(set(t1) & set(t2)))\n\nprint('Intersection:',___)",
+      "expected_output": "Intersection: (2, 3)\n",
+      "hints": "填空交集。",
+      "test_cases": [
+        "assert captured_output == 'Intersection: (2, 3)\\n'"
+      ],
+      "solution": "def tuple_intersect(t1, t2):\n    return tuple(sorted(set(t1) & set(t2)))\n\nprint('Intersection:', tuple_intersect((1, 2, 3), (2, 3, 4)))"
+    },
+    {
+      "id": "CH13-X-023",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现两两乘积。",
+      "code_template": "def pair_products(t):\n    return tuple(a * b for a, b in zip(t, t[1:]))\n\nprint(___)",
+      "expected_output": "(6, 12, 20)\n",
+      "hints": "填空两两乘积。",
+      "test_cases": [
+        "assert captured_output == '(6, 12, 20)\\n'"
+      ],
+      "solution": "def pair_products(t):\n    return tuple(a * b for a, b in zip(t, t[1:]))\n\nprint(pair_products((2, 3, 4, 5)))"
+    },
+    {
+      "id": "CH13-X-024",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现索引映射。",
+      "code_template": "def indexed(t):\n    return tuple((i, v) for i, v in enumerate(t))\n\nprint(___)",
+      "expected_output": "((0, 'a'), (1, 'b'))\n",
+      "hints": "填空索引映射。",
+      "test_cases": [
+        "assert captured_output == \"((0, 'a'), (1, 'b'))\\n\""
+      ],
+      "solution": "def indexed(t):\n    return tuple((i, v) for i, v in enumerate(t))\n\nprint(indexed((\"a\", \"b\")))"
+    },
+    {
+      "id": "CH13-X-025",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现可哈希集合操作。",
+      "code_template": "def add_point(points, p):\n    return tuple(sorted(set(points) | {p}))\n\npoints = ((1, 1), (2, 2))\npoints = add_point(points, (3, 3))\nprint(___)",
+      "expected_output": "((1, 1), (2, 2), (3, 3))\n",
+      "hints": "填空集合操作。",
+      "test_cases": [
+        "assert captured_output == '((1, 1), (2, 2), (3, 3))\\n'"
+      ],
+      "solution": "def add_point(points, p):\n    return tuple(sorted(set(points) | {p}))\n\npoints = ((1, 1), (2, 2))\npoints = add_point(points, (3, 3))\nprint(points)"
+    },
+    {
+      "id": "CH13-X-026",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现最大值滑动。",
+      "code_template": "def sliding_max(t, k):\n    return tuple(max(t[i:i + k]) for i in range(len(t) - k + 1))\n\nprint(___)",
+      "expected_output": "(3, 3, 5, 5)\n",
+      "hints": "填空滑动最大。",
+      "test_cases": [
+        "assert captured_output == '(3, 3, 5, 5)\\n'"
+      ],
+      "solution": "def sliding_max(t, k):\n    return tuple(max(t[i:i + k]) for i in range(len(t) - k + 1))\n\nprint(sliding_max((1, 3, 2, 5, 4), 2))"
+    },
+    {
+      "id": "CH13-X-027",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现分类统计。",
+      "code_template": "def classify(nums):\n    evens = tuple(n for n in nums if n % 2 == 0)\n    odds = tuple(n for n in nums if n % 2 == 1)\n    return evens, odds\n\ne, o = classify((1, 2, 3, 4, 5))\nprint(___, o)",
+      "expected_output": "(2, 4) (1, 3, 5)\n",
+      "hints": "填空分类返回。",
+      "test_cases": [
+        "assert captured_output == '(2, 4) (1, 3, 5)\\n'"
+      ],
+      "solution": "def classify(nums):\n    evens = tuple(n for n in nums if n % 2 == 0)\n    odds = tuple(n for n in nums if n % 2 == 1)\n    return evens, odds\n\ne, o = classify((1, 2, 3, 4, 5))\nprint(e, o)"
+    },
+    {
+      "id": "CH13-X-028",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现数字签名校验。",
+      "code_template": "def checksum(t):\n    return sum(v * (i + 1) for i, v in enumerate(t)) % 10\n\nprint('Checksum:',___)",
+      "expected_output": "Checksum: 7\n",
+      "hints": "填空校验和。",
+      "test_cases": [
+        "assert captured_output == 'Checksum: 7\\n'"
+      ],
+      "solution": "def checksum(t):\n    return sum(v * (i + 1) for i, v in enumerate(t)) % 10\n\nprint('Checksum:', checksum((3, 1, 4)))"
+    },
+    {
+      "id": "CH13-X-029",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "元组实现范围判断。",
+      "code_template": "def in_box(p, box):\n    x1, y1, x2, y2 = box\n    return x1 <= p[0] <= x2 and y1 <= p[1] <= y2\n\nprint('In box:',___)",
+      "expected_output": "In box: True\n",
+      "hints": "填空范围判断。",
+      "test_cases": [
+        "assert captured_output == 'In box: True\\n'"
+      ],
+      "solution": "def in_box(p, box):\n    x1, y1, x2, y2 = box\n    return x1 <= p[0] <= x2 and y1 <= p[1] <= y2\n\nprint('In box:', in_box((3, 3), (1, 1, 5, 5)))"
+    },
+    {
+      "id": "CH13-X-030",
+      "topic": "元组 (Tuples)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "综合：元组矩阵转置。",
+      "code_template": "def transpose(m):\n    rows = len(m)\n    cols = len(m[0])\n    return tuple(tuple(m[i][j] for i in range(rows)) for j in range(cols))\n\nprint(___)",
+      "expected_output": "((1, 4), (2, 5), (3, 6))\n",
+      "hints": "填空转置。",
+      "test_cases": [
+        "assert captured_output == '((1, 4), (2, 5), (3, 6))\\n'"
+      ],
+      "solution": "def transpose(m):\n    rows = len(m)\n    cols = len(m[0])\n    return tuple(tuple(m[i][j] for i in range(rows)) for j in range(cols))\n\nprint(transpose(((1, 2, 3), (4, 5, 6))))"
+    }
+  ]
+}

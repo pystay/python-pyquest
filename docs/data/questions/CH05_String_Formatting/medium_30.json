@@ -1,0 +1,427 @@
+{
+  "chapter": "CH05",
+  "title": "字符串格式化",
+  "difficulty": "简单",
+  "questions": [
+    {
+      "id": "CH05-M-001",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 f-string 输出多个变量。",
+      "code_template": "name = \"Bob\"\nage = 25\nprint(f\"{___} is {___} years old\")",
+      "expected_output": "Bob is 25 years old\n",
+      "hints": "依次填 name、age。",
+      "test_cases": [
+        "assert captured_output == 'Bob is 25 years old\\n'"
+      ],
+      "solution": "name = \"Bob\"\nage = 25\nprint(f\"{name} is {age} years old\")"
+    },
+    {
+      "id": "CH05-M-002",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "三种对齐方式输出。",
+      "code_template": "s = \"ab\"\nprint(f\"|{s:___}|\")\nprint(f\"|{s:___}|\")\nprint(f\"|{s:___}|\")",
+      "expected_output": "|ab   |\n|   ab|\n| ab  |\n",
+      "hints": "依次填 <5、>5、^5。",
+      "test_cases": [
+        "assert captured_output == '|ab   |\\n|   ab|\\n| ab  |\\n'"
+      ],
+      "solution": "s = \"ab\"\nprint(f\"|{s:<5}|\")\nprint(f\"|{s:>5}|\")\nprint(f\"|{s:^5}|\")"
+    },
+    {
+      "id": "CH05-M-003",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "千分位加两位小数。",
+      "code_template": "amount = 1234567.891\nprint(f\"{___:,.2f}\")",
+      "expected_output": "1,234,567.89\n",
+      "hints": "花括号内填 amount。",
+      "test_cases": [
+        "assert captured_output == '1,234,567.89\\n'"
+      ],
+      "solution": "amount = 1234567.891\nprint(f\"{amount:,.2f}\")"
+    },
+    {
+      "id": "CH05-M-004",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "百分比带符号输出。",
+      "code_template": "rate = 0.125\nprint(f\"{___:+.1%}\")",
+      "expected_output": "+12.5%\n",
+      "hints": "花括号内填 rate。",
+      "test_cases": [
+        "assert captured_output == '+12.5%\\n'"
+      ],
+      "solution": "rate = 0.125\nprint(f\"{rate:+.1%}\")"
+    },
+    {
+      "id": "CH05-M-005",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "宽度加填充对齐。",
+      "code_template": "print(f\"{42:___}\")\nprint(f\"{42:___}\")",
+      "expected_output": "      42\n00000042\n",
+      "hints": "依次填 >8、0>8。",
+      "test_cases": [
+        "assert captured_output == '      42\\n00000042\\n'"
+      ],
+      "solution": "print(f\"{42:>8}\")\nprint(f\"{42:0>8}\")"
+    },
+    {
+      "id": "CH05-M-006",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "format() 混合位置与关键字。",
+      "code_template": "print(\"{0} loves {lang}\".format(\"Tom\", lang=___))",
+      "expected_output": "Tom loves Python\n",
+      "hints": "填 \"Python\"。",
+      "test_cases": [
+        "assert captured_output == 'Tom loves Python\\n'"
+      ],
+      "solution": "print(\"{0} loves {lang}\".format(\"Tom\", lang=\"Python\"))"
+    },
+    {
+      "id": "CH05-M-007",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 % 输出多种类型。",
+      "code_template": "print(\"%s scored %d (%.1f%%)\" % (___, ___, ___))",
+      "expected_output": "Bob scored 92 (92.5%)\n",
+      "hints": "依次填 \"Bob\"、92、92.5。",
+      "test_cases": [
+        "assert captured_output == 'Bob scored 92 (92.5%)\\n'"
+      ],
+      "solution": "print(\"%s scored %d (%.1f%%)\" % (\"Bob\", 92, 92.5))"
+    },
+    {
+      "id": "CH05-M-008",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "转义与格式组合输出。",
+      "code_template": "print(\"Name\\tScore\")\nprint(\"%s\\t%d\" % (___, ___))",
+      "expected_output": "Name\tScore\nAlice\t90\n",
+      "hints": "依次填 \"Alice\"、90。",
+      "test_cases": [
+        "assert captured_output == 'Name\\tScore\\nAlice\\t90\\n'"
+      ],
+      "solution": "print(\"Name\\tScore\")\nprint(\"%s\\t%d\" % (\"Alice\", 90))"
+    },
+    {
+      "id": "CH05-M-009",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "拼接后格式化输出。",
+      "code_template": "name = \"Bob\"\nmsg = \"Hello, \" + name + \"!\"\nprint(f\"{___:>20}\")",
+      "expected_output": "         Hello, Bob!\n",
+      "hints": "花括号内填 msg。",
+      "test_cases": [
+        "assert captured_output == '         Hello, Bob!\\n'"
+      ],
+      "solution": "name = \"Bob\"\nmsg = \"Hello, \" + name + \"!\"\nprint(f\"{msg:>20}\")"
+    },
+    {
+      "id": "CH05-M-010",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "居中加填充字符。",
+      "code_template": "title = \"PyQuest\"\nprint(f\"{___:=^30}\")",
+      "expected_output": "===========PyQuest============\n",
+      "hints": "花括号内填 title。",
+      "test_cases": [
+        "assert captured_output == '===========PyQuest============\\n'"
+      ],
+      "solution": "title = \"PyQuest\"\nprint(f\"{title:=^30}\")"
+    },
+    {
+      "id": "CH05-M-011",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "数字转字符串并填充。",
+      "code_template": "n = 7\nprint(f\"{str(___):0>3}\")",
+      "expected_output": "007\n",
+      "hints": "括号内填 n。",
+      "test_cases": [
+        "assert captured_output == '007\\n'"
+      ],
+      "solution": "n = 7\nprint(f\"{str(n):0>3}\")"
+    },
+    {
+      "id": "CH05-M-012",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "根据条件格式化输出。",
+      "code_template": "score = 85\ngrade = \"A\" if score >= 90 else \"B\"\nprint(f\"Score: {___}, Grade: {___}\")",
+      "expected_output": "Score: 85, Grade: B\n",
+      "hints": "依次填 score、grade。",
+      "test_cases": [
+        "assert captured_output == 'Score: 85, Grade: B\\n'"
+      ],
+      "solution": "score = 85\ngrade = \"A\" if score >= 90 else \"B\"\nprint(f\"Score: {score}, Grade: {grade}\")"
+    },
+    {
+      "id": "CH05-M-013",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "把列表 join 成格式化字符串。",
+      "code_template": "nums = [1, 2, 3]\nprint(___)",
+      "expected_output": " 1| 2| 3\n",
+      "hints": "填空生成器表达式。",
+      "test_cases": [
+        "assert captured_output == ' 1| 2| 3\\n'"
+      ],
+      "solution": "nums = [1, 2, 3]\nprint(\"|\".join(f\"{n:>2}\" for n in nums))"
+    },
+    {
+      "id": "CH05-M-014",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "格式化字典中的值。",
+      "code_template": "scores = {\"Alice\": 90, \"Bob\": 85}\nfor name, score in scores.items():\n    print(f\"{___}: {___}\")",
+      "expected_output": "Alice: 90\nBob: 85\n",
+      "hints": "依次填 name、score。",
+      "test_cases": [
+        "assert captured_output == 'Alice: 90\\nBob: 85\\n'"
+      ],
+      "solution": "scores = {\"Alice\": 90, \"Bob\": 85}\nfor name, score in scores.items():\n    print(f\"{name}: {score}\")"
+    },
+    {
+      "id": "CH05-M-015",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "循环中格式化输出序号。",
+      "code_template": "items = [\"a\", \"b\", \"c\"]\nfor i, item in enumerate(items, 1):\n    print(f\"{i:>2}. {___}\")",
+      "expected_output": " 1. a\n 2. b\n 3. c\n",
+      "hints": "花括号内填 item。",
+      "test_cases": [
+        "assert captured_output == ' 1. a\\n 2. b\\n 3. c\\n'"
+      ],
+      "solution": "items = [\"a\", \"b\", \"c\"]\nfor i, item in enumerate(items, 1):\n    print(f\"{i:>2}. {item}\")"
+    },
+    {
+      "id": "CH05-M-016",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用换行连接多段文本。",
+      "code_template": "print(\"Line1\\n\" + \"Line2\\n\" + ___ + \"\\nLine4\")",
+      "expected_output": "Line1\nLine2\nLine3\nLine4\n",
+      "hints": "填 \"Line3\"。",
+      "test_cases": [
+        "assert captured_output == 'Line1\\nLine2\\nLine3\\nLine4\\n'"
+      ],
+      "solution": "print(\"Line1\\n\" + \"Line2\\n\" + \"Line3\" + \"\\nLine4\")"
+    },
+    {
+      "id": "CH05-M-017",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "输出格式化的表格行。",
+      "code_template": "row = (\"Alice\", 90, \"A\")\nprint(f\"{row[___]:<8}{row[___]:>5}{row[___]:>4}\")",
+      "expected_output": "Alice      90   A\n",
+      "hints": "依次填 0、1、2。",
+      "test_cases": [
+        "assert captured_output == 'Alice      90   A\\n'"
+      ],
+      "solution": "row = (\"Alice\", 90, \"A\")\nprint(f\"{row[0]:<8}{row[1]:>5}{row[2]:>4}\")"
+    },
+    {
+      "id": "CH05-M-018",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "格式化模拟时间。",
+      "code_template": "h, m, s = 9, 5, 3\nprint(f\"{h:02d}:{m:02d}:{___:02d}\")",
+      "expected_output": "09:05:03\n",
+      "hints": "花括号内填 s。",
+      "test_cases": [
+        "assert captured_output == '09:05:03\\n'"
+      ],
+      "solution": "h, m, s = 9, 5, 3\nprint(f\"{h:02d}:{m:02d}:{s:02d}\")"
+    },
+    {
+      "id": "CH05-M-019",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "格式化金额输出。",
+      "code_template": "price = 19.5\nqty = 3\nprint(f\"Total: ${price * qty:___}\")",
+      "expected_output": "Total: $58.50\n",
+      "hints": "格式符填 .2f。",
+      "test_cases": [
+        "assert captured_output == 'Total: $58.50\\n'"
+      ],
+      "solution": "price = 19.5\nqty = 3\nprint(f\"Total: ${price * qty:.2f}\")"
+    },
+    {
+      "id": "CH05-M-020",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "输出得分百分比。",
+      "code_template": "correct = 18\ntotal = 20\nprint(f\"Accuracy: {correct / total:___}\")",
+      "expected_output": "Accuracy: 90.0%\n",
+      "hints": "格式符填 .1% 。",
+      "test_cases": [
+        "assert captured_output == 'Accuracy: 90.0%\\n'"
+      ],
+      "solution": "correct = 18\ntotal = 20\nprint(f\"Accuracy: {correct / total:.1%}\")"
+    },
+    {
+      "id": "CH05-M-021",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "表头与数据对齐。",
+      "code_template": "print(f\"{'Name':<10}{'Score':>6}\")\nprint(___)",
+      "expected_output": "Name       Score\nAlice         90\n",
+      "hints": "填空对齐格式。",
+      "test_cases": [
+        "assert captured_output == 'Name       Score\\nAlice         90\\n'"
+      ],
+      "solution": "print(f\"{'Name':<10}{'Score':>6}\")\nprint(f\"{'Alice':<10}{90:>6}\")"
+    },
+    {
+      "id": "CH05-M-022",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字符串乘法拼边框。",
+      "code_template": "print(\"+\" + \"-\" * 8 + \"+\")\nprint(___)",
+      "expected_output": "+--------+\n| Hi |\n",
+      "hints": "填空边框拼接。",
+      "test_cases": [
+        "assert captured_output == '+--------+\\n| Hi |\\n'"
+      ],
+      "solution": "print(\"+\" + \"-\" * 8 + \"+\")\nprint(\"|\" + \" Hi \" + \"|\")"
+    },
+    {
+      "id": "CH05-M-023",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "科学计数法格式化。",
+      "code_template": "big = 123456789.0\nprint(f\"{___:.2e}\")",
+      "expected_output": "1.23e+08\n",
+      "hints": "花括号内填 big。",
+      "test_cases": [
+        "assert captured_output == '1.23e+08\\n'"
+      ],
+      "solution": "big = 123456789.0\nprint(f\"{big:.2e}\")"
+    },
+    {
+      "id": "CH05-M-024",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "带符号输出数字。",
+      "code_template": "a, b = 5, -3\nprint(f\"{a:+d} {___:+d}\")",
+      "expected_output": "+5 -3\n",
+      "hints": "花括号内填 b。",
+      "test_cases": [
+        "assert captured_output == '+5 -3\\n'"
+      ],
+      "solution": "a, b = 5, -3\nprint(f\"{a:+d} {b:+d}\")"
+    },
+    {
+      "id": "CH05-M-025",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "进制前缀输出。",
+      "code_template": "n = 255\nprint(f\"{n:#x} {n:#o} {___:#b}\")",
+      "expected_output": "0xff 0o377 0b11111111\n",
+      "hints": "花括号内填 n。",
+      "test_cases": [
+        "assert captured_output == '0xff 0o377 0b11111111\\n'"
+      ],
+      "solution": "n = 255\nprint(f\"{n:#x} {n:#o} {n:#b}\")"
+    },
+    {
+      "id": "CH05-M-026",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "截断字符串输出。",
+      "code_template": "text = \"Python Programming\"\nprint(f\"{___:.6}...\")",
+      "expected_output": "Python...\n",
+      "hints": "花括号内填 text。",
+      "test_cases": [
+        "assert captured_output == 'Python...\\n'"
+      ],
+      "solution": "text = \"Python Programming\"\nprint(f\"{text:.6}...\")"
+    },
+    {
+      "id": "CH05-M-027",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "保留指定精度。",
+      "code_template": "value = 2.7182818\nprint(f\"{___:.4f}\")",
+      "expected_output": "2.7183\n",
+      "hints": "花括号内填 value。",
+      "test_cases": [
+        "assert captured_output == '2.7183\\n'"
+      ],
+      "solution": "value = 2.7182818\nprint(f\"{value:.4f}\")"
+    },
+    {
+      "id": "CH05-M-028",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "统计并格式化文本信息。",
+      "code_template": "text = \"hello world\"\nprint(___)",
+      "expected_output": "Chars: 11, Words: 2\n",
+      "hints": "填空 len 统计。",
+      "test_cases": [
+        "assert captured_output == 'Chars: 11, Words: 2\\n'"
+      ],
+      "solution": "text = \"hello world\"\nprint(f\"Chars: {len(text)}, Words: {len(text.split())}\")"
+    },
+    {
+      "id": "CH05-M-029",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "多维数据格式化输出。",
+      "code_template": "data = [[1, 2], [3, 4]]\nfor row in data:\n    print(f\"{row[0]:>2} {row[___]:>2}\")",
+      "expected_output": " 1  2\n 3  4\n",
+      "hints": "索引填 1。",
+      "test_cases": [
+        "assert captured_output == ' 1  2\\n 3  4\\n'"
+      ],
+      "solution": "data = [[1, 2], [3, 4]]\nfor row in data:\n    print(f\"{row[0]:>2} {row[1]:>2}\")"
+    },
+    {
+      "id": "CH05-M-030",
+      "topic": "字符串格式化",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "综合格式化输出名片。",
+      "code_template": "name = \"Ada\"\nage = 36\ncity = \"London\"\nprint(___)",
+      "expected_output": "Ada     36    London\n",
+      "hints": "填空对齐格式。",
+      "test_cases": [
+        "assert captured_output == 'Ada     36    London\\n'"
+      ],
+      "solution": "name = \"Ada\"\nage = 36\ncity = \"London\"\nprint(f\"{name:<6}{age:>4}{city:>10}\")"
+    }
+  ]
+}

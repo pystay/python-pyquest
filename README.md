@@ -2,9 +2,17 @@
 
 > 闯关式 · 高密度 · 从零到进阶的 Python 刷题平台
 
+## 🖥️ 在线练习
+
+**👉 [https://pystay.github.io/python-pyquest/](https://pystay.github.io/python-pyquest/)**
+
+在浏览器中直接刷题：代码通过 **Pyodide（WebAssembly 版 Python）** 实时运行判分，无需安装任何软件。
+完成一题自动记录进度（保存在浏览器本地）。题库、前端与判分逻辑全部开源于此仓库。
+
+> 若链接暂未生效，请到仓库 **Settings → Pages** 选择分支 `master` 与目录 `/docs` 后保存，等待 1~2 分钟即可访问。
+
 PyQuest 是一套以 **learn-py.org** 知识体系为蓝本的 Python 交互式练习题集，
 按"超简单 → 简单 → 中等 → 较难"四档难度阶梯组织，共规划 **29 章 × 120 题 = 3480 道**练习题。
-未来将配合 **Next.js + Pyodide** 前端，在浏览器中直接编写并运行 Python 代码，即时判分。
 
 ## ✨ 特性
 
@@ -63,6 +71,11 @@ python generator/validate.py          # 生成后全库校验
 
 ```
 PyQuest/
+├── docs/                 # 在线练习站点（GitHub Pages 发布目录）
+│   ├── index.html        # 刷题页面
+│   ├── app.js            # 导航 + Pyodide 判分 + 进度
+│   ├── styles.css
+│   └── data/             # 同步的题库数据 + index.json
 ├── questions/            # 题库（按章节组织）
 │   ├── CH01_Hello_World/ # easy_30.json / medium_30.json / hard_30.json / expert_30.json
 │   ├── CH02_Variables_Types/
@@ -70,8 +83,8 @@ PyQuest/
 ├── generator/            # 题库生成与校验脚本
 │   ├── framework.py      # 共享生成框架（含自动挖空模板）
 │   ├── gen_chXX.py       # 各章生成脚本
+│   ├── sync_site.py      # 同步题库 → docs/data/ 并生成索引
 │   └── validate.py       # 全库校验入口
-├── web-app/              # Next.js + Pyodide 前端（规划中）
 └── package.json
 ```
 
@@ -104,9 +117,9 @@ PyQuest/
 ## 🗺️ 路线图
 
 - [x] **阶段一**：题库生成（29 章 × 120 道，进行中，已 15 章）
-- [ ] **阶段二**：Next.js + Pyodide 浏览器端在线练习前端
+- [x] **阶段二**：在线练习前端（GitHub Pages + Pyodide 实时判分）
 - [ ] **阶段三**：本地测试与判分验证
-- [ ] **阶段四**：部署上线
+- [ ] **阶段四**：部署上线与推广
 
 ## 🤝 贡献者
 
