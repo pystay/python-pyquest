@@ -103,6 +103,7 @@ function renderChapters() {
         btn.className = "qlink";
         btn.dataset.id = id;
         btn.textContent = id;
+        if (state.progress[id]) btn.classList.add("done");
         btn.addEventListener("click", () => openQuestion(id));
         dg.appendChild(btn);
       }
@@ -157,6 +158,10 @@ async function openQuestion(id) {
   // 编辑器初始为空白；仅当用户之前保存过代码时恢复，否则一律留空
   const saved = loadCode(q.id);
   $("editor").value = saved || "";
+
+  // 题目头部“已完成”徽章 + 左侧链接标记（与已存进度同步）
+  const done = !!state.progress[id];
+  $("q-done").classList.toggle("hidden", !done);
 
   // 彻底重置输出与判定区（不残留上一题的通过/失败状态）
   $("output").textContent = "点击「运行」查看结果…";
@@ -232,6 +237,8 @@ async function runCode() {
         refreshProgressBar();
         markLinkDone(qid);
       }
+      // 题目头部立即点亮“已完成”徽章
+      $("q-done").classList.remove("hidden");
     } else {
       box.className = "verdict fail";
       box.innerHTML =
@@ -306,6 +313,7 @@ $("btn-clear-progress").addEventListener("click", () => {
   state.progress = {};
   refreshProgressBar();
   document.querySelectorAll(".qlink").forEach((b) => b.classList.remove("done"));
+  $("q-done").classList.add("hidden");
   $("editor").value = "";
   $("output").textContent = "点击「运行」查看结果…";
   $("verdict").classList.add("hidden");
