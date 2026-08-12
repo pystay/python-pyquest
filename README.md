@@ -2,6 +2,10 @@
 
 > 闯关式 · 高密度 · 从零到进阶的 Python 刷题平台
 
+## 📸 预览
+
+![PyQuest 预览](docs/assets/screenshot.png)
+
 ## 🖥️ 在线练习
 
 **👉 [https://pystay.github.io/python-pyquest/](https://pystay.github.io/python-pyquest/)**
