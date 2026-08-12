@@ -128,10 +128,11 @@ PyQuest/
 - [ ] **阶段三**：本地测试与判分验证
 - [ ] **阶段四**：部署上线与推广
 
-## 🤝 贡献者
+## 🤝 项目制作者
 
 - **pystay** — 项目设计与全部题库内容
-
+- bilibili账号：https://space.bilibili.com/1923949592?spm_id_from=333.1007.0.0
+- bilibili专栏https://www.bilibili.com/opus/1235651469632339991?spm_id_from=333.1007.top_right_bar_window_dynamic.content.click
 ## 📄 许可证
 
 本项目基于 [MIT License](LICENSE) 开源。
