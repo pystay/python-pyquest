@@ -1,0 +1,427 @@
+{
+  "chapter": "CH04",
+  "title": "基础运算符",
+  "difficulty": "超简单",
+  "questions": [
+    {
+      "id": "CH04-E-001",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 + 计算两个数相加。",
+      "code_template": "print(3 + ___)",
+      "expected_output": "8\n",
+      "hints": "填 5。",
+      "test_cases": [
+        "assert captured_output == '8\\n'"
+      ],
+      "solution": "print(3 + 5)"
+    },
+    {
+      "id": "CH04-E-002",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 - 计算两个数相减。",
+      "code_template": "print(___ - 4)",
+      "expected_output": "6\n",
+      "hints": "填 10。",
+      "test_cases": [
+        "assert captured_output == '6\\n'"
+      ],
+      "solution": "print(10 - 4)"
+    },
+    {
+      "id": "CH04-E-003",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 * 计算两个数相乘。",
+      "code_template": "print(6 * ___)",
+      "expected_output": "42\n",
+      "hints": "填 7。",
+      "test_cases": [
+        "assert captured_output == '42\\n'"
+      ],
+      "solution": "print(6 * 7)"
+    },
+    {
+      "id": "CH04-E-004",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 / 计算两个数相除。",
+      "code_template": "print(9 / ___)",
+      "expected_output": "4.5\n",
+      "hints": "填 2。",
+      "test_cases": [
+        "assert captured_output == '4.5\\n'"
+      ],
+      "solution": "print(9 / 2)"
+    },
+    {
+      "id": "CH04-E-005",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 // 计算整除结果。",
+      "code_template": "print(9 // ___)",
+      "expected_output": "4\n",
+      "hints": "填 2。",
+      "test_cases": [
+        "assert captured_output == '4\\n'"
+      ],
+      "solution": "print(9 // 2)"
+    },
+    {
+      "id": "CH04-E-006",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 % 计算取余结果。",
+      "code_template": "print(9 % ___)",
+      "expected_output": "1\n",
+      "hints": "填 2。",
+      "test_cases": [
+        "assert captured_output == '1\\n'"
+      ],
+      "solution": "print(9 % 2)"
+    },
+    {
+      "id": "CH04-E-007",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 ** 计算幂运算。",
+      "code_template": "print(2 ** ___)",
+      "expected_output": "32\n",
+      "hints": "填 5。",
+      "test_cases": [
+        "assert captured_output == '32\\n'"
+      ],
+      "solution": "print(2 ** 5)"
+    },
+    {
+      "id": "CH04-E-008",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "比较三个结果并输出。",
+      "code_template": "a = 5\nb = 3\nprint(___ > b, a == ___, a < b)",
+      "expected_output": "True False False\n",
+      "hints": "依次填 a、b。",
+      "test_cases": [
+        "assert captured_output == 'True False False\\n'"
+      ],
+      "solution": "a = 5\nb = 3\nprint(a > b, a == b, a < b)"
+    },
+    {
+      "id": "CH04-E-009",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "比较 >= 和 == 的结果。",
+      "code_template": "a = 5\nb = 5\nprint(a >= ___, a == b)",
+      "expected_output": "True True\n",
+      "hints": "填 b。",
+      "test_cases": [
+        "assert captured_output == 'True True\\n'"
+      ],
+      "solution": "a = 5\nb = 5\nprint(a >= b, a == b)"
+    },
+    {
+      "id": "CH04-E-010",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "比较 != 和 == 的结果。",
+      "code_template": "a = 3\nb = 4\nprint(a != ___, a == b)",
+      "expected_output": "True False\n",
+      "hints": "填 b。",
+      "test_cases": [
+        "assert captured_output == 'True False\\n'"
+      ],
+      "solution": "a = 3\nb = 4\nprint(a != b, a == b)"
+    },
+    {
+      "id": "CH04-E-011",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "输出 and 与 or 的结果。",
+      "code_template": "print(True and ___, True or False)",
+      "expected_output": "False True\n",
+      "hints": "填 False。",
+      "test_cases": [
+        "assert captured_output == 'False True\\n'"
+      ],
+      "solution": "print(True and False, True or False)"
+    },
+    {
+      "id": "CH04-E-012",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 not 取反布尔值。",
+      "code_template": "print(___ True)",
+      "expected_output": "False\n",
+      "hints": "填 not。",
+      "test_cases": [
+        "assert captured_output == 'False\\n'"
+      ],
+      "solution": "print(not True)"
+    },
+    {
+      "id": "CH04-E-013",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 and 连接两个比较。",
+      "code_template": "print(5 > 3 ___ 5 < 10)",
+      "expected_output": "True\n",
+      "hints": "填 and。",
+      "test_cases": [
+        "assert captured_output == 'True\\n'"
+      ],
+      "solution": "print(5 > 3 and 5 < 10)"
+    },
+    {
+      "id": "CH04-E-014",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 += 复合赋值后输出。",
+      "code_template": "x = 5\nx += ___\nprint(x)",
+      "expected_output": "15\n",
+      "hints": "填 10。",
+      "test_cases": [
+        "assert captured_output == '15\\n'"
+      ],
+      "solution": "x = 5\nx += 10\nprint(x)"
+    },
+    {
+      "id": "CH04-E-015",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "输出负数。",
+      "code_template": "print(___)",
+      "expected_output": "-7\n",
+      "hints": "填 -7。",
+      "test_cases": [
+        "assert captured_output == '-7\\n'"
+      ],
+      "solution": "print(-7)"
+    },
+    {
+      "id": "CH04-E-016",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "观察乘法的优先级。",
+      "code_template": "print(1 + ___ * 3)",
+      "expected_output": "7\n",
+      "hints": "填 2。",
+      "test_cases": [
+        "assert captured_output == '7\\n'"
+      ],
+      "solution": "print(1 + 2 * 3)"
+    },
+    {
+      "id": "CH04-E-017",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用括号改变运算顺序。",
+      "code_template": "print((___ + 2) * 3)",
+      "expected_output": "9\n",
+      "hints": "填 1。",
+      "test_cases": [
+        "assert captured_output == '9\\n'"
+      ],
+      "solution": "print((1 + 2) * 3)"
+    },
+    {
+      "id": "CH04-E-018",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 * 重复字符串。",
+      "code_template": "print(___ * 3)",
+      "expected_output": "ababab\n",
+      "hints": "填 \"ab\"。",
+      "test_cases": [
+        "assert captured_output == 'ababab\\n'"
+      ],
+      "solution": "print(\"ab\" * 3)"
+    },
+    {
+      "id": "CH04-E-019",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 + 拼接字符串。",
+      "code_template": "print(\"a\" + ___)",
+      "expected_output": "ab\n",
+      "hints": "填 \"b\"。",
+      "test_cases": [
+        "assert captured_output == 'ab\\n'"
+      ],
+      "solution": "print(\"a\" + \"b\")"
+    },
+    {
+      "id": "CH04-E-020",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "浮点数相乘。",
+      "code_template": "print(2.5 * ___)",
+      "expected_output": "5.0\n",
+      "hints": "填 2。",
+      "test_cases": [
+        "assert captured_output == '5.0\\n'"
+      ],
+      "solution": "print(2.5 * 2)"
+    },
+    {
+      "id": "CH04-E-021",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "整数与浮点数相加。",
+      "code_template": "print(10 + ___)",
+      "expected_output": "15.5\n",
+      "hints": "填 5.5。",
+      "test_cases": [
+        "assert captured_output == '15.5\\n'"
+      ],
+      "solution": "print(10 + 5.5)"
+    },
+    {
+      "id": "CH04-E-022",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "计算 10 除以 4 的余数。",
+      "code_template": "print(10 % ___)",
+      "expected_output": "2\n",
+      "hints": "填 4。",
+      "test_cases": [
+        "assert captured_output == '2\\n'"
+      ],
+      "solution": "print(10 % 4)"
+    },
+    {
+      "id": "CH04-E-023",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "计算 17 整除 5。",
+      "code_template": "print(17 // ___)",
+      "expected_output": "3\n",
+      "hints": "填 5。",
+      "test_cases": [
+        "assert captured_output == '3\\n'"
+      ],
+      "solution": "print(17 // 5)"
+    },
+    {
+      "id": "CH04-E-024",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "输出链式比较的结果。",
+      "code_template": "print(\"chain:\", ___ < 2 < 3)",
+      "expected_output": "chain: True\n",
+      "hints": "填 1。",
+      "test_cases": [
+        "assert captured_output == 'chain: True\\n'"
+      ],
+      "solution": "print(\"chain:\", 1 < 2 < 3)"
+    },
+    {
+      "id": "CH04-E-025",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "计算 2 的负一次方。",
+      "code_template": "print(2 ** ___)",
+      "expected_output": "0.5\n",
+      "hints": "填 -1。",
+      "test_cases": [
+        "assert captured_output == '0.5\\n'"
+      ],
+      "solution": "print(2 ** -1)"
+    },
+    {
+      "id": "CH04-E-026",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 not 和 and 组合判断。",
+      "code_template": "print(\"result:\", not (___ and False))",
+      "expected_output": "result: True\n",
+      "hints": "填 True。",
+      "test_cases": [
+        "assert captured_output == 'result: True\\n'"
+      ],
+      "solution": "print(\"result:\", not (True and False))"
+    },
+    {
+      "id": "CH04-E-027",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "变量相乘后输出。",
+      "code_template": "x = 4\ny = 3\nprint(___ * y)",
+      "expected_output": "12\n",
+      "hints": "填 x。",
+      "test_cases": [
+        "assert captured_output == '12\\n'"
+      ],
+      "solution": "x = 4\ny = 3\nprint(x * y)"
+    },
+    {
+      "id": "CH04-E-028",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "输出比较结果和差值。",
+      "code_template": "a = 3\nb = 4\nprint(a < b, ___ - a)",
+      "expected_output": "True 1\n",
+      "hints": "填 b。",
+      "test_cases": [
+        "assert captured_output == 'True 1\\n'"
+      ],
+      "solution": "a = 3\nb = 4\nprint(a < b, b - a)"
+    },
+    {
+      "id": "CH04-E-029",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "计算 5*5-5 的结果。",
+      "code_template": "print(5 * 5 - ___)",
+      "expected_output": "20\n",
+      "hints": "填 5。",
+      "test_cases": [
+        "assert captured_output == '20\\n'"
+      ],
+      "solution": "print(5 * 5 - 5)"
+    },
+    {
+      "id": "CH04-E-030",
+      "topic": "基础运算符",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "计算 100 整除 7。",
+      "code_template": "print(100 // ___)",
+      "expected_output": "14\n",
+      "hints": "填 7。",
+      "test_cases": [
+        "assert captured_output == '14\\n'"
+      ],
+      "solution": "print(100 // 7)"
+    }
+  ]
+}

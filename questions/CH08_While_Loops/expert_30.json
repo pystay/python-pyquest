@@ -1,0 +1,427 @@
+{
+  "chapter": "CH08",
+  "title": "循环 (while)",
+  "difficulty": "较难",
+  "questions": [
+    {
+      "id": "CH08-X-001",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 实现十进制转任意进制。",
+      "code_template": "def to_base(n, base):\n    digits = \"0123456789ABCDEF\"\n    result = \"\"\n    while n > 0:\n        result = digits[n % base] + result\n        n //= base\n    return result\nprint(___, to_base(100, 2))",
+      "expected_output": "FF 1100100\n",
+      "hints": "填空取余拼接。",
+      "test_cases": [
+        "assert captured_output == 'FF 1100100\\n'"
+      ],
+      "solution": "def to_base(n, base):\n    digits = \"0123456789ABCDEF\"\n    result = \"\"\n    while n > 0:\n        result = digits[n % base] + result\n        n //= base\n    return result\nprint(to_base(255, 16), to_base(100, 2))"
+    },
+    {
+      "id": "CH08-X-002",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 实现快速幂。",
+      "code_template": "def fast_pow(base, exp):\n    result = 1\n    while exp > 0:\n        if exp % 2 == 1:\n            result *= base\n        base *= base\n        exp //= 2\n    return result\nprint(___, fast_pow(3, 4))",
+      "expected_output": "1024 81\n",
+      "hints": "填空快速幂。",
+      "test_cases": [
+        "assert captured_output == '1024 81\\n'"
+      ],
+      "solution": "def fast_pow(base, exp):\n    result = 1\n    while exp > 0:\n        if exp % 2 == 1:\n            result *= base\n        base *= base\n        exp //= 2\n    return result\nprint(fast_pow(2, 10), fast_pow(3, 4))"
+    },
+    {
+      "id": "CH08-X-003",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 求最大公约数（多组）。",
+      "code_template": "def gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a\npairs = [(12, 18), (35, 10), (17, 5)]\ni = 0\nwhile i < len(pairs):\n    a, b = pairs[i]\n    print(___)\n    i += 1",
+      "expected_output": "gcd(12, 18) = 6\ngcd(35, 10) = 5\ngcd(17, 5) = 1\n",
+      "hints": "填空多组 gcd。",
+      "test_cases": [
+        "assert captured_output == 'gcd(12, 18) = 6\\ngcd(35, 10) = 5\\ngcd(17, 5) = 1\\n'"
+      ],
+      "solution": "def gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a\npairs = [(12, 18), (35, 10), (17, 5)]\ni = 0\nwhile i < len(pairs):\n    a, b = pairs[i]\n    print(f\"gcd({a}, {b}) = {gcd(a, b)}\")\n    i += 1"
+    },
+    {
+      "id": "CH08-X-004",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 求平方根近似（牛顿法）。",
+      "code_template": "n = 50\nx = n / 2\nwhile abs(x * x - n) > 1e-6:\n    x = (x + n / x) / 2\nprint(___)",
+      "expected_output": "sqrt(50) ≈ 7.0711\n",
+      "hints": "填空牛顿迭代。",
+      "test_cases": [
+        "assert captured_output == 'sqrt(50) ≈ 7.0711\\n'"
+      ],
+      "solution": "n = 50\nx = n / 2\nwhile abs(x * x - n) > 1e-6:\n    x = (x + n / x) / 2\nprint(f\"sqrt({n}) ≈ {x:.4f}\")"
+    },
+    {
+      "id": "CH08-X-005",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 输出 100 以内的质数。",
+      "code_template": "n = 2\nprimes = []\nwhile n <= 100:\n    is_prime = True\n    d = 2\n    while d * d <= n:\n        if n % d == 0:\n            is_prime = False\n            break\n        d += 1\n    if is_prime:\n        primes.append(n)\n    n += 1\nprint(___)",
+      "expected_output": "[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]\n",
+      "hints": "填空质数收集。",
+      "test_cases": [
+        "assert captured_output == '[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]\\n'"
+      ],
+      "solution": "n = 2\nprimes = []\nwhile n <= 100:\n    is_prime = True\n    d = 2\n    while d * d <= n:\n        if n % d == 0:\n            is_prime = False\n            break\n        d += 1\n    if is_prime:\n        primes.append(n)\n    n += 1\nprint(primes)"
+    },
+    {
+      "id": "CH08-X-006",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 求第 n 个斐波那契数。",
+      "code_template": "def fib(n):\n    a, b = 0, 1\n    count = 0\n    while count < n:\n        a, b = b, a + b\n        count += 1\n    return a\nfor n in [5, 10]:\n    print(___)",
+      "expected_output": "fib(5) = 5\nfib(10) = 55\n",
+      "hints": "填空斐波那契函数。",
+      "test_cases": [
+        "assert captured_output == 'fib(5) = 5\\nfib(10) = 55\\n'"
+      ],
+      "solution": "def fib(n):\n    a, b = 0, 1\n    count = 0\n    while count < n:\n        a, b = b, a + b\n        count += 1\n    return a\nfor n in [5, 10]:\n    print(f\"fib({n}) = {fib(n)}\")"
+    },
+    {
+      "id": "CH08-X-007",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 模拟猜数字统计次数。",
+      "code_template": "secret = 7\nattempts = [2, 4, 6, 7]\ni = 0\nwhile i < len(attempts):\n    g = attempts[i]\n    if g == secret:\n        print(f\"Correct in {i + 1} tries\")\n        break\n    elif g < secret:\n        print(f\"Try {i + 1}: too low\")\n    else:\n        print(___)\n    i += 1",
+      "expected_output": "Try 1: too low\nTry 2: too low\nTry 3: too low\nCorrect in 4 tries\n",
+      "hints": "填空猜数字统计。",
+      "test_cases": [
+        "assert captured_output == 'Try 1: too low\\nTry 2: too low\\nTry 3: too low\\nCorrect in 4 tries\\n'"
+      ],
+      "solution": "secret = 7\nattempts = [2, 4, 6, 7]\ni = 0\nwhile i < len(attempts):\n    g = attempts[i]\n    if g == secret:\n        print(f\"Correct in {i + 1} tries\")\n        break\n    elif g < secret:\n        print(f\"Try {i + 1}: too low\")\n    else:\n        print(f\"Try {i + 1}: too high\")\n    i += 1"
+    },
+    {
+      "id": "CH08-X-008",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 实现大数乘法（字符串）。",
+      "code_template": "def str_multiply(s, n):\n    result = \"\"\n    carry = 0\n    i = len(s) - 1\n    while i >= 0:\n        prod = int(s[i]) * n + carry\n        result = str(prod % 10) + result\n        carry = prod // 10\n        i -= 1\n    if carry:\n        result = str(carry) + result\n    return result\nprint(___)",
+      "expected_output": "369\n",
+      "hints": "填空逐位乘法。",
+      "test_cases": [
+        "assert captured_output == '369\\n'"
+      ],
+      "solution": "def str_multiply(s, n):\n    result = \"\"\n    carry = 0\n    i = len(s) - 1\n    while i >= 0:\n        prod = int(s[i]) * n + carry\n        result = str(prod % 10) + result\n        carry = prod // 10\n        i -= 1\n    if carry:\n        result = str(carry) + result\n    return result\nprint(str_multiply(\"123\", 3))"
+    },
+    {
+      "id": "CH08-X-009",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 输出杨辉三角。",
+      "code_template": "rows = 5\ntriangle = []\ni = 0\nwhile i < rows:\n    row = [1] * (i + 1)\n    j = 1\n    while j < i:\n        row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]\n        j += 1\n    triangle.append(row)\n    i += 1\nfor row in triangle:\n    print(___)",
+      "expected_output": "[1]\n[1, 1]\n[1, 2, 1]\n[1, 3, 3, 1]\n[1, 4, 6, 4, 1]\n",
+      "hints": "填空杨辉三角。",
+      "test_cases": [
+        "assert captured_output == '[1]\\n[1, 1]\\n[1, 2, 1]\\n[1, 3, 3, 1]\\n[1, 4, 6, 4, 1]\\n'"
+      ],
+      "solution": "rows = 5\ntriangle = []\ni = 0\nwhile i < rows:\n    row = [1] * (i + 1)\n    j = 1\n    while j < i:\n        row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]\n        j += 1\n    triangle.append(row)\n    i += 1\nfor row in triangle:\n    print(row)"
+    },
+    {
+      "id": "CH08-X-010",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 求水仙花数。",
+      "code_template": "n = 100\nwhile n < 500:\n    a = n // 100\n    b = (n // 10) % 10\n    c = n % 10\n    if a ** 3 + b ** 3 + c ** 3 == n:\n        print(___)\n    n += 1",
+      "expected_output": "153\n370\n371\n407\n",
+      "hints": "填空水仙花。",
+      "test_cases": [
+        "assert captured_output == '153\\n370\\n371\\n407\\n'"
+      ],
+      "solution": "n = 100\nwhile n < 500:\n    a = n // 100\n    b = (n // 10) % 10\n    c = n % 10\n    if a ** 3 + b ** 3 + c ** 3 == n:\n        print(n)\n    n += 1"
+    },
+    {
+      "id": "CH08-X-011",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 模拟银行取款（面额组合）。",
+      "code_template": "amount = 78\nbills = [50, 20, 10, 5, 1]\ni = 0\nwhile i < len(bills):\n    count = amount // bills[i]\n    if count:\n        print(___)\n    amount %= bills[i]\n    i += 1",
+      "expected_output": "50 x 1\n20 x 1\n5 x 1\n1 x 3\n",
+      "hints": "填空找零。",
+      "test_cases": [
+        "assert captured_output == '50 x 1\\n20 x 1\\n5 x 1\\n1 x 3\\n'"
+      ],
+      "solution": "amount = 78\nbills = [50, 20, 10, 5, 1]\ni = 0\nwhile i < len(bills):\n    count = amount // bills[i]\n    if count:\n        print(f\"{bills[i]} x {count}\")\n    amount %= bills[i]\n    i += 1"
+    },
+    {
+      "id": "CH08-X-012",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 求最大回文乘积（简化）。",
+      "code_template": "max_pal = 0\nfor i in range(10, 100):\n    for j in range(10, 100):\n        prod = i * j\n        if str(prod) == str(prod)[::-1] and prod > max_pal:\n            max_pal = prod\nprint(___)",
+      "expected_output": "9009\n",
+      "hints": "填空回文乘积。",
+      "test_cases": [
+        "assert captured_output == '9009\\n'"
+      ],
+      "solution": "max_pal = 0\nfor i in range(10, 100):\n    for j in range(10, 100):\n        prod = i * j\n        if str(prod) == str(prod)[::-1] and prod > max_pal:\n            max_pal = prod\nprint(max_pal)"
+    },
+    {
+      "id": "CH08-X-013",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 统计每个字符出现次数。",
+      "code_template": "text = \"hello world\"\ncounts = {}\ni = 0\nwhile i < len(text):\n    ch = text[i]\n    counts[ch] = counts.get(ch, 0) + 1\n    i += 1\nfor ch in sorted(counts):\n    print(___)",
+      "expected_output": "' ': 1\n'd': 1\n'e': 1\n'h': 1\n'l': 3\n'o': 2\n'r': 1\n'w': 1\n",
+      "hints": "填空字符统计。",
+      "test_cases": [
+        "assert captured_output == \"' ': 1\\n'd': 1\\n'e': 1\\n'h': 1\\n'l': 3\\n'o': 2\\n'r': 1\\n'w': 1\\n\""
+      ],
+      "solution": "text = \"hello world\"\ncounts = {}\ni = 0\nwhile i < len(text):\n    ch = text[i]\n    counts[ch] = counts.get(ch, 0) + 1\n    i += 1\nfor ch in sorted(counts):\n    print(f\"{repr(ch)}: {counts[ch]}\")"
+    },
+    {
+      "id": "CH08-X-014",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 求两个有序列表的合并。",
+      "code_template": "a = [1, 3, 5]\nb = [2, 4, 6]\nmerged = []\ni = j = 0\nwhile i < len(a) and j < len(b):\n    if a[i] < b[j]:\n        merged.append(a[i])\n        i += 1\n    else:\n        merged.append(b[j])\n        j += 1\nmerged.extend(a[i:])\nmerged.extend(b[j:])\nprint(___)",
+      "expected_output": "[1, 2, 3, 4, 5, 6]\n",
+      "hints": "填空双指针合并。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3, 4, 5, 6]\\n'"
+      ],
+      "solution": "a = [1, 3, 5]\nb = [2, 4, 6]\nmerged = []\ni = j = 0\nwhile i < len(a) and j < len(b):\n    if a[i] < b[j]:\n        merged.append(a[i])\n        i += 1\n    else:\n        merged.append(b[j])\n        j += 1\nmerged.extend(a[i:])\nmerged.extend(b[j:])\nprint(merged)"
+    },
+    {
+      "id": "CH08-X-015",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 判断并输出素数对。",
+      "code_template": "def is_prime(n):\n    d = 2\n    while d * d <= n:\n        if n % d == 0:\n            return False\n        d += 1\n    return n > 1\nn = 2\nwhile n < 20:\n    if is_prime(n) and is_prime(n + 2):\n        print(___, n + 2)\n    n += 1",
+      "expected_output": "3 5\n5 7\n11 13\n17 19\n",
+      "hints": "填空孪生素数。",
+      "test_cases": [
+        "assert captured_output == '3 5\\n5 7\\n11 13\\n17 19\\n'"
+      ],
+      "solution": "def is_prime(n):\n    d = 2\n    while d * d <= n:\n        if n % d == 0:\n            return False\n        d += 1\n    return n > 1\nn = 2\nwhile n < 20:\n    if is_prime(n) and is_prime(n + 2):\n        print(n, n + 2)\n    n += 1"
+    },
+    {
+      "id": "CH08-X-016",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 求最长连续递增段。",
+      "code_template": "nums = [1, 2, 3, 1, 2, 3, 4]\nmax_len = 1\ncur_len = 1\ni = 1\nwhile i < len(nums):\n    if nums[i] > nums[i - 1]:\n        cur_len += 1\n        max_len = max(max_len, cur_len)\n    else:\n        cur_len = 1\n    i += 1\nprint(___)",
+      "expected_output": "Longest: 4\n",
+      "hints": "填空递增段。",
+      "test_cases": [
+        "assert captured_output == 'Longest: 4\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 1, 2, 3, 4]\nmax_len = 1\ncur_len = 1\ni = 1\nwhile i < len(nums):\n    if nums[i] > nums[i - 1]:\n        cur_len += 1\n        max_len = max(max_len, cur_len)\n    else:\n        cur_len = 1\n    i += 1\nprint(f\"Longest: {max_len}\")"
+    },
+    {
+      "id": "CH08-X-017",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 模拟除法（整除与余数）。",
+      "code_template": "a, b = 17, 5\nquotient = 0\nwhile a >= b:\n    a -= b\n    quotient += 1\nprint(___)",
+      "expected_output": "Quotient: 3, Remainder: 2\n",
+      "hints": "填空减法除法。",
+      "test_cases": [
+        "assert captured_output == 'Quotient: 3, Remainder: 2\\n'"
+      ],
+      "solution": "a, b = 17, 5\nquotient = 0\nwhile a >= b:\n    a -= b\n    quotient += 1\nprint(f\"Quotient: {quotient}, Remainder: {a}\")"
+    },
+    {
+      "id": "CH08-X-018",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 生成螺旋矩阵。",
+      "code_template": "n = 3\nmatrix = [[0] * n for _ in range(n)]\nnum = 1\ntop, bottom, left, right = 0, n - 1, 0, n - 1\nwhile top <= bottom and left <= right:\n    j = left\n    while j <= right:\n        matrix[top][j] = num\n        num += 1\n        j += 1\n    top += 1\n    i = top\n    while i <= bottom:\n        matrix[i][right] = num\n        num += 1\n        i += 1\n    right -= 1\n    j = right\n    while j >= left:\n        matrix[bottom][j] = num\n        num += 1\n        j -= 1\n    bottom -= 1\n    i = bottom\n    while i >= top:\n        matrix[i][left] = num\n        num += 1\n        i -= 1\n    left += 1\nfor row in matrix:\n    print(___)",
+      "expected_output": "[1, 2, 3]\n[8, 9, 4]\n[7, 6, 5]\n",
+      "hints": "填空螺旋矩阵。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3]\\n[8, 9, 4]\\n[7, 6, 5]\\n'"
+      ],
+      "solution": "n = 3\nmatrix = [[0] * n for _ in range(n)]\nnum = 1\ntop, bottom, left, right = 0, n - 1, 0, n - 1\nwhile top <= bottom and left <= right:\n    j = left\n    while j <= right:\n        matrix[top][j] = num\n        num += 1\n        j += 1\n    top += 1\n    i = top\n    while i <= bottom:\n        matrix[i][right] = num\n        num += 1\n        i += 1\n    right -= 1\n    j = right\n    while j >= left:\n        matrix[bottom][j] = num\n        num += 1\n        j -= 1\n    bottom -= 1\n    i = bottom\n    while i >= top:\n        matrix[i][left] = num\n        num += 1\n        i -= 1\n    left += 1\nfor row in matrix:\n    print(row)"
+    },
+    {
+      "id": "CH08-X-019",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 求字符串中最长单词长度。",
+      "code_template": "text = \"the quick brown fox jumps\"\nwords = text.split()\nmax_len = 0\ni = 0\nwhile i < len(words):\n    if len(words[i]) > max_len:\n        max_len = len(words[i])\n    i += 1\nprint(___)",
+      "expected_output": "Longest word length: 5\n",
+      "hints": "填空最长长度。",
+      "test_cases": [
+        "assert captured_output == 'Longest word length: 5\\n'"
+      ],
+      "solution": "text = \"the quick brown fox jumps\"\nwords = text.split()\nmax_len = 0\ni = 0\nwhile i < len(words):\n    if len(words[i]) > max_len:\n        max_len = len(words[i])\n    i += 1\nprint(f\"Longest word length: {max_len}\")"
+    },
+    {
+      "id": "CH08-X-020",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 模拟二进制加法。",
+      "code_template": "def bin_add(a, b):\n    result = \"\"\n    carry = 0\n    i = len(a) - 1\n    j = len(b) - 1\n    while i >= 0 or j >= 0 or carry:\n        x = int(a[i]) if i >= 0 else 0\n        y = int(b[j]) if j >= 0 else 0\n        total = x + y + carry\n        result = str(total % 2) + result\n        carry = total // 2\n        i -= 1\n        j -= 1\n    return result\nprint(___)",
+      "expected_output": "1000\n",
+      "hints": "填空二进制加法。",
+      "test_cases": [
+        "assert captured_output == '1000\\n'"
+      ],
+      "solution": "def bin_add(a, b):\n    result = \"\"\n    carry = 0\n    i = len(a) - 1\n    j = len(b) - 1\n    while i >= 0 or j >= 0 or carry:\n        x = int(a[i]) if i >= 0 else 0\n        y = int(b[j]) if j >= 0 else 0\n        total = x + y + carry\n        result = str(total % 2) + result\n        carry = total // 2\n        i -= 1\n        j -= 1\n    return result\nprint(bin_add(\"101\", \"11\"))"
+    },
+    {
+      "id": "CH08-X-021",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 求数组的众数。",
+      "code_template": "nums = [1, 3, 3, 2, 3, 1]\ncounts = {}\ni = 0\nwhile i < len(nums):\n    counts[nums[i]] = counts.get(nums[i], 0) + 1\n    i += 1\nmode = max(counts, key=counts.get)\nprint(___)",
+      "expected_output": "Mode: 3 (3 times)\n",
+      "hints": "填空众数。",
+      "test_cases": [
+        "assert captured_output == 'Mode: 3 (3 times)\\n'"
+      ],
+      "solution": "nums = [1, 3, 3, 2, 3, 1]\ncounts = {}\ni = 0\nwhile i < len(nums):\n    counts[nums[i]] = counts.get(nums[i], 0) + 1\n    i += 1\nmode = max(counts, key=counts.get)\nprint(f\"Mode: {mode} ({counts[mode]} times)\")"
+    },
+    {
+      "id": "CH08-X-022",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 求矩阵转置。",
+      "code_template": "matrix = [[1, 2, 3], [4, 5, 6]]\nrows = len(matrix)\ncols = len(matrix[0])\ntransposed = [[0] * rows for _ in range(cols)]\ni = 0\nwhile i < rows:\n    j = 0\n    while j < cols:\n        transposed[j][i] = matrix[i][j]\n        j += 1\n    i += 1\nprint(___)",
+      "expected_output": "[[1, 4], [2, 5], [3, 6]]\n",
+      "hints": "填空转置。",
+      "test_cases": [
+        "assert captured_output == '[[1, 4], [2, 5], [3, 6]]\\n'"
+      ],
+      "solution": "matrix = [[1, 2, 3], [4, 5, 6]]\nrows = len(matrix)\ncols = len(matrix[0])\ntransposed = [[0] * rows for _ in range(cols)]\ni = 0\nwhile i < rows:\n    j = 0\n    while j < cols:\n        transposed[j][i] = matrix[i][j]\n        j += 1\n    i += 1\nprint(transposed)"
+    },
+    {
+      "id": "CH08-X-023",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 求 1 到 100 的完数。",
+      "code_template": "n = 2\nperfect = []\nwhile n <= 100:\n    total = 0\n    d = 1\n    while d < n:\n        if n % d == 0:\n            total += d\n        d += 1\n    if total == n:\n        perfect.append(n)\n    n += 1\nprint(___)",
+      "expected_output": "[6, 28]\n",
+      "hints": "填空完数。",
+      "test_cases": [
+        "assert captured_output == '[6, 28]\\n'"
+      ],
+      "solution": "n = 2\nperfect = []\nwhile n <= 100:\n    total = 0\n    d = 1\n    while d < n:\n        if n % d == 0:\n            total += d\n        d += 1\n    if total == n:\n        perfect.append(n)\n    n += 1\nprint(perfect)"
+    },
+    {
+      "id": "CH08-X-024",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 统计单词频次前 2。",
+      "code_template": "text = \"the cat and the dog\"\nwords = text.split()\ncounts = {}\ni = 0\nwhile i < len(words):\n    counts[words[i]] = counts.get(words[i], 0) + 1\n    i += 1\nfor w, c in sorted(counts.items(), key=lambda x: x[1], reverse=True)[:2]:\n    print(___)",
+      "expected_output": "the: 2\ncat: 1\n",
+      "hints": "填空词频前 2。",
+      "test_cases": [
+        "assert captured_output == 'the: 2\\ncat: 1\\n'"
+      ],
+      "solution": "text = \"the cat and the dog\"\nwords = text.split()\ncounts = {}\ni = 0\nwhile i < len(words):\n    counts[words[i]] = counts.get(words[i], 0) + 1\n    i += 1\nfor w, c in sorted(counts.items(), key=lambda x: x[1], reverse=True)[:2]:\n    print(f\"{w}: {c}\")"
+    },
+    {
+      "id": "CH08-X-025",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 判断回文素数（前几个）。",
+      "code_template": "def is_prime(n):\n    d = 2\n    while d * d <= n:\n        if n % d == 0:\n            return False\n        d += 1\n    return n > 1\nn = 2\nresult = []\nwhile len(result) < 5:\n    if is_prime(n) and str(n) == str(n)[::-1]:\n        result.append(n)\n    n += 1\nprint(___)",
+      "expected_output": "[2, 3, 5, 7, 11]\n",
+      "hints": "填空回文素数。",
+      "test_cases": [
+        "assert captured_output == '[2, 3, 5, 7, 11]\\n'"
+      ],
+      "solution": "def is_prime(n):\n    d = 2\n    while d * d <= n:\n        if n % d == 0:\n            return False\n        d += 1\n    return n > 1\nn = 2\nresult = []\nwhile len(result) < 5:\n    if is_prime(n) and str(n) == str(n)[::-1]:\n        result.append(n)\n    n += 1\nprint(result)"
+    },
+    {
+      "id": "CH08-X-026",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 求数列的第 n 项（递推）。",
+      "code_template": "n = 10\na, b = 1, 1\ncount = 2\nwhile count < n:\n    a, b = b, a + b\n    count += 1\nprint(___)",
+      "expected_output": "Term 10: 55\n",
+      "hints": "填空递推。",
+      "test_cases": [
+        "assert captured_output == 'Term 10: 55\\n'"
+      ],
+      "solution": "n = 10\na, b = 1, 1\ncount = 2\nwhile count < n:\n    a, b = b, a + b\n    count += 1\nprint(f\"Term {n}: {b}\")"
+    },
+    {
+      "id": "CH08-X-027",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 求最大连续 1 的个数。",
+      "code_template": "bits = [1, 1, 0, 1, 1, 1]\nmax_count = 0\ncur = 0\ni = 0\nwhile i < len(bits):\n    if bits[i] == 1:\n        cur += 1\n        max_count = max(max_count, cur)\n    else:\n        cur = 0\n    i += 1\nprint(___)",
+      "expected_output": "Max ones: 3\n",
+      "hints": "填空连续计数。",
+      "test_cases": [
+        "assert captured_output == 'Max ones: 3\\n'"
+      ],
+      "solution": "bits = [1, 1, 0, 1, 1, 1]\nmax_count = 0\ncur = 0\ni = 0\nwhile i < len(bits):\n    if bits[i] == 1:\n        cur += 1\n        max_count = max(max_count, cur)\n    else:\n        cur = 0\n    i += 1\nprint(f\"Max ones: {max_count}\")"
+    },
+    {
+      "id": "CH08-X-028",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 验证哥德巴赫猜想。",
+      "code_template": "def is_prime(n):\n    d = 2\n    while d * d <= n:\n        if n % d == 0:\n            return False\n        d += 1\n    return n > 1\neven = 4\nwhile even <= 20:\n    p = 2\n    while p < even:\n        if is_prime(p) and is_prime(even - p):\n            print(___)\n            break\n        p += 1\n    even += 2",
+      "expected_output": "4 = 2 + 2\n6 = 3 + 3\n8 = 3 + 5\n10 = 3 + 7\n12 = 5 + 7\n14 = 3 + 11\n16 = 3 + 13\n18 = 5 + 13\n20 = 3 + 17\n",
+      "hints": "填空哥德巴赫。",
+      "test_cases": [
+        "assert captured_output == '4 = 2 + 2\\n6 = 3 + 3\\n8 = 3 + 5\\n10 = 3 + 7\\n12 = 5 + 7\\n14 = 3 + 11\\n16 = 3 + 13\\n18 = 5 + 13\\n20 = 3 + 17\\n'"
+      ],
+      "solution": "def is_prime(n):\n    d = 2\n    while d * d <= n:\n        if n % d == 0:\n            return False\n        d += 1\n    return n > 1\neven = 4\nwhile even <= 20:\n    p = 2\n    while p < even:\n        if is_prime(p) and is_prime(even - p):\n            print(f\"{even} = {p} + {even - p}\")\n            break\n        p += 1\n    even += 2"
+    },
+    {
+      "id": "CH08-X-029",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 模拟环形队列出队。",
+      "code_template": "queue = [1, 2, 3, 4, 5]\nresult = []\ni = 0\nwhile queue:\n    i = (i + 1) % len(queue)\n    result.append(queue.pop(i))\nprint(___)",
+      "expected_output": "[2, 4, 1, 5, 3]\n",
+      "hints": "填空环形出队。",
+      "test_cases": [
+        "assert captured_output == '[2, 4, 1, 5, 3]\\n'"
+      ],
+      "solution": "queue = [1, 2, 3, 4, 5]\nresult = []\ni = 0\nwhile queue:\n    i = (i + 1) % len(queue)\n    result.append(queue.pop(i))\nprint(result)"
+    },
+    {
+      "id": "CH08-X-030",
+      "topic": "循环 (while)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 综合：统计 1 到 50 的数字特性。",
+      "code_template": "n = 1\nsquares = 0\ncubes = 0\nwhile n <= 50:\n    root = int(n ** 0.5)\n    if root * root == n:\n        squares += 1\n    cr = round(n ** (1 / 3))\n    if cr ** 3 == n:\n        cubes += 1\n    n += 1\nprint(___)",
+      "expected_output": "Squares: 7, Cubes: 3\n",
+      "hints": "填空特性统计。",
+      "test_cases": [
+        "assert captured_output == 'Squares: 7, Cubes: 3\\n'"
+      ],
+      "solution": "n = 1\nsquares = 0\ncubes = 0\nwhile n <= 50:\n    root = int(n ** 0.5)\n    if root * root == n:\n        squares += 1\n    cr = round(n ** (1 / 3))\n    if cr ** 3 == n:\n        cubes += 1\n    n += 1\nprint(f\"Squares: {squares}, Cubes: {cubes}\")"
+    }
+  ]
+}

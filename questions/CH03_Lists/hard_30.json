@@ -1,0 +1,427 @@
+{
+  "chapter": "CH03",
+  "title": "列表 (Lists)",
+  "difficulty": "中等",
+  "questions": [
+    {
+      "id": "CH03-H-001",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "统计分数列表的最大、最小和平均值。",
+      "code_template": "scores = [88, 92, 76, 95]\nprint(\"Max:\", max(scores))\nprint(\"Min:\", min(scores))\nprint(\"Avg:\",___)",
+      "expected_output": "Max: 95\nMin: 76\nAvg: 87.75\n",
+      "hints": "填空 max/min/sum 统计。",
+      "test_cases": [
+        "assert captured_output == 'Max: 95\\nMin: 76\\nAvg: 87.75\\n'"
+      ],
+      "solution": "scores = [88, 92, 76, 95]\nprint(\"Max:\", max(scores))\nprint(\"Min:\", min(scores))\nprint(\"Avg:\", sum(scores) / len(scores))"
+    },
+    {
+      "id": "CH03-H-002",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "把列表向左旋转两位。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nprint(___)",
+      "expected_output": "[3, 4, 5, 1, 2]\n",
+      "hints": "填空切片拼接。",
+      "test_cases": [
+        "assert captured_output == '[3, 4, 5, 1, 2]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nprint(nums[2:] + nums[:2])"
+    },
+    {
+      "id": "CH03-H-003",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "去除列表中的重复元素（保持顺序）。",
+      "code_template": "nums = [3, 1, 2, 3, 1]\nseen = []\nfor n in nums:\n    if n not in seen:\n        seen.append(n)\nprint(___)",
+      "expected_output": "[3, 1, 2]\n",
+      "hints": "填空去重逻辑。",
+      "test_cases": [
+        "assert captured_output == '[3, 1, 2]\\n'"
+      ],
+      "solution": "nums = [3, 1, 2, 3, 1]\nseen = []\nfor n in nums:\n    if n not in seen:\n        seen.append(n)\nprint(seen)"
+    },
+    {
+      "id": "CH03-H-004",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "统计列表中每个元素的出现次数。",
+      "code_template": "nums = [1, 2, 2, 3, 3, 3]\ncounts = {}\nfor n in nums:\n    counts[n] = counts.get(n, 0) + 1\nprint(___)",
+      "expected_output": "{1: 1, 2: 2, 3: 3}\n",
+      "hints": "填空计数更新。",
+      "test_cases": [
+        "assert captured_output == '{1: 1, 2: 2, 3: 3}\\n'"
+      ],
+      "solution": "nums = [1, 2, 2, 3, 3, 3]\ncounts = {}\nfor n in nums:\n    counts[n] = counts.get(n, 0) + 1\nprint(counts)"
+    },
+    {
+      "id": "CH03-H-005",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "转置一个 2x3 矩阵。",
+      "code_template": "matrix = [[1, 2, 3], [4, 5, 6]]\ntransposed = [[matrix[j][i] for j in range(2)] for i in range(3)]\nprint(___)",
+      "expected_output": "[[1, 4], [2, 5], [3, 6]]\n",
+      "hints": "填空转置推导。",
+      "test_cases": [
+        "assert captured_output == '[[1, 4], [2, 5], [3, 6]]\\n'"
+      ],
+      "solution": "matrix = [[1, 2, 3], [4, 5, 6]]\ntransposed = [[matrix[j][i] for j in range(2)] for i in range(3)]\nprint(transposed)"
+    },
+    {
+      "id": "CH03-H-006",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "在有序列表中二分查找目标值。",
+      "code_template": "nums = [1, 3, 5, 7, 9]\ntarget = 7\nlow, high = 0, len(nums) - 1\nfound = False\nwhile low <= high:\n    mid = (low + high) // 2\n    if nums[mid] == target:\n        found = True\n        break\n    elif nums[mid] < target:\n        low = mid + 1\n    else:\n        high = mid - 1\nprint(\"Found:\",___, \"at index\", mid)",
+      "expected_output": "Found: True at index 3\n",
+      "hints": "填空二分逻辑。",
+      "test_cases": [
+        "assert captured_output == 'Found: True at index 3\\n'"
+      ],
+      "solution": "nums = [1, 3, 5, 7, 9]\ntarget = 7\nlow, high = 0, len(nums) - 1\nfound = False\nwhile low <= high:\n    mid = (low + high) // 2\n    if nums[mid] == target:\n        found = True\n        break\n    elif nums[mid] < target:\n        low = mid + 1\n    else:\n        high = mid - 1\nprint(\"Found:\", found, \"at index\", mid)"
+    },
+    {
+      "id": "CH03-H-007",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用选择排序给列表排序。",
+      "code_template": "nums = [5, 3, 8, 1]\nfor i in range(len(nums)):\n    m = i\n    for j in range(i + 1, len(nums)):\n        if nums[j] < nums[m]:\n            m = j\n    nums[i], nums[m] = nums[m], nums[i]\nprint(___)",
+      "expected_output": "[1, 3, 5, 8]\n",
+      "hints": "填空选择排序。",
+      "test_cases": [
+        "assert captured_output == '[1, 3, 5, 8]\\n'"
+      ],
+      "solution": "nums = [5, 3, 8, 1]\nfor i in range(len(nums)):\n    m = i\n    for j in range(i + 1, len(nums)):\n        if nums[j] < nums[m]:\n            m = j\n    nums[i], nums[m] = nums[m], nums[i]\nprint(nums)"
+    },
+    {
+      "id": "CH03-H-008",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用插入排序给列表排序。",
+      "code_template": "nums = [9, 2, 7, 4]\nfor i in range(1, len(nums)):\n    key = nums[i]\n    j = i - 1\n    while j >= 0 and nums[j] > key:\n        nums[j + 1] = nums[j]\n        j -= 1\n    nums[j + 1] = key\nprint(___)",
+      "expected_output": "[2, 4, 7, 9]\n",
+      "hints": "填空插入排序。",
+      "test_cases": [
+        "assert captured_output == '[2, 4, 7, 9]\\n'"
+      ],
+      "solution": "nums = [9, 2, 7, 4]\nfor i in range(1, len(nums)):\n    key = nums[i]\n    j = i - 1\n    while j >= 0 and nums[j] > key:\n        nums[j + 1] = nums[j]\n        j -= 1\n    nums[j + 1] = key\nprint(nums)"
+    },
+    {
+      "id": "CH03-H-009",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "合并两个有序列表。",
+      "code_template": "a = [1, 4, 7]\nb = [2, 5]\nmerged = sorted(a + b)\nprint(___)",
+      "expected_output": "[1, 2, 4, 5, 7]\n",
+      "hints": "填空 a + b 与 sorted。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 4, 5, 7]\\n'"
+      ],
+      "solution": "a = [1, 4, 7]\nb = [2, 5]\nmerged = sorted(a + b)\nprint(merged)"
+    },
+    {
+      "id": "CH03-H-010",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "找出列表中第二大的数。",
+      "code_template": "nums = [4, 9, 7, 9, 2]\nprint(___)",
+      "expected_output": "7\n",
+      "hints": "填空去重排序取倒数第二个。",
+      "test_cases": [
+        "assert captured_output == '7\\n'"
+      ],
+      "solution": "nums = [4, 9, 7, 9, 2]\nprint(sorted(set(nums))[-2])"
+    },
+    {
+      "id": "CH03-H-011",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "把列表向右旋转一位。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nprint(___)",
+      "expected_output": "[5, 1, 2, 3, 4]\n",
+      "hints": "填空右移拼接。",
+      "test_cases": [
+        "assert captured_output == '[5, 1, 2, 3, 4]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nprint([nums[-1]] + nums[:-1])"
+    },
+    {
+      "id": "CH03-H-012",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "把列表分成奇数和偶数两组。",
+      "code_template": "nums = [1, 2, 3, 4, 5, 6]\nevens = [n for n in nums if n % 2 == 0]\nodds = [n for n in nums if n % 2 == 1]\nprint(___, odds)",
+      "expected_output": "[2, 4, 6] [1, 3, 5]\n",
+      "hints": "填空两组推导式。",
+      "test_cases": [
+        "assert captured_output == '[2, 4, 6] [1, 3, 5]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5, 6]\nevens = [n for n in nums if n % 2 == 0]\nodds = [n for n in nums if n % 2 == 1]\nprint(evens, odds)"
+    },
+    {
+      "id": "CH03-H-013",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "比较两个列表的内容与身份。",
+      "code_template": "a = [1, 2, 3]\nb = [1, 2, 3]\nprint(___, a is b)",
+      "expected_output": "True False\n",
+      "hints": "填空 == 与 is 比较。",
+      "test_cases": [
+        "assert captured_output == 'True False\\n'"
+      ],
+      "solution": "a = [1, 2, 3]\nb = [1, 2, 3]\nprint(a == b, a is b)"
+    },
+    {
+      "id": "CH03-H-014",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "判断元素是否存在于列表中。",
+      "code_template": "nums = [1, 2, 3]\nprint(___, 5 in nums)",
+      "expected_output": "False False\n",
+      "hints": "填空两个 in 判断。",
+      "test_cases": [
+        "assert captured_output == 'False False\\n'"
+      ],
+      "solution": "nums = [1, 2, 3]\nprint(0 in nums, 5 in nums)"
+    },
+    {
+      "id": "CH03-H-015",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "计算列表的前缀和。",
+      "code_template": "nums = [1, 2, 3, 4]\nprefix = []\ntotal = 0\nfor n in nums:\n    total += n\n    prefix.append(total)\nprint(___)",
+      "expected_output": "[1, 3, 6, 10]\n",
+      "hints": "填空累加与添加。",
+      "test_cases": [
+        "assert captured_output == '[1, 3, 6, 10]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4]\nprefix = []\ntotal = 0\nfor n in nums:\n    total += n\n    prefix.append(total)\nprint(prefix)"
+    },
+    {
+      "id": "CH03-H-016",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "求矩阵主对角线元素之和。",
+      "code_template": "matrix = [[2, 3], [4, 9]]\nprint(\"Diagonal sum:\",___)",
+      "expected_output": "Diagonal sum: 11\n",
+      "hints": "填空对角线求和。",
+      "test_cases": [
+        "assert captured_output == 'Diagonal sum: 11\\n'"
+      ],
+      "solution": "matrix = [[2, 3], [4, 9]]\nprint(\"Diagonal sum:\", matrix[0][0] + matrix[1][1])"
+    },
+    {
+      "id": "CH03-H-017",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "把 range 转成列表。",
+      "code_template": "print(___)",
+      "expected_output": "[0, 1, 2, 3, 4]\n",
+      "hints": "填空 list(range(5))。",
+      "test_cases": [
+        "assert captured_output == '[0, 1, 2, 3, 4]\\n'"
+      ],
+      "solution": "print(list(range(5)))"
+    },
+    {
+      "id": "CH03-H-018",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "按字符串长度排序列表。",
+      "code_template": "words = [\"bb\", \"a\", \"ccc\"]\nprint(___)",
+      "expected_output": "['a', 'bb', 'ccc']\n",
+      "hints": "填空 key=len。",
+      "test_cases": [
+        "assert captured_output == \"['a', 'bb', 'ccc']\\n\""
+      ],
+      "solution": "words = [\"bb\", \"a\", \"ccc\"]\nprint(sorted(words, key=len))"
+    },
+    {
+      "id": "CH03-H-019",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "格式化输出列表中的每个元素。",
+      "code_template": "nums = [1, 2, 3]\nfor n in nums:\n    print(___)",
+      "expected_output": "Item: 1\nItem: 2\nItem: 3\n",
+      "hints": "填空 f-string。",
+      "test_cases": [
+        "assert captured_output == 'Item: 1\\nItem: 2\\nItem: 3\\n'"
+      ],
+      "solution": "nums = [1, 2, 3]\nfor n in nums:\n    print(f\"Item: {n}\")"
+    },
+    {
+      "id": "CH03-H-020",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "计算列表中所有元素的乘积。",
+      "code_template": "nums = [2, 3, 4]\nproduct = 1\nfor n in nums:\n    product *= n\nprint(___)",
+      "expected_output": "24\n",
+      "hints": "填空累乘。",
+      "test_cases": [
+        "assert captured_output == '24\\n'"
+      ],
+      "solution": "nums = [2, 3, 4]\nproduct = 1\nfor n in nums:\n    product *= n\nprint(product)"
+    },
+    {
+      "id": "CH03-H-021",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "找出列表中重复出现的元素。",
+      "code_template": "nums = [1, 3, 3, 5, 5, 5]\nprint(___)",
+      "expected_output": "[3, 5]\n",
+      "hints": "填空去重筛选。",
+      "test_cases": [
+        "assert captured_output == '[3, 5]\\n'"
+      ],
+      "solution": "nums = [1, 3, 3, 5, 5, 5]\nprint([n for n in sorted(set(nums)) if nums.count(n) > 1])"
+    },
+    {
+      "id": "CH03-H-022",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "把二维列表扁平化。",
+      "code_template": "matrix = [[7, 8], [9, 10]]\nflat = [n for row in matrix for n in row]\nprint(___)",
+      "expected_output": "[7, 8, 9, 10]\n",
+      "hints": "填空嵌套推导。",
+      "test_cases": [
+        "assert captured_output == '[7, 8, 9, 10]\\n'"
+      ],
+      "solution": "matrix = [[7, 8], [9, 10]]\nflat = [n for row in matrix for n in row]\nprint(flat)"
+    },
+    {
+      "id": "CH03-H-023",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "把列表首尾配对求和。",
+      "code_template": "nums = [1, 2, 3, 4]\nprint(___)",
+      "expected_output": "[5, 5]\n",
+      "hints": "填空配对索引。",
+      "test_cases": [
+        "assert captured_output == '[5, 5]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4]\nprint([nums[i] + nums[-1 - i] for i in range(len(nums) // 2)])"
+    },
+    {
+      "id": "CH03-H-024",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "过滤掉列表中的 None。",
+      "code_template": "items = [None, \"a\", None, \"b\"]\nprint(___)",
+      "expected_output": "['a', 'b']\n",
+      "hints": "填空过滤条件。",
+      "test_cases": [
+        "assert captured_output == \"['a', 'b']\\n\""
+      ],
+      "solution": "items = [None, \"a\", None, \"b\"]\nprint([x for x in items if x is not None])"
+    },
+    {
+      "id": "CH03-H-025",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "筛选平方大于 10 的元素。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nprint(___)",
+      "expected_output": "[16, 25]\n",
+      "hints": "填空筛选与平方。",
+      "test_cases": [
+        "assert captured_output == '[16, 25]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nprint([n * n for n in nums if n * n > 10])"
+    },
+    {
+      "id": "CH03-H-026",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "输出每个单词的长度列表。",
+      "code_template": "words = [\"hello\", \"world\", \"python\"]\nprint(___)",
+      "expected_output": "[5, 5, 6]\n",
+      "hints": "填空 len(w)。",
+      "test_cases": [
+        "assert captured_output == '[5, 5, 6]\\n'"
+      ],
+      "solution": "words = [\"hello\", \"world\", \"python\"]\nprint([len(w) for w in words])"
+    },
+    {
+      "id": "CH03-H-027",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "找出列表 A 中不在列表 B 的元素。",
+      "code_template": "a = [10, 20, 30, 40, 50]\nb = [20, 40]\nprint(___)",
+      "expected_output": "[10, 30, 50]\n",
+      "hints": "填空差集推导。",
+      "test_cases": [
+        "assert captured_output == '[10, 30, 50]\\n'"
+      ],
+      "solution": "a = [10, 20, 30, 40, 50]\nb = [20, 40]\nprint([x for x in a if x not in b])"
+    },
+    {
+      "id": "CH03-H-028",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "输出每个元素及其出现次数。",
+      "code_template": "nums = [1, 1, 2]\nfor n in sorted(set(nums)):\n    print(___, nums.count(n))",
+      "expected_output": "1 2\n2 1\n",
+      "hints": "填空遍历去重集合。",
+      "test_cases": [
+        "assert captured_output == '1 2\\n2 1\\n'"
+      ],
+      "solution": "nums = [1, 1, 2]\nfor n in sorted(set(nums)):\n    print(n, nums.count(n))"
+    },
+    {
+      "id": "CH03-H-029",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "求反转列表的和。",
+      "code_template": "nums = [1, 2, 3, 4]\nprint(\"Sum of reversed:\",___)",
+      "expected_output": "Sum of reversed: 10\n",
+      "hints": "填空反转切片。",
+      "test_cases": [
+        "assert captured_output == 'Sum of reversed: 10\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4]\nprint(\"Sum of reversed:\", sum(nums[::-1]))"
+    },
+    {
+      "id": "CH03-H-030",
+      "topic": "列表 (Lists)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 enumerate() 输出索引和值。",
+      "code_template": "nums = [10, 20, 30]\nfor i, n in enumerate(nums):\n    print(___, n)",
+      "expected_output": "0 10\n1 20\n2 30\n",
+      "hints": "填空 enumerate(nums)。",
+      "test_cases": [
+        "assert captured_output == '0 10\\n1 20\\n2 30\\n'"
+      ],
+      "solution": "nums = [10, 20, 30]\nfor i, n in enumerate(nums):\n    print(i, n)"
+    }
+  ]
+}

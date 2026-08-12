@@ -1,0 +1,427 @@
+{
+  "chapter": "CH09",
+  "title": "函数 (基础)",
+  "difficulty": "超简单",
+  "questions": [
+    {
+      "id": "CH09-E-001",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义函数 greet 并调用输出。",
+      "code_template": "def greet():\n    print(___)\n\ngreet()",
+      "expected_output": "Hello\n",
+      "hints": "填空函数调用。",
+      "test_cases": [
+        "assert captured_output == 'Hello\\n'"
+      ],
+      "solution": "def greet():\n    print(\"Hello\")\n\ngreet()"
+    },
+    {
+      "id": "CH09-E-002",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义函数输出两次问候。",
+      "code_template": "def greet():\n    print(___)\n\ngreet()\ngreet()",
+      "expected_output": "Hi\nHi\n",
+      "hints": "填空两次调用。",
+      "test_cases": [
+        "assert captured_output == 'Hi\\nHi\\n'"
+      ],
+      "solution": "def greet():\n    print(\"Hi\")\n\ngreet()\ngreet()"
+    },
+    {
+      "id": "CH09-E-003",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义函数返回数字 42。",
+      "code_template": "def get_number():\n    return 42\n\nprint(___)",
+      "expected_output": "42\n",
+      "hints": "填空 return。",
+      "test_cases": [
+        "assert captured_output == '42\\n'"
+      ],
+      "solution": "def get_number():\n    return 42\n\nprint(get_number())"
+    },
+    {
+      "id": "CH09-E-004",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义函数输出参数值。",
+      "code_template": "def show(x):\n    print(___)\n\nshow(5)",
+      "expected_output": "5\n",
+      "hints": "填空参数调用。",
+      "test_cases": [
+        "assert captured_output == '5\\n'"
+      ],
+      "solution": "def show(x):\n    print(x)\n\nshow(5)"
+    },
+    {
+      "id": "CH09-E-005",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义两参数函数求差。",
+      "code_template": "def diff(a, b):\n    return a - b\n\nprint(___)",
+      "expected_output": "7\n",
+      "hints": "填空返回表达式。",
+      "test_cases": [
+        "assert captured_output == '7\\n'"
+      ],
+      "solution": "def diff(a, b):\n    return a - b\n\nprint(diff(10, 3))"
+    },
+    {
+      "id": "CH09-E-006",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数返回两数之和并输出。",
+      "code_template": "def add(a, b):\n    return a + b\n\nresult = add(3, 8)\nprint(___)",
+      "expected_output": "11\n",
+      "hints": "填空调用赋值。",
+      "test_cases": [
+        "assert captured_output == '11\\n'"
+      ],
+      "solution": "def add(a, b):\n    return a + b\n\nresult = add(3, 8)\nprint(result)"
+    },
+    {
+      "id": "CH09-E-007",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数体内输出固定文本。",
+      "code_template": "def say():\n    print(___)\n\nsay()",
+      "expected_output": "Python\n",
+      "hints": "填空函数体。",
+      "test_cases": [
+        "assert captured_output == 'Python\\n'"
+      ],
+      "solution": "def say():\n    print(\"Python\")\n\nsay()"
+    },
+    {
+      "id": "CH09-E-008",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "无 return 的函数输出 None。",
+      "code_template": "def no_return():\n    x = 1\n\nprint(___)",
+      "expected_output": "None\n",
+      "hints": "填空调用。",
+      "test_cases": [
+        "assert captured_output == 'None\\n'"
+      ],
+      "solution": "def no_return():\n    x = 1\n\nprint(no_return())"
+    },
+    {
+      "id": "CH09-E-009",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数接收字符串参数并输出。",
+      "code_template": "def echo(text):\n    print(___)\n\necho(\"hi\")",
+      "expected_output": "hi\n",
+      "hints": "填空参数调用。",
+      "test_cases": [
+        "assert captured_output == 'hi\\n'"
+      ],
+      "solution": "def echo(text):\n    print(text)\n\necho(\"hi\")"
+    },
+    {
+      "id": "CH09-E-010",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "同一函数调用两次。",
+      "code_template": "def square(x):\n    return x * x\n\nprint(square(2))\nprint(___)",
+      "expected_output": "4\n9\n",
+      "hints": "填空两次调用。",
+      "test_cases": [
+        "assert captured_output == '4\\n9\\n'"
+      ],
+      "solution": "def square(x):\n    return x * x\n\nprint(square(2))\nprint(square(3))"
+    },
+    {
+      "id": "CH09-E-011",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数内做参数运算。",
+      "code_template": "def double(x):\n    return x * 2\n\nprint(___)",
+      "expected_output": "14\n",
+      "hints": "填空运算返回。",
+      "test_cases": [
+        "assert captured_output == '14\\n'"
+      ],
+      "solution": "def double(x):\n    return x * 2\n\nprint(double(7))"
+    },
+    {
+      "id": "CH09-E-012",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数返回拼接字符串。",
+      "code_template": "def combine(a, b):\n    return a + b\n\nprint(___)",
+      "expected_output": "PyQuest\n",
+      "hints": "填空拼接返回。",
+      "test_cases": [
+        "assert captured_output == 'PyQuest\\n'"
+      ],
+      "solution": "def combine(a, b):\n    return a + b\n\nprint(combine(\"Py\", \"Quest\"))"
+    },
+    {
+      "id": "CH09-E-013",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "使用默认参数。",
+      "code_template": "def greet(name=\"World\"):\n    print(\"Hello\",___)\n\ngreet()",
+      "expected_output": "Hello World\n",
+      "hints": "填空默认参数。",
+      "test_cases": [
+        "assert captured_output == 'Hello World\\n'"
+      ],
+      "solution": "def greet(name=\"World\"):\n    print(\"Hello\", name)\n\ngreet()"
+    },
+    {
+      "id": "CH09-E-014",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数内定义局部变量。",
+      "code_template": "def calc():\n    x = 10\n    return x + 5\n\nprint(___)",
+      "expected_output": "15\n",
+      "hints": "填空局部变量。",
+      "test_cases": [
+        "assert captured_output == '15\\n'"
+      ],
+      "solution": "def calc():\n    x = 10\n    return x + 5\n\nprint(calc())"
+    },
+    {
+      "id": "CH09-E-015",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用函数返回值做判断。",
+      "code_template": "def is_even(n):\n    return n % 2 == 0\n\nprint(___)",
+      "expected_output": "True\n",
+      "hints": "填空布尔返回。",
+      "test_cases": [
+        "assert captured_output == 'True\\n'"
+      ],
+      "solution": "def is_even(n):\n    return n % 2 == 0\n\nprint(is_even(4))"
+    },
+    {
+      "id": "CH09-E-016",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数返回字符串并输出。",
+      "code_template": "def make_msg():\n    return 'Hi there!'\n\nprint(___)",
+      "expected_output": "Hi there!\n",
+      "hints": "填空返回。",
+      "test_cases": [
+        "assert captured_output == 'Hi there!\\n'"
+      ],
+      "solution": "def make_msg():\n    return 'Hi there!'\n\nprint(make_msg())"
+    },
+    {
+      "id": "CH09-E-017",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "数字参数传入函数。",
+      "code_template": "def add_ten(n):\n    return n + 10\n\nprint(___)",
+      "expected_output": "13\n",
+      "hints": "填空函数调用。",
+      "test_cases": [
+        "assert captured_output == '13\\n'"
+      ],
+      "solution": "def add_ten(n):\n    return n + 10\n\nprint(add_ten(3))"
+    },
+    {
+      "id": "CH09-E-018",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数返回比较结果。",
+      "code_template": "def is_larger(a, b):\n    return a > b\n\nprint(___)",
+      "expected_output": "False\n",
+      "hints": "填空比较返回。",
+      "test_cases": [
+        "assert captured_output == 'False\\n'"
+      ],
+      "solution": "def is_larger(a, b):\n    return a > b\n\nprint(is_larger(3, 5))"
+    },
+    {
+      "id": "CH09-E-019",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "复用函数计算多个值。",
+      "code_template": "def triple(x):\n    return x * 3\n\nprint(___, triple(3))",
+      "expected_output": "6 9\n",
+      "hints": "填空复用调用。",
+      "test_cases": [
+        "assert captured_output == '6 9\\n'"
+      ],
+      "solution": "def triple(x):\n    return x * 3\n\nprint(triple(2), triple(3))"
+    },
+    {
+      "id": "CH09-E-020",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用关键字参数调用。",
+      "code_template": "def greet(name, msg):\n    print(___, name)\n\ngreet(msg=\"Hi\", name=\"Bob\")",
+      "expected_output": "Hi Bob\n",
+      "hints": "填空关键字调用。",
+      "test_cases": [
+        "assert captured_output == 'Hi Bob\\n'"
+      ],
+      "solution": "def greet(name, msg):\n    print(msg, name)\n\ngreet(msg=\"Hi\", name=\"Bob\")"
+    },
+    {
+      "id": "CH09-E-021",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数内条件返回。",
+      "code_template": "def sign(n):\n    if n > 0:\n        return \"positive\"\n    return \"non-positive\"\n\nprint(___)",
+      "expected_output": "positive\n",
+      "hints": "填空条件返回。",
+      "test_cases": [
+        "assert captured_output == 'positive\\n'"
+      ],
+      "solution": "def sign(n):\n    if n > 0:\n        return \"positive\"\n    return \"non-positive\"\n\nprint(sign(5))"
+    },
+    {
+      "id": "CH09-E-022",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "循环内调用函数。",
+      "code_template": "def square(x):\n    return x * x\n\nfor i in range(1, 4):\n    print(___)",
+      "expected_output": "1\n4\n9\n",
+      "hints": "填空循环调用。",
+      "test_cases": [
+        "assert captured_output == '1\\n4\\n9\\n'"
+      ],
+      "solution": "def square(x):\n    return x * x\n\nfor i in range(1, 4):\n    print(square(i))"
+    },
+    {
+      "id": "CH09-E-023",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数返回平方数。",
+      "code_template": "def square(x):\n    return ___ * x\n\nprint(square(6))",
+      "expected_output": "36\n",
+      "hints": "填 x。",
+      "test_cases": [
+        "assert captured_output == '36\\n'"
+      ],
+      "solution": "def square(x):\n    return x * x\n\nprint(square(6))"
+    },
+    {
+      "id": "CH09-E-024",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义并调用打招呼函数。",
+      "code_template": "def hello():\n    return \"Hello\"\n\nprint(___)",
+      "expected_output": "Hello!\n",
+      "hints": "填空返回拼接。",
+      "test_cases": [
+        "assert captured_output == 'Hello!\\n'"
+      ],
+      "solution": "def hello():\n    return \"Hello\"\n\nprint(hello() + \"!\")"
+    },
+    {
+      "id": "CH09-E-025",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "默认参数与传入参数。",
+      "code_template": "def repeat(text, times=2):\n    return text * times\n\nprint(___)",
+      "expected_output": "abab\n",
+      "hints": "填空默认参数。",
+      "test_cases": [
+        "assert captured_output == 'abab\\n'"
+      ],
+      "solution": "def repeat(text, times=2):\n    return text * times\n\nprint(repeat(\"ab\"))"
+    },
+    {
+      "id": "CH09-E-026",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "递归求阶乘（雏形）。",
+      "code_template": "def fact(n):\n    if n <= 1:\n        return 1\n    return n * fact(n - 1)\n\nprint(___)",
+      "expected_output": "120\n",
+      "hints": "填空递归式。",
+      "test_cases": [
+        "assert captured_output == '120\\n'"
+      ],
+      "solution": "def fact(n):\n    if n <= 1:\n        return 1\n    return n * fact(n - 1)\n\nprint(fact(5))"
+    },
+    {
+      "id": "CH09-E-027",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数返回多个值。",
+      "code_template": "def get_stats():\n    return 1, 2\n\na, b = get_stats()\nprint(___, b)",
+      "expected_output": "1 2\n",
+      "hints": "填空多返回值。",
+      "test_cases": [
+        "assert captured_output == '1 2\\n'"
+      ],
+      "solution": "def get_stats():\n    return 1, 2\n\na, b = get_stats()\nprint(a, b)"
+    },
+    {
+      "id": "CH09-E-028",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "空函数用 pass。",
+      "code_template": "def placeholder():\n    pass\n\nprint(___)",
+      "expected_output": "done\n",
+      "hints": "填空 pass。",
+      "test_cases": [
+        "assert captured_output == 'done\\n'"
+      ],
+      "solution": "def placeholder():\n    pass\n\nprint(\"done\")"
+    },
+    {
+      "id": "CH09-E-029",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "带文档说明的函数。",
+      "code_template": "def greet():\n    \"\"\"Say hello\"\"\"\n    print(___)\n\ngreet()",
+      "expected_output": "Hi!\n",
+      "hints": "填空调用。",
+      "test_cases": [
+        "assert captured_output == 'Hi!\\n'"
+      ],
+      "solution": "def greet():\n    \"\"\"Say hello\"\"\"\n    print(\"Hi!\")\n\ngreet()"
+    },
+    {
+      "id": "CH09-E-030",
+      "topic": "函数 (基础)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "综合：函数求和并输出。",
+      "code_template": "def total(a, b, c):\n    return a + b + c\n\nprint(___)",
+      "expected_output": "6\n",
+      "hints": "填空三参数求和。",
+      "test_cases": [
+        "assert captured_output == '6\\n'"
+      ],
+      "solution": "def total(a, b, c):\n    return a + b + c\n\nprint(total(1, 2, 3))"
+    }
+  ]
+}

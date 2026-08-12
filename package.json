@@ -1,0 +1,25 @@
+{
+  "name": "pyquest",
+  "version": "0.8.1",
+  "private": true,
+  "description": "PyQuest — 互动式 Python 练习平台（闯关式题库）",
+  "scripts": {
+    "gen:ch01": "python generator/gen_ch01_easy.py && python generator/gen_ch01_rest.py && python generator/gen_ch01_hard.py && python generator/gen_ch01_expert.py",
+    "gen:ch02": "python generator/gen_ch02_easy.py && python generator/gen_ch02_medium.py && python generator/gen_ch02_hard.py && python generator/gen_ch02_expert.py",
+    "gen:ch03": "python generator/gen_ch03.py",
+    "gen:ch04": "python generator/gen_ch04.py",
+    "gen:ch05": "python generator/gen_ch05.py",
+    "gen:ch06": "python generator/gen_ch06.py",
+    "gen:ch07": "python generator/gen_ch07.py",
+    "gen:ch08": "python generator/gen_ch08.py",
+    "gen:ch09": "python generator/gen_ch09.py",
+    "gen:ch10": "python generator/gen_ch10.py",
+    "gen:ch11": "python generator/gen_ch11.py",
+    "gen:ch12": "python generator/gen_ch12.py",
+    "gen:ch13": "python generator/gen_ch13.py",
+    "gen:ch14": "python generator/gen_ch14.py",
+    "gen:ch15": "python generator/gen_ch15.py",
+    "validate": "python generator/validate.py"
+  },
+  "license": "MIT"
+}

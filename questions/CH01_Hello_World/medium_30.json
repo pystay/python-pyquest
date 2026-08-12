@@ -1,0 +1,427 @@
+{
+  "chapter": "CH01",
+  "title": "Hello, World!",
+  "difficulty": "简单",
+  "questions": [
+    {
+      "id": "CH01-M-001",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "定义字符串变量 name 为 'Bob' 并用 print() 输出。",
+      "code_template": "name = \"Bob\"\nprint(___)",
+      "expected_output": "Bob\n",
+      "hints": "print 括号内填变量名 name。",
+      "test_cases": [
+        "assert captured_output == 'Bob\\n'"
+      ],
+      "solution": "name = \"Bob\"\nprint(name)"
+    },
+    {
+      "id": "CH01-M-002",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "定义整数变量 score 为 92 并输出。",
+      "code_template": "score = 92\nprint(___)",
+      "expected_output": "92\n",
+      "hints": "print 括号内填变量名 score。",
+      "test_cases": [
+        "assert captured_output == '92\\n'"
+      ],
+      "solution": "score = 92\nprint(score)"
+    },
+    {
+      "id": "CH01-M-003",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "定义浮点数变量 price 为 19.99 并输出。",
+      "code_template": "price = 19.99\nprint(___)",
+      "expected_output": "19.99\n",
+      "hints": "print 括号内填变量名 price。",
+      "test_cases": [
+        "assert captured_output == '19.99\\n'"
+      ],
+      "solution": "price = 19.99\nprint(price)"
+    },
+    {
+      "id": "CH01-M-004",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "定义布尔变量 is_student 并随文字一起输出。",
+      "code_template": "is_student = True\nprint(\"Is student:\", ___)",
+      "expected_output": "Is student: True\n",
+      "hints": "逗号后填变量名 is_student。",
+      "test_cases": [
+        "assert captured_output == 'Is student: True\\n'"
+      ],
+      "solution": "is_student = True\nprint(\"Is student:\", is_student)"
+    },
+    {
+      "id": "CH01-M-005",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 + 拼接两个字符串变量后输出。",
+      "code_template": "first = \"Alice\"\nlast = \"Smith\"\nprint(___ + \" \" + ___)",
+      "expected_output": "Alice Smith\n",
+      "hints": "用 + 连接 first、空格和 last。",
+      "test_cases": [
+        "assert captured_output == 'Alice Smith\\n'"
+      ],
+      "solution": "first = \"Alice\"\nlast = \"Smith\"\nprint(first + \" \" + last)"
+    },
+    {
+      "id": "CH01-M-006",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 f-string 输出姓名和年龄。",
+      "code_template": "name = \"Alice\"\nage = 25\nprint(f\"{___} is {___} years old\")",
+      "expected_output": "Alice is 25 years old\n",
+      "hints": "花括号内依次填 name、age。",
+      "test_cases": [
+        "assert captured_output == 'Alice is 25 years old\\n'"
+      ],
+      "solution": "name = \"Alice\"\nage = 25\nprint(f\"{name} is {age} years old\")"
+    },
+    {
+      "id": "CH01-M-007",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 format() 输出两个数相加的等式。",
+      "code_template": "a = 3\nb = 7\nprint(\"{} + {} = {}\".format(___, ___, ___))",
+      "expected_output": "3 + 7 = 10\n",
+      "hints": "依次填 a、b、a + b。",
+      "test_cases": [
+        "assert captured_output == '3 + 7 = 10\\n'"
+      ],
+      "solution": "a = 3\nb = 7\nprint(\"{} + {} = {}\".format(a, b, a + b))"
+    },
+    {
+      "id": "CH01-M-008",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用逗号分隔同时输出姓名和分数。",
+      "code_template": "name = \"Tom\"\nscore = 88\nprint(___, ___)",
+      "expected_output": "Tom 88\n",
+      "hints": "依次填 name、score。",
+      "test_cases": [
+        "assert captured_output == 'Tom 88\\n'"
+      ],
+      "solution": "name = \"Tom\"\nscore = 88\nprint(name, score)"
+    },
+    {
+      "id": "CH01-M-009",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "变量参与算术运算后输出三个结果。",
+      "code_template": "x = 7\ny = 2\nprint(___, ___, ___)",
+      "expected_output": "9 5 14\n",
+      "hints": "依次填 x + y、x - y、x * y。",
+      "test_cases": [
+        "assert captured_output == '9 5 14\\n'"
+      ],
+      "solution": "x = 7\ny = 2\nprint(x + y, x - y, x * y)"
+    },
+    {
+      "id": "CH01-M-010",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "变量参与比较运算后输出布尔结果。",
+      "code_template": "a = 10\nb = 5\nprint(___, ___)",
+      "expected_output": "True False\n",
+      "hints": "依次填 a > b、a == b。",
+      "test_cases": [
+        "assert captured_output == 'True False\\n'"
+      ],
+      "solution": "a = 10\nb = 5\nprint(a > b, a == b)"
+    },
+    {
+      "id": "CH01-M-011",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "定义三个变量并在一行 print() 中全部输出。",
+      "code_template": "x = 1\ny = 2\nz = 3\nprint(___, ___, ___)",
+      "expected_output": "1 2 3\n",
+      "hints": "依次填 x、y、z。",
+      "test_cases": [
+        "assert captured_output == '1 2 3\\n'"
+      ],
+      "solution": "x = 1\ny = 2\nz = 3\nprint(x, y, z)"
+    },
+    {
+      "id": "CH01-M-012",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "变量重新赋值后再输出新值。",
+      "code_template": "x = 3\nx = ___ * 3\nprint(___)",
+      "expected_output": "9\n",
+      "hints": "先填 x 再填 x，观察重新赋值。",
+      "test_cases": [
+        "assert captured_output == '9\\n'"
+      ],
+      "solution": "x = 3\nx = x * 3\nprint(x)"
+    },
+    {
+      "id": "CH01-M-013",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 + 拼接字符串与 str() 转换的数字。",
+      "code_template": "name = \"Alice\"\nage = 25\nprint(\"Name: \" + ___ + \", Age: \" + str(___))",
+      "expected_output": "Name: Alice, Age: 25\n",
+      "hints": "依次填 name、age。",
+      "test_cases": [
+        "assert captured_output == 'Name: Alice, Age: 25\\n'"
+      ],
+      "solution": "name = \"Alice\"\nage = 25\nprint(\"Name: \" + name + \", Age: \" + str(age))"
+    },
+    {
+      "id": "CH01-M-014",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 f-string 把浮点数保留两位小数输出。",
+      "code_template": "price = 19.99\nprint(f\"Price: {___:.2f}\")",
+      "expected_output": "Price: 19.99\n",
+      "hints": "花括号内填 price。",
+      "test_cases": [
+        "assert captured_output == 'Price: 19.99\\n'"
+      ],
+      "solution": "price = 19.99\nprint(f\"Price: {price:.2f}\")"
+    },
+    {
+      "id": "CH01-M-015",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "输出变量除法的商、整除和余数。",
+      "code_template": "a = 9\nb = 2\nprint(___ / b, ___ // b, ___ % b)",
+      "expected_output": "4.5 4 1\n",
+      "hints": "三处都填变量 a。",
+      "test_cases": [
+        "assert captured_output == '4.5 4 1\\n'"
+      ],
+      "solution": "a = 9\nb = 2\nprint(a / b, a // b, a % b)"
+    },
+    {
+      "id": "CH01-M-016",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "定义布尔变量 is_ready 并随文字输出。",
+      "code_template": "is_ready = True\nprint(\"Ready:\", ___)",
+      "expected_output": "Ready: True\n",
+      "hints": "逗号后填变量名 is_ready。",
+      "test_cases": [
+        "assert captured_output == 'Ready: True\\n'"
+      ],
+      "solution": "is_ready = True\nprint(\"Ready:\", is_ready)"
+    },
+    {
+      "id": "CH01-M-017",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "变量参与幂运算后输出结果。",
+      "code_template": "base = 3\nexp = 4\nprint(___ ** ___)",
+      "expected_output": "81\n",
+      "hints": "依次填 base、exp。",
+      "test_cases": [
+        "assert captured_output == '81\\n'"
+      ],
+      "solution": "base = 3\nexp = 4\nprint(base ** exp)"
+    },
+    {
+      "id": "CH01-M-018",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字符串变量拼接后重新赋值并输出。",
+      "code_template": "msg = \"Good\"\nmsg = ___ + \" job\"\nprint(___)",
+      "expected_output": "Good job\n",
+      "hints": "先填 msg 再填 msg。",
+      "test_cases": [
+        "assert captured_output == 'Good job\\n'"
+      ],
+      "solution": "msg = \"Good\"\nmsg = msg + \" job\"\nprint(msg)"
+    },
+    {
+      "id": "CH01-M-019",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 format() 关键字参数输出姓名和年龄。",
+      "code_template": "name = \"Bob\"\nage = 30\nprint(\"{n} is {a} years old\".format(n=___, a=___))",
+      "expected_output": "Bob is 30 years old\n",
+      "hints": "依次填 name、age。",
+      "test_cases": [
+        "assert captured_output == 'Bob is 30 years old\\n'"
+      ],
+      "solution": "name = \"Bob\"\nage = 30\nprint(\"{n} is {a} years old\".format(n=name, a=age))"
+    },
+    {
+      "id": "CH01-M-020",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "交换两个变量的值后输出。",
+      "code_template": "a = 1\nb = 2\n___, ___ = b, a\nprint(a, b)",
+      "expected_output": "2 1\n",
+      "hints": "用 a, b = b, a 交换。",
+      "test_cases": [
+        "assert captured_output == '2 1\\n'"
+      ],
+      "solution": "a = 1\nb = 2\na, b = b, a\nprint(a, b)"
+    },
+    {
+      "id": "CH01-M-021",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用变量与数字相乘重复字符串并输出。",
+      "code_template": "symbol = \"*\"\nn = 5\nprint(___ * ___)",
+      "expected_output": "*****\n",
+      "hints": "依次填 symbol、n。",
+      "test_cases": [
+        "assert captured_output == '*****\\n'"
+      ],
+      "solution": "symbol = \"*\"\nn = 5\nprint(symbol * n)"
+    },
+    {
+      "id": "CH01-M-022",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "两个浮点数变量相乘并输出面积。",
+      "code_template": "width = 2.5\nheight = 4.0\nprint(___ * ___)",
+      "expected_output": "10.0\n",
+      "hints": "依次填 width、height。",
+      "test_cases": [
+        "assert captured_output == '10.0\\n'"
+      ],
+      "solution": "width = 2.5\nheight = 4.0\nprint(width * height)"
+    },
+    {
+      "id": "CH01-M-023",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "一个变量参与多个比较并输出结果。",
+      "code_template": "a = 5\nprint(___ > 3, a < 10, ___ == 5)",
+      "expected_output": "True True True\n",
+      "hints": "两处都填变量 a。",
+      "test_cases": [
+        "assert captured_output == 'True True True\\n'"
+      ],
+      "solution": "a = 5\nprint(a > 3, a < 10, a == 5)"
+    },
+    {
+      "id": "CH01-M-024",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "定义负数变量并输出。",
+      "code_template": "temp = -5\nprint(___)",
+      "expected_output": "-5\n",
+      "hints": "print 括号内填变量名 temp。",
+      "test_cases": [
+        "assert captured_output == '-5\\n'"
+      ],
+      "solution": "temp = -5\nprint(temp)"
+    },
+    {
+      "id": "CH01-M-025",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "输出字符串变量和浮点数变量。",
+      "code_template": "product = \"Python\"\nversion = 3.12\nprint(___, ___)",
+      "expected_output": "Python 3.12\n",
+      "hints": "依次填 product、version。",
+      "test_cases": [
+        "assert captured_output == 'Python 3.12\\n'"
+      ],
+      "solution": "product = \"Python\"\nversion = 3.12\nprint(product, version)"
+    },
+    {
+      "id": "CH01-M-026",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "一行输出字符串、整数、浮点数三个变量。",
+      "code_template": "name = \"Ada\"\nage = 36\nheight = 1.7\nprint(___, ___, ___)",
+      "expected_output": "Ada 36 1.7\n",
+      "hints": "依次填 name、age、height。",
+      "test_cases": [
+        "assert captured_output == 'Ada 36 1.7\\n'"
+      ],
+      "solution": "name = \"Ada\"\nage = 36\nheight = 1.7\nprint(name, age, height)"
+    },
+    {
+      "id": "CH01-M-027",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用 f-string 在花括号内写表达式并输出。",
+      "code_template": "x = 5\nprint(f\"{___} squared is {___ * x}\")",
+      "expected_output": "5 squared is 25\n",
+      "hints": "依次填 x、x。",
+      "test_cases": [
+        "assert captured_output == '5 squared is 25\\n'"
+      ],
+      "solution": "x = 5\nprint(f\"{x} squared is {x * x}\")"
+    },
+    {
+      "id": "CH01-M-028",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "输出变量整除的商和余数。",
+      "code_template": "total = 17\nn = 5\nprint(___ // n, ___ % n)",
+      "expected_output": "3 2\n",
+      "hints": "两处都填变量 total。",
+      "test_cases": [
+        "assert captured_output == '3 2\\n'"
+      ],
+      "solution": "total = 17\nn = 5\nprint(total // n, total % n)"
+    },
+    {
+      "id": "CH01-M-029",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "拼接两个字符串变量并加逗号输出。",
+      "code_template": "city = \"Beijing\"\ncountry = \"China\"\nprint(___ + \", \" + ___)",
+      "expected_output": "Beijing, China\n",
+      "hints": "依次填 city、country。",
+      "test_cases": [
+        "assert captured_output == 'Beijing, China\\n'"
+      ],
+      "solution": "city = \"Beijing\"\ncountry = \"China\"\nprint(city + \", \" + country)"
+    },
+    {
+      "id": "CH01-M-030",
+      "topic": "print() 函数与变量的结合使用",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "变量累加后输出最终结果。",
+      "code_template": "count = 0\ncount += 10\ncount += 5\nprint(___)",
+      "expected_output": "15\n",
+      "hints": "print 括号内填变量名 count。",
+      "test_cases": [
+        "assert captured_output == '15\\n'"
+      ],
+      "solution": "count = 0\ncount += 10\ncount += 5\nprint(count)"
+    }
+  ]
+}

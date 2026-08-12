@@ -1,0 +1,427 @@
+{
+  "chapter": "CH05",
+  "title": "字符串格式化",
+  "difficulty": "超简单",
+  "questions": [
+    {
+      "id": "CH05-E-001",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 f-string 输出问候语。",
+      "code_template": "name = \"Tom\"\nprint(f\"Hello, {___}!\")",
+      "expected_output": "Hello, Tom!\n",
+      "hints": "花括号内填 name。",
+      "test_cases": [
+        "assert captured_output == 'Hello, Tom!\\n'"
+      ],
+      "solution": "name = \"Tom\"\nprint(f\"Hello, {name}!\")"
+    },
+    {
+      "id": "CH05-E-002",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 f-string 输出变量的值。",
+      "code_template": "x = 5\nprint(f\"Value: {___}\")",
+      "expected_output": "Value: 5\n",
+      "hints": "花括号内填 x。",
+      "test_cases": [
+        "assert captured_output == 'Value: 5\\n'"
+      ],
+      "solution": "x = 5\nprint(f\"Value: {x}\")"
+    },
+    {
+      "id": "CH05-E-003",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 format() 输出两个值。",
+      "code_template": "print(\"{} and {}\".format(___, ___))",
+      "expected_output": "a and b\n",
+      "hints": "依次填 \"a\"、\"b\"。",
+      "test_cases": [
+        "assert captured_output == 'a and b\\n'"
+      ],
+      "solution": "print(\"{} and {}\".format(\"a\", \"b\"))"
+    },
+    {
+      "id": "CH05-E-004",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 format() 关键字参数。",
+      "code_template": "print(\"{x} + {y}\".format(x=___, y=___))",
+      "expected_output": "1 + 2\n",
+      "hints": "依次填 1、2。",
+      "test_cases": [
+        "assert captured_output == '1 + 2\\n'"
+      ],
+      "solution": "print(\"{x} + {y}\".format(x=1, y=2))"
+    },
+    {
+      "id": "CH05-E-005",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 %s 和 %d 格式化。",
+      "code_template": "print(\"%s is %d\" % (___, ___))",
+      "expected_output": "Bob is 25\n",
+      "hints": "依次填 \"Bob\"、25。",
+      "test_cases": [
+        "assert captured_output == 'Bob is 25\\n'"
+      ],
+      "solution": "print(\"%s is %d\" % (\"Bob\", 25))"
+    },
+    {
+      "id": "CH05-E-006",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 %.3f 保留三位小数。",
+      "code_template": "print(\"%.3f\" % ___)",
+      "expected_output": "3.142\n",
+      "hints": "填 3.14159。",
+      "test_cases": [
+        "assert captured_output == '3.142\\n'"
+      ],
+      "solution": "print(\"%.3f\" % 3.14159)"
+    },
+    {
+      "id": "CH05-E-007",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 f-string 保留两位小数。",
+      "code_template": "pi = 3.14159\nprint(f\"{___:.2f}\")",
+      "expected_output": "3.14\n",
+      "hints": "花括号内填 pi。",
+      "test_cases": [
+        "assert captured_output == '3.14\\n'"
+      ],
+      "solution": "pi = 3.14159\nprint(f\"{pi:.2f}\")"
+    },
+    {
+      "id": "CH05-E-008",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 f-string 设置数字宽度。",
+      "code_template": "n = 42\nprint(f\"{___:5d}\")",
+      "expected_output": "   42\n",
+      "hints": "花括号内填 n。",
+      "test_cases": [
+        "assert captured_output == '   42\\n'"
+      ],
+      "solution": "n = 42\nprint(f\"{n:5d}\")"
+    },
+    {
+      "id": "CH05-E-009",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 f-string 左对齐字符串。",
+      "code_template": "name = \"ab\"\nprint(f\"{name:___}|\")",
+      "expected_output": "ab   |\n",
+      "hints": "对齐符填 <5。",
+      "test_cases": [
+        "assert captured_output == 'ab   |\\n'"
+      ],
+      "solution": "name = \"ab\"\nprint(f\"{name:<5}|\")"
+    },
+    {
+      "id": "CH05-E-010",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 f-string 右对齐字符串。",
+      "code_template": "print(f\"{'ab':___}|\")",
+      "expected_output": "   ab|\n",
+      "hints": "对齐符填 >5。",
+      "test_cases": [
+        "assert captured_output == '   ab|\\n'"
+      ],
+      "solution": "print(f\"{'ab':>5}|\")"
+    },
+    {
+      "id": "CH05-E-011",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 f-string 居中字符串。",
+      "code_template": "print(f\"{'ab':___}\")",
+      "expected_output": " ab  \n",
+      "hints": "对齐符填 ^5。",
+      "test_cases": [
+        "assert captured_output == ' ab  \\n'"
+      ],
+      "solution": "print(f\"{'ab':^5}\")"
+    },
+    {
+      "id": "CH05-E-012",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 f-string 填充字符。",
+      "code_template": "print(f\"{'ab':___^6}\")",
+      "expected_output": "**ab**\n",
+      "hints": "填充符填 *。",
+      "test_cases": [
+        "assert captured_output == '**ab**\\n'"
+      ],
+      "solution": "print(f\"{'ab':*^6}\")"
+    },
+    {
+      "id": "CH05-E-013",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 f-string 输出千分位。",
+      "code_template": "amount = 1234567\nprint(f\"{___:,}\")",
+      "expected_output": "1,234,567\n",
+      "hints": "花括号内填 amount。",
+      "test_cases": [
+        "assert captured_output == '1,234,567\\n'"
+      ],
+      "solution": "amount = 1234567\nprint(f\"{amount:,}\")"
+    },
+    {
+      "id": "CH05-E-014",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 f-string 输出百分比。",
+      "code_template": "ratio = 0.25\nprint(f\"{___:.1%}\")",
+      "expected_output": "25.0%\n",
+      "hints": "花括号内填 ratio。",
+      "test_cases": [
+        "assert captured_output == '25.0%\\n'"
+      ],
+      "solution": "ratio = 0.25\nprint(f\"{ratio:.1%}\")"
+    },
+    {
+      "id": "CH05-E-015",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 f-string 输出十六进制。",
+      "code_template": "n = 255\nprint(f\"{___:x}\")",
+      "expected_output": "ff\n",
+      "hints": "花括号内填 n。",
+      "test_cases": [
+        "assert captured_output == 'ff\\n'"
+      ],
+      "solution": "n = 255\nprint(f\"{n:x}\")"
+    },
+    {
+      "id": "CH05-E-016",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 f-string 输出二进制。",
+      "code_template": "print(f\"{___:b}\")",
+      "expected_output": "101\n",
+      "hints": "花括号内填 5。",
+      "test_cases": [
+        "assert captured_output == '101\\n'"
+      ],
+      "solution": "print(f\"{5:b}\")"
+    },
+    {
+      "id": "CH05-E-017",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "输出含转义字符的字符串。",
+      "code_template": "print(___)",
+      "expected_output": "Tab:\tA\nLine2\n",
+      "hints": "填空转义序列。",
+      "test_cases": [
+        "assert captured_output == 'Tab:\\tA\\nLine2\\n'"
+      ],
+      "solution": "print(\"Tab:\\tA\\nLine2\")"
+    },
+    {
+      "id": "CH05-E-018",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 + 拼接字符串。",
+      "code_template": "print(\"Py\" + ___)",
+      "expected_output": "PyQuest\n",
+      "hints": "填 \"Quest\"。",
+      "test_cases": [
+        "assert captured_output == 'PyQuest\\n'"
+      ],
+      "solution": "print(\"Py\" + \"Quest\")"
+    },
+    {
+      "id": "CH05-E-019",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 * 重复字符串。",
+      "code_template": "print(___ * 10)",
+      "expected_output": "----------\n",
+      "hints": "填 \"-\"。",
+      "test_cases": [
+        "assert captured_output == '----------\\n'"
+      ],
+      "solution": "print(\"-\" * 10)"
+    },
+    {
+      "id": "CH05-E-020",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 upper() 转大写。",
+      "code_template": "name = \"python\"\nprint(name.___())",
+      "expected_output": "PYTHON\n",
+      "hints": "方法名填 upper。",
+      "test_cases": [
+        "assert captured_output == 'PYTHON\\n'"
+      ],
+      "solution": "name = \"python\"\nprint(name.upper())"
+    },
+    {
+      "id": "CH05-E-021",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 capitalize() 首字母大写。",
+      "code_template": "print(\"hello\".___())",
+      "expected_output": "Hello\n",
+      "hints": "方法名填 capitalize。",
+      "test_cases": [
+        "assert captured_output == 'Hello\\n'"
+      ],
+      "solution": "print(\"hello\".capitalize())"
+    },
+    {
+      "id": "CH05-E-022",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 replace() 替换字符。",
+      "code_template": "print(\"a-b-c\".replace(___, \"\"))",
+      "expected_output": "abc\n",
+      "hints": "替换目标填 \"-\"。",
+      "test_cases": [
+        "assert captured_output == 'abc\\n'"
+      ],
+      "solution": "print(\"a-b-c\".replace(\"-\", \"\"))"
+    },
+    {
+      "id": "CH05-E-023",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 split() 分割字符串。",
+      "code_template": "print(\"a,b,c\".split(___,))",
+      "expected_output": "['a', 'b', 'c']\n",
+      "hints": "分隔符填 \",\"。",
+      "test_cases": [
+        "assert captured_output == \"['a', 'b', 'c']\\n\""
+      ],
+      "solution": "print(\"a,b,c\".split(\",\"))"
+    },
+    {
+      "id": "CH05-E-024",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 strip() 去除两端空格。",
+      "code_template": "print(\"  hi  \".___())",
+      "expected_output": "hi\n",
+      "hints": "方法名填 strip。",
+      "test_cases": [
+        "assert captured_output == 'hi\\n'"
+      ],
+      "solution": "print(\"  hi  \".strip())"
+    },
+    {
+      "id": "CH05-E-025",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 len() 求字符串长度。",
+      "code_template": "print(len(___))",
+      "expected_output": "6\n",
+      "hints": "填 \"Python\"。",
+      "test_cases": [
+        "assert captured_output == '6\\n'"
+      ],
+      "solution": "print(len(\"Python\"))"
+    },
+    {
+      "id": "CH05-E-026",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用索引访问字符串首字符。",
+      "code_template": "word = \"Python\"\nprint(word[___])",
+      "expected_output": "P\n",
+      "hints": "索引填 0。",
+      "test_cases": [
+        "assert captured_output == 'P\\n'"
+      ],
+      "solution": "word = \"Python\"\nprint(word[0])"
+    },
+    {
+      "id": "CH05-E-027",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用切片截取字符串。",
+      "code_template": "print(\"Python\"[___])",
+      "expected_output": "Pyth\n",
+      "hints": "切片填 0:4。",
+      "test_cases": [
+        "assert captured_output == 'Pyth\\n'"
+      ],
+      "solution": "print(\"Python\"[0:4])"
+    },
+    {
+      "id": "CH05-E-028",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用切片反转字符串。",
+      "code_template": "print(\"abc\"[___])",
+      "expected_output": "cba\n",
+      "hints": "切片填 ::-1。",
+      "test_cases": [
+        "assert captured_output == 'cba\\n'"
+      ],
+      "solution": "print(\"abc\"[::-1])"
+    },
+    {
+      "id": "CH05-E-029",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 in 判断子串存在。",
+      "code_template": "print(\"ell\" in ___)",
+      "expected_output": "True\n",
+      "hints": "填 \"hello\"。",
+      "test_cases": [
+        "assert captured_output == 'True\\n'"
+      ],
+      "solution": "print(\"ell\" in \"hello\")"
+    },
+    {
+      "id": "CH05-E-030",
+      "topic": "字符串格式化",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 %% 输出百分号。",
+      "code_template": "print(\"%d%%\" % ___)",
+      "expected_output": "50%\n",
+      "hints": "填 50。",
+      "test_cases": [
+        "assert captured_output == '50%\\n'"
+      ],
+      "solution": "print(\"%d%%\" % 50)"
+    }
+  ]
+}

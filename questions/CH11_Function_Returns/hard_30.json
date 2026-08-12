@@ -1,0 +1,427 @@
+{
+  "chapter": "CH11",
+  "title": "函数 (返回值)",
+  "difficulty": "中等",
+  "questions": [
+    {
+      "id": "CH11-H-001",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回计算表达式结果。",
+      "code_template": "def poly(x):\n    return 2 * x ** 2 + 3 * x + 1\n\nprint(___)",
+      "expected_output": "Poly: 15\n",
+      "hints": "填空多项式返回。",
+      "test_cases": [
+        "assert captured_output == 'Poly: 15\\n'"
+      ],
+      "solution": "def poly(x):\n    return 2 * x ** 2 + 3 * x + 1\n\nprint(f\"Poly: {poly(2)}\")"
+    },
+    {
+      "id": "CH11-H-002",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回质数判断。",
+      "code_template": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\nprint('Prime:',___, is_prime(14))",
+      "expected_output": "Prime: True False\n",
+      "hints": "填空质数返回。",
+      "test_cases": [
+        "assert captured_output == 'Prime: True False\\n'"
+      ],
+      "solution": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\nprint('Prime:', is_prime(13), is_prime(14))"
+    },
+    {
+      "id": "CH11-H-003",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回回文数判断。",
+      "code_template": "def is_pal_num(n):\n    return str(n) == str(n)[::-1]\n\nprint('Pal:',___, is_pal_num(123))",
+      "expected_output": "Pal: True False\n",
+      "hints": "填空回文数返回。",
+      "test_cases": [
+        "assert captured_output == 'Pal: True False\\n'"
+      ],
+      "solution": "def is_pal_num(n):\n    return str(n) == str(n)[::-1]\n\nprint('Pal:', is_pal_num(121), is_pal_num(123))"
+    },
+    {
+      "id": "CH11-H-004",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回数字反转。",
+      "code_template": "def reverse_num(n):\n    return int(str(n)[::-1])\n\nprint(___)",
+      "expected_output": "Reversed: 321\n",
+      "hints": "填空反转返回。",
+      "test_cases": [
+        "assert captured_output == 'Reversed: 321\\n'"
+      ],
+      "solution": "def reverse_num(n):\n    return int(str(n)[::-1])\n\nprint(f\"Reversed: {reverse_num(123)}\")"
+    },
+    {
+      "id": "CH11-H-005",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回快乐数状态。",
+      "code_template": "def is_happy(n):\n    seen = set()\n    while n != 1 and n not in seen:\n        seen.add(n)\n        n = sum(int(d) ** 2 for d in str(n))\n    return n == 1\n\nprint('Happy:',___)",
+      "expected_output": "Happy: True\n",
+      "hints": "填空快乐数返回。",
+      "test_cases": [
+        "assert captured_output == 'Happy: True\\n'"
+      ],
+      "solution": "def is_happy(n):\n    seen = set()\n    while n != 1 and n not in seen:\n        seen.add(n)\n        n = sum(int(d) ** 2 for d in str(n))\n    return n == 1\n\nprint('Happy:', is_happy(19))"
+    },
+    {
+      "id": "CH11-H-006",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回最大公约数。",
+      "code_template": "def gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a\n\nprint(___)",
+      "expected_output": "GCD: 12\n",
+      "hints": "填空 gcd 返回。",
+      "test_cases": [
+        "assert captured_output == 'GCD: 12\\n'"
+      ],
+      "solution": "def gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a\n\nprint(f\"GCD: {gcd(48, 36)}\")"
+    },
+    {
+      "id": "CH11-H-007",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回多返回值并格式化。",
+      "code_template": "def circle(r):\n    return 2 * 3.14 * r, 3.14 * r * r\n\nc, a = circle(1)\nprint(___, round(a, 2))",
+      "expected_output": "6.28 3.14\n",
+      "hints": "填空圆参数返回。",
+      "test_cases": [
+        "assert captured_output == '6.28 3.14\\n'"
+      ],
+      "solution": "def circle(r):\n    return 2 * 3.14 * r, 3.14 * r * r\n\nc, a = circle(1)\nprint(round(c, 2), round(a, 2))"
+    },
+    {
+      "id": "CH11-H-008",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回字典统计。",
+      "code_template": "def char_counts(s):\n    counts = {}\n    for ch in s:\n        counts[ch] = counts.get(ch, 0) + 1\n    return counts\n\nprint(___)",
+      "expected_output": "{'h': 1, 'e': 1, 'l': 2, 'o': 1}\n",
+      "hints": "填空字符统计返回。",
+      "test_cases": [
+        "assert captured_output == \"{'h': 1, 'e': 1, 'l': 2, 'o': 1}\\n\""
+      ],
+      "solution": "def char_counts(s):\n    counts = {}\n    for ch in s:\n        counts[ch] = counts.get(ch, 0) + 1\n    return counts\n\nprint(char_counts(\"hello\"))"
+    },
+    {
+      "id": "CH11-H-009",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回第 n 个斐波那契。",
+      "code_template": "def fib(n):\n    a, b = 0, 1\n    for _ in range(n):\n        a, b = b, a + b\n    return a\n\nprint(___)",
+      "expected_output": "fib(7) = 13\n",
+      "hints": "填空斐波那契返回。",
+      "test_cases": [
+        "assert captured_output == 'fib(7) = 13\\n'"
+      ],
+      "solution": "def fib(n):\n    a, b = 0, 1\n    for _ in range(n):\n        a, b = b, a + b\n    return a\n\nprint(f\"fib(7) = {fib(7)}\")"
+    },
+    {
+      "id": "CH11-H-010",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回列表操作结果。",
+      "code_template": "def append_double(nums, n):\n    return nums + [n * 2]\n\nprint(___)",
+      "expected_output": "[1, 2, 10]\n",
+      "hints": "填空列表返回。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 10]\\n'"
+      ],
+      "solution": "def append_double(nums, n):\n    return nums + [n * 2]\n\nprint(append_double([1, 2], 5))"
+    },
+    {
+      "id": "CH11-H-011",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回条件筛选。",
+      "code_template": "def filter_positive(nums):\n    return [n for n in nums if n > 0]\n\nprint(___)",
+      "expected_output": "[2, 4]\n",
+      "hints": "填空筛选返回。",
+      "test_cases": [
+        "assert captured_output == '[2, 4]\\n'"
+      ],
+      "solution": "def filter_positive(nums):\n    return [n for n in nums if n > 0]\n\nprint(filter_positive([-1, 2, -3, 4]))"
+    },
+    {
+      "id": "CH11-H-012",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回键值对数量。",
+      "code_template": "def size(d):\n    return len(d)\n\nprint('Size:',___)",
+      "expected_output": "Size: 3\n",
+      "hints": "填空字典大小。",
+      "test_cases": [
+        "assert captured_output == 'Size: 3\\n'"
+      ],
+      "solution": "def size(d):\n    return len(d)\n\nprint('Size:', size({'a': 1, 'b': 2, 'c': 3}))"
+    },
+    {
+      "id": "CH11-H-013",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回字符串压缩长度。",
+      "code_template": "def unique_chars(s):\n    return len(set(s))\n\nprint('Unique:',___)",
+      "expected_output": "Unique: 3\n",
+      "hints": "填空唯一字符。",
+      "test_cases": [
+        "assert captured_output == 'Unique: 3\\n'"
+      ],
+      "solution": "def unique_chars(s):\n    return len(set(s))\n\nprint('Unique:', unique_chars('banana'))"
+    },
+    {
+      "id": "CH11-H-014",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回最大乘积对。",
+      "code_template": "def max_pair_product(nums):\n    sorted_nums = sorted(nums)\n    return sorted_nums[-1] * sorted_nums[-2]\n\nprint(___)",
+      "expected_output": "35\n",
+      "hints": "填空乘积返回。",
+      "test_cases": [
+        "assert captured_output == '35\\n'"
+      ],
+      "solution": "def max_pair_product(nums):\n    sorted_nums = sorted(nums)\n    return sorted_nums[-1] * sorted_nums[-2]\n\nprint(max_pair_product([3, 5, 2, 7, 4]))"
+    },
+    {
+      "id": "CH11-H-015",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回出现次数最多字符。",
+      "code_template": "def most_common(s):\n    counts = {}\n    for ch in s:\n        counts[ch] = counts.get(ch, 0) + 1\n    return max(counts, key=counts.get)\n\nprint(___)",
+      "expected_output": "a\n",
+      "hints": "填空众数字符。",
+      "test_cases": [
+        "assert captured_output == 'a\\n'"
+      ],
+      "solution": "def most_common(s):\n    counts = {}\n    for ch in s:\n        counts[ch] = counts.get(ch, 0) + 1\n    return max(counts, key=counts.get)\n\nprint(most_common(\"banana\"))"
+    },
+    {
+      "id": "CH11-H-016",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回列表合并去重。",
+      "code_template": "def merge_unique(a, b):\n    return sorted(set(a + b))\n\nprint(___)",
+      "expected_output": "[1, 2, 3, 4]\n",
+      "hints": "填空合并返回。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3, 4]\\n'"
+      ],
+      "solution": "def merge_unique(a, b):\n    return sorted(set(a + b))\n\nprint(merge_unique([1, 2, 3], [2, 3, 4]))"
+    },
+    {
+      "id": "CH11-H-017",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回数字位数和。",
+      "code_template": "def digit_sum(n):\n    return sum(int(d) for d in str(n))\n\nprint(___)",
+      "expected_output": "Digit sum: 10\n",
+      "hints": "填空位和返回。",
+      "test_cases": [
+        "assert captured_output == 'Digit sum: 10\\n'"
+      ],
+      "solution": "def digit_sum(n):\n    return sum(int(d) for d in str(n))\n\nprint(f\"Digit sum: {digit_sum(1234)}\")"
+    },
+    {
+      "id": "CH11-H-018",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回矩阵列和。",
+      "code_template": "def column_sums(matrix):\n    return [sum(row[i] for row in matrix) for i in range(len(matrix[0]))]\n\nprint(___)",
+      "expected_output": "[4, 6]\n",
+      "hints": "填空列和返回。",
+      "test_cases": [
+        "assert captured_output == '[4, 6]\\n'"
+      ],
+      "solution": "def column_sums(matrix):\n    return [sum(row[i] for row in matrix) for i in range(len(matrix[0]))]\n\nprint(column_sums([[1, 2], [3, 4]]))"
+    },
+    {
+      "id": "CH11-H-019",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回回文子串数。",
+      "code_template": "def count_palindromic(s):\n    count = 0\n    for i in range(len(s)):\n        for j in range(i, len(s)):\n            sub = s[i:j + 1]\n            if sub == sub[::-1]:\n                count += 1\n    return count\n\nprint('Count:',___)",
+      "expected_output": "Count: 4\n",
+      "hints": "填空回文计数。",
+      "test_cases": [
+        "assert captured_output == 'Count: 4\\n'"
+      ],
+      "solution": "def count_palindromic(s):\n    count = 0\n    for i in range(len(s)):\n        for j in range(i, len(s)):\n            sub = s[i:j + 1]\n            if sub == sub[::-1]:\n                count += 1\n    return count\n\nprint('Count:', count_palindromic('aba'))"
+    },
+    {
+      "id": "CH11-H-020",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回成绩等级。",
+      "code_template": "def grade(score):\n    if score >= 90:\n        return \"A\"\n    elif score >= 80:\n        return \"B\"\n    else:\n        return \"C\"\n\nfor s in [92, 85, 70]:\n    print(___)",
+      "expected_output": "92 -> A\n85 -> B\n70 -> C\n",
+      "hints": "填空等级返回。",
+      "test_cases": [
+        "assert captured_output == '92 -> A\\n85 -> B\\n70 -> C\\n'"
+      ],
+      "solution": "def grade(score):\n    if score >= 90:\n        return \"A\"\n    elif score >= 80:\n        return \"B\"\n    else:\n        return \"C\"\n\nfor s in [92, 85, 70]:\n    print(f\"{s} -> {grade(s)}\")"
+    },
+    {
+      "id": "CH11-H-021",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回幂运算结果。",
+      "code_template": "def power(base, exp):\n    return base ** exp\n\nprint(___)",
+      "expected_output": "Power: 81\n",
+      "hints": "填空幂返回。",
+      "test_cases": [
+        "assert captured_output == 'Power: 81\\n'"
+      ],
+      "solution": "def power(base, exp):\n    return base ** exp\n\nprint(f\"Power: {power(3, 4)}\")"
+    },
+    {
+      "id": "CH11-H-022",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回组合数。",
+      "code_template": "def comb(n, k):\n    if k == 0 or k == n:\n        return 1\n    return comb(n - 1, k - 1) + comb(n - 1, k)\n\nprint('Comb:',___)",
+      "expected_output": "Comb: 10\n",
+      "hints": "填空组合返回。",
+      "test_cases": [
+        "assert captured_output == 'Comb: 10\\n'"
+      ],
+      "solution": "def comb(n, k):\n    if k == 0 or k == n:\n        return 1\n    return comb(n - 1, k - 1) + comb(n - 1, k)\n\nprint('Comb:', comb(5, 2))"
+    },
+    {
+      "id": "CH11-H-023",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回数字进制形式。",
+      "code_template": "def to_binary(n):\n    return bin(n)[2:]\n\nprint(___)",
+      "expected_output": "1010\n",
+      "hints": "填空二进制返回。",
+      "test_cases": [
+        "assert captured_output == '1010\\n'"
+      ],
+      "solution": "def to_binary(n):\n    return bin(n)[2:]\n\nprint(to_binary(10))"
+    },
+    {
+      "id": "CH11-H-024",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回元组解包结果。",
+      "code_template": "def unpack(pairs):\n    return [a + b for a, b in pairs]\n\nprint(___)",
+      "expected_output": "[3, 7, 11]\n",
+      "hints": "填空解包返回。",
+      "test_cases": [
+        "assert captured_output == '[3, 7, 11]\\n'"
+      ],
+      "solution": "def unpack(pairs):\n    return [a + b for a, b in pairs]\n\nprint(unpack([(1, 2), (3, 4), (5, 6)]))"
+    },
+    {
+      "id": "CH11-H-025",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回条件默认值。",
+      "code_template": "def validate(n, minimum=0):\n    if n < minimum:\n        return minimum\n    return n\n\nprint(___, validate(-3, 0))",
+      "expected_output": "5 0\n",
+      "hints": "填空校验返回。",
+      "test_cases": [
+        "assert captured_output == '5 0\\n'"
+      ],
+      "solution": "def validate(n, minimum=0):\n    if n < minimum:\n        return minimum\n    return n\n\nprint(validate(5), validate(-3, 0))"
+    },
+    {
+      "id": "CH11-H-026",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回列表平均值与中位数。",
+      "code_template": "def stats(nums):\n    avg = sum(nums) / len(nums)\n    sorted_nums = sorted(nums)\n    mid = len(sorted_nums) // 2\n    median = sorted_nums[mid]\n    return avg, median\n\na, m = stats([3, 1, 2])\nprint(___, m)",
+      "expected_output": "2.0 2\n",
+      "hints": "填空统计返回。",
+      "test_cases": [
+        "assert captured_output == '2.0 2\\n'"
+      ],
+      "solution": "def stats(nums):\n    avg = sum(nums) / len(nums)\n    sorted_nums = sorted(nums)\n    mid = len(sorted_nums) // 2\n    median = sorted_nums[mid]\n    return avg, median\n\na, m = stats([3, 1, 2])\nprint(round(a, 1), m)"
+    },
+    {
+      "id": "CH11-H-027",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回字符串中数字和。",
+      "code_template": "def digit_total(s):\n    return sum(int(c) for c in s if c.isdigit())\n\nprint('Sum:',___)",
+      "expected_output": "Sum: 6\n",
+      "hints": "填空数字和返回。",
+      "test_cases": [
+        "assert captured_output == 'Sum: 6\\n'"
+      ],
+      "solution": "def digit_total(s):\n    return sum(int(c) for c in s if c.isdigit())\n\nprint('Sum:', digit_total('a1b2c3'))"
+    },
+    {
+      "id": "CH11-H-028",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回去重排序单词。",
+      "code_template": "def unique_words(text):\n    return sorted(set(text.lower().split()))\n\nprint(___)",
+      "expected_output": "['apple', 'banana']\n",
+      "hints": "填空单词去重。",
+      "test_cases": [
+        "assert captured_output == \"['apple', 'banana']\\n\""
+      ],
+      "solution": "def unique_words(text):\n    return sorted(set(text.lower().split()))\n\nprint(unique_words(\"Apple apple Banana\"))"
+    },
+    {
+      "id": "CH11-H-029",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "函数返回最大递增差。",
+      "code_template": "def max_gain(prices):\n    min_price = prices[0]\n    max_profit = 0\n    for p in prices:\n        min_price = min(min_price, p)\n        max_profit = max(max_profit, p - min_price)\n    return max_profit\n\nprint('Gain:',___)",
+      "expected_output": "Gain: 5\n",
+      "hints": "填空最大收益。",
+      "test_cases": [
+        "assert captured_output == 'Gain: 5\\n'"
+      ],
+      "solution": "def max_gain(prices):\n    min_price = prices[0]\n    max_profit = 0\n    for p in prices:\n        min_price = min(min_price, p)\n        max_profit = max(max_profit, p - min_price)\n    return max_profit\n\nprint('Gain:', max_gain([7, 1, 5, 3, 6, 4]))"
+    },
+    {
+      "id": "CH11-H-030",
+      "topic": "函数 (返回值)",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "综合：返回并汇总多个统计。",
+      "code_template": "def analyze(nums):\n    return len(nums), sum(nums), max(nums)\n\nn, s, m = analyze([2, 4, 6, 8])\nprint(___)",
+      "expected_output": "Count: 4, Sum: 20, Max: 8\n",
+      "hints": "填空分析返回。",
+      "test_cases": [
+        "assert captured_output == 'Count: 4, Sum: 20, Max: 8\\n'"
+      ],
+      "solution": "def analyze(nums):\n    return len(nums), sum(nums), max(nums)\n\nn, s, m = analyze([2, 4, 6, 8])\nprint(f\"Count: {n}, Sum: {s}, Max: {m}\")"
+    }
+  ]
+}

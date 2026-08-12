@@ -1,0 +1,427 @@
+{
+  "chapter": "CH12",
+  "title": "作用域与变量",
+  "difficulty": "中等",
+  "questions": [
+    {
+      "id": "CH12-H-001",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "闭包实现计数器并演示。",
+      "code_template": "def make_counter():\n    count = 0\n    def counter():\n        nonlocal count\n        count += 1\n        return count\n    return counter\n\nc1 = make_counter()\nprint(c1())\nprint(c1())\nc2 = make_counter()\nprint(___)",
+      "expected_output": "1\n2\n1\n",
+      "hints": "填空闭包计数器。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n1\\n'"
+      ],
+      "solution": "def make_counter():\n    count = 0\n    def counter():\n        nonlocal count\n        count += 1\n        return count\n    return counter\n\nc1 = make_counter()\nprint(c1())\nprint(c1())\nc2 = make_counter()\nprint(c2())"
+    },
+    {
+      "id": "CH12-H-002",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "闭包实现记忆化阶乘。",
+      "code_template": "def make_fact():\n    cache = {}\n    def fact(n):\n        if n in cache:\n            return cache[n]\n        if n <= 1:\n            cache[n] = 1\n        else:\n            cache[n] = n * fact(n - 1)\n        return cache[n]\n    return fact\n\nf = make_fact()\nprint(f(5))\nprint(___)",
+      "expected_output": "120\n720\n",
+      "hints": "填空闭包缓存。",
+      "test_cases": [
+        "assert captured_output == '120\\n720\\n'"
+      ],
+      "solution": "def make_fact():\n    cache = {}\n    def fact(n):\n        if n in cache:\n            return cache[n]\n        if n <= 1:\n            cache[n] = 1\n        else:\n            cache[n] = n * fact(n - 1)\n        return cache[n]\n    return fact\n\nf = make_fact()\nprint(f(5))\nprint(f(6))"
+    },
+    {
+      "id": "CH12-H-003",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "global 实现银行账户余额。",
+      "code_template": "balance = 1000\ndef deposit(n):\n    global balance\n    balance += n\n\ndef withdraw(n):\n    global balance\n    if n <= balance:\n        balance -= n\n\ndeposit(500)\nwithdraw(200)\nprint(___)",
+      "expected_output": "Balance: 1300\n",
+      "hints": "填空账户操作。",
+      "test_cases": [
+        "assert captured_output == 'Balance: 1300\\n'"
+      ],
+      "solution": "balance = 1000\ndef deposit(n):\n    global balance\n    balance += n\n\ndef withdraw(n):\n    global balance\n    if n <= balance:\n        balance -= n\n\ndeposit(500)\nwithdraw(200)\nprint(f\"Balance: {balance}\")"
+    },
+    {
+      "id": "CH12-H-004",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "nonlocal 实现累加器。",
+      "code_template": "def make_accumulator():\n    total = 0\n    def add(n):\n        nonlocal total\n        total += n\n        return total\n    return add\n\nacc = make_accumulator()\nprint(acc(5))\nprint(acc(3))\nprint(___)",
+      "expected_output": "5\n8\n10\n",
+      "hints": "填空累加器。",
+      "test_cases": [
+        "assert captured_output == '5\\n8\\n10\\n'"
+      ],
+      "solution": "def make_accumulator():\n    total = 0\n    def add(n):\n        nonlocal total\n        total += n\n        return total\n    return add\n\nacc = make_accumulator()\nprint(acc(5))\nprint(acc(3))\nprint(acc(2))"
+    },
+    {
+      "id": "CH12-H-005",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "全局变量在函数间共享。",
+      "code_template": "shared = []\ndef add_to_shared(x):\n    shared.append(x)\n\ndef show_shared():\n    print(___)\n\nadd_to_shared(1)\nadd_to_shared(2)\nshow_shared()",
+      "expected_output": "[1, 2]\n",
+      "hints": "填空共享列表。",
+      "test_cases": [
+        "assert captured_output == '[1, 2]\\n'"
+      ],
+      "solution": "shared = []\ndef add_to_shared(x):\n    shared.append(x)\n\ndef show_shared():\n    print(shared)\n\nadd_to_shared(1)\nadd_to_shared(2)\nshow_shared()"
+    },
+    {
+      "id": "CH12-H-006",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "闭包保存配置。",
+      "code_template": "def make_config():\n    settings = {\"theme\": \"light\"}\n    def set(key, value):\n        settings[key] = value\n    def get(key):\n        return settings[key]\n    return set, get\n\nset_cfg, get_cfg = make_config()\nset_cfg(\"theme\", \"dark\")\nprint(___)",
+      "expected_output": "dark\n",
+      "hints": "填空闭包配置。",
+      "test_cases": [
+        "assert captured_output == 'dark\\n'"
+      ],
+      "solution": "def make_config():\n    settings = {\"theme\": \"light\"}\n    def set(key, value):\n        settings[key] = value\n    def get(key):\n        return settings[key]\n    return set, get\n\nset_cfg, get_cfg = make_config()\nset_cfg(\"theme\", \"dark\")\nprint(get_cfg(\"theme\"))"
+    },
+    {
+      "id": "CH12-H-007",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "全局与局部变量比较。",
+      "code_template": "x = 1\ndef f():\n    x = 2\n    y = 3\n    return x + y\n\nprint(f())\nprint(___)",
+      "expected_output": "5\n1\n",
+      "hints": "填空作用域比较。",
+      "test_cases": [
+        "assert captured_output == '5\\n1\\n'"
+      ],
+      "solution": "x = 1\ndef f():\n    x = 2\n    y = 3\n    return x + y\n\nprint(f())\nprint(x)"
+    },
+    {
+      "id": "CH12-H-008",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "nonlocal 修改外层并返回。",
+      "code_template": "def outer():\n    value = 1\n    def inner():\n        nonlocal value\n        value *= 2\n        return value\n    inner()\n    inner()\n    return value\n\nprint('Value:',___)",
+      "expected_output": "Value: 4\n",
+      "hints": "填空 nonlocal 加倍。",
+      "test_cases": [
+        "assert captured_output == 'Value: 4\\n'"
+      ],
+      "solution": "def outer():\n    value = 1\n    def inner():\n        nonlocal value\n        value *= 2\n        return value\n    inner()\n    inner()\n    return value\n\nprint('Value:', outer())"
+    },
+    {
+      "id": "CH12-H-009",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "全局变量动态更新。",
+      "code_template": "steps = 0\ndef move():\n    global steps\n    steps += 1\n\nfor _ in range(5):\n    move()\nprint(___)",
+      "expected_output": "Steps: 5\n",
+      "hints": "填空循环 global。",
+      "test_cases": [
+        "assert captured_output == 'Steps: 5\\n'"
+      ],
+      "solution": "steps = 0\ndef move():\n    global steps\n    steps += 1\n\nfor _ in range(5):\n    move()\nprint(f\"Steps: {steps}\")"
+    },
+    {
+      "id": "CH12-H-010",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "闭包返回两个操作函数。",
+      "code_template": "def make_ops():\n    x = 10\n    def add(n):\n        return x + n\n    def sub(n):\n        return x - n\n    return add, sub\n\nadd_op, sub_op = make_ops()\nprint(add_op(5))\nprint(___)",
+      "expected_output": "15\n7\n",
+      "hints": "填空双操作闭包。",
+      "test_cases": [
+        "assert captured_output == '15\\n7\\n'"
+      ],
+      "solution": "def make_ops():\n    x = 10\n    def add(n):\n        return x + n\n    def sub(n):\n        return x - n\n    return add, sub\n\nadd_op, sub_op = make_ops()\nprint(add_op(5))\nprint(sub_op(3))"
+    },
+    {
+      "id": "CH12-H-011",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "全局变量与函数调用计数。",
+      "code_template": "calls = 0\ndef f():\n    global calls\n    calls += 1\n    return \"called\"\n\nf()\nf()\nprint(___)",
+      "expected_output": "Calls: 2\n",
+      "hints": "填空调用计数。",
+      "test_cases": [
+        "assert captured_output == 'Calls: 2\\n'"
+      ],
+      "solution": "calls = 0\ndef f():\n    global calls\n    calls += 1\n    return \"called\"\n\nf()\nf()\nprint(f\"Calls: {calls}\")"
+    },
+    {
+      "id": "CH12-H-012",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "嵌套作用域三层读取。",
+      "code_template": "def level1():\n    a = 1\n    def level2():\n        b = 2\n        def level3():\n            return a + b\n        return level3()\n    return level2()\n\nprint('Sum:',___)",
+      "expected_output": "Sum: 3\n",
+      "hints": "填空三层作用域。",
+      "test_cases": [
+        "assert captured_output == 'Sum: 3\\n'"
+      ],
+      "solution": "def level1():\n    a = 1\n    def level2():\n        b = 2\n        def level3():\n            return a + b\n        return level3()\n    return level2()\n\nprint('Sum:', level1())"
+    },
+    {
+      "id": "CH12-H-013",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "global 修改变量类型。",
+      "code_template": "data = \"text\"\ndef to_list():\n    global data\n    data = [7, 8]\n\nto_list()\nprint(___)",
+      "expected_output": "[7, 8]\n",
+      "hints": "填空类型修改。",
+      "test_cases": [
+        "assert captured_output == '[7, 8]\\n'"
+      ],
+      "solution": "data = \"text\"\ndef to_list():\n    global data\n    data = [7, 8]\n\nto_list()\nprint(data)"
+    },
+    {
+      "id": "CH12-H-014",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "闭包实现幂函数工厂。",
+      "code_template": "def power_factory(exp):\n    def power(base):\n        return base ** exp\n    return power\n\nsquare = power_factory(2)\ncube = power_factory(3)\nprint(square(4))\nprint(___)",
+      "expected_output": "16\n8\n",
+      "hints": "填空幂工厂。",
+      "test_cases": [
+        "assert captured_output == '16\\n8\\n'"
+      ],
+      "solution": "def power_factory(exp):\n    def power(base):\n        return base ** exp\n    return power\n\nsquare = power_factory(2)\ncube = power_factory(3)\nprint(square(4))\nprint(cube(2))"
+    },
+    {
+      "id": "CH12-H-015",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "全局变量在异常后保持。",
+      "code_template": "value = 5\ndef safe(n):\n    try:\n        return 10 / n\n    except ZeroDivisionError:\n        return -1\n\nprint(safe(2))\nprint(___)",
+      "expected_output": "5.0\n5\n",
+      "hints": "填空异常与全局。",
+      "test_cases": [
+        "assert captured_output == '5.0\\n5\\n'"
+      ],
+      "solution": "value = 5\ndef safe(n):\n    try:\n        return 10 / n\n    except ZeroDivisionError:\n        return -1\n\nprint(safe(2))\nprint(value)"
+    },
+    {
+      "id": "CH12-H-016",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "nonlocal 多层修改。",
+      "code_template": "def outer():\n    x = 0\n    def middle():\n        def inner():\n            nonlocal x\n            x += 1\n        inner()\n        inner()\n    middle()\n    return x\n\nprint('Value:',___)",
+      "expected_output": "Value: 2\n",
+      "hints": "填空 nonlocal 多层。",
+      "test_cases": [
+        "assert captured_output == 'Value: 2\\n'"
+      ],
+      "solution": "def outer():\n    x = 0\n    def middle():\n        def inner():\n            nonlocal x\n            x += 1\n        inner()\n        inner()\n    middle()\n    return x\n\nprint('Value:', outer())"
+    },
+    {
+      "id": "CH12-H-017",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "全局变量作为默认参数。",
+      "code_template": "limit = 10\ndef check(n, max_limit=limit):\n    return n <= max_limit\n\nprint(___, check(15))",
+      "expected_output": "True False\n",
+      "hints": "填空默认全局。",
+      "test_cases": [
+        "assert captured_output == 'True False\\n'"
+      ],
+      "solution": "limit = 10\ndef check(n, max_limit=limit):\n    return n <= max_limit\n\nprint(check(5), check(15))"
+    },
+    {
+      "id": "CH12-H-018",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "闭包延迟绑定陷阱演示。",
+      "code_template": "def make_funcs():\n    funcs = []\n    for i in range(3):\n        funcs.append(lambda: i)\n    return funcs\n\nfuncs = make_funcs()\nprint(___)",
+      "expected_output": "[2, 2, 2]\n",
+      "hints": "填空延迟绑定。",
+      "test_cases": [
+        "assert captured_output == '[2, 2, 2]\\n'"
+      ],
+      "solution": "def make_funcs():\n    funcs = []\n    for i in range(3):\n        funcs.append(lambda: i)\n    return funcs\n\nfuncs = make_funcs()\nprint([f() for f in funcs])"
+    },
+    {
+      "id": "CH12-H-019",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "global 变量在多函数中读写。",
+      "code_template": "state = \"idle\"\ndef start():\n    global state\n    state = \"running\"\n\ndef stop():\n    global state\n    state = \"stopped\"\n\nstart()\nstop()\nprint(___)",
+      "expected_output": "stopped\n",
+      "hints": "填空状态机。",
+      "test_cases": [
+        "assert captured_output == 'stopped\\n'"
+      ],
+      "solution": "state = \"idle\"\ndef start():\n    global state\n    state = \"running\"\n\ndef stop():\n    global state\n    state = \"stopped\"\n\nstart()\nstop()\nprint(state)"
+    },
+    {
+      "id": "CH12-H-020",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "闭包累加多个值。",
+      "code_template": "def make_stats():\n    values = []\n    def add(v):\n        values.append(v)\n        return sum(values)\n    return add\n\nadder = make_stats()\nprint(adder(10))\nprint(adder(20))\nprint(___)",
+      "expected_output": "10\n30\n60\n",
+      "hints": "填空累加闭包。",
+      "test_cases": [
+        "assert captured_output == '10\\n30\\n60\\n'"
+      ],
+      "solution": "def make_stats():\n    values = []\n    def add(v):\n        values.append(v)\n        return sum(values)\n    return add\n\nadder = make_stats()\nprint(adder(10))\nprint(adder(20))\nprint(adder(30))"
+    },
+    {
+      "id": "CH12-H-021",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "作用域中变量查找顺序。",
+      "code_template": "x = \"global\"\ndef outer():\n    x = \"outer\"\n    def inner():\n        return x\n    return inner()\n\nprint(___)",
+      "expected_output": "outer\n",
+      "hints": "填空查找顺序。",
+      "test_cases": [
+        "assert captured_output == 'outer\\n'"
+      ],
+      "solution": "x = \"global\"\ndef outer():\n    x = \"outer\"\n    def inner():\n        return x\n    return inner()\n\nprint(outer())"
+    },
+    {
+      "id": "CH12-H-022",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "global 变量被函数返回修改。",
+      "code_template": "points = 0\ndef score(n):\n    global points\n    points += n\n    return points\n\nprint(score(3))\nprint(___)",
+      "expected_output": "3\n7\n",
+      "hints": "填空返回更新。",
+      "test_cases": [
+        "assert captured_output == '3\\n7\\n'"
+      ],
+      "solution": "points = 0\ndef score(n):\n    global points\n    points += n\n    return points\n\nprint(score(3))\nprint(score(4))"
+    },
+    {
+      "id": "CH12-H-023",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "嵌套闭包访问多层变量。",
+      "code_template": "def a():\n    x = 1\n    def b():\n        y = 2\n        def c():\n            return x * y\n        return c()\n    return b()\n\nprint('Result:',___)",
+      "expected_output": "Result: 2\n",
+      "hints": "填空多层闭包。",
+      "test_cases": [
+        "assert captured_output == 'Result: 2\\n'"
+      ],
+      "solution": "def a():\n    x = 1\n    def b():\n        y = 2\n        def c():\n            return x * y\n        return c()\n    return b()\n\nprint('Result:', a())"
+    },
+    {
+      "id": "CH12-H-024",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "全局变量在循环函数中累加。",
+      "code_template": "total = 0\ndef add_range(n):\n    global total\n    for i in range(1, n + 1):\n        total += i\n\nadd_range(7)\nprint(___)",
+      "expected_output": "Total: 28\n",
+      "hints": "填空循环累加全局。",
+      "test_cases": [
+        "assert captured_output == 'Total: 28\\n'"
+      ],
+      "solution": "total = 0\ndef add_range(n):\n    global total\n    for i in range(1, n + 1):\n        total += i\n\nadd_range(7)\nprint(f\"Total: {total}\")"
+    },
+    {
+      "id": "CH12-H-025",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "闭包实现字符串构建器。",
+      "code_template": "def make_builder():\n    parts = []\n    def build(s):\n        parts.append(s)\n        return \" \".join(parts)\n    return build\n\nb = make_builder()\nprint(b(\"Hello\"))\nprint(___)",
+      "expected_output": "Hello\nHello World\n",
+      "hints": "填空构建器。",
+      "test_cases": [
+        "assert captured_output == 'Hello\\nHello World\\n'"
+      ],
+      "solution": "def make_builder():\n    parts = []\n    def build(s):\n        parts.append(s)\n        return \" \".join(parts)\n    return build\n\nb = make_builder()\nprint(b(\"Hello\"))\nprint(b(\"World\"))"
+    },
+    {
+      "id": "CH12-H-026",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "全局变量被局部列表遮蔽。",
+      "code_template": "data = [1]\ndef f():\n    data = [2]\n    return data\n\nprint(f())\nprint(___)",
+      "expected_output": "[2]\n[1]\n",
+      "hints": "填空局部遮蔽。",
+      "test_cases": [
+        "assert captured_output == '[2]\\n[1]\\n'"
+      ],
+      "solution": "data = [1]\ndef f():\n    data = [2]\n    return data\n\nprint(f())\nprint(data)"
+    },
+    {
+      "id": "CH12-H-027",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "nonlocal 与外层交互。",
+      "code_template": "def outer():\n    count = 0\n    def inc():\n        nonlocal count\n        count += 1\n        if count < 3:\n            inc()\n        return count\n    return inc()\n\nprint('Total:',___)",
+      "expected_output": "Total: 3\n",
+      "hints": "填空递归 nonlocal。",
+      "test_cases": [
+        "assert captured_output == 'Total: 3\\n'"
+      ],
+      "solution": "def outer():\n    count = 0\n    def inc():\n        nonlocal count\n        count += 1\n        if count < 3:\n            inc()\n        return count\n    return inc()\n\nprint('Total:', outer())"
+    },
+    {
+      "id": "CH12-H-028",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "全局变量类型保持。",
+      "code_template": "item = 5\ndef f():\n    item = \"changed\"\n    return item\n\nprint(f())\nprint(___)",
+      "expected_output": "changed\n5\n",
+      "hints": "填空类型保持。",
+      "test_cases": [
+        "assert captured_output == 'changed\\n5\\n'"
+      ],
+      "solution": "item = 5\ndef f():\n    item = \"changed\"\n    return item\n\nprint(f())\nprint(item)"
+    },
+    {
+      "id": "CH12-H-029",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "闭包缓存计算结果。",
+      "code_template": "def make_cache():\n    cache = {}\n    def compute(n):\n        if n not in cache:\n            cache[n] = n * n\n        return cache[n]\n    return compute\n\nc = make_cache()\nprint(c(4))\nprint(c(4))\nprint(___)",
+      "expected_output": "16\n16\n25\n",
+      "hints": "填空缓存闭包。",
+      "test_cases": [
+        "assert captured_output == '16\\n16\\n25\\n'"
+      ],
+      "solution": "def make_cache():\n    cache = {}\n    def compute(n):\n        if n not in cache:\n            cache[n] = n * n\n        return cache[n]\n    return compute\n\nc = make_cache()\nprint(c(4))\nprint(c(4))\nprint(c(5))"
+    },
+    {
+      "id": "CH12-H-030",
+      "topic": "作用域与变量",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "综合：作用域完整应用。",
+      "code_template": "counter = 0\ndef make_ops():\n    x = 10\n    def add(n):\n        return x + n\n    def double():\n        global counter\n        counter += 1\n        return counter\n    return add, double\n\nadd_op, double_op = make_ops()\nprint(add_op(5))\nprint(double_op())\nprint(___)",
+      "expected_output": "15\n1\n2\n",
+      "hints": "填空综合作用域。",
+      "test_cases": [
+        "assert captured_output == '15\\n1\\n2\\n'"
+      ],
+      "solution": "counter = 0\ndef make_ops():\n    x = 10\n    def add(n):\n        return x + n\n    def double():\n        global counter\n        counter += 1\n        return counter\n    return add, double\n\nadd_op, double_op = make_ops()\nprint(add_op(5))\nprint(double_op())\nprint(double_op())"
+    }
+  ]
+}

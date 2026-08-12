@@ -1,0 +1,427 @@
+{
+  "chapter": "CH13",
+  "title": "元组 (Tuples)",
+  "difficulty": "超简单",
+  "questions": [
+    {
+      "id": "CH13-E-001",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "创建元组并输出。",
+      "code_template": "t = (1, 2, 3)\nprint(___)",
+      "expected_output": "(1, 2, 3)\n",
+      "hints": "print 内填 t。",
+      "test_cases": [
+        "assert captured_output == '(1, 2, 3)\\n'"
+      ],
+      "solution": "t = (1, 2, 3)\nprint(t)"
+    },
+    {
+      "id": "CH13-E-002",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用索引访问元组元素。",
+      "code_template": "t = (\"a\", \"b\", \"c\")\nprint(t[___])",
+      "expected_output": "b\n",
+      "hints": "索引填 1。",
+      "test_cases": [
+        "assert captured_output == 'b\\n'"
+      ],
+      "solution": "t = (\"a\", \"b\", \"c\")\nprint(t[1])"
+    },
+    {
+      "id": "CH13-E-003",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用负索引访问元组最后一个元素。",
+      "code_template": "t = (10, 20, 30)\nprint(t[___])",
+      "expected_output": "30\n",
+      "hints": "索引填 -1。",
+      "test_cases": [
+        "assert captured_output == '30\\n'"
+      ],
+      "solution": "t = (10, 20, 30)\nprint(t[-1])"
+    },
+    {
+      "id": "CH13-E-004",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用切片截取元组。",
+      "code_template": "t = (1, 2, 3, 4)\nprint(___)",
+      "expected_output": "(2, 3)\n",
+      "hints": "切片填 1:3。",
+      "test_cases": [
+        "assert captured_output == '(2, 3)\\n'"
+      ],
+      "solution": "t = (1, 2, 3, 4)\nprint(t[1:3])"
+    },
+    {
+      "id": "CH13-E-005",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "把元组解包到变量。",
+      "code_template": "point = (3, 4)\nx, y = ___\nprint(x, y)",
+      "expected_output": "3 4\n",
+      "hints": "解包填 point。",
+      "test_cases": [
+        "assert captured_output == '3 4\\n'"
+      ],
+      "solution": "point = (3, 4)\nx, y = point\nprint(x, y)"
+    },
+    {
+      "id": "CH13-E-006",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 len() 求元组长度。",
+      "code_template": "t = (1, 2, 3, 4, 5)\nprint(len(___))",
+      "expected_output": "5\n",
+      "hints": "len 内填 t。",
+      "test_cases": [
+        "assert captured_output == '5\\n'"
+      ],
+      "solution": "t = (1, 2, 3, 4, 5)\nprint(len(t))"
+    },
+    {
+      "id": "CH13-E-007",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "访问嵌套元组元素。",
+      "code_template": "t = ((1, 2), (3, 4))\nprint(___)",
+      "expected_output": "3\n",
+      "hints": "填空嵌套索引。",
+      "test_cases": [
+        "assert captured_output == '3\\n'"
+      ],
+      "solution": "t = ((1, 2), (3, 4))\nprint(t[1][0])"
+    },
+    {
+      "id": "CH13-E-008",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "拼接两个元组。",
+      "code_template": "a = (1, 2)\nb = (3, 4)\nprint(___ + ___)",
+      "expected_output": "Sum: (1, 2, 3, 4)\n",
+      "hints": "依次填 a、b。",
+      "test_cases": [
+        "assert captured_output == 'Sum: (1, 2, 3, 4)\\n'"
+      ],
+      "solution": "a = (1, 2)\nb = (3, 4)\nprint('Sum:', a + b)"
+    },
+    {
+      "id": "CH13-E-009",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "重复元组。",
+      "code_template": "t = (0,)\nprint(___ * 3)",
+      "expected_output": "(0, 0, 0)\n",
+      "hints": "填 t。",
+      "test_cases": [
+        "assert captured_output == '(0, 0, 0)\\n'"
+      ],
+      "solution": "t = (0,)\nprint(t * 3)"
+    },
+    {
+      "id": "CH13-E-010",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "遍历元组逐行输出。",
+      "code_template": "for v in (1, 2, 3):\n    print(___)\n",
+      "expected_output": "1\n2\n3\n",
+      "hints": "输出变量 v。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n3\\n'"
+      ],
+      "solution": "for v in (1, 2, 3):\n    print(v)"
+    },
+    {
+      "id": "CH13-E-011",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 in 判断元素在元组中。",
+      "code_template": "t = (1, 2, 3)\nprint(2 in ___)",
+      "expected_output": "True\n",
+      "hints": "填 t。",
+      "test_cases": [
+        "assert captured_output == 'True\\n'"
+      ],
+      "solution": "t = (1, 2, 3)\nprint(2 in t)"
+    },
+    {
+      "id": "CH13-E-012",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 count() 统计元素次数。",
+      "code_template": "t = (1, 2, 2, 3)\nprint(t.count(___))",
+      "expected_output": "2\n",
+      "hints": "统计 2。",
+      "test_cases": [
+        "assert captured_output == '2\\n'"
+      ],
+      "solution": "t = (1, 2, 2, 3)\nprint(t.count(2))"
+    },
+    {
+      "id": "CH13-E-013",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 index() 查找元素位置。",
+      "code_template": "t = (10, 20, 30)\nprint(t.index(___))",
+      "expected_output": "1\n",
+      "hints": "查找 20。",
+      "test_cases": [
+        "assert captured_output == '1\\n'"
+      ],
+      "solution": "t = (10, 20, 30)\nprint(t.index(20))"
+    },
+    {
+      "id": "CH13-E-014",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "创建单元素元组。",
+      "code_template": "t = (5, 6, 7, 8)\nprint(len(___))",
+      "expected_output": "4\n",
+      "hints": "len 内填 t。",
+      "test_cases": [
+        "assert captured_output == '4\\n'"
+      ],
+      "solution": "t = (5, 6, 7, 8)\nprint(len(t))"
+    },
+    {
+      "id": "CH13-E-015",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "创建空元组。",
+      "code_template": "t = ()\nprint(len(___))",
+      "expected_output": "0\n",
+      "hints": "len 内填 t。",
+      "test_cases": [
+        "assert captured_output == '0\\n'"
+      ],
+      "solution": "t = ()\nprint(len(t))"
+    },
+    {
+      "id": "CH13-E-016",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "元组转列表。",
+      "code_template": "t = (1, 2, 3)\nprint(list(___))",
+      "expected_output": "[1, 2, 3]\n",
+      "hints": "list 内填 t。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3]\\n'"
+      ],
+      "solution": "t = (1, 2, 3)\nprint(list(t))"
+    },
+    {
+      "id": "CH13-E-017",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "列表转元组。",
+      "code_template": "nums = [4, 5, 6]\nprint(tuple(___))",
+      "expected_output": "(4, 5, 6)\n",
+      "hints": "tuple 内填 nums。",
+      "test_cases": [
+        "assert captured_output == '(4, 5, 6)\\n'"
+      ],
+      "solution": "nums = [4, 5, 6]\nprint(tuple(nums))"
+    },
+    {
+      "id": "CH13-E-018",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "比较两个元组。",
+      "code_template": "a = (1, 2)\nb = (1, 3)\nprint(___ < ___)",
+      "expected_output": "False\n",
+      "hints": "依次填 a、b。",
+      "test_cases": [
+        "assert captured_output == 'False\\n'"
+      ],
+      "solution": "a = (1, 3)\nb = (1, 2)\nprint(a < b)"
+    },
+    {
+      "id": "CH13-E-019",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "元组作为字典键。",
+      "code_template": "d = {(1, 2): \"point\"}\nprint(___)",
+      "expected_output": "point\n",
+      "hints": "填空键访问。",
+      "test_cases": [
+        "assert captured_output == 'point\\n'"
+      ],
+      "solution": "d = {(1, 2): \"point\"}\nprint(d[(1, 2)])"
+    },
+    {
+      "id": "CH13-E-020",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "三值解包。",
+      "code_template": "t = (1, 2, 3)\na, b, c = ___\nprint(a, b, c)",
+      "expected_output": "1 2 3\n",
+      "hints": "解包填 t。",
+      "test_cases": [
+        "assert captured_output == '1 2 3\\n'"
+      ],
+      "solution": "t = (1, 2, 3)\na, b, c = t\nprint(a, b, c)"
+    },
+    {
+      "id": "CH13-E-021",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "元组不可变验证（重新绑定）。",
+      "code_template": "t = (1, 2)\nt = (3, 4)\nprint(___)",
+      "expected_output": "(3, 4)\n",
+      "hints": "填空重新绑定。",
+      "test_cases": [
+        "assert captured_output == '(3, 4)\\n'"
+      ],
+      "solution": "t = (1, 2)\nt = (3, 4)\nprint(t)"
+    },
+    {
+      "id": "CH13-E-022",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "元组解包交换变量。",
+      "code_template": "a, b = 1, 2\na, b = b, a\nprint(___, b)",
+      "expected_output": "2 1\n",
+      "hints": "填空元组交换。",
+      "test_cases": [
+        "assert captured_output == '2 1\\n'"
+      ],
+      "solution": "a, b = 1, 2\na, b = b, a\nprint(a, b)"
+    },
+    {
+      "id": "CH13-E-023",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "元组内混合类型。",
+      "code_template": "t = (1, \"two\", 3.0)\nprint(___)",
+      "expected_output": "two\n",
+      "hints": "索引填 1。",
+      "test_cases": [
+        "assert captured_output == 'two\\n'"
+      ],
+      "solution": "t = (1, \"two\", 3.0)\nprint(t[1])"
+    },
+    {
+      "id": "CH13-E-024",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "切片步长取元组。",
+      "code_template": "t = (1, 2, 3, 4, 5)\nprint(___)",
+      "expected_output": "(1, 3, 5)\n",
+      "hints": "切片填 ::2。",
+      "test_cases": [
+        "assert captured_output == '(1, 3, 5)\\n'"
+      ],
+      "solution": "t = (1, 2, 3, 4, 5)\nprint(t[::2])"
+    },
+    {
+      "id": "CH13-E-025",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "元组反转切片。",
+      "code_template": "t = (1, 2, 3)\nprint(t[___])",
+      "expected_output": "(3, 2, 1)\n",
+      "hints": "切片填 ::-1。",
+      "test_cases": [
+        "assert captured_output == '(3, 2, 1)\\n'"
+      ],
+      "solution": "t = (1, 2, 3)\nprint(t[::-1])"
+    },
+    {
+      "id": "CH13-E-026",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "解包时使用占位变量。",
+      "code_template": "t = (1, 2, 3)\na, _, c = ___\nprint(a, c)",
+      "expected_output": "1 3\n",
+      "hints": "解包填 t。",
+      "test_cases": [
+        "assert captured_output == '1 3\\n'"
+      ],
+      "solution": "t = (1, 2, 3)\na, _, c = t\nprint(a, c)"
+    },
+    {
+      "id": "CH13-E-027",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "元组求和（sum）。",
+      "code_template": "t = (4, 5, 6)\nprint(sum(___))",
+      "expected_output": "15\n",
+      "hints": "sum 内填 t。",
+      "test_cases": [
+        "assert captured_output == '15\\n'"
+      ],
+      "solution": "t = (4, 5, 6)\nprint(sum(t))"
+    },
+    {
+      "id": "CH13-E-028",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "元组最大值。",
+      "code_template": "t = (3, 9, 5)\nprint(max(___))",
+      "expected_output": "9\n",
+      "hints": "max 内填 t。",
+      "test_cases": [
+        "assert captured_output == '9\\n'"
+      ],
+      "solution": "t = (3, 9, 5)\nprint(max(t))"
+    },
+    {
+      "id": "CH13-E-029",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "元组最小值。",
+      "code_template": "t = (10, 20, 6)\nprint(min(___))",
+      "expected_output": "6\n",
+      "hints": "min 内填 t。",
+      "test_cases": [
+        "assert captured_output == '6\\n'"
+      ],
+      "solution": "t = (10, 20, 6)\nprint(min(t))"
+    },
+    {
+      "id": "CH13-E-030",
+      "topic": "元组 (Tuples)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "综合：解包并输出。",
+      "code_template": "t = (\"Alice\", 20)\nname, age = ___\nprint(name, age)",
+      "expected_output": "Alice 20\n",
+      "hints": "解包填 t。",
+      "test_cases": [
+        "assert captured_output == 'Alice 20\\n'"
+      ],
+      "solution": "t = (\"Alice\", 20)\nname, age = t\nprint(name, age)"
+    }
+  ]
+}

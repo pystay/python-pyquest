@@ -1,0 +1,327 @@
+{
+  "chapter": "CH02",
+  "title": "变量和类型",
+  "difficulty": "中等",
+  "questions": [
+    {
+      "id": "CH02-H-001",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "定义 a=10、b=3，把六种算术运算结果存入列表并逐行输出。",
+      "code_template": "a = 10\nb = 3\n# 请把 a+b、a-b、a*b、a/b、a//b、a%b 存入列表并逐行输出\n___ = [a + b, a - b, a * b, a / b, a // b, a % b]\nfor r in ___:\n    print(r)",
+      "expected_output": "13\n7\n30\n3.3333333333333335\n3\n1\n",
+      "hints": "先算六种结果存列表，再遍历输出。",
+      "test_cases": [
+        "assert captured_output == '13\\n7\\n30\\n3.3333333333333335\\n3\\n1\\n'",
+        "assert captured_output.count(chr(10)) == 6",
+        "assert captured_output.strip() == '13\\n7\\n30\\n3.3333333333333335\\n3\\n1'"
+      ],
+      "solution": "a = 10\nb = 3\nresults = [a + b, a - b, a * b, a / b, a // b, a % b]\nfor r in results:\n    print(r)"
+    },
+    {
+      "id": "CH02-H-002",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "定义 x=7、y=2，一次输出六种算术运算结果。",
+      "code_template": "x = 7\ny = 2\nprint(___, ___, ___, ___, ___, ___)",
+      "expected_output": "9 5 14 49 3 1\n",
+      "hints": "依次填 x+y、x-y、x*y、x**y、x//y、x%y。",
+      "test_cases": [
+        "assert captured_output == '9 5 14 49 3 1\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '9 5 14 49 3 1'"
+      ],
+      "solution": "x = 7\ny = 2\nprint(x + y, x - y, x * y, x ** y, x // y, x % y)"
+    },
+    {
+      "id": "CH02-H-003",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "定义 a=5、b=8，输出两组比较结果并按大小输出提示。",
+      "code_template": "a = 5\nb = 8\nprint(___ > b, a < ___)\nif a < b:\n    print(\"b is bigger\")\nelse:\n    print(\"a is bigger\")",
+      "expected_output": "False True\nb is bigger\n",
+      "hints": "依次填 a、b；if-else 判断大小。",
+      "test_cases": [
+        "assert captured_output == 'False True\\nb is bigger\\n'",
+        "assert captured_output.count(chr(10)) == 2",
+        "assert captured_output.strip() == 'False True\\nb is bigger'"
+      ],
+      "solution": "a = 5\nb = 8\nprint(a > b, a < b)\nif a < b:\n    print(\"b is bigger\")\nelse:\n    print(\"a is bigger\")"
+    },
+    {
+      "id": "CH02-H-004",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "定义 x=10、y=10，输出四种比较运算结果。",
+      "code_template": "x = 10\ny = 10\nprint(___ == ___, x >= ___, ___ <= y, x != y)",
+      "expected_output": "True True True False\n",
+      "hints": "依次填 x、y、y、x。",
+      "test_cases": [
+        "assert captured_output == 'True True True False\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'True True True False'"
+      ],
+      "solution": "x = 10\ny = 10\nprint(x == y, x >= y, x <= y, x != y)"
+    },
+    {
+      "id": "CH02-H-005",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "定义 a=True、b=False，用 if-elif-else 判断逻辑组合并输出。",
+      "code_template": "a = True\nb = False\nif a ___ b:\n    print(\"both\")\nelif a ___ b:\n    print(\"one\")\nelse:\n    print(\"none\")",
+      "expected_output": "one\n",
+      "hints": "依次填 and、or。",
+      "test_cases": [
+        "assert captured_output == 'one\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'one'"
+      ],
+      "solution": "a = True\nb = False\nif a and b:\n    print(\"both\")\nelif a or b:\n    print(\"one\")\nelse:\n    print(\"none\")"
+    },
+    {
+      "id": "CH02-H-006",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "定义 x=5，输出三组逻辑与比较混合运算结果。",
+      "code_template": "x = 5\nprint(___ > 3 ___ x < 10, x == 5 ___ x > 10, ___ (x < 0))",
+      "expected_output": "True True True\n",
+      "hints": "依次填 x、and、or、not。",
+      "test_cases": [
+        "assert captured_output == 'True True True\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'True True True'"
+      ],
+      "solution": "x = 5\nprint(x > 3 and x < 10, x == 5 or x > 10, not (x < 0))"
+    },
+    {
+      "id": "CH02-H-007",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "定义 a=4、b=6，用混合表达式做条件判断并输出。",
+      "code_template": "a = 4\nb = 6\nif (___ + b) > 9 ___ a < b:\n    print(\"big and ordered\")\nelse:\n    print(\"other\")",
+      "expected_output": "big and ordered\n",
+      "hints": "依次填 a、and。",
+      "test_cases": [
+        "assert captured_output == 'big and ordered\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'big and ordered'"
+      ],
+      "solution": "a = 4\nb = 6\nif (a + b) > 9 and a < b:\n    print(\"big and ordered\")\nelse:\n    print(\"other\")"
+    },
+    {
+      "id": "CH02-H-008",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "定义 x=3、y=4，输出三个复杂表达式的结果。",
+      "code_template": "x = 3\ny = 4\nprint(___ ** 2 + y ** 2, (___ + y) ** 2 // 5, (x + ___) % 5)",
+      "expected_output": "25 9 2\n",
+      "hints": "依次填 x、x、y。",
+      "test_cases": [
+        "assert captured_output == '25 9 2\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '25 9 2'"
+      ],
+      "solution": "x = 3\ny = 4\nprint(x ** 2 + y ** 2, (x + y) ** 2 // 5, (x + y) % 5)"
+    },
+    {
+      "id": "CH02-H-009",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "定义 score=85，用 if-elif-else 输出成绩等级。",
+      "code_template": "score = 85\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelse:\n    grade = \"D\"\nprint(f\"Grade: {___}\")",
+      "expected_output": "Grade: B\n",
+      "hints": "输出变量 grade。",
+      "test_cases": [
+        "assert captured_output == 'Grade: B\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'Grade: B'"
+      ],
+      "solution": "score = 85\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelse:\n    grade = \"D\"\nprint(f\"Grade: {grade}\")"
+    },
+    {
+      "id": "CH02-H-010",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "定义 n=-3，用 if-elif-else 判断正负零并输出。",
+      "code_template": "n = ___\nif n > 0:\n    print(n, \"is positive\")\nelif n < 0:\n    print(n, \"is negative\")\nelse:\n    print(n, \"is zero\")",
+      "expected_output": "-3 is negative\n",
+      "hints": "填 -3。",
+      "test_cases": [
+        "assert captured_output == '-3 is negative\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '-3 is negative'"
+      ],
+      "solution": "n = -3\nif n > 0:\n    print(n, \"is positive\")\nelif n < 0:\n    print(n, \"is negative\")\nelse:\n    print(n, \"is zero\")"
+    },
+    {
+      "id": "CH02-H-011",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 for 循环累加 1 到 10 并输出总和。",
+      "code_template": "total = 0\nfor i in range(1, 11):\n    total += i\nprint(f\"Sum: {___}\")",
+      "expected_output": "Sum: 55\n",
+      "hints": "输出 total。",
+      "test_cases": [
+        "assert captured_output == 'Sum: 55\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'Sum: 55'"
+      ],
+      "solution": "total = 0\nfor i in range(1, 11):\n    total += i\nprint(f\"Sum: {total}\")"
+    },
+    {
+      "id": "CH02-H-012",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "用 while 循环累乘 1 到 5 并输出结果。",
+      "code_template": "product = 1\ni = 1\nwhile i <= 5:\n    ___ *= i\n    i += 1\nprint(f\"Product: {___}\")",
+      "expected_output": "Product: 120\n",
+      "hints": "依次填 product、product。",
+      "test_cases": [
+        "assert captured_output == 'Product: 120\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'Product: 120'"
+      ],
+      "solution": "product = 1\ni = 1\nwhile i <= 5:\n    product *= i\n    i += 1\nprint(f\"Product: {product}\")"
+    },
+    {
+      "id": "CH02-H-013",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "遍历混合类型列表，输出每个值与类型名。",
+      "code_template": "for v in [3, 2.0]:\n    print(v, type(___).__name__)",
+      "expected_output": "3 int\n2.0 float\n",
+      "hints": "type 内填 v。",
+      "test_cases": [
+        "assert captured_output == '3 int\\n2.0 float\\n'",
+        "assert captured_output.count(chr(10)) == 2",
+        "assert captured_output.strip() == '3 int\\n2.0 float'"
+      ],
+      "solution": "for v in [3, 2.0]:\n    print(v, type(v).__name__)"
+    },
+    {
+      "id": "CH02-H-014",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "定义 n=10，输出除法、整除和混合乘法的结果。",
+      "code_template": "n = 10\nprint(n / ___, n // ___, n * 1.5)",
+      "expected_output": "2.5 2 15.0\n",
+      "hints": "依次填 4、4。",
+      "test_cases": [
+        "assert captured_output == '2.5 2 15.0\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '2.5 2 15.0'"
+      ],
+      "solution": "n = 10\nprint(n / 4, n // 4, n * 1.5)"
+    },
+    {
+      "id": "CH02-H-015",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "定义 pi=3.14159，用 round() 保留两位小数输出。",
+      "code_template": "pi = 3.14159\nprint(f\"Rounded: {___(pi, 2)}\")",
+      "expected_output": "Rounded: 3.14\n",
+      "hints": "round(pi, 2) 保留两位。",
+      "test_cases": [
+        "assert captured_output == 'Rounded: 3.14\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == 'Rounded: 3.14'"
+      ],
+      "solution": "pi = 3.14159\nprint(f\"Rounded: {round(pi, 2)}\")"
+    },
+    {
+      "id": "CH02-H-016",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "遍历浮点数列表，逐行用 round() 保留两位小数。",
+      "code_template": "for v in [2.675, 3.14159]:\n    print(round(___, 2))",
+      "expected_output": "2.67\n3.14\n",
+      "hints": "round 内填 v。",
+      "test_cases": [
+        "assert captured_output == '2.67\\n3.14\\n'",
+        "assert captured_output.count(chr(10)) == 2",
+        "assert captured_output.strip() == '2.67\\n3.14'"
+      ],
+      "solution": "for v in [2.675, 3.14159]:\n    print(round(v, 2))"
+    },
+    {
+      "id": "CH02-H-017",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "定义 a=5、b=3，把运算结果存入列表并按条件输出。",
+      "code_template": "a = 5\nb = 3\nnums = [a + b, a - b, a * b]\nif nums[2] > 10:\n    print(___, \"big product\")\nelse:\n    print(nums)",
+      "expected_output": "[8, 2, 15] big product\n",
+      "hints": "输出 nums。",
+      "test_cases": [
+        "assert captured_output == '[8, 2, 15] big product\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '[8, 2, 15] big product'"
+      ],
+      "solution": "a = 5\nb = 3\nnums = [a + b, a - b, a * b]\nif nums[2] > 10:\n    print(nums, \"big product\")\nelse:\n    print(nums)"
+    },
+    {
+      "id": "CH02-H-018",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "定义 a=10、b=20，把运算结果存入字典并按键访问。",
+      "code_template": "a = 10\nb = 20\nd = {\"sum\": a + b, \"diff\": b - a}\nprint(d[___], d[___])",
+      "expected_output": "30 10\n",
+      "hints": "依次填 \"sum\"、\"diff\"。",
+      "test_cases": [
+        "assert captured_output == '30 10\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '30 10'"
+      ],
+      "solution": "a = 10\nb = 20\nd = {\"sum\": a + b, \"diff\": b - a}\nprint(d[\"sum\"], d[\"diff\"])"
+    },
+    {
+      "id": "CH02-H-019",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "a=1、b=2，用循环同步更新两变量并输出。",
+      "code_template": "a, b = 1, 2\nfor _ in range(3):\n    ___, ___ = b, a + b\nprint(a, b)",
+      "expected_output": "5 8\n",
+      "hints": "斐波那契式同步更新。",
+      "test_cases": [
+        "assert captured_output == '5 8\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '5 8'"
+      ],
+      "solution": "a, b = 1, 2\nfor _ in range(3):\n    a, b = b, a + b\nprint(a, b)"
+    },
+    {
+      "id": "CH02-H-020",
+      "topic": "变量在运算、比较和逻辑中的综合应用",
+      "difficulty": "中等",
+      "stars": "⭐⭐⭐",
+      "description": "循环累加并把每次结果收集到列表输出。",
+      "code_template": "total = 0\nsums = []\nfor i in range(1, 6):\n    total += i\n    sums.___(total)\nprint(sums)",
+      "expected_output": "[1, 3, 6, 10, 15]\n",
+      "hints": "append 收集。",
+      "test_cases": [
+        "assert captured_output == '[1, 3, 6, 10, 15]\\n'",
+        "assert captured_output.count(chr(10)) == 1",
+        "assert captured_output.strip() == '[1, 3, 6, 10, 15]'"
+      ],
+      "solution": "total = 0\nsums = []\nfor i in range(1, 6):\n    total += i\n    sums.append(total)\nprint(sums)"
+    }
+  ]
+}

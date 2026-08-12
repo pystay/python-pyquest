@@ -1,0 +1,287 @@
+{
+  "chapter": "CH02",
+  "title": "变量的复杂应用与类型检查技巧",
+  "difficulty": "较难",
+  "questions": [
+    {
+      "id": "CH02-X-001",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "给定混合列表 data，将其中能安全转换为整数的元素相加（布尔值跳过、无法转换的字符串跳过），输出结果。",
+      "code_template": "data = [10, '20', 3.14, True, 'False', None, 25, '30']\ntotal = 0\nfor item in data:\n    if isinstance(item, bool):\n        continue\n    if isinstance(item, (int, float)):\n        total += int(item)\n    elif isinstance(item, str):\n        ___\n            total += int(item)\n        except ValueError:\n            pass\nprint(total)",
+      "expected_output": "88\n",
+      "hints": "用 try-except 捕获 int() 的 ValueError。",
+      "test_cases": [
+        "assert captured_output == '88\\n'"
+      ],
+      "solution": "data = [10, '20', 3.14, True, 'False', None, 25, '30']\ntotal = 0\nfor item in data:\n    if isinstance(item, bool):\n        continue\n    if isinstance(item, (int, float)):\n        total += int(item)\n    elif isinstance(item, str):\n        try:\n            total += int(item)\n        except ValueError:\n            pass\nprint(total)"
+    },
+    {
+      "id": "CH02-X-002",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "统计混合列表中各类型元素的数量（区分 int/float/str/bool/None），输出计数字典。",
+      "code_template": "data = [10, '20', 3.14, True, 'False', None, 25]\ncounts = {'int': 0, 'float': 0, 'str': 0, 'bool': 0, 'none': 0}\nfor item in data:\n    if isinstance(item, bool):\n        counts['bool'] += 1\n    elif isinstance(item, int):\n        counts['int'] += 1\n    elif isinstance(item, float):\n        counts['float'] += 1\n    elif isinstance(item, str):\n        counts['str'] += 1\n    elif item is None:\n        counts['none'] += 1\nprint(___)",
+      "expected_output": "{'int': 2, 'float': 1, 'str': 2, 'bool': 1, 'none': 1}\n",
+      "hints": "bool 是 int 的子类，判断顺序要先 bool 后 int。",
+      "test_cases": [
+        "assert captured_output == \"{'int': 2, 'float': 1, 'str': 2, 'bool': 1, 'none': 1}\\n\""
+      ],
+      "solution": "data = [10, '20', 3.14, True, 'False', None, 25]\ncounts = {'int': 0, 'float': 0, 'str': 0, 'bool': 0, 'none': 0}\nfor item in data:\n    if isinstance(item, bool):\n        counts['bool'] += 1\n    elif isinstance(item, int):\n        counts['int'] += 1\n    elif isinstance(item, float):\n        counts['float'] += 1\n    elif isinstance(item, str):\n        counts['str'] += 1\n    elif item is None:\n        counts['none'] += 1\nprint(counts)"
+    },
+    {
+      "id": "CH02-X-003",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "定义 safe_int() 函数：将值转为整数，转换失败返回 None，对列表 values 逐项转换并输出结果列表。",
+      "code_template": "def safe_int(value):\n    try:\n        return int(value)\n    except (ValueError, TypeError):\n        ___\nvalues = ['12', '3.5', 7, None, 'abc']\nresults = [safe_int(v) for v in values]\nprint(results)",
+      "expected_output": "[12, None, 7, None, None]\n",
+      "hints": "异常时返回 None。",
+      "test_cases": [
+        "assert captured_output == '[12, None, 7, None, None]\\n'"
+      ],
+      "solution": "def safe_int(value):\n    try:\n        return int(value)\n    except (ValueError, TypeError):\n        return None\nvalues = ['12', '3.5', 7, None, 'abc']\nresults = [safe_int(v) for v in values]\nprint(results)"
+    },
+    {
+      "id": "CH02-X-004",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "理解全局变量：counter 为全局变量，increment() 函数通过 global 修改它，连续调用两次后输出 counter。",
+      "code_template": "counter = 0\ndef increment(step):\n    global counter\n    counter += step\nincrement(2)\nincrement(3)\nprint(\"Counter:\",___)",
+      "expected_output": "Counter: 5\n",
+      "hints": "函数内修改全局变量必须声明 global。",
+      "test_cases": [
+        "assert captured_output == 'Counter: 5\\n'"
+      ],
+      "solution": "counter = 0\ndef increment(step):\n    global counter\n    counter += step\nincrement(2)\nincrement(3)\nprint(\"Counter:\", counter)"
+    },
+    {
+      "id": "CH02-X-005",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "可变与不可变类型：函数内对列表追加元素、对字符串重新赋值，输出调用后原变量的值。",
+      "code_template": "def modify(li, s):\n    li.append(4)\n    s = s + '!'\nmy_list = [1, 2, 3]\nmy_str = 'hi'\nmodify(my_list, my_str)\nprint(___, my_str)",
+      "expected_output": "[1, 2, 3, 4] hi\n",
+      "hints": "列表可变（原地修改生效），字符串不可变（函数内是新对象）。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3, 4] hi\\n'"
+      ],
+      "solution": "def modify(li, s):\n    li.append(4)\n    s = s + '!'\nmy_list = [1, 2, 3]\nmy_str = 'hi'\nmodify(my_list, my_str)\nprint(my_list, my_str)"
+    },
+    {
+      "id": "CH02-X-006",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "类型推断与动态类型：变量 x 依次赋值为整数、字符串、列表，分别用 type().__name__ 输出其类型名。",
+      "code_template": "x = 42\nprint(type(x).__name__)\nx = 'hello'\nprint(type(x).__name__)\nx = [1, 2]\nprint(___)",
+      "expected_output": "int\nstr\nlist\n",
+      "hints": "type(x).__name__ 返回类型名字符串。",
+      "test_cases": [
+        "assert captured_output == 'int\\nstr\\nlist\\n'"
+      ],
+      "solution": "x = 42\nprint(type(x).__name__)\nx = 'hello'\nprint(type(x).__name__)\nx = [1, 2]\nprint(type(x).__name__)"
+    },
+    {
+      "id": "CH02-X-007",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "嵌套字典与列表访问：从 data['user']['scores'] 取出第一个分数，输出 '名字: 分数' 格式。",
+      "code_template": "data = {'user': {'name': 'Alice', 'scores': [90, 85]}}\nname = data['user']['name']\nfirst = data['user']['scores'][0]\nprint(___)",
+      "expected_output": "Alice: 90\n",
+      "hints": "逐层用键/索引访问。",
+      "test_cases": [
+        "assert captured_output == 'Alice: 90\\n'"
+      ],
+      "solution": "data = {'user': {'name': 'Alice', 'scores': [90, 85]}}\nname = data['user']['name']\nfirst = data['user']['scores'][0]\nprint(f'{name}: {first}')"
+    },
+    {
+      "id": "CH02-X-008",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "变量引用与 id()：判断小整数 256 与 256 是否同一对象、列表与其副本是否同一对象，输出三个布尔结果。",
+      "code_template": "a = 256\nb = 256\nc = [1, 2]\nd = c\nprint(___, c is d, c is c.copy())",
+      "expected_output": "True True False\n",
+      "hints": "小整数可能被缓存；list.copy() 返回新对象。",
+      "test_cases": [
+        "assert captured_output == 'True True False\\n'"
+      ],
+      "solution": "a = 256\nb = 256\nc = [1, 2]\nd = c\nprint(a is b, c is d, c is c.copy())"
+    },
+    {
+      "id": "CH02-X-009",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "自定义类型检查：定义 Animal 与继承它的 Dog 类，创建 Dog 实例后用 isinstance() 判断类型并输出。",
+      "code_template": "class Animal:\n    pass\nclass Dog(Animal):\n    pass\nd = Dog()\nprint(___, isinstance(d, Animal), type(d).__name__)",
+      "expected_output": "True True Dog\n",
+      "hints": "isinstance 支持继承关系判断。",
+      "test_cases": [
+        "assert captured_output == 'True True Dog\\n'"
+      ],
+      "solution": "class Animal:\n    pass\nclass Dog(Animal):\n    pass\nd = Dog()\nprint(isinstance(d, Dog), isinstance(d, Animal), type(d).__name__)"
+    },
+    {
+      "id": "CH02-X-010",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "布尔值参与运算的特殊情况：输出 True+True、True*3、bool(0)、bool([])、bool('a') 五个结果。",
+      "code_template": "print(___, True * 3, bool(0), bool([]), bool('a'))",
+      "expected_output": "2 3 False False True\n",
+      "hints": "True 可当作 1 参与算术。",
+      "test_cases": [
+        "assert captured_output == '2 3 False False True\\n'"
+      ],
+      "solution": "print(True + True, True * 3, bool(0), bool([]), bool('a'))"
+    },
+    {
+      "id": "CH02-X-011",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "None 与空值判断：分别判断 None、空列表、空字符串与 None 的关系及与空值比较的结果，输出五个布尔值。",
+      "code_template": "a = None\nb = []\nc = ''\nprint(___, b is None, b == [], c == '')",
+      "expected_output": "True False True True\n",
+      "hints": "is None 判断身份，== 判断值相等。",
+      "test_cases": [
+        "assert captured_output == 'True False True True\\n'"
+      ],
+      "solution": "a = None\nb = []\nc = ''\nprint(a is None, b is None, b == [], c == '')"
+    },
+    {
+      "id": "CH02-X-012",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "从混合列表提取数字：将能转换为浮点数的元素转为 float 放入新列表（跳过无法转换的），输出结果列表。",
+      "code_template": "data = ['12', '3.5', '7', 'x', 8]\nnums = []\nfor item in data:\n    ___\n        nums.append(float(item))\n    except (ValueError, TypeError):\n        continue\nprint(nums)",
+      "expected_output": "[12.0, 3.5, 7.0, 8.0]\n",
+      "hints": "float() 可转换数字字符串；8 为 int 也可转。",
+      "test_cases": [
+        "assert captured_output == '[12.0, 3.5, 7.0, 8.0]\\n'"
+      ],
+      "solution": "data = ['12', '3.5', '7', 'x', 8]\nnums = []\nfor item in data:\n    try:\n        nums.append(float(item))\n    except (ValueError, TypeError):\n        continue\nprint(nums)"
+    },
+    {
+      "id": "CH02-X-013",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "异常处理链：convert() 将值转 int，捕获 ValueError 与 TypeError 返回 None，对多种输入转换后输出结果列表。",
+      "code_template": "def convert(value):\n    try:\n        return int(value)\n    except (ValueError, TypeError):\n        return None\nresults = [convert(v) for v in ['5', 'abc', None, 3.9, '']]\nprint(___)",
+      "expected_output": "[5, None, None, 3, None]\n",
+      "hints": "int(3.9) 截断为 3；int('') 抛 ValueError。",
+      "test_cases": [
+        "assert captured_output == '[5, None, None, 3, None]\\n'"
+      ],
+      "solution": "def convert(value):\n    try:\n        return int(value)\n    except (ValueError, TypeError):\n        return None\nresults = [convert(v) for v in ['5', 'abc', None, 3.9, '']]\nprint(results)"
+    },
+    {
+      "id": "CH02-X-014",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数类型校验：add() 函数仅当两个参数均为 int/float 时求和，否则返回 None，输出三组调用结果。",
+      "code_template": "def add(a, b):\n    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):\n        return None\n    return a + b\nprint(___, add('x', 2), add(1.5, 2))",
+      "expected_output": "3 None 3.5\n",
+      "hints": "isinstance(a, (int, float)) 检查数值类型。",
+      "test_cases": [
+        "assert captured_output == '3 None 3.5\\n'"
+      ],
+      "solution": "def add(a, b):\n    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):\n        return None\n    return a + b\nprint(add(1, 2), add('x', 2), add(1.5, 2))"
+    },
+    {
+      "id": "CH02-X-015",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "深浅拷贝与引用：对含嵌套列表的 orig 分别做浅拷贝与深拷贝，修改浅拷贝的内层后输出原列表与深拷贝的内层。",
+      "code_template": "import copy\norig = [1, [2, 3]]\nshallow = copy.copy(orig)\ndeep = copy.deepcopy(orig)\nshallow[1].append(4)\nprint(___, deep[1])",
+      "expected_output": "[2, 3, 4] [2, 3]\n",
+      "hints": "浅拷贝共享内层可变对象，深拷贝完全独立。",
+      "test_cases": [
+        "assert captured_output == '[2, 3, 4] [2, 3]\\n'"
+      ],
+      "solution": "import copy\norig = [1, [2, 3]]\nshallow = copy.copy(orig)\ndeep = copy.deepcopy(orig)\nshallow[1].append(4)\nprint(orig[1], deep[1])"
+    },
+    {
+      "id": "CH02-X-016",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "鸭子类型与方法检查：定义 Cat 与 Dog 类（各有 speak 方法），用 hasattr() 判断对象是否有 speak 方法再调用，并传入一个普通整数观察结果。",
+      "code_template": "class Cat:\n    def speak(self):\n        return 'Meow'\nclass Dog:\n    def speak(self):\n        return 'Woof'\ndef call_speak(animal):\n    if hasattr(animal, 'speak'):\n        print(animal.speak())\n    else:\n        print(___)\ncall_speak(Cat())\ncall_speak(Dog())\ncall_speak(42)",
+      "expected_output": "Meow\nWoof\nNo speak method\n",
+      "hints": "hasattr(obj, name) 检查属性/方法是否存在。",
+      "test_cases": [
+        "assert captured_output == 'Meow\\nWoof\\nNo speak method\\n'"
+      ],
+      "solution": "class Cat:\n    def speak(self):\n        return 'Meow'\nclass Dog:\n    def speak(self):\n        return 'Woof'\ndef call_speak(animal):\n    if hasattr(animal, 'speak'):\n        print(animal.speak())\n    else:\n        print('No speak method')\ncall_speak(Cat())\ncall_speak(Dog())\ncall_speak(42)"
+    },
+    {
+      "id": "CH02-X-017",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "布尔值参与数值运算的陷阱：跳过列表中的布尔值，对其余元素安全 int() 转换后求和，输出结果。",
+      "code_template": "data = [True, 1, '3']\ntotal = 0\nfor item in data:\n    if isinstance(item, bool):\n        continue\n    try:\n        total += int(item)\n    except (ValueError, TypeError):\n        pass\nprint('Total:',___)",
+      "expected_output": "Total: 4\n",
+      "hints": "bool 是 int 子类，int(True) 会得到 1，需先跳过。",
+      "test_cases": [
+        "assert captured_output == 'Total: 4\\n'"
+      ],
+      "solution": "data = [True, 1, '3']\ntotal = 0\nfor item in data:\n    if isinstance(item, bool):\n        continue\n    try:\n        total += int(item)\n    except (ValueError, TypeError):\n        pass\nprint('Total:', total)"
+    },
+    {
+      "id": "CH02-X-018",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "复杂结构中的类型检查：字典混合键（int/str/tuple），遍历输出每个键及其值的类型名。",
+      "code_template": "d = {1: 'int', '1': 'str', (1,): 'tuple'}\nfor key in d:\n    print(___, type(d[key]).__name__)",
+      "expected_output": "1 str\n1 str\n(1,) str\n",
+      "hints": "字典保持插入顺序。",
+      "test_cases": [
+        "assert captured_output == '1 str\\n1 str\\n(1,) str\\n'"
+      ],
+      "solution": "d = {1: 'int', '1': 'str', (1,): 'tuple'}\nfor key in d:\n    print(key, type(d[key]).__name__)"
+    },
+    {
+      "id": "CH02-X-019",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "递归与全局变量：全局累加器 total，accumulate(n) 递归累加 n 到 1，调用 accumulate(4) 后输出 total。",
+      "code_template": "total = 0\ndef accumulate(n):\n    global total\n    if n == 0:\n        return\n    total += n\n    accumulate(n - 1)\naccumulate(4)\nprint(___)",
+      "expected_output": "10\n",
+      "hints": "递归每层用 global 修改 total。",
+      "test_cases": [
+        "assert captured_output == '10\\n'"
+      ],
+      "solution": "total = 0\ndef accumulate(n):\n    global total\n    if n == 0:\n        return\n    total += n\n    accumulate(n - 1)\naccumulate(4)\nprint(total)"
+    },
+    {
+      "id": "CH02-X-020",
+      "topic": "变量的复杂应用与类型检查技巧",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "综合类型检查工具：classify() 将任意值归类为 none/bool/int/float/str/container，对示例列表逐项输出分类名。",
+      "code_template": "def classify(value):\n    if value is None:\n        return 'none'\n    if isinstance(value, bool):\n        return 'bool'\n    if isinstance(value, int):\n        return 'int'\n    if isinstance(value, float):\n        return 'float'\n    if isinstance(value, str):\n        return 'str'\n    if isinstance(value, (list, tuple, set, dict)):\n        return 'container'\n    return 'unknown'\nfor v in [True, 5, 3.14, 'hi', [1], None]:\n    print(___)",
+      "expected_output": "bool\nint\nfloat\nstr\ncontainer\nnone\n",
+      "hints": "先判断 None 与 bool，再判断数值与容器类型。",
+      "test_cases": [
+        "assert captured_output == 'bool\\nint\\nfloat\\nstr\\ncontainer\\nnone\\n'"
+      ],
+      "solution": "def classify(value):\n    if value is None:\n        return 'none'\n    if isinstance(value, bool):\n        return 'bool'\n    if isinstance(value, int):\n        return 'int'\n    if isinstance(value, float):\n        return 'float'\n    if isinstance(value, str):\n        return 'str'\n    if isinstance(value, (list, tuple, set, dict)):\n        return 'container'\n    return 'unknown'\nfor v in [True, 5, 3.14, 'hi', [1], None]:\n    print(classify(v))"
+    }
+  ]
+}

@@ -1,0 +1,427 @@
+{
+  "chapter": "CH08",
+  "title": "循环 (while)",
+  "difficulty": "超简单",
+  "questions": [
+    {
+      "id": "CH08-E-001",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 while 输出 1 到 3。",
+      "code_template": "i = 1\nwhile i <= 3:\n    print(___)\n    i += 1",
+      "expected_output": "1\n2\n3\n",
+      "hints": "输出变量 i，并让 i 递增。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n3\\n'"
+      ],
+      "solution": "i = 1\nwhile i <= 3:\n    print(i)\n    i += 1"
+    },
+    {
+      "id": "CH08-E-002",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 while 倒计时输出 3 到 1。",
+      "code_template": "i = 3\nwhile i >= 1:\n    print(___)\n    i -= 1",
+      "expected_output": "3\n2\n1\n",
+      "hints": "输出变量 i，并让 i 递减。",
+      "test_cases": [
+        "assert captured_output == '3\\n2\\n1\\n'"
+      ],
+      "solution": "i = 3\nwhile i >= 1:\n    print(i)\n    i -= 1"
+    },
+    {
+      "id": "CH08-E-003",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 while 计数器从 0 加到 3。",
+      "code_template": "i = 0\nwhile i < 3:\n    print(___)\n    i += 1",
+      "expected_output": "0\n1\n2\n",
+      "hints": "输出变量 i，并让 i 递增。",
+      "test_cases": [
+        "assert captured_output == '0\\n1\\n2\\n'"
+      ],
+      "solution": "i = 0\nwhile i < 3:\n    print(i)\n    i += 1"
+    },
+    {
+      "id": "CH08-E-004",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 while 累加 1 到 5。",
+      "code_template": "total = 0\ni = 1\nwhile i <= 5:\n    total += i\n    i += 1\nprint(___)\n",
+      "expected_output": "15\n",
+      "hints": "输出 total。",
+      "test_cases": [
+        "assert captured_output == '15\\n'"
+      ],
+      "solution": "total = 0\ni = 1\nwhile i <= 5:\n    total += i\n    i += 1\nprint(total)"
+    },
+    {
+      "id": "CH08-E-005",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 while 累乘 1 到 4。",
+      "code_template": "product = 1\ni = 1\nwhile i <= 4:\n    product *= i\n    i += 1\nprint(___)\n",
+      "expected_output": "24\n",
+      "hints": "输出 product。",
+      "test_cases": [
+        "assert captured_output == '24\\n'"
+      ],
+      "solution": "product = 1\ni = 1\nwhile i <= 4:\n    product *= i\n    i += 1\nprint(product)"
+    },
+    {
+      "id": "CH08-E-006",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 while 输出 1 到 10 的偶数。",
+      "code_template": "i = 2\nwhile i <= 10:\n    print(___)\n    i += 2",
+      "expected_output": "2\n4\n6\n8\n10\n",
+      "hints": "填空步长。",
+      "test_cases": [
+        "assert captured_output == '2\\n4\\n6\\n8\\n10\\n'"
+      ],
+      "solution": "i = 2\nwhile i <= 10:\n    print(i)\n    i += 2"
+    },
+    {
+      "id": "CH08-E-007",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "循环中用 break 提前退出。",
+      "code_template": "i = 1\nwhile i <= 5:\n    if i == 3:\n        break\n    print(___)\n    i += 1",
+      "expected_output": "1\n2\n",
+      "hints": "填空 break。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n'"
+      ],
+      "solution": "i = 1\nwhile i <= 5:\n    if i == 3:\n        break\n    print(i)\n    i += 1"
+    },
+    {
+      "id": "CH08-E-008",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "循环中用 continue 跳过 3。",
+      "code_template": "i = 0\nwhile i < 5:\n    i += 1\n    if i == 3:\n        continue\n    print(___)",
+      "expected_output": "1\n2\n4\n5\n",
+      "hints": "填空 continue。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n4\\n5\\n'"
+      ],
+      "solution": "i = 0\nwhile i < 5:\n    i += 1\n    if i == 3:\n        continue\n    print(i)"
+    },
+    {
+      "id": "CH08-E-009",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 正常结束执行 else。",
+      "code_template": "i = 1\nwhile i <= 3:\n    print(i)\n    i += 1\nelse:\n    print(___)",
+      "expected_output": "1\n2\n3\ndone\n",
+      "hints": "填空 else 输出。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n3\\ndone\\n'"
+      ],
+      "solution": "i = 1\nwhile i <= 3:\n    print(i)\n    i += 1\nelse:\n    print(\"done\")"
+    },
+    {
+      "id": "CH08-E-010",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用条件变量控制循环。",
+      "code_template": "flag = True\ni = 0\nwhile flag:\n    i += 1\n    print(___)\n    if i == 4:\n        flag = False",
+      "expected_output": "1\n2\n3\n4\n",
+      "hints": "填空 flag 终止。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n3\\n4\\n'"
+      ],
+      "solution": "flag = True\ni = 0\nwhile flag:\n    i += 1\n    print(i)\n    if i == 4:\n        flag = False"
+    },
+    {
+      "id": "CH08-E-011",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 步长递增输出。",
+      "code_template": "i = 1\nwhile i < 10:\n    print(___)\n    i += 3",
+      "expected_output": "1\n4\n7\n",
+      "hints": "填空步长 3。",
+      "test_cases": [
+        "assert captured_output == '1\\n4\\n7\\n'"
+      ],
+      "solution": "i = 1\nwhile i < 10:\n    print(i)\n    i += 3"
+    },
+    {
+      "id": "CH08-E-012",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 输出 1 到 3 的平方。",
+      "code_template": "i = 1\nwhile i <= 3:\n    print(___)\n    i += 1",
+      "expected_output": "1\n4\n9\n",
+      "hints": "填空平方。",
+      "test_cases": [
+        "assert captured_output == '1\\n4\\n9\\n'"
+      ],
+      "solution": "i = 1\nwhile i <= 3:\n    print(i * i)\n    i += 1"
+    },
+    {
+      "id": "CH08-E-013",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 累加 1 到 10 的奇数。",
+      "code_template": "total = 0\ni = 1\nwhile i <= 10:\n    if i % 2 == 1:\n        total += i\n    i += 1\nprint(___)\n",
+      "expected_output": "25\n",
+      "hints": "输出 total。",
+      "test_cases": [
+        "assert captured_output == '25\\n'"
+      ],
+      "solution": "total = 0\ni = 1\nwhile i <= 10:\n    if i % 2 == 1:\n        total += i\n    i += 1\nprint(total)"
+    },
+    {
+      "id": "CH08-E-014",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 while 求数字 123 的各位和。",
+      "code_template": "n = 123\ntotal = 0\nwhile n > 0:\n    total += n % 10\n    n //= 10\nprint(___)\n",
+      "expected_output": "6\n",
+      "hints": "输出 total。",
+      "test_cases": [
+        "assert captured_output == '6\\n'"
+      ],
+      "solution": "n = 123\ntotal = 0\nwhile n > 0:\n    total += n % 10\n    n //= 10\nprint(total)"
+    },
+    {
+      "id": "CH08-E-015",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 while 求数字 123 的位数。",
+      "code_template": "n = 123\ncount = 0\nwhile n > 0:\n    count += 1\n    n //= 10\nprint(___)\n",
+      "expected_output": "3\n",
+      "hints": "输出 count。",
+      "test_cases": [
+        "assert captured_output == '3\\n'"
+      ],
+      "solution": "n = 123\ncount = 0\nwhile n > 0:\n    count += 1\n    n //= 10\nprint(count)"
+    },
+    {
+      "id": "CH08-E-016",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 while 遍历列表索引。",
+      "code_template": "fruits = [\"a\", \"b\", \"c\"]\ni = 0\nwhile i < len(fruits):\n    print(___)\n    i += 1",
+      "expected_output": "a\nb\nc\n",
+      "hints": "填空索引访问。",
+      "test_cases": [
+        "assert captured_output == 'a\\nb\\nc\\n'"
+      ],
+      "solution": "fruits = [\"a\", \"b\", \"c\"]\ni = 0\nwhile i < len(fruits):\n    print(fruits[i])\n    i += 1"
+    },
+    {
+      "id": "CH08-E-017",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 打印星号递增。",
+      "code_template": "i = 1\nwhile i <= 3:\n    print(___)\n    i += 1",
+      "expected_output": "*\n**\n***\n",
+      "hints": "填空重复。",
+      "test_cases": [
+        "assert captured_output == '*\\n**\\n***\\n'"
+      ],
+      "solution": "i = 1\nwhile i <= 3:\n    print(\"*\" * i)\n    i += 1"
+    },
+    {
+      "id": "CH08-E-018",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 循环固定次数。",
+      "code_template": "count = 0\nwhile count < 2:\n    print(___)\n    count += 1",
+      "expected_output": "Hi\nHi\n",
+      "hints": "填空计数。",
+      "test_cases": [
+        "assert captured_output == 'Hi\\nHi\\n'"
+      ],
+      "solution": "count = 0\nwhile count < 2:\n    print(\"Hi\")\n    count += 1"
+    },
+    {
+      "id": "CH08-E-019",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 中判断并输出。",
+      "code_template": "i = 1\nwhile i <= 4:\n    if i % 2 == 0:\n        print(\"even\",___)\n    i += 1",
+      "expected_output": "even 2\neven 4\n",
+      "hints": "填空判断。",
+      "test_cases": [
+        "assert captured_output == 'even 2\\neven 4\\n'"
+      ],
+      "solution": "i = 1\nwhile i <= 4:\n    if i % 2 == 0:\n        print(\"even\", i)\n    i += 1"
+    },
+    {
+      "id": "CH08-E-020",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 计算 2 的幂。",
+      "code_template": "i = 1\nwhile i <= 3:\n    print(___)\n    i += 1",
+      "expected_output": "2\n4\n8\n",
+      "hints": "填空幂运算。",
+      "test_cases": [
+        "assert captured_output == '2\\n4\\n8\\n'"
+      ],
+      "solution": "i = 1\nwhile i <= 3:\n    print(2 ** i)\n    i += 1"
+    },
+    {
+      "id": "CH08-E-021",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 取余循环判断。",
+      "code_template": "n = 10\nwhile n > 0:\n    print(___)\n    n -= 3",
+      "expected_output": "1\n1\n1\n1\n",
+      "hints": "填空取余。",
+      "test_cases": [
+        "assert captured_output == '1\\n1\\n1\\n1\\n'"
+      ],
+      "solution": "n = 10\nwhile n > 0:\n    print(n % 3)\n    n -= 3"
+    },
+    {
+      "id": "CH08-E-022",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 整除循环。",
+      "code_template": "n = 100\nwhile n > 1:\n    n //= 2\n    print(___)",
+      "expected_output": "50\n25\n12\n6\n3\n1\n",
+      "hints": "填空整除。",
+      "test_cases": [
+        "assert captured_output == '50\\n25\\n12\\n6\\n3\\n1\\n'"
+      ],
+      "solution": "n = 100\nwhile n > 1:\n    n //= 2\n    print(n)"
+    },
+    {
+      "id": "CH08-E-023",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 索引访问字符串。",
+      "code_template": "s = \"ab\"\ni = 0\nwhile i < len(s):\n    print(___)\n    i += 1",
+      "expected_output": "a\nb\n",
+      "hints": "填空字符索引。",
+      "test_cases": [
+        "assert captured_output == 'a\\nb\\n'"
+      ],
+      "solution": "s = \"ab\"\ni = 0\nwhile i < len(s):\n    print(s[i])\n    i += 1"
+    },
+    {
+      "id": "CH08-E-024",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 计数 1 到 8 中 2 的倍数。",
+      "code_template": "i = 1\ncount = 0\nwhile i <= 8:\n    if i % 2 == 0:\n        count += 1\n    i += 1\nprint(___)\n",
+      "expected_output": "4\n",
+      "hints": "输出 count。",
+      "test_cases": [
+        "assert captured_output == '4\\n'"
+      ],
+      "solution": "i = 1\ncount = 0\nwhile i <= 8:\n    if i % 2 == 0:\n        count += 1\n    i += 1\nprint(count)"
+    },
+    {
+      "id": "CH08-E-025",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 累加不超过 10 的数。",
+      "code_template": "total = 0\ni = 1\nwhile total + i <= 10:\n    total += i\n    i += 1\nprint(___)\n",
+      "expected_output": "10\n",
+      "hints": "输出 total。",
+      "test_cases": [
+        "assert captured_output == '10\\n'"
+      ],
+      "solution": "total = 0\ni = 1\nwhile total + i <= 10:\n    total += i\n    i += 1\nprint(total)"
+    },
+    {
+      "id": "CH08-E-026",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 递减输出。",
+      "code_template": "i = 5\nwhile i > 0:\n    print(___)\n    i -= 2",
+      "expected_output": "5\n3\n1\n",
+      "hints": "填空递减 2。",
+      "test_cases": [
+        "assert captured_output == '5\\n3\\n1\\n'"
+      ],
+      "solution": "i = 5\nwhile i > 0:\n    print(i)\n    i -= 2"
+    },
+    {
+      "id": "CH08-E-027",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 累加偶数。",
+      "code_template": "total = 0\ni = 2\nwhile i <= 6:\n    total += i\n    i += 2\nprint(___)\n",
+      "expected_output": "12\n",
+      "hints": "输出 total。",
+      "test_cases": [
+        "assert captured_output == '12\\n'"
+      ],
+      "solution": "total = 0\ni = 2\nwhile i <= 6:\n    total += i\n    i += 2\nprint(total)"
+    },
+    {
+      "id": "CH08-E-028",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 判断数字大小。",
+      "code_template": "i = 1\nwhile i <= 5:\n    if i > 3:\n        print(___, \"big\")\n    i += 1",
+      "expected_output": "4 big\n5 big\n",
+      "hints": "填空判断。",
+      "test_cases": [
+        "assert captured_output == '4 big\\n5 big\\n'"
+      ],
+      "solution": "i = 1\nwhile i <= 5:\n    if i > 3:\n        print(i, \"big\")\n    i += 1"
+    },
+    {
+      "id": "CH08-E-029",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 求和直到 0。",
+      "code_template": "nums = [5, 2, 1, 0, 3]\ntotal = 0\ni = 0\nwhile nums[i] != 0:\n    total += nums[i]\n    i += 1\nprint(___)\n",
+      "expected_output": "8\n",
+      "hints": "输出 total。",
+      "test_cases": [
+        "assert captured_output == '8\\n'"
+      ],
+      "solution": "nums = [5, 2, 1, 0, 3]\ntotal = 0\ni = 0\nwhile nums[i] != 0:\n    total += nums[i]\n    i += 1\nprint(total)"
+    },
+    {
+      "id": "CH08-E-030",
+      "topic": "循环 (while)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "while 输出平方数直到超限。",
+      "code_template": "i = 1\nwhile i * i < 20:\n    print(___)\n    i += 1",
+      "expected_output": "1\n4\n9\n16\n",
+      "hints": "填空平方条件。",
+      "test_cases": [
+        "assert captured_output == '1\\n4\\n9\\n16\\n'"
+      ],
+      "solution": "i = 1\nwhile i * i < 20:\n    print(i * i)\n    i += 1"
+    }
+  ]
+}

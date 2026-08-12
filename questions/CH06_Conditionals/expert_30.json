@@ -1,0 +1,427 @@
+{
+  "chapter": "CH06",
+  "title": "条件语句",
+  "difficulty": "较难",
+  "questions": [
+    {
+      "id": "CH06-X-001",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用条件语句求三个数的最大值与最小值。",
+      "code_template": "a, b, c = 12, 7, 19\nmaximum = a\nminimum = a\nif b > maximum:\n    maximum = b\nif c > maximum:\n    maximum = c\nif b < minimum:\n    minimum = b\nif c < minimum:\n    minimum = c\nprint(___)",
+      "expected_output": "Max: 19, Min: 7\n",
+      "hints": "填空比较更新。",
+      "test_cases": [
+        "assert captured_output == 'Max: 19, Min: 7\\n'"
+      ],
+      "solution": "a, b, c = 12, 7, 19\nmaximum = a\nminimum = a\nif b > maximum:\n    maximum = b\nif c > maximum:\n    maximum = c\nif b < minimum:\n    minimum = b\nif c < minimum:\n    minimum = c\nprint(f\"Max: {maximum}, Min: {minimum}\")"
+    },
+    {
+      "id": "CH06-X-002",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断年份并输出完整描述。",
+      "code_template": "year = 2000\nif year % 400 == 0:\n    print(f\"{year}: leap (divisible by 400)\")\nelif year % 100 == 0:\n    print(f\"{year}: common (century)\")\nelif year % 4 == 0:\n    print(f\"{year}: leap\")\nelse:\n    print(___)",
+      "expected_output": "2000: leap (divisible by 400)\n",
+      "hints": "填空闰年全判定。",
+      "test_cases": [
+        "assert captured_output == '2000: leap (divisible by 400)\\n'"
+      ],
+      "solution": "year = 2000\nif year % 400 == 0:\n    print(f\"{year}: leap (divisible by 400)\")\nelif year % 100 == 0:\n    print(f\"{year}: common (century)\")\nelif year % 4 == 0:\n    print(f\"{year}: leap\")\nelse:\n    print(f\"{year}: common\")"
+    },
+    {
+      "id": "CH06-X-003",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "实现分数化简（求最大公约数后约分）。",
+      "code_template": "def gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a\nnum, den = 12, 18\ng = gcd(num, den)\nprint(___)",
+      "expected_output": "12/18 = 2/3\n",
+      "hints": "填空约分。",
+      "test_cases": [
+        "assert captured_output == '12/18 = 2/3\\n'"
+      ],
+      "solution": "def gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a\nnum, den = 12, 18\ng = gcd(num, den)\nprint(f\"{num}/{den} = {num // g}/{den // g}\")"
+    },
+    {
+      "id": "CH06-X-004",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "根据成绩列表输出统计报告。",
+      "code_template": "scores = [88, 92, 76, 95, 84, 57]\npassed = [s for s in scores if s >= 60]\nfailed = [s for s in scores if s < 60]\nprint(f\"Passed: {len(passed)}, Failed: {len(failed)}\")\nprint(f\"Highest: {max(scores)}, Lowest: {min(scores)}\")\nprint(___)",
+      "expected_output": "Passed: 5, Failed: 1\nHighest: 95, Lowest: 57\nAverage: 82.0\n",
+      "hints": "填空成绩报告。",
+      "test_cases": [
+        "assert captured_output == 'Passed: 5, Failed: 1\\nHighest: 95, Lowest: 57\\nAverage: 82.0\\n'"
+      ],
+      "solution": "scores = [88, 92, 76, 95, 84, 57]\npassed = [s for s in scores if s >= 60]\nfailed = [s for s in scores if s < 60]\nprint(f\"Passed: {len(passed)}, Failed: {len(failed)}\")\nprint(f\"Highest: {max(scores)}, Lowest: {min(scores)}\")\nprint(f\"Average: {sum(scores) / len(scores):.1f}\")"
+    },
+    {
+      "id": "CH06-X-005",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断是否为回文数（数字反转法）。",
+      "code_template": "n = 121\ntemp = n\nrev = 0\nwhile temp > 0:\n    rev = rev * 10 + temp % 10\n    temp //= 10\nif rev == n:\n    print(f\"{n} is palindrome\")\nelse:\n    print(___)",
+      "expected_output": "121 is palindrome\n",
+      "hints": "填空反转判断。",
+      "test_cases": [
+        "assert captured_output == '121 is palindrome\\n'"
+      ],
+      "solution": "n = 121\ntemp = n\nrev = 0\nwhile temp > 0:\n    rev = rev * 10 + temp % 10\n    temp //= 10\nif rev == n:\n    print(f\"{n} is palindrome\")\nelse:\n    print(f\"{n} is not palindrome\")"
+    },
+    {
+      "id": "CH06-X-006",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "计算个人所得税（阶梯税率）。",
+      "code_template": "income = 8000\nif income <= 3000:\n    tax = income * 0.03\nelif income <= 12000:\n    tax = 3000 * 0.03 + (income - 3000) * 0.1\nelif income <= 25000:\n    tax = 3000 * 0.03 + 9000 * 0.1 + (income - 12000) * 0.2\nelse:\n    tax = 3000 * 0.03 + 9000 * 0.1 + 13000 * 0.2 + (income - 25000) * 0.25\nprint(___)",
+      "expected_output": "Tax: 590.00\n",
+      "hints": "填空阶梯税。",
+      "test_cases": [
+        "assert captured_output == 'Tax: 590.00\\n'"
+      ],
+      "solution": "income = 8000\nif income <= 3000:\n    tax = income * 0.03\nelif income <= 12000:\n    tax = 3000 * 0.03 + (income - 3000) * 0.1\nelif income <= 25000:\n    tax = 3000 * 0.03 + 9000 * 0.1 + (income - 12000) * 0.2\nelse:\n    tax = 3000 * 0.03 + 9000 * 0.1 + 13000 * 0.2 + (income - 25000) * 0.25\nprint(f\"Tax: {tax:.2f}\")"
+    },
+    {
+      "id": "CH06-X-007",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用条件实现二分查找判定过程。",
+      "code_template": "nums = [1, 3, 5, 7, 9]\ntarget = 7\nlow, high = 0, len(nums) - 1\nfound = False\nwhile low <= high:\n    mid = (low + high) // 2\n    if nums[mid] == target:\n        found = True\n        break\n    elif nums[mid] < target:\n        low = mid + 1\n    else:\n        high = mid - 1\nif found:\n    print(f\"Found {target} at index {mid}\")\nelse:\n    print(___)",
+      "expected_output": "Found 7 at index 3\n",
+      "hints": "填空二分条件。",
+      "test_cases": [
+        "assert captured_output == 'Found 7 at index 3\\n'"
+      ],
+      "solution": "nums = [1, 3, 5, 7, 9]\ntarget = 7\nlow, high = 0, len(nums) - 1\nfound = False\nwhile low <= high:\n    mid = (low + high) // 2\n    if nums[mid] == target:\n        found = True\n        break\n    elif nums[mid] < target:\n        low = mid + 1\n    else:\n        high = mid - 1\nif found:\n    print(f\"Found {target} at index {mid}\")\nelse:\n    print(f\"{target} not found\")"
+    },
+    {
+      "id": "CH06-X-008",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断字符串是否为合法的变量名。",
+      "code_template": "name = \"my_var1\"\nif not name or name[0].isdigit():\n    print(\"invalid\")\nelif not all(c.isalnum() or c == \"_\" for c in name):\n    print(\"invalid\")\nelif name in (\"if\", \"for\", \"while\"):\n    print(\"keyword\")\nelse:\n    print(___)",
+      "expected_output": "valid\n",
+      "hints": "填空变量名判断。",
+      "test_cases": [
+        "assert captured_output == 'valid\\n'"
+      ],
+      "solution": "name = \"my_var1\"\nif not name or name[0].isdigit():\n    print(\"invalid\")\nelif not all(c.isalnum() or c == \"_\" for c in name):\n    print(\"invalid\")\nelif name in (\"if\", \"for\", \"while\"):\n    print(\"keyword\")\nelse:\n    print(\"valid\")"
+    },
+    {
+      "id": "CH06-X-009",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "根据三边判断三角形并计算面积（海伦公式）。",
+      "code_template": "a, b, c = 5, 12, 13\nif a + b > c and a + c > b and b + c > a:\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    print(f\"Area: {area:.2f}\")\nelse:\n    print(___)",
+      "expected_output": "Area: 30.00\n",
+      "hints": "填空海伦公式。",
+      "test_cases": [
+        "assert captured_output == 'Area: 30.00\\n'"
+      ],
+      "solution": "a, b, c = 5, 12, 13\nif a + b > c and a + c > b and b + c > a:\n    s = (a + b + c) / 2\n    area = (s * (s - a) * (s - b) * (s - c)) ** 0.5\n    print(f\"Area: {area:.2f}\")\nelse:\n    print(\"Invalid triangle\")"
+    },
+    {
+      "id": "CH06-X-010",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "模拟电梯调度（多条件）。",
+      "code_template": "current = 3\nrequested = 7\nif requested > current:\n    print(f\"Going up to floor {requested}\")\nelif requested < current:\n    print(f\"Going down to floor {requested}\")\nelse:\n    print(___)",
+      "expected_output": "Going up to floor 7\n",
+      "hints": "填空电梯逻辑。",
+      "test_cases": [
+        "assert captured_output == 'Going up to floor 7\\n'"
+      ],
+      "solution": "current = 3\nrequested = 7\nif requested > current:\n    print(f\"Going up to floor {requested}\")\nelif requested < current:\n    print(f\"Going down to floor {requested}\")\nelse:\n    print(\"Already at floor\")"
+    },
+    {
+      "id": "CH06-X-011",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断数字是否同时满足多个条件。",
+      "code_template": "n = 30\nif n % 2 == 0 and n % 3 == 0 and n % 5 == 0:\n    print(\"divisible by 2, 3, 5\")\nelif n % 2 == 0 and n % 3 == 0:\n    print(\"divisible by 2 and 3\")\nelif n % 2 == 0:\n    print(\"even only\")\nelse:\n    print(___)",
+      "expected_output": "divisible by 2, 3, 5\n",
+      "hints": "填空多重整除。",
+      "test_cases": [
+        "assert captured_output == 'divisible by 2, 3, 5\\n'"
+      ],
+      "solution": "n = 30\nif n % 2 == 0 and n % 3 == 0 and n % 5 == 0:\n    print(\"divisible by 2, 3, 5\")\nelif n % 2 == 0 and n % 3 == 0:\n    print(\"divisible by 2 and 3\")\nelif n % 2 == 0:\n    print(\"even only\")\nelse:\n    print(\"other\")"
+    },
+    {
+      "id": "CH06-X-012",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "实现简易成绩转换（百分制到等级分）。",
+      "code_template": "def to_grade(score):\n    if score >= 90:\n        return \"A\"\n    elif score >= 80:\n        return \"B\"\n    elif score >= 70:\n        return \"C\"\n    elif score >= 60:\n        return \"D\"\n    else:\n        return \"F\"\nscores = [59, 62, 75, 88, 99]\nfor s in scores:\n    print(___)",
+      "expected_output": "59 -> F\n62 -> D\n75 -> C\n88 -> B\n99 -> A\n",
+      "hints": "填空等级函数。",
+      "test_cases": [
+        "assert captured_output == '59 -> F\\n62 -> D\\n75 -> C\\n88 -> B\\n99 -> A\\n'"
+      ],
+      "solution": "def to_grade(score):\n    if score >= 90:\n        return \"A\"\n    elif score >= 80:\n        return \"B\"\n    elif score >= 70:\n        return \"C\"\n    elif score >= 60:\n        return \"D\"\n    else:\n        return \"F\"\nscores = [59, 62, 75, 88, 99]\nfor s in scores:\n    print(f\"{s} -> {to_grade(s)}\")"
+    },
+    {
+      "id": "CH06-X-013",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断两个区间是否重叠。",
+      "code_template": "a1, a2 = 1, 5\nb1, b2 = 4, 8\nif a2 < b1 or b2 < a1:\n    print(\"no overlap\")\nelse:\n    overlap_start = max(a1, b1)\n    overlap_end = min(a2, b2)\n    print(___)",
+      "expected_output": "overlap: 4-5\n",
+      "hints": "填空区间重叠。",
+      "test_cases": [
+        "assert captured_output == 'overlap: 4-5\\n'"
+      ],
+      "solution": "a1, a2 = 1, 5\nb1, b2 = 4, 8\nif a2 < b1 or b2 < a1:\n    print(\"no overlap\")\nelse:\n    overlap_start = max(a1, b1)\n    overlap_end = min(a2, b2)\n    print(f\"overlap: {overlap_start}-{overlap_end}\")"
+    },
+    {
+      "id": "CH06-X-014",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断列表是否包含重复元素。",
+      "code_template": "nums = [1, 3, 2, 3]\nif len(nums) != len(set(nums)):\n    print(\"has duplicates\")\nelse:\n    print(___)",
+      "expected_output": "has duplicates\n",
+      "hints": "填空重复判断。",
+      "test_cases": [
+        "assert captured_output == 'has duplicates\\n'"
+      ],
+      "solution": "nums = [1, 3, 2, 3]\nif len(nums) != len(set(nums)):\n    print(\"has duplicates\")\nelse:\n    print(\"all unique\")"
+    },
+    {
+      "id": "CH06-X-015",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "根据成绩决定课程等级并输出。",
+      "code_template": "course_scores = {\"Math\": 92, \"English\": 78, \"Science\": 85}\nfor course, score in course_scores.items():\n    if score >= 90:\n        level = \"advanced\"\n    elif score >= 80:\n        level = \"intermediate\"\n    else:\n        level = \"foundation\"\n    print(___)",
+      "expected_output": "Math: advanced\nEnglish: foundation\nScience: intermediate\n",
+      "hints": "填空课程分档。",
+      "test_cases": [
+        "assert captured_output == 'Math: advanced\\nEnglish: foundation\\nScience: intermediate\\n'"
+      ],
+      "solution": "course_scores = {\"Math\": 92, \"English\": 78, \"Science\": 85}\nfor course, score in course_scores.items():\n    if score >= 90:\n        level = \"advanced\"\n    elif score >= 80:\n        level = \"intermediate\"\n    else:\n        level = \"foundation\"\n    print(f\"{course}: {level}\")"
+    },
+    {
+      "id": "CH06-X-016",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断一个数是否为自幂数（水仙花数）。",
+      "code_template": "n = 153\ndigits = [int(d) for d in str(n)]\npower = sum(d ** len(digits) for d in digits)\nif power == n:\n    print(f\"{n} is an Armstrong number\")\nelse:\n    print(___)",
+      "expected_output": "153 is an Armstrong number\n",
+      "hints": "填空自幂判断。",
+      "test_cases": [
+        "assert captured_output == '153 is an Armstrong number\\n'"
+      ],
+      "solution": "n = 153\ndigits = [int(d) for d in str(n)]\npower = sum(d ** len(digits) for d in digits)\nif power == n:\n    print(f\"{n} is an Armstrong number\")\nelse:\n    print(f\"{n} is not\")"
+    },
+    {
+      "id": "CH06-X-017",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "模拟红绿灯控制输出。",
+      "code_template": "signal = \"red\"\nif signal == \"red\":\n    print(\"Stop\")\nelif signal == \"yellow\":\n    print(\"Slow down\")\nelif signal == \"green\":\n    print(\"Go\")\nelse:\n    print(___)",
+      "expected_output": "Stop\n",
+      "hints": "填空红绿灯。",
+      "test_cases": [
+        "assert captured_output == 'Stop\\n'"
+      ],
+      "solution": "signal = \"red\"\nif signal == \"red\":\n    print(\"Stop\")\nelif signal == \"yellow\":\n    print(\"Slow down\")\nelif signal == \"green\":\n    print(\"Go\")\nelse:\n    print(\"Invalid signal\")"
+    },
+    {
+      "id": "CH06-X-018",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断表达式结果的正负。",
+      "code_template": "a, b, c = 3, -4, 5\nresult = a * b + c\nif result > 0:\n    print(f\"{result} is positive\")\nelif result < 0:\n    print(f\"{result} is negative\")\nelse:\n    print(___)",
+      "expected_output": "-7 is negative\n",
+      "hints": "填空表达式判断。",
+      "test_cases": [
+        "assert captured_output == '-7 is negative\\n'"
+      ],
+      "solution": "a, b, c = 3, -4, 5\nresult = a * b + c\nif result > 0:\n    print(f\"{result} is positive\")\nelif result < 0:\n    print(f\"{result} is negative\")\nelse:\n    print(\"zero\")"
+    },
+    {
+      "id": "CH06-X-019",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断密码强度并输出规则详情。",
+      "code_template": "pwd = \"P@ssw0rd\"\nlength_ok = len(pwd) >= 8\nupper_ok = any(c.isupper() for c in pwd)\ndigit_ok = any(c.isdigit() for c in pwd)\nsymbol_ok = any(not c.isalnum() for c in pwd)\nscore = sum([length_ok, upper_ok, digit_ok, symbol_ok])\nif score == 4:\n    print(\"very strong\")\nelif score == 3:\n    print(\"strong\")\nelif score == 2:\n    print(\"medium\")\nelse:\n    print(___)",
+      "expected_output": "very strong\n",
+      "hints": "填空密码评分。",
+      "test_cases": [
+        "assert captured_output == 'very strong\\n'"
+      ],
+      "solution": "pwd = \"P@ssw0rd\"\nlength_ok = len(pwd) >= 8\nupper_ok = any(c.isupper() for c in pwd)\ndigit_ok = any(c.isdigit() for c in pwd)\nsymbol_ok = any(not c.isalnum() for c in pwd)\nscore = sum([length_ok, upper_ok, digit_ok, symbol_ok])\nif score == 4:\n    print(\"very strong\")\nelif score == 3:\n    print(\"strong\")\nelif score == 2:\n    print(\"medium\")\nelse:\n    print(\"weak\")"
+    },
+    {
+      "id": "CH06-X-020",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断字符串是否包含连续三个相同字符。",
+      "code_template": "s = \"aaab\"\nhas_three = False\nfor i in range(len(s) - 2):\n    if s[i] == s[i + 1] == s[i + 2]:\n        has_three = True\n        break\nif has_three:\n    print(\"has triple\")\nelse:\n    print(___)",
+      "expected_output": "has triple\n",
+      "hints": "填空三连判断。",
+      "test_cases": [
+        "assert captured_output == 'has triple\\n'"
+      ],
+      "solution": "s = \"aaab\"\nhas_three = False\nfor i in range(len(s) - 2):\n    if s[i] == s[i + 1] == s[i + 2]:\n        has_three = True\n        break\nif has_three:\n    print(\"has triple\")\nelse:\n    print(\"no triple\")"
+    },
+    {
+      "id": "CH06-X-021",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "综合：判断并输出多行统计。",
+      "code_template": "nums = [5, -3, 0, 8, -2, 7]\npositive = [n for n in nums if n > 0]\nnegative = [n for n in nums if n < 0]\nprint(f\"Positive: {len(positive)}, Negative: {len(negative)}, Zero: {len(nums) - len(positive) - len(negative)}\")\nprint(f\"Sum positive: {sum(positive)}\")\nprint(___)",
+      "expected_output": "Positive: 3, Negative: 2, Zero: 1\nSum positive: 20\nSum negative: -5\n",
+      "hints": "填空综合统计。",
+      "test_cases": [
+        "assert captured_output == 'Positive: 3, Negative: 2, Zero: 1\\nSum positive: 20\\nSum negative: -5\\n'"
+      ],
+      "solution": "nums = [5, -3, 0, 8, -2, 7]\npositive = [n for n in nums if n > 0]\nnegative = [n for n in nums if n < 0]\nprint(f\"Positive: {len(positive)}, Negative: {len(negative)}, Zero: {len(nums) - len(positive) - len(negative)}\")\nprint(f\"Sum positive: {sum(positive)}\")\nprint(f\"Sum negative: {sum(negative)}\")"
+    },
+    {
+      "id": "CH06-X-022",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断日期是否合法（年月日）。",
+      "code_template": "y, m, d = 2026, 2, 29\nif m in (1, 3, 5, 7, 8, 10, 12):\n    max_d = 31\nelif m in (4, 6, 9, 11):\n    max_d = 30\nelse:\n    max_d = 29 if (y % 4 == 0 and y % 100 != 0) or y % 400 == 0 else 28\nif 1 <= m <= 12 and 1 <= d <= max_d:\n    print(\"valid date\")\nelse:\n    print(___)",
+      "expected_output": "invalid date\n",
+      "hints": "填空日期合法性。",
+      "test_cases": [
+        "assert captured_output == 'invalid date\\n'"
+      ],
+      "solution": "y, m, d = 2026, 2, 29\nif m in (1, 3, 5, 7, 8, 10, 12):\n    max_d = 31\nelif m in (4, 6, 9, 11):\n    max_d = 30\nelse:\n    max_d = 29 if (y % 4 == 0 and y % 100 != 0) or y % 400 == 0 else 28\nif 1 <= m <= 12 and 1 <= d <= max_d:\n    print(\"valid date\")\nelse:\n    print(\"invalid date\")"
+    },
+    {
+      "id": "CH06-X-023",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "模拟考试系统判定（多条件，全部答对）。",
+      "code_template": "answers = 10\nquestions = 10\nif answers == questions:\n    print(\"perfect score\")\nelif answers >= questions * 0.8:\n    print(\"excellent\")\nelif answers >= questions * 0.6:\n    print(\"passed\")\nelse:\n    print(___)",
+      "expected_output": "perfect score\n",
+      "hints": "填空考试判定。",
+      "test_cases": [
+        "assert captured_output == 'perfect score\\n'"
+      ],
+      "solution": "answers = 10\nquestions = 10\nif answers == questions:\n    print(\"perfect score\")\nelif answers >= questions * 0.8:\n    print(\"excellent\")\nelif answers >= questions * 0.6:\n    print(\"passed\")\nelse:\n    print(\"failed\")"
+    },
+    {
+      "id": "CH06-X-024",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断点是否在圆内。",
+      "code_template": "x, y = 3, 4\ncx, cy, r = 0, 0, 5\nif (x - cx) ** 2 + (y - cy) ** 2 <= r ** 2:\n    print(\"inside circle\")\nelse:\n    print(___)",
+      "expected_output": "inside circle\n",
+      "hints": "填空圆内判断。",
+      "test_cases": [
+        "assert captured_output == 'inside circle\\n'"
+      ],
+      "solution": "x, y = 3, 4\ncx, cy, r = 0, 0, 5\nif (x - cx) ** 2 + (y - cy) ** 2 <= r ** 2:\n    print(\"inside circle\")\nelse:\n    print(\"outside circle\")"
+    },
+    {
+      "id": "CH06-X-025",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断回文素数（前几个）。",
+      "code_template": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\nresult = []\nfor n in range(2, 200):\n    if is_prime(n) and str(n) == str(n)[::-1]:\n        result.append(n)\nprint(___)",
+      "expected_output": "[2, 3, 5, 7, 11, 101, 131, 151, 181, 191]\n",
+      "hints": "填空回文素数。",
+      "test_cases": [
+        "assert captured_output == '[2, 3, 5, 7, 11, 101, 131, 151, 181, 191]\\n'"
+      ],
+      "solution": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\nresult = []\nfor n in range(2, 200):\n    if is_prime(n) and str(n) == str(n)[::-1]:\n        result.append(n)\nprint(result)"
+    },
+    {
+      "id": "CH06-X-026",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断数字是否为快乐数（含过程）。",
+      "code_template": "def is_happy(n):\n    seen = set()\n    while n != 1:\n        if n in seen:\n            return False\n        seen.add(n)\n        n = sum(int(d) ** 2 for d in str(n))\n    return True\nfor n in [19, 20, 7]:\n    print(___)",
+      "expected_output": "19: True\n20: False\n7: True\n",
+      "hints": "填空快乐数函数。",
+      "test_cases": [
+        "assert captured_output == '19: True\\n20: False\\n7: True\\n'"
+      ],
+      "solution": "def is_happy(n):\n    seen = set()\n    while n != 1:\n        if n in seen:\n            return False\n        seen.add(n)\n        n = sum(int(d) ** 2 for d in str(n))\n    return True\nfor n in [19, 20, 7]:\n    print(f\"{n}: {is_happy(n)}\")"
+    },
+    {
+      "id": "CH06-X-027",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "模拟优惠叠加（多重条件）。",
+      "code_template": "price = 200\nmember = True\nholiday = False\nif member and holiday:\n    final = price * 0.6\nelif member:\n    final = price * 0.8\nelif holiday:\n    final = price * 0.9\nelse:\n    final = price\nprint(___)",
+      "expected_output": "Final price: 160.0\n",
+      "hints": "填空优惠叠加。",
+      "test_cases": [
+        "assert captured_output == 'Final price: 160.0\\n'"
+      ],
+      "solution": "price = 200\nmember = True\nholiday = False\nif member and holiday:\n    final = price * 0.6\nelif member:\n    final = price * 0.8\nelif holiday:\n    final = price * 0.9\nelse:\n    final = price\nprint(f\"Final price: {final}\")"
+    },
+    {
+      "id": "CH06-X-028",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断三个字符串是否按字典序排列。",
+      "code_template": "a, b, c = \"apple\", \"banana\", \"cherry\"\nif a <= b <= c:\n    print(\"sorted\")\nelif a >= b >= c:\n    print(\"reverse sorted\")\nelse:\n    print(___)",
+      "expected_output": "sorted\n",
+      "hints": "填空字典序判断。",
+      "test_cases": [
+        "assert captured_output == 'sorted\\n'"
+      ],
+      "solution": "a, b, c = \"apple\", \"banana\", \"cherry\"\nif a <= b <= c:\n    print(\"sorted\")\nelif a >= b >= c:\n    print(\"reverse sorted\")\nelse:\n    print(\"unsorted\")"
+    },
+    {
+      "id": "CH06-X-029",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "综合：多条件筛选与分类输出。",
+      "code_template": "items = [(\"apple\", 3.5, 20), (\"milk\", 5.0, 5), (\"bread\", 4.5, 30)]\nfor name, price, stock in items:\n    if stock == 0:\n        status = \"out of stock\"\n    elif stock < 10:\n        status = \"low stock\"\n    elif price > 4:\n        status = \"premium\"\n    else:\n        status = \"normal\"\n    print(___)",
+      "expected_output": "apple: normal\nmilk: low stock\nbread: premium\n",
+      "hints": "填空库存分类。",
+      "test_cases": [
+        "assert captured_output == 'apple: normal\\nmilk: low stock\\nbread: premium\\n'"
+      ],
+      "solution": "items = [(\"apple\", 3.5, 20), (\"milk\", 5.0, 5), (\"bread\", 4.5, 30)]\nfor name, price, stock in items:\n    if stock == 0:\n        status = \"out of stock\"\n    elif stock < 10:\n        status = \"low stock\"\n    elif price > 4:\n        status = \"premium\"\n    else:\n        status = \"normal\"\n    print(f\"{name}: {status}\")"
+    },
+    {
+      "id": "CH06-X-030",
+      "topic": "条件语句",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "验证哥德巴赫猜想（50 内偶数）。",
+      "code_template": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\nfor even in range(4, 31, 2):\n    for p in range(2, even):\n        if is_prime(p) and is_prime(even - p):\n            print(___)\n            break",
+      "expected_output": "4 = 2 + 2\n6 = 3 + 3\n8 = 3 + 5\n10 = 3 + 7\n12 = 5 + 7\n14 = 3 + 11\n16 = 3 + 13\n18 = 5 + 13\n20 = 3 + 17\n22 = 3 + 19\n24 = 5 + 19\n26 = 3 + 23\n28 = 5 + 23\n30 = 7 + 23\n",
+      "hints": "填空哥德巴赫。",
+      "test_cases": [
+        "assert captured_output == '4 = 2 + 2\\n6 = 3 + 3\\n8 = 3 + 5\\n10 = 3 + 7\\n12 = 5 + 7\\n14 = 3 + 11\\n16 = 3 + 13\\n18 = 5 + 13\\n20 = 3 + 17\\n22 = 3 + 19\\n24 = 5 + 19\\n26 = 3 + 23\\n28 = 5 + 23\\n30 = 7 + 23\\n'"
+      ],
+      "solution": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\nfor even in range(4, 31, 2):\n    for p in range(2, even):\n        if is_prime(p) and is_prime(even - p):\n            print(f\"{even} = {p} + {even - p}\")\n            break"
+    }
+  ]
+}

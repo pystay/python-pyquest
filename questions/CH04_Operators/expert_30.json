@@ -1,0 +1,427 @@
+{
+  "chapter": "CH04",
+  "title": "基础运算符",
+  "difficulty": "较难",
+  "questions": [
+    {
+      "id": "CH04-X-001",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用迭代实现快速幂。",
+      "code_template": "def fast_pow(base, exp):\n    result = 1\n    while exp > 0:\n        if exp % 2 == 1:\n            result *= base\n        base *= base\n        exp //= 2\n    return result\n\nprint(___, fast_pow(3, 5))",
+      "expected_output": "1024 243\n",
+      "hints": "填空分治幂运算。",
+      "test_cases": [
+        "assert captured_output == '1024 243\\n'"
+      ],
+      "solution": "def fast_pow(base, exp):\n    result = 1\n    while exp > 0:\n        if exp % 2 == 1:\n            result *= base\n        base *= base\n        exp //= 2\n    return result\n\nprint(fast_pow(2, 10), fast_pow(3, 5))"
+    },
+    {
+      "id": "CH04-X-002",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "统计二进制中 1 的个数。",
+      "code_template": "def popcount(n):\n    count = 0\n    while n:\n        count += n & 1\n        n >>= 1\n    return count\n\nfor n in [0, 5, 7, 15]:\n    print(___, \"->\", popcount(n))",
+      "expected_output": "0 -> 0\n5 -> 2\n7 -> 3\n15 -> 4\n",
+      "hints": "填空位运算。",
+      "test_cases": [
+        "assert captured_output == '0 -> 0\\n5 -> 2\\n7 -> 3\\n15 -> 4\\n'"
+      ],
+      "solution": "def popcount(n):\n    count = 0\n    while n:\n        count += n & 1\n        n >>= 1\n    return count\n\nfor n in [0, 5, 7, 15]:\n    print(n, \"->\", popcount(n))"
+    },
+    {
+      "id": "CH04-X-003",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用位运算实现两数相加。",
+      "code_template": "def add(a, b):\n    while b:\n        carry = a & b\n        a = a ^ b\n        b = carry << 1\n    return a\n\nfor x, y in [(3, 5), (7, 9), (10, 20)]:\n    print(___)",
+      "expected_output": "3 + 5 = 8\n7 + 9 = 16\n10 + 20 = 30\n",
+      "hints": "填空位运算加法。",
+      "test_cases": [
+        "assert captured_output == '3 + 5 = 8\\n7 + 9 = 16\\n10 + 20 = 30\\n'"
+      ],
+      "solution": "def add(a, b):\n    while b:\n        carry = a & b\n        a = a ^ b\n        b = carry << 1\n    return a\n\nfor x, y in [(3, 5), (7, 9), (10, 20)]:\n    print(f\"{x} + {y} = {add(x, y)}\")"
+    },
+    {
+      "id": "CH04-X-004",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "计算两个数的汉明距离。",
+      "code_template": "def popcount(n):\n    c = 0\n    while n:\n        c += n & 1\n        n >>= 1\n    return c\n\ndef hamming(a, b):\n    return popcount(a ^ b)\n\nprint(___, hamming(3, 1))",
+      "expected_output": "2 1\n",
+      "hints": "填空异或与计数。",
+      "test_cases": [
+        "assert captured_output == '2 1\\n'"
+      ],
+      "solution": "def popcount(n):\n    c = 0\n    while n:\n        c += n & 1\n        n >>= 1\n    return c\n\ndef hamming(a, b):\n    return popcount(a ^ b)\n\nprint(hamming(1, 4), hamming(3, 1))"
+    },
+    {
+      "id": "CH04-X-005",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "对 84 做质因数分解。",
+      "code_template": "n = 84\nfactors = []\nd = 2\nwhile d * d <= n:\n    while n % d == 0:\n        factors.append(d)\n        n //= d\n    d += 1\nif n > 1:\n    factors.append(n)\nprint(___)",
+      "expected_output": "[2, 2, 3, 7]\n",
+      "hints": "填空试除分解。",
+      "test_cases": [
+        "assert captured_output == '[2, 2, 3, 7]\\n'"
+      ],
+      "solution": "n = 84\nfactors = []\nd = 2\nwhile d * d <= n:\n    while n % d == 0:\n        factors.append(d)\n        n //= d\n    d += 1\nif n > 1:\n    factors.append(n)\nprint(factors)"
+    },
+    {
+      "id": "CH04-X-006",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用埃氏筛输出 30 以内素数。",
+      "code_template": "limit = 30\nis_prime = [True] * (limit + 1)\nis_prime[0] = is_prime[1] = False\nfor i in range(2, int(limit ** 0.5) + 1):\n    if is_prime[i]:\n        for j in range(i * i, limit + 1, i):\n            is_prime[j] = False\nprimes = [n for n in range(2, limit + 1) if is_prime[n]]\nprint(___)",
+      "expected_output": "[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]\n",
+      "hints": "填空筛法标记。",
+      "test_cases": [
+        "assert captured_output == '[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]\\n'"
+      ],
+      "solution": "limit = 30\nis_prime = [True] * (limit + 1)\nis_prime[0] = is_prime[1] = False\nfor i in range(2, int(limit ** 0.5) + 1):\n    if is_prime[i]:\n        for j in range(i * i, limit + 1, i):\n            is_prime[j] = False\nprimes = [n for n in range(2, limit + 1) if is_prime[n]]\nprint(primes)"
+    },
+    {
+      "id": "CH04-X-007",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用列表实现高精度加法。",
+      "code_template": "def big_add(a, b):\n    a, b = list(str(a)), list(str(b))\n    carry = 0\n    result = []\n    while a or b or carry:\n        x = int(a.pop()) if a else 0\n        y = int(b.pop()) if b else 0\n        total = x + y + carry\n        result.append(total % 10)\n        carry = total // 10\n    return int(\"\".join(map(str, reversed(result))))\n\nprint(big_add(999, 1))\nprint(___)",
+      "expected_output": "1000\n1111111110\n",
+      "hints": "填空逐位加法。",
+      "test_cases": [
+        "assert captured_output == '1000\\n1111111110\\n'"
+      ],
+      "solution": "def big_add(a, b):\n    a, b = list(str(a)), list(str(b))\n    carry = 0\n    result = []\n    while a or b or carry:\n        x = int(a.pop()) if a else 0\n        y = int(b.pop()) if b else 0\n        total = x + y + carry\n        result.append(total % 10)\n        carry = total // 10\n    return int(\"\".join(map(str, reversed(result))))\n\nprint(big_add(999, 1))\nprint(big_add(123456789, 987654321))"
+    },
+    {
+      "id": "CH04-X-008",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用位运算把二进制转十进制。",
+      "code_template": "def bin_to_dec(b):\n    dec = 0\n    for ch in b:\n        dec = (dec << 1) + int(ch)\n    return dec\n\nfor b in [\"101\", \"1101\", \"10000\"]:\n    print(___, \"->\", bin_to_dec(b))",
+      "expected_output": "101 -> 5\n1101 -> 13\n10000 -> 16\n",
+      "hints": "填空移位累加。",
+      "test_cases": [
+        "assert captured_output == '101 -> 5\\n1101 -> 13\\n10000 -> 16\\n'"
+      ],
+      "solution": "def bin_to_dec(b):\n    dec = 0\n    for ch in b:\n        dec = (dec << 1) + int(ch)\n    return dec\n\nfor b in [\"101\", \"1101\", \"10000\"]:\n    print(b, \"->\", bin_to_dec(b))"
+    },
+    {
+      "id": "CH04-X-009",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "求 7 的 100 次方的末位数字。",
+      "code_template": "base = 7\nexp = 100\nresult = 1\nfor _ in range(exp):\n    result = (result * base) % 10\nprint(\"Last digit:\",___)",
+      "expected_output": "Last digit: 1\n",
+      "hints": "填空取模循环。",
+      "test_cases": [
+        "assert captured_output == 'Last digit: 1\\n'"
+      ],
+      "solution": "base = 7\nexp = 100\nresult = 1\nfor _ in range(exp):\n    result = (result * base) % 10\nprint(\"Last digit:\", result)"
+    },
+    {
+      "id": "CH04-X-010",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用牛顿法求 16 的平方根近似。",
+      "code_template": "n = 16\nx = n / 2\nfor _ in range(5):\n    x = (x + n / x) / 2\nprint(___)",
+      "expected_output": "4.0\n",
+      "hints": "填空牛顿迭代。",
+      "test_cases": [
+        "assert captured_output == '4.0\\n'"
+      ],
+      "solution": "n = 16\nx = n / 2\nfor _ in range(5):\n    x = (x + n / x) / 2\nprint(round(x, 4))"
+    },
+    {
+      "id": "CH04-X-011",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "递归实现最大公约数。",
+      "code_template": "def gcd(a, b):\n    if b == 0:\n        return a\n    return gcd(b, a % b)\n\nprint(___, gcd(17, 5))",
+      "expected_output": "12 1\n",
+      "hints": "填空递归取余。",
+      "test_cases": [
+        "assert captured_output == '12 1\\n'"
+      ],
+      "solution": "def gcd(a, b):\n    if b == 0:\n        return a\n    return gcd(b, a % b)\n\nprint(gcd(48, 36), gcd(17, 5))"
+    },
+    {
+      "id": "CH04-X-012",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "验证取模运算性质。",
+      "code_template": "a, b, m = 17, 23, 5\nprint((a * b) % m)\nprint(___)",
+      "expected_output": "1\n1\n",
+      "hints": "填空取模性质验证。",
+      "test_cases": [
+        "assert captured_output == '1\\n1\\n'"
+      ],
+      "solution": "a, b, m = 17, 23, 5\nprint((a * b) % m)\nprint(((a % m) * (b % m)) % m)"
+    },
+    {
+      "id": "CH04-X-013",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "演示浮点数累加误差。",
+      "code_template": "total = 0.0\nfor _ in range(10):\n    total += 0.1\nprint(repr(total))\nprint(___)",
+      "expected_output": "0.9999999999999999\n1.0\n",
+      "hints": "填空累加与舍入。",
+      "test_cases": [
+        "assert captured_output == '0.9999999999999999\\n1.0\\n'"
+      ],
+      "solution": "total = 0.0\nfor _ in range(10):\n    total += 0.1\nprint(repr(total))\nprint(round(total, 2))"
+    },
+    {
+      "id": "CH04-X-014",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用位掩码表示集合并运算。",
+      "code_template": "a = 0b10110\nb = 0b01101\nprint(\"and:\", bin(a & b))\nprint(\"or:\", bin(a | b))\nprint(\"xor:\",___)",
+      "expected_output": "and: 0b100\nor: 0b11111\nxor: 0b11011\n",
+      "hints": "填空集合位运算。",
+      "test_cases": [
+        "assert captured_output == 'and: 0b100\\nor: 0b11111\\nxor: 0b11011\\n'"
+      ],
+      "solution": "a = 0b10110\nb = 0b01101\nprint(\"and:\", bin(a & b))\nprint(\"or:\", bin(a | b))\nprint(\"xor:\", bin(a ^ b))"
+    },
+    {
+      "id": "CH04-X-015",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用异或交换两个变量。",
+      "code_template": "a, b = 5, 9\nprint(a, b)\na = a ^ b\nb = a ^ b\na = a ^ b\nprint(___, b)",
+      "expected_output": "5 9\n9 5\n",
+      "hints": "填空三步异或交换。",
+      "test_cases": [
+        "assert captured_output == '5 9\\n9 5\\n'"
+      ],
+      "solution": "a, b = 5, 9\nprint(a, b)\na = a ^ b\nb = a ^ b\na = a ^ b\nprint(a, b)"
+    },
+    {
+      "id": "CH04-X-016",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "输出 1000 以内的自守数。",
+      "code_template": "for n in range(1, 1001):\n    square = n * n\n    if str(square).endswith(str(n)):\n        print(___, end=\" \")",
+      "expected_output": "1 5 6 25 76 376 625 ",
+      "hints": "填空平方尾数判断。",
+      "test_cases": [
+        "assert captured_output == '1 5 6 25 76 376 625 '"
+      ],
+      "solution": "for n in range(1, 1001):\n    square = n * n\n    if str(square).endswith(str(n)):\n        print(n, end=\" \")"
+    },
+    {
+      "id": "CH04-X-017",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断 45 是否为卡普雷卡数。",
+      "code_template": "def is_kaprekar(n):\n    square = n * n\n    s = str(square)\n    for i in range(1, len(s)):\n        left = int(s[:i])\n        right = int(s[i:])\n        if left + right == n:\n            return True\n    return False\n\nfor n in [9, 45, 55, 99]:\n    print(___, is_kaprekar(n))",
+      "expected_output": "9 True\n45 True\n55 True\n99 True\n",
+      "hints": "填空拆分判断。",
+      "test_cases": [
+        "assert captured_output == '9 True\\n45 True\\n55 True\\n99 True\\n'"
+      ],
+      "solution": "def is_kaprekar(n):\n    square = n * n\n    s = str(square)\n    for i in range(1, len(s)):\n        left = int(s[:i])\n        right = int(s[i:])\n        if left + right == n:\n            return True\n    return False\n\nfor n in [9, 45, 55, 99]:\n    print(n, is_kaprekar(n))"
+    },
+    {
+      "id": "CH04-X-018",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断 19 是否为快乐数。",
+      "code_template": "def is_happy(n):\n    seen = set()\n    while n != 1 and n not in seen:\n        seen.add(n)\n        n = sum(int(d) ** 2 for d in str(n))\n    return n == 1\n\nfor n in [19, 4]:\n    print(___, \"happy:\", is_happy(n))",
+      "expected_output": "19 happy: True\n4 happy: False\n",
+      "hints": "填空平方和迭代。",
+      "test_cases": [
+        "assert captured_output == '19 happy: True\\n4 happy: False\\n'"
+      ],
+      "solution": "def is_happy(n):\n    seen = set()\n    while n != 1 and n not in seen:\n        seen.add(n)\n        n = sum(int(d) ** 2 for d in str(n))\n    return n == 1\n\nfor n in [19, 4]:\n    print(n, \"happy:\", is_happy(n))"
+    },
+    {
+      "id": "CH04-X-019",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "模拟猜数字游戏并统计次数。",
+      "code_template": "secret = 7\nguesses = [3, 5, 7]\nfor g in guesses:\n    if g == secret:\n        print(g, \"correct!\")\n        break\n    elif g < secret:\n        print(g, \"too low\")\n    else:\n        print(___, \"too high\")",
+      "expected_output": "3 too low\n5 too low\n7 correct!\n",
+      "hints": "填空比较与分支。",
+      "test_cases": [
+        "assert captured_output == '3 too low\\n5 too low\\n7 correct!\\n'"
+      ],
+      "solution": "secret = 7\nguesses = [3, 5, 7]\nfor g in guesses:\n    if g == secret:\n        print(g, \"correct!\")\n        break\n    elif g < secret:\n        print(g, \"too low\")\n    else:\n        print(g, \"too high\")"
+    },
+    {
+      "id": "CH04-X-020",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 while 实现简易四则计算器。",
+      "code_template": "ops = [(\"+\", 6, 3), (\"-\", 6, 3), (\"*\", 6, 3), (\"/\", 6, 3)]\nfor op, a, b in ops:\n    if op == \"+\":\n        print(a + b)\n    elif op == \"-\":\n        print(a - b)\n    elif op == \"*\":\n        print(a * b)\n    else:\n        print(___)",
+      "expected_output": "9\n3\n18\n2.0\n",
+      "hints": "填空四则分发。",
+      "test_cases": [
+        "assert captured_output == '9\\n3\\n18\\n2.0\\n'"
+      ],
+      "solution": "ops = [(\"+\", 6, 3), (\"-\", 6, 3), (\"*\", 6, 3), (\"/\", 6, 3)]\nfor op, a, b in ops:\n    if op == \"+\":\n        print(a + b)\n    elif op == \"-\":\n        print(a - b)\n    elif op == \"*\":\n        print(a * b)\n    else:\n        print(a / b)"
+    },
+    {
+      "id": "CH04-X-021",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "把十进制转成任意进制。",
+      "code_template": "def to_base(n, base):\n    digits = \"0123456789ABCDEF\"\n    if n == 0:\n        return \"0\"\n    result = \"\"\n    while n > 0:\n        result = digits[n % base] + result\n        n //= base\n    return result\n\nprint(___, to_base(100, 2), to_base(100, 8))",
+      "expected_output": "FF 1100100 144\n",
+      "hints": "填空取余拼接。",
+      "test_cases": [
+        "assert captured_output == 'FF 1100100 144\\n'"
+      ],
+      "solution": "def to_base(n, base):\n    digits = \"0123456789ABCDEF\"\n    if n == 0:\n        return \"0\"\n    result = \"\"\n    while n > 0:\n        result = digits[n % base] + result\n        n //= base\n    return result\n\nprint(to_base(255, 16), to_base(100, 2), to_base(100, 8))"
+    },
+    {
+      "id": "CH04-X-022",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用列表逐位计算大数阶乘。",
+      "code_template": "def big_fact(n):\n    digits = [1]\n    for i in range(2, n + 1):\n        carry = 0\n        for j in range(len(digits)):\n            prod = digits[j] * i + carry\n            digits[j] = prod % 10\n            carry = prod // 10\n        while carry:\n            digits.append(carry % 10)\n            carry //= 10\n    return \"\".join(map(str, reversed(digits)))\n\nprint(big_fact(5))\nprint(___)",
+      "expected_output": "120\n2432902008176640000\n",
+      "hints": "填空逐位乘法。",
+      "test_cases": [
+        "assert captured_output == '120\\n2432902008176640000\\n'"
+      ],
+      "solution": "def big_fact(n):\n    digits = [1]\n    for i in range(2, n + 1):\n        carry = 0\n        for j in range(len(digits)):\n            prod = digits[j] * i + carry\n            digits[j] = prod % 10\n            carry = prod // 10\n        while carry:\n            digits.append(carry % 10)\n            carry //= 10\n    return \"\".join(map(str, reversed(digits)))\n\nprint(big_fact(5))\nprint(big_fact(20))"
+    },
+    {
+      "id": "CH04-X-023",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "计算 2x2 矩阵乘法。",
+      "code_template": "a = [[1, 2], [3, 4]]\nb = [[5, 6], [7, 8]]\nresult = [[0, 0], [0, 0]]\nfor i in range(2):\n    for j in range(2):\n        for k in range(2):\n            result[i][j] += a[i][k] * b[k][j]\nfor row in result:\n    print(___)",
+      "expected_output": "[19, 22]\n[43, 50]\n",
+      "hints": "填空三重循环乘法。",
+      "test_cases": [
+        "assert captured_output == '[19, 22]\\n[43, 50]\\n'"
+      ],
+      "solution": "a = [[1, 2], [3, 4]]\nb = [[5, 6], [7, 8]]\nresult = [[0, 0], [0, 0]]\nfor i in range(2):\n    for j in range(2):\n        for k in range(2):\n            result[i][j] += a[i][k] * b[k][j]\nfor row in result:\n    print(row)"
+    },
+    {
+      "id": "CH04-X-024",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "输出 100 以内的孪生素数对。",
+      "code_template": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\nfor n in range(2, 98):\n    if is_prime(n) and is_prime(n + 2):\n        print(___, n + 2)",
+      "expected_output": "3 5\n5 7\n11 13\n17 19\n29 31\n41 43\n59 61\n71 73\n",
+      "hints": "填空素数判断与相邻检查。",
+      "test_cases": [
+        "assert captured_output == '3 5\\n5 7\\n11 13\\n17 19\\n29 31\\n41 43\\n59 61\\n71 73\\n'"
+      ],
+      "solution": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\nfor n in range(2, 98):\n    if is_prime(n) and is_prime(n + 2):\n        print(n, n + 2)"
+    },
+    {
+      "id": "CH04-X-025",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "验证哥德巴赫猜想（100 内偶数）。",
+      "code_template": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\nfor even in range(4, 21, 2):\n    for p in range(2, even):\n        if is_prime(p) and is_prime(even - p):\n            print(___, \"=\", p, \"+\", even - p)\n            break",
+      "expected_output": "4 = 2 + 2\n6 = 3 + 3\n8 = 3 + 5\n10 = 3 + 7\n12 = 5 + 7\n14 = 3 + 11\n16 = 3 + 13\n18 = 5 + 13\n20 = 3 + 17\n",
+      "hints": "填空素数拆分。",
+      "test_cases": [
+        "assert captured_output == '4 = 2 + 2\\n6 = 3 + 3\\n8 = 3 + 5\\n10 = 3 + 7\\n12 = 5 + 7\\n14 = 3 + 11\\n16 = 3 + 13\\n18 = 5 + 13\\n20 = 3 + 17\\n'"
+      ],
+      "solution": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\nfor even in range(4, 21, 2):\n    for p in range(2, even):\n        if is_prime(p) and is_prime(even - p):\n            print(even, \"=\", p, \"+\", even - p)\n            break"
+    },
+    {
+      "id": "CH04-X-026",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用运算验证三个数的最大值。",
+      "code_template": "a, b, c = 3, 9, 5\nmaximum = a\nif b > maximum:\n    maximum = b\nif c > maximum:\n    maximum = c\nprint(\"Max:\",___)",
+      "expected_output": "Max: 9\n",
+      "hints": "填空比较更新。",
+      "test_cases": [
+        "assert captured_output == 'Max: 9\\n'"
+      ],
+      "solution": "a, b, c = 3, 9, 5\nmaximum = a\nif b > maximum:\n    maximum = b\nif c > maximum:\n    maximum = c\nprint(\"Max:\", maximum)"
+    },
+    {
+      "id": "CH04-X-027",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "计算表达式的综合结果。",
+      "code_template": "x = 5\ny = 2\nprint(x ** 2 + y * 3)\nprint((x + y) ** 2 // 3)\nprint(___)",
+      "expected_output": "31\n16\n1\n",
+      "hints": "填空三个综合表达式。",
+      "test_cases": [
+        "assert captured_output == '31\\n16\\n1\\n'"
+      ],
+      "solution": "x = 5\ny = 2\nprint(x ** 2 + y * 3)\nprint((x + y) ** 2 // 3)\nprint(x * (y + 3) % 4)"
+    },
+    {
+      "id": "CH04-X-028",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用运算符判断平年闰年个数。",
+      "code_template": "leap = 0\nfor year in range(2000, 2051):\n    if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:\n        leap += 1\nprint(\"Leap years:\",___)",
+      "expected_output": "Leap years: 13\n",
+      "hints": "填空闰年统计。",
+      "test_cases": [
+        "assert captured_output == 'Leap years: 13\\n'"
+      ],
+      "solution": "leap = 0\nfor year in range(2000, 2051):\n    if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:\n        leap += 1\nprint(\"Leap years:\", leap)"
+    },
+    {
+      "id": "CH04-X-029",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "求三个数的最小公倍数。",
+      "code_template": "a, b, c = 3, 4, 6\nm = max(a, b, c)\nwhile True:\n    if m % a == 0 and m % b == 0 and m % c == 0:\n        break\n    m += 1\nprint(\"LCM:\",___)",
+      "expected_output": "LCM: 12\n",
+      "hints": "填空逐增判断。",
+      "test_cases": [
+        "assert captured_output == 'LCM: 12\\n'"
+      ],
+      "solution": "a, b, c = 3, 4, 6\nm = max(a, b, c)\nwhile True:\n    if m % a == 0 and m % b == 0 and m % c == 0:\n        break\n    m += 1\nprint(\"LCM:\", m)"
+    },
+    {
+      "id": "CH04-X-030",
+      "topic": "基础运算符",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "输出 1 到 50 的数字分类统计。",
+      "code_template": "perfect = abundant = 0\nfor n in range(2, 51):\n    total = sum(d for d in range(1, n) if n % d == 0)\n    if total == n:\n        perfect += 1\n    elif total > n:\n        abundant += 1\nprint(\"Perfect:\",___, \"Abundant:\", abundant)",
+      "expected_output": "Perfect: 2 Abundant: 9\n",
+      "hints": "填空约数分类。",
+      "test_cases": [
+        "assert captured_output == 'Perfect: 2 Abundant: 9\\n'"
+      ],
+      "solution": "perfect = abundant = 0\nfor n in range(2, 51):\n    total = sum(d for d in range(1, n) if n % d == 0)\n    if total == n:\n        perfect += 1\n    elif total > n:\n        abundant += 1\nprint(\"Perfect:\", perfect, \"Abundant:\", abundant)"
+    }
+  ]
+}

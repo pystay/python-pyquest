@@ -1,0 +1,427 @@
+{
+  "chapter": "CH10",
+  "title": "函数 (参数)",
+  "difficulty": "超简单",
+  "questions": [
+    {
+      "id": "CH10-E-001",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "定义带一个参数的函数并调用。",
+      "code_template": "def show(x):\n    print(x)\n\nshow(___)",
+      "expected_output": "5\n",
+      "hints": "填 5。",
+      "test_cases": [
+        "assert captured_output == '5\\n'"
+      ],
+      "solution": "def show(x):\n    print(x)\n\nshow(5)"
+    },
+    {
+      "id": "CH10-E-002",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数接收两个参数并相加输出。",
+      "code_template": "def add(a, b):\n    print(a + b)\n\nadd(___, ___)",
+      "expected_output": "7\n",
+      "hints": "依次填 3、4。",
+      "test_cases": [
+        "assert captured_output == '7\\n'"
+      ],
+      "solution": "def add(a, b):\n    print(a + b)\n\nadd(3, 4)"
+    },
+    {
+      "id": "CH10-E-003",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "使用默认参数调用函数。",
+      "code_template": "def greet(name=\"World\"):\n    print(___)\n\ngreet()",
+      "expected_output": "World\n",
+      "hints": "填空默认参数。",
+      "test_cases": [
+        "assert captured_output == 'World\\n'"
+      ],
+      "solution": "def greet(name=\"World\"):\n    print(name)\n\ngreet()"
+    },
+    {
+      "id": "CH10-E-004",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用关键字参数调用函数。",
+      "code_template": "def info(name, age):\n    print(___, age)\n\ninfo(age=25, name=\"Bob\")",
+      "expected_output": "Bob 25\n",
+      "hints": "填空关键字调用。",
+      "test_cases": [
+        "assert captured_output == 'Bob 25\\n'"
+      ],
+      "solution": "def info(name, age):\n    print(name, age)\n\ninfo(age=25, name=\"Bob\")"
+    },
+    {
+      "id": "CH10-E-005",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "默认参数被传入值覆盖。",
+      "code_template": "def greet(name=\"World\"):\n    print(___)\n\ngreet(\"Alice\")",
+      "expected_output": "Alice\n",
+      "hints": "填空覆盖调用。",
+      "test_cases": [
+        "assert captured_output == 'Alice\\n'"
+      ],
+      "solution": "def greet(name=\"World\"):\n    print(name)\n\ngreet(\"Alice\")"
+    },
+    {
+      "id": "CH10-E-006",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数有两个默认参数。",
+      "code_template": "def box(w=10, h=5):\n    print(___, h)\n\nbox()",
+      "expected_output": "10 5\n",
+      "hints": "填空默认调用。",
+      "test_cases": [
+        "assert captured_output == '10 5\\n'"
+      ],
+      "solution": "def box(w=10, h=5):\n    print(w, h)\n\nbox()"
+    },
+    {
+      "id": "CH10-E-007",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 *args 求参数个数。",
+      "code_template": "def count(*args):\n    print(___)\n\ncount(1, 2, 3)",
+      "expected_output": "3\n",
+      "hints": "填空可变参数。",
+      "test_cases": [
+        "assert captured_output == '3\\n'"
+      ],
+      "solution": "def count(*args):\n    print(len(args))\n\ncount(1, 2, 3)"
+    },
+    {
+      "id": "CH10-E-008",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 *args 求和。",
+      "code_template": "def total(*args):\n    print(___)\n\ntotal(1, 2, 3, 4)",
+      "expected_output": "10\n",
+      "hints": "填空求和。",
+      "test_cases": [
+        "assert captured_output == '10\\n'"
+      ],
+      "solution": "def total(*args):\n    print(sum(args))\n\ntotal(1, 2, 3, 4)"
+    },
+    {
+      "id": "CH10-E-009",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 **kwargs 输出键。",
+      "code_template": "def show(**kwargs):\n    for k in kwargs:\n        print(___)\n\nshow(a=1, b=2)",
+      "expected_output": "a\nb\n",
+      "hints": "填空 kwargs 遍历。",
+      "test_cases": [
+        "assert captured_output == 'a\\nb\\n'"
+      ],
+      "solution": "def show(**kwargs):\n    for k in kwargs:\n        print(k)\n\nshow(a=1, b=2)"
+    },
+    {
+      "id": "CH10-E-010",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "位置参数和关键字参数混合。",
+      "code_template": "def greet(name, msg=\"Hi\"):\n    print(___, name)\n\ngreet(\"Tom\", msg=\"Hello\")",
+      "expected_output": "Hello Tom\n",
+      "hints": "填空混合调用。",
+      "test_cases": [
+        "assert captured_output == 'Hello Tom\\n'"
+      ],
+      "solution": "def greet(name, msg=\"Hi\"):\n    print(msg, name)\n\ngreet(\"Tom\", msg=\"Hello\")"
+    },
+    {
+      "id": "CH10-E-011",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数接收字符串参数。",
+      "code_template": "def echo(text):\n    print(___)\n\necho(\"Python\")",
+      "expected_output": "Python\n",
+      "hints": "填空字符串调用。",
+      "test_cases": [
+        "assert captured_output == 'Python\\n'"
+      ],
+      "solution": "def echo(text):\n    print(text)\n\necho(\"Python\")"
+    },
+    {
+      "id": "CH10-E-012",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数接收数字参数并乘 2。",
+      "code_template": "def double(x):\n    print(___)\n\ndouble(6)",
+      "expected_output": "12\n",
+      "hints": "填空调用。",
+      "test_cases": [
+        "assert captured_output == '12\\n'"
+      ],
+      "solution": "def double(x):\n    print(x * 2)\n\ndouble(6)"
+    },
+    {
+      "id": "CH10-E-013",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数接收布尔参数。",
+      "code_template": "def flag(f):\n    print(___)\n\nflag(True)",
+      "expected_output": "True\n",
+      "hints": "填空布尔调用。",
+      "test_cases": [
+        "assert captured_output == 'True\\n'"
+      ],
+      "solution": "def flag(f):\n    print(f)\n\nflag(True)"
+    },
+    {
+      "id": "CH10-E-014",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数接收列表参数并输出长度。",
+      "code_template": "def size(items):\n    print(___)\n\nsize([1, 2, 3, 4])",
+      "expected_output": "4\n",
+      "hints": "填空 len。",
+      "test_cases": [
+        "assert captured_output == '4\\n'"
+      ],
+      "solution": "def size(items):\n    print(len(items))\n\nsize([1, 2, 3, 4])"
+    },
+    {
+      "id": "CH10-E-015",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "函数接收字典参数。",
+      "code_template": "def show(d):\n    print(___)\n\nshow({\"x\": 15})",
+      "expected_output": "15\n",
+      "hints": "填空键访问。",
+      "test_cases": [
+        "assert captured_output == '15\\n'"
+      ],
+      "solution": "def show(d):\n    print(d[\"x\"])\n\nshow({\"x\": 15})"
+    },
+    {
+      "id": "CH10-E-016",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "默认参数为表达式。",
+      "code_template": "def add(x, y=2):\n    print(___)\n\nadd(6)",
+      "expected_output": "8\n",
+      "hints": "填空默认调用。",
+      "test_cases": [
+        "assert captured_output == '8\\n'"
+      ],
+      "solution": "def add(x, y=2):\n    print(x + y)\n\nadd(6)"
+    },
+    {
+      "id": "CH10-E-017",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "位置参数按顺序传入。",
+      "code_template": "def pair(a, b):\n    print(___, b)\n\npair(1, 2)",
+      "expected_output": "1 2\n",
+      "hints": "填空顺序调用。",
+      "test_cases": [
+        "assert captured_output == '1 2\\n'"
+      ],
+      "solution": "def pair(a, b):\n    print(a, b)\n\npair(1, 2)"
+    },
+    {
+      "id": "CH10-E-018",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "关键字参数任意顺序。",
+      "code_template": "def point(x, y):\n    print(___, y)\n\npoint(y=4, x=1)",
+      "expected_output": "1 4\n",
+      "hints": "填空关键字顺序。",
+      "test_cases": [
+        "assert captured_output == '1 4\\n'"
+      ],
+      "solution": "def point(x, y):\n    print(x, y)\n\npoint(y=4, x=1)"
+    },
+    {
+      "id": "CH10-E-019",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 * 解包调用函数。",
+      "code_template": "def add(a, b):\n    print(___)\n\nargs = [5, 6]\nadd(*args)",
+      "expected_output": "11\n",
+      "hints": "填空解包调用。",
+      "test_cases": [
+        "assert captured_output == '11\\n'"
+      ],
+      "solution": "def add(a, b):\n    print(a + b)\n\nargs = [5, 6]\nadd(*args)"
+    },
+    {
+      "id": "CH10-E-020",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "可变参数逐个输出。",
+      "code_template": "def show(*args):\n    for a in args:\n        print(___)\n\nshow(1, 2)",
+      "expected_output": "1\n2\n",
+      "hints": "填空遍历输出。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n'"
+      ],
+      "solution": "def show(*args):\n    for a in args:\n        print(a)\n\nshow(1, 2)"
+    },
+    {
+      "id": "CH10-E-021",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "参数默认值不影响外部变量。",
+      "code_template": "x = 10\ndef show(x):\n    x = 20\n    print(x)\n\nshow(x)\nprint(___)",
+      "expected_output": "20\n10\n",
+      "hints": "填空作用域演示。",
+      "test_cases": [
+        "assert captured_output == '20\\n10\\n'"
+      ],
+      "solution": "x = 10\ndef show(x):\n    x = 20\n    print(x)\n\nshow(x)\nprint(x)"
+    },
+    {
+      "id": "CH10-E-022",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "同一函数用默认和传入各调用一次。",
+      "code_template": "def greet(name=\"Guest\"):\n    print(___)\n\ngreet()\ngreet(\"Ada\")",
+      "expected_output": "Guest\nAda\n",
+      "hints": "填空两次调用。",
+      "test_cases": [
+        "assert captured_output == 'Guest\\nAda\\n'"
+      ],
+      "solution": "def greet(name=\"Guest\"):\n    print(name)\n\ngreet()\ngreet(\"Ada\")"
+    },
+    {
+      "id": "CH10-E-023",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "三个位置参数。",
+      "code_template": "def add3(a, b, c):\n    print(___)\n\nadd3(1, 2, 3)",
+      "expected_output": "6\n",
+      "hints": "填空三参数调用。",
+      "test_cases": [
+        "assert captured_output == '6\\n'"
+      ],
+      "solution": "def add3(a, b, c):\n    print(a + b + c)\n\nadd3(1, 2, 3)"
+    },
+    {
+      "id": "CH10-E-024",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "位置、默认、关键字组合。",
+      "code_template": "def calc(a, b=2, c=3):\n    print(___)\n\ncalc(1, c=10)",
+      "expected_output": "13\n",
+      "hints": "填空组合调用。",
+      "test_cases": [
+        "assert captured_output == '13\\n'"
+      ],
+      "solution": "def calc(a, b=2, c=3):\n    print(a + b + c)\n\ncalc(1, c=10)"
+    },
+    {
+      "id": "CH10-E-025",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "关键字参数全部指定。",
+      "code_template": "def area(w, h):\n    print(___)\n\narea(w=5, h=4)",
+      "expected_output": "20\n",
+      "hints": "填空全部关键字。",
+      "test_cases": [
+        "assert captured_output == '20\\n'"
+      ],
+      "solution": "def area(w, h):\n    print(w * h)\n\narea(w=5, h=4)"
+    },
+    {
+      "id": "CH10-E-026",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "遍历 *args 并求平均。",
+      "code_template": "def avg(*args):\n    print(___)\n\navg(2, 4, 6)",
+      "expected_output": "4.0\n",
+      "hints": "填空平均值。",
+      "test_cases": [
+        "assert captured_output == '4.0\\n'"
+      ],
+      "solution": "def avg(*args):\n    print(sum(args) / len(args))\n\navg(2, 4, 6)"
+    },
+    {
+      "id": "CH10-E-027",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "遍历 **kwargs 输出键值。",
+      "code_template": "def show(**kwargs):\n    for k, v in kwargs.items():\n        print(___, v)\n\nshow(a=1)",
+      "expected_output": "a 1\n",
+      "hints": "填空键值输出。",
+      "test_cases": [
+        "assert captured_output == 'a 1\\n'"
+      ],
+      "solution": "def show(**kwargs):\n    for k, v in kwargs.items():\n        print(k, v)\n\nshow(a=1)"
+    },
+    {
+      "id": "CH10-E-028",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "默认参数与传入参数同用。",
+      "code_template": "def greet(name, msg=\"Hello\"):\n    print(___, name)\n\ngreet(\"Bob\")",
+      "expected_output": "Hello Bob\n",
+      "hints": "填空默认 msg。",
+      "test_cases": [
+        "assert captured_output == 'Hello Bob\\n'"
+      ],
+      "solution": "def greet(name, msg=\"Hello\"):\n    print(msg, name)\n\ngreet(\"Bob\")"
+    },
+    {
+      "id": "CH10-E-029",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "参数参与组合运算。",
+      "code_template": "def combo(a, b):\n    print(___)\n\ncombo(3, 2)",
+      "expected_output": "9\n",
+      "hints": "填空组合运算。",
+      "test_cases": [
+        "assert captured_output == '9\\n'"
+      ],
+      "solution": "def combo(a, b):\n    print(a * b + a)\n\ncombo(3, 2)"
+    },
+    {
+      "id": "CH10-E-030",
+      "topic": "函数 (参数)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "综合：多种参数调用。",
+      "code_template": "def f(a, b=1, *args, **kwargs):\n    print(___, b, len(args), len(kwargs))\n\nf(10, 2, 3, 4, x=5)",
+      "expected_output": "10 2 2 1\n",
+      "hints": "填空综合参数。",
+      "test_cases": [
+        "assert captured_output == '10 2 2 1\\n'"
+      ],
+      "solution": "def f(a, b=1, *args, **kwargs):\n    print(a, b, len(args), len(kwargs))\n\nf(10, 2, 3, 4, x=5)"
+    }
+  ]
+}

@@ -1,0 +1,427 @@
+{
+  "chapter": "CH07",
+  "title": "循环 (for)",
+  "difficulty": "超简单",
+  "questions": [
+    {
+      "id": "CH07-E-001",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 for 输出 1 到 5。",
+      "code_template": "for i in range(1, 6):\n    print(___)",
+      "expected_output": "1\n2\n3\n4\n5\n",
+      "hints": "输出变量 i。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n3\\n4\\n5\\n'"
+      ],
+      "solution": "for i in range(1, 6):\n    print(i)"
+    },
+    {
+      "id": "CH07-E-002",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 for 输出 0 到 4。",
+      "code_template": "for i in range(5):\n    print(___)",
+      "expected_output": "0\n1\n2\n3\n4\n",
+      "hints": "输出变量 i。",
+      "test_cases": [
+        "assert captured_output == '0\\n1\\n2\\n3\\n4\\n'"
+      ],
+      "solution": "for i in range(5):\n    print(i)"
+    },
+    {
+      "id": "CH07-E-003",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用步长输出 0、2、4、6。",
+      "code_template": "for i in range(0, 7, 2):\n    print(___)",
+      "expected_output": "0\n2\n4\n6\n",
+      "hints": "输出变量 i。",
+      "test_cases": [
+        "assert captured_output == '0\\n2\\n4\\n6\\n'"
+      ],
+      "solution": "for i in range(0, 7, 2):\n    print(i)"
+    },
+    {
+      "id": "CH07-E-004",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "遍历列表逐行输出。",
+      "code_template": "for fruit in [\"apple\", \"banana\"]:\n    print(___)",
+      "expected_output": "apple\nbanana\n",
+      "hints": "输出变量 fruit。",
+      "test_cases": [
+        "assert captured_output == 'apple\\nbanana\\n'"
+      ],
+      "solution": "for fruit in [\"apple\", \"banana\"]:\n    print(fruit)"
+    },
+    {
+      "id": "CH07-E-005",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "遍历字符串逐字符输出。",
+      "code_template": "for ch in \"Hi\":\n    print(___)",
+      "expected_output": "H\ni\n",
+      "hints": "输出变量 ch。",
+      "test_cases": [
+        "assert captured_output == 'H\\ni\\n'"
+      ],
+      "solution": "for ch in \"Hi\":\n    print(ch)"
+    },
+    {
+      "id": "CH07-E-006",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "遍历字典的键。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\nfor key in d:\n    print(___)",
+      "expected_output": "a\nb\n",
+      "hints": "输出变量 key。",
+      "test_cases": [
+        "assert captured_output == 'a\\nb\\n'"
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\nfor key in d:\n    print(key)"
+    },
+    {
+      "id": "CH07-E-007",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用倒序 range 输出 3、2、1。",
+      "code_template": "for i in range(3, 0, -1):\n    print(___)",
+      "expected_output": "3\n2\n1\n",
+      "hints": "输出变量 i。",
+      "test_cases": [
+        "assert captured_output == '3\\n2\\n1\\n'"
+      ],
+      "solution": "for i in range(3, 0, -1):\n    print(i)"
+    },
+    {
+      "id": "CH07-E-008",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用循环累加 1 到 5。",
+      "code_template": "total = 0\nfor i in range(1, 6):\n    total += i\nprint(___)\n",
+      "expected_output": "15\n",
+      "hints": "输出 total。",
+      "test_cases": [
+        "assert captured_output == '15\\n'"
+      ],
+      "solution": "total = 0\nfor i in range(1, 6):\n    total += i\nprint(total)"
+    },
+    {
+      "id": "CH07-E-009",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用循环累乘 1 到 4。",
+      "code_template": "product = 1\nfor i in range(1, 5):\n    product *= i\nprint(___)\n",
+      "expected_output": "24\n",
+      "hints": "输出 product。",
+      "test_cases": [
+        "assert captured_output == '24\\n'"
+      ],
+      "solution": "product = 1\nfor i in range(1, 5):\n    product *= i\nprint(product)"
+    },
+    {
+      "id": "CH07-E-010",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用循环计数 1 到 5 的个数。",
+      "code_template": "count = 0\nfor i in range(1, 6):\n    count += 1\nprint(___)\n",
+      "expected_output": "5\n",
+      "hints": "输出 count。",
+      "test_cases": [
+        "assert captured_output == '5\\n'"
+      ],
+      "solution": "count = 0\nfor i in range(1, 6):\n    count += 1\nprint(count)"
+    },
+    {
+      "id": "CH07-E-011",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 enumerate 输出索引和值。",
+      "code_template": "for i, v in enumerate([\"a\", \"b\"]):\n    print(___, v)",
+      "expected_output": "0 a\n1 b\n",
+      "hints": "输出 i。",
+      "test_cases": [
+        "assert captured_output == '0 a\\n1 b\\n'"
+      ],
+      "solution": "for i, v in enumerate([\"a\", \"b\"]):\n    print(i, v)"
+    },
+    {
+      "id": "CH07-E-012",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "循环中遇到 3 用 break 退出。",
+      "code_template": "for i in range(1, 6):\n    if i == 3:\n        break\n    print(___)",
+      "expected_output": "1\n2\n",
+      "hints": "输出变量 i。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n'"
+      ],
+      "solution": "for i in range(1, 6):\n    if i == 3:\n        break\n    print(i)"
+    },
+    {
+      "id": "CH07-E-013",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "循环中用 continue 跳过 3。",
+      "code_template": "for i in range(1, 6):\n    if i == 3:\n        continue\n    print(___)",
+      "expected_output": "1\n2\n4\n5\n",
+      "hints": "输出变量 i。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n4\\n5\\n'"
+      ],
+      "solution": "for i in range(1, 6):\n    if i == 3:\n        continue\n    print(i)"
+    },
+    {
+      "id": "CH07-E-014",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "for 循环正常结束后执行 else。",
+      "code_template": "for i in range(3):\n    print(i)\nelse:\n    print(___)",
+      "expected_output": "0\n1\n2\ndone\n",
+      "hints": "填空 else 输出。",
+      "test_cases": [
+        "assert captured_output == '0\\n1\\n2\\ndone\\n'"
+      ],
+      "solution": "for i in range(3):\n    print(i)\nelse:\n    print(\"done\")"
+    },
+    {
+      "id": "CH07-E-015",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "嵌套循环输出乘法表一列。",
+      "code_template": "for i in range(1, 4):\n    for j in range(1, 4):\n        print(i * j, end=\" \")\n    print(___)",
+      "expected_output": "1 2 3 \n2 4 6 \n3 6 9 \n",
+      "hints": "填空嵌套循环。",
+      "test_cases": [
+        "assert captured_output == '1 2 3 \\n2 4 6 \\n3 6 9 \\n'"
+      ],
+      "solution": "for i in range(1, 4):\n    for j in range(1, 4):\n        print(i * j, end=\" \")\n    print()"
+    },
+    {
+      "id": "CH07-E-016",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 zip 并行遍历两个列表。",
+      "code_template": "for a, b in zip([1, 2], [3, 4]):\n    print(___, b)",
+      "expected_output": "1 3\n2 4\n",
+      "hints": "输出变量 a。",
+      "test_cases": [
+        "assert captured_output == '1 3\\n2 4\\n'"
+      ],
+      "solution": "for a, b in zip([1, 2], [3, 4]):\n    print(a, b)"
+    },
+    {
+      "id": "CH07-E-017",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用列表推导式生成平方。",
+      "code_template": "squares = [n * n for n in range(1, 4)]\nprint(___)",
+      "expected_output": "[1, 4, 9]\n",
+      "hints": "输出 squares。",
+      "test_cases": [
+        "assert captured_output == '[1, 4, 9]\\n'"
+      ],
+      "solution": "squares = [n * n for n in range(1, 4)]\nprint(squares)"
+    },
+    {
+      "id": "CH07-E-018",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "遍历元组输出。",
+      "code_template": "for v in (10, 20):\n    print(___)",
+      "expected_output": "10\n20\n",
+      "hints": "输出变量 v。",
+      "test_cases": [
+        "assert captured_output == '10\\n20\\n'"
+      ],
+      "solution": "for v in (10, 20):\n    print(v)"
+    },
+    {
+      "id": "CH07-E-019",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "遍历排序后的集合。",
+      "code_template": "for v in sorted({3, 1, 2}):\n    print(___)",
+      "expected_output": "1\n2\n3\n",
+      "hints": "输出变量 v。",
+      "test_cases": [
+        "assert captured_output == '1\\n2\\n3\\n'"
+      ],
+      "solution": "for v in sorted({3, 1, 2}):\n    print(v)"
+    },
+    {
+      "id": "CH07-E-020",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "循环拼接字符串。",
+      "code_template": "result = \"\"\nfor ch in \"abc\":\n    result += ch\nprint(___)\n",
+      "expected_output": "abc\n",
+      "hints": "输出 result。",
+      "test_cases": [
+        "assert captured_output == 'abc\\n'"
+      ],
+      "solution": "result = \"\"\nfor ch in \"abc\":\n    result += ch\nprint(result)"
+    },
+    {
+      "id": "CH07-E-021",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "输出 1 到 4 的平方。",
+      "code_template": "for i in range(1, 5):\n    print(___ * i)",
+      "expected_output": "1\n4\n9\n16\n",
+      "hints": "填 i。",
+      "test_cases": [
+        "assert captured_output == '1\\n4\\n9\\n16\\n'"
+      ],
+      "solution": "for i in range(1, 5):\n    print(i * i)"
+    },
+    {
+      "id": "CH07-E-022",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "输出 1 到 10 中的偶数。",
+      "code_template": "for i in range(1, 11):\n    if i % 2 == 0:\n        print(___)",
+      "expected_output": "2\n4\n6\n8\n10\n",
+      "hints": "输出变量 i。",
+      "test_cases": [
+        "assert captured_output == '2\\n4\\n6\\n8\\n10\\n'"
+      ],
+      "solution": "for i in range(1, 11):\n    if i % 2 == 0:\n        print(i)"
+    },
+    {
+      "id": "CH07-E-023",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "输出 1 到 10 中的奇数。",
+      "code_template": "for i in range(1, 11):\n    if i % 2 == 1:\n        print(___)",
+      "expected_output": "1\n3\n5\n7\n9\n",
+      "hints": "输出变量 i。",
+      "test_cases": [
+        "assert captured_output == '1\\n3\\n5\\n7\\n9\\n'"
+      ],
+      "solution": "for i in range(1, 11):\n    if i % 2 == 1:\n        print(i)"
+    },
+    {
+      "id": "CH07-E-024",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "累加 1 到 10 中的偶数。",
+      "code_template": "total = 0\nfor i in range(1, 11):\n    if i % 2 == 0:\n        total += i\nprint(___)\n",
+      "expected_output": "30\n",
+      "hints": "输出 total。",
+      "test_cases": [
+        "assert captured_output == '30\\n'"
+      ],
+      "solution": "total = 0\nfor i in range(1, 11):\n    if i % 2 == 0:\n        total += i\nprint(total)"
+    },
+    {
+      "id": "CH07-E-025",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "循环变量参与运算。",
+      "code_template": "for i in range(1, 4):\n    print(___)",
+      "expected_output": "11\n12\n13\n",
+      "hints": "填 i + 10。",
+      "test_cases": [
+        "assert captured_output == '11\\n12\\n13\\n'"
+      ],
+      "solution": "for i in range(1, 4):\n    print(i + 10)"
+    },
+    {
+      "id": "CH07-E-026",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用三参数 range 输出 5、4、3。",
+      "code_template": "for i in range(5, 2, -1):\n    print(___)",
+      "expected_output": "5\n4\n3\n",
+      "hints": "输出变量 i。",
+      "test_cases": [
+        "assert captured_output == '5\\n4\\n3\\n'"
+      ],
+      "solution": "for i in range(5, 2, -1):\n    print(i)"
+    },
+    {
+      "id": "CH07-E-027",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "循环结束后输出总数。",
+      "code_template": "for i in range(1, 4):\n    pass\nprint(\"total:\",___)",
+      "expected_output": "total: 3\n",
+      "hints": "填空 pass 与输出。",
+      "test_cases": [
+        "assert captured_output == 'total: 3\\n'"
+      ],
+      "solution": "for i in range(1, 4):\n    pass\nprint(\"total:\", i)"
+    },
+    {
+      "id": "CH07-E-028",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "解包遍历二维列表。",
+      "code_template": "for a, b in [[1, 2], [3, 4]]:\n    print(___)",
+      "expected_output": "3\n7\n",
+      "hints": "填 a + b。",
+      "test_cases": [
+        "assert captured_output == '3\\n7\\n'"
+      ],
+      "solution": "for a, b in [[1, 2], [3, 4]]:\n    print(a + b)"
+    },
+    {
+      "id": "CH07-E-029",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "用 reversed 逆序输出。",
+      "code_template": "for v in reversed([1, 2, 3, 4]):\n    print(___)",
+      "expected_output": "4\n3\n2\n1\n",
+      "hints": "输出变量 v。",
+      "test_cases": [
+        "assert captured_output == '4\\n3\\n2\\n1\\n'"
+      ],
+      "solution": "for v in reversed([1, 2, 3, 4]):\n    print(v)"
+    },
+    {
+      "id": "CH07-E-030",
+      "topic": "循环 (for)",
+      "difficulty": "超简单",
+      "stars": "⭐",
+      "description": "输出 3 次问候。",
+      "code_template": "for i in range(3):\n    print(___)",
+      "expected_output": "Hi\nHi\nHi\n",
+      "hints": "填空循环体。",
+      "test_cases": [
+        "assert captured_output == 'Hi\\nHi\\nHi\\n'"
+      ],
+      "solution": "for i in range(3):\n    print(\"Hi\")"
+    }
+  ]
+}

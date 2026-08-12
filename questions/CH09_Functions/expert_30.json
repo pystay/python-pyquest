@@ -1,0 +1,427 @@
+{
+  "chapter": "CH09",
+  "title": "函数 (基础)",
+  "difficulty": "较难",
+  "questions": [
+    {
+      "id": "CH09-X-001",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数递归求 1 到 n 的和。",
+      "code_template": "def sum_rec(n):\n    if n <= 1:\n        return n\n    return n + sum_rec(n - 1)\n\nprint(___)",
+      "expected_output": "Recursive sum: 55\n",
+      "hints": "填空递归求和。",
+      "test_cases": [
+        "assert captured_output == 'Recursive sum: 55\\n'"
+      ],
+      "solution": "def sum_rec(n):\n    if n <= 1:\n        return n\n    return n + sum_rec(n - 1)\n\nprint(f\"Recursive sum: {sum_rec(10)}\")"
+    },
+    {
+      "id": "CH09-X-002",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数实现快速排序。",
+      "code_template": "def quicksort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[0]\n    left = [x for x in arr[1:] if x <= pivot]\n    right = [x for x in arr[1:] if x > pivot]\n    return quicksort(left) + [pivot] + quicksort(right)\n\nprint(___)",
+      "expected_output": "[1, 2, 3, 5, 8]\n",
+      "hints": "填空快排。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3, 5, 8]\\n'"
+      ],
+      "solution": "def quicksort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[0]\n    left = [x for x in arr[1:] if x <= pivot]\n    right = [x for x in arr[1:] if x > pivot]\n    return quicksort(left) + [pivot] + quicksort(right)\n\nprint(quicksort([5, 3, 8, 1, 2]))"
+    },
+    {
+      "id": "CH09-X-003",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数实现归并排序。",
+      "code_template": "def merge_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] < right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    result.extend(left[i:])\n    result.extend(right[j:])\n    return result\n\nprint(___)",
+      "expected_output": "[1, 3, 6, 7, 8]\n",
+      "hints": "填空归并排序。",
+      "test_cases": [
+        "assert captured_output == '[1, 3, 6, 7, 8]\\n'"
+      ],
+      "solution": "def merge_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] < right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    result.extend(left[i:])\n    result.extend(right[j:])\n    return result\n\nprint(merge_sort([8, 3, 6, 1, 7]))"
+    },
+    {
+      "id": "CH09-X-004",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求 1 到 n 的阶乘和。",
+      "code_template": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nfor n in [5, 10]:\n    total = sum(factorial(i) for i in range(1, n + 1))\n    print(___)",
+      "expected_output": "Sum of 1!..5! = 153\nSum of 1!..10! = 4037913\n",
+      "hints": "填空阶乘和。",
+      "test_cases": [
+        "assert captured_output == 'Sum of 1!..5! = 153\\nSum of 1!..10! = 4037913\\n'"
+      ],
+      "solution": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nfor n in [5, 10]:\n    total = sum(factorial(i) for i in range(1, n + 1))\n    print(f\"Sum of 1!..{n}! = {total}\")"
+    },
+    {
+      "id": "CH09-X-005",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求第 n 个质数。",
+      "code_template": "def nth_prime(n):\n    primes = []\n    num = 2\n    while len(primes) < n:\n        if all(num % p for p in primes if p * p <= num):\n            primes.append(num)\n        num += 1\n    return primes[-1]\n\nprint(___, nth_prime(10))",
+      "expected_output": "11 29\n",
+      "hints": "填空第 n 质数。",
+      "test_cases": [
+        "assert captured_output == '11 29\\n'"
+      ],
+      "solution": "def nth_prime(n):\n    primes = []\n    num = 2\n    while len(primes) < n:\n        if all(num % p for p in primes if p * p <= num):\n            primes.append(num)\n        num += 1\n    return primes[-1]\n\nprint(nth_prime(5), nth_prime(10))"
+    },
+    {
+      "id": "CH09-X-006",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数实现字符串乘法（大数）。",
+      "code_template": "def str_multiply(s, n):\n    result = \"\"\n    carry = 0\n    for i in range(len(s) - 1, -1, -1):\n        prod = int(s[i]) * n + carry\n        result = str(prod % 10) + result\n        carry = prod // 10\n    if carry:\n        result = str(carry) + result\n    return result\n\nprint(___)",
+      "expected_output": "8991\n",
+      "hints": "填空大数乘法。",
+      "test_cases": [
+        "assert captured_output == '8991\\n'"
+      ],
+      "solution": "def str_multiply(s, n):\n    result = \"\"\n    carry = 0\n    for i in range(len(s) - 1, -1, -1):\n        prod = int(s[i]) * n + carry\n        result = str(prod % 10) + result\n        carry = prod // 10\n    if carry:\n        result = str(carry) + result\n    return result\n\nprint(str_multiply(\"999\", 9))"
+    },
+    {
+      "id": "CH09-X-007",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数判断完全数。",
+      "code_template": "def is_perfect(n):\n    return sum(d for d in range(1, n) if n % d == 0) == n\n\nfor n in [6, 12, 28]:\n    print(___, is_perfect(n))",
+      "expected_output": "6 True\n12 False\n28 True\n",
+      "hints": "填空完全数。",
+      "test_cases": [
+        "assert captured_output == '6 True\\n12 False\\n28 True\\n'"
+      ],
+      "solution": "def is_perfect(n):\n    return sum(d for d in range(1, n) if n % d == 0) == n\n\nfor n in [6, 12, 28]:\n    print(n, is_perfect(n))"
+    },
+    {
+      "id": "CH09-X-008",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数实现进制转换（任意进制）。",
+      "code_template": "def to_base(n, base):\n    digits = \"0123456789ABCDEF\"\n    if n == 0:\n        return \"0\"\n    result = \"\"\n    while n > 0:\n        result = digits[n % base] + result\n        n //= base\n    return result\n\nprint(___, to_base(10, 2))",
+      "expected_output": "FF 1010\n",
+      "hints": "填空进制转换。",
+      "test_cases": [
+        "assert captured_output == 'FF 1010\\n'"
+      ],
+      "solution": "def to_base(n, base):\n    digits = \"0123456789ABCDEF\"\n    if n == 0:\n        return \"0\"\n    result = \"\"\n    while n > 0:\n        result = digits[n % base] + result\n        n //= base\n    return result\n\nprint(to_base(255, 16), to_base(10, 2))"
+    },
+    {
+      "id": "CH09-X-009",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求最大子序列乘积。",
+      "code_template": "def max_product(nums):\n    max_prod = nums[0]\n    for i in range(len(nums)):\n        prod = 1\n        for j in range(i, len(nums)):\n            prod *= nums[j]\n            max_prod = max(max_prod, prod)\n    return max_prod\n\nprint(___)",
+      "expected_output": "Max product: 6\n",
+      "hints": "填空最大乘积。",
+      "test_cases": [
+        "assert captured_output == 'Max product: 6\\n'"
+      ],
+      "solution": "def max_product(nums):\n    max_prod = nums[0]\n    for i in range(len(nums)):\n        prod = 1\n        for j in range(i, len(nums)):\n            prod *= nums[j]\n            max_prod = max(max_prod, prod)\n    return max_prod\n\nprint(f\"Max product: {max_product([2, 3, -2, 4])}\")"
+    },
+    {
+      "id": "CH09-X-010",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数实现杨辉三角。",
+      "code_template": "def pascal(rows):\n    triangle = []\n    for i in range(rows):\n        row = [1] * (i + 1)\n        for j in range(1, i):\n            row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]\n        triangle.append(row)\n    return triangle\n\nfor row in pascal(5):\n    print(___)",
+      "expected_output": "[1]\n[1, 1]\n[1, 2, 1]\n[1, 3, 3, 1]\n[1, 4, 6, 4, 1]\n",
+      "hints": "填空杨辉三角。",
+      "test_cases": [
+        "assert captured_output == '[1]\\n[1, 1]\\n[1, 2, 1]\\n[1, 3, 3, 1]\\n[1, 4, 6, 4, 1]\\n'"
+      ],
+      "solution": "def pascal(rows):\n    triangle = []\n    for i in range(rows):\n        row = [1] * (i + 1)\n        for j in range(1, i):\n            row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]\n        triangle.append(row)\n    return triangle\n\nfor row in pascal(5):\n    print(row)"
+    },
+    {
+      "id": "CH09-X-011",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求水仙花数列表。",
+      "code_template": "def armstrong(limit):\n    result = []\n    for n in range(100, limit):\n        digits = [int(d) for d in str(n)]\n        if sum(d ** len(digits) for d in digits) == n:\n            result.append(n)\n    return result\n\nprint(___)",
+      "expected_output": "[153, 370, 371, 407]\n",
+      "hints": "填空水仙花。",
+      "test_cases": [
+        "assert captured_output == '[153, 370, 371, 407]\\n'"
+      ],
+      "solution": "def armstrong(limit):\n    result = []\n    for n in range(100, limit):\n        digits = [int(d) for d in str(n)]\n        if sum(d ** len(digits) for d in digits) == n:\n            result.append(n)\n    return result\n\nprint(armstrong(500))"
+    },
+    {
+      "id": "CH09-X-012",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数统计字符串中每个单词出现次数。",
+      "code_template": "def word_freq(text):\n    words = text.lower().split()\n    freq = {}\n    for w in words:\n        freq[w] = freq.get(w, 0) + 1\n    return freq\n\nprint(___)",
+      "expected_output": "{'the': 2, 'cat': 1, 'and': 1, 'dog': 1}\n",
+      "hints": "填空词频。",
+      "test_cases": [
+        "assert captured_output == \"{'the': 2, 'cat': 1, 'and': 1, 'dog': 1}\\n\""
+      ],
+      "solution": "def word_freq(text):\n    words = text.lower().split()\n    freq = {}\n    for w in words:\n        freq[w] = freq.get(w, 0) + 1\n    return freq\n\nprint(word_freq(\"The cat and the dog\"))"
+    },
+    {
+      "id": "CH09-X-013",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求矩阵乘法。",
+      "code_template": "def mat_mult(a, b):\n    result = [[0, 0], [0, 0]]\n    for i in range(2):\n        for j in range(2):\n            for k in range(2):\n                result[i][j] += a[i][k] * b[k][j]\n    return result\n\nprint(___)",
+      "expected_output": "[[19, 22], [43, 50]]\n",
+      "hints": "填空矩阵乘法。",
+      "test_cases": [
+        "assert captured_output == '[[19, 22], [43, 50]]\\n'"
+      ],
+      "solution": "def mat_mult(a, b):\n    result = [[0, 0], [0, 0]]\n    for i in range(2):\n        for j in range(2):\n            for k in range(2):\n                result[i][j] += a[i][k] * b[k][j]\n    return result\n\nprint(mat_mult([[1, 2], [3, 4]], [[5, 6], [7, 8]]))"
+    },
+    {
+      "id": "CH09-X-014",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求最长连续递增长度。",
+      "code_template": "def longest_increasing(nums):\n    max_len = 1\n    cur = 1\n    for i in range(1, len(nums)):\n        if nums[i] > nums[i - 1]:\n            cur += 1\n            max_len = max(max_len, cur)\n        else:\n            cur = 1\n    return max_len\n\nprint(___)",
+      "expected_output": "Longest: 3\n",
+      "hints": "填空递增长度。",
+      "test_cases": [
+        "assert captured_output == 'Longest: 3\\n'"
+      ],
+      "solution": "def longest_increasing(nums):\n    max_len = 1\n    cur = 1\n    for i in range(1, len(nums)):\n        if nums[i] > nums[i - 1]:\n            cur += 1\n            max_len = max(max_len, cur)\n        else:\n            cur = 1\n    return max_len\n\nprint(f\"Longest: {longest_increasing([1, 2, 3, 1, 2])}\")"
+    },
+    {
+      "id": "CH09-X-015",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数判断两个字符串是否变位词。",
+      "code_template": "def anagram(a, b):\n    return sorted(a) == sorted(b)\n\nprint('Anagram:',___, anagram('abc', 'abd'))",
+      "expected_output": "Anagram: True False\n",
+      "hints": "填空变位词。",
+      "test_cases": [
+        "assert captured_output == 'Anagram: True False\\n'"
+      ],
+      "solution": "def anagram(a, b):\n    return sorted(a) == sorted(b)\n\nprint('Anagram:', anagram('listen', 'silent'), anagram('abc', 'abd'))"
+    },
+    {
+      "id": "CH09-X-016",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数实现二分查找演示。",
+      "code_template": "def binary_search(nums, target):\n    low, high = 0, len(nums) - 1\n    steps = []\n    while low <= high:\n        mid = (low + high) // 2\n        steps.append(nums[mid])\n        if nums[mid] == target:\n            return steps\n        elif nums[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return steps\n\nprint(___)",
+      "expected_output": "[5, 9]\n",
+      "hints": "填空二分演示。",
+      "test_cases": [
+        "assert captured_output == '[5, 9]\\n'"
+      ],
+      "solution": "def binary_search(nums, target):\n    low, high = 0, len(nums) - 1\n    steps = []\n    while low <= high:\n        mid = (low + high) // 2\n        steps.append(nums[mid])\n        if nums[mid] == target:\n            return steps\n        elif nums[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return steps\n\nprint(binary_search([1, 3, 5, 7, 9, 11], 9))"
+    },
+    {
+      "id": "CH09-X-017",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求 100 内素数列表。",
+      "code_template": "def primes_up_to(limit):\n    result = []\n    for n in range(2, limit + 1):\n        if all(n % d for d in range(2, int(n ** 0.5) + 1)):\n            result.append(n)\n    return result\n\nprint(___)",
+      "expected_output": "[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]\n",
+      "hints": "填空素数列表。",
+      "test_cases": [
+        "assert captured_output == '[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]\\n'"
+      ],
+      "solution": "def primes_up_to(limit):\n    result = []\n    for n in range(2, limit + 1):\n        if all(n % d for d in range(2, int(n ** 0.5) + 1)):\n            result.append(n)\n    return result\n\nprint(primes_up_to(30))"
+    },
+    {
+      "id": "CH09-X-018",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求最大公约数与最小公倍数。",
+      "code_template": "def gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a\n\ndef lcm(a, b):\n    return a * b // gcd(a, b)\n\nprint(___, lcm(12, 18))",
+      "expected_output": "6 36\n",
+      "hints": "填空 gcd/lcm。",
+      "test_cases": [
+        "assert captured_output == '6 36\\n'"
+      ],
+      "solution": "def gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a\n\ndef lcm(a, b):\n    return a * b // gcd(a, b)\n\nprint(gcd(12, 18), lcm(12, 18))"
+    },
+    {
+      "id": "CH09-X-019",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数实现简易加密（移位）。",
+      "code_template": "def encrypt(text, shift):\n    result = \"\"\n    for ch in text:\n        if ch.isalpha():\n            base = ord('a') if ch.islower() else ord('A')\n            result += chr((ord(ch) - base + shift) % 26 + base)\n        else:\n            result += ch\n    return result\n\nprint(___)",
+      "expected_output": "Khoor Zruog\n",
+      "hints": "填空加密。",
+      "test_cases": [
+        "assert captured_output == 'Khoor Zruog\\n'"
+      ],
+      "solution": "def encrypt(text, shift):\n    result = \"\"\n    for ch in text:\n        if ch.isalpha():\n            base = ord('a') if ch.islower() else ord('A')\n            result += chr((ord(ch) - base + shift) % 26 + base)\n        else:\n            result += ch\n    return result\n\nprint(encrypt(\"Hello World\", 3))"
+    },
+    {
+      "id": "CH09-X-020",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求列表第二大的数。",
+      "code_template": "def second_largest(nums):\n    unique = sorted(set(nums))\n    return unique[-2] if len(unique) >= 2 else None\n\nprint(___)",
+      "expected_output": "Second: 7\n",
+      "hints": "填空第二大。",
+      "test_cases": [
+        "assert captured_output == 'Second: 7\\n'"
+      ],
+      "solution": "def second_largest(nums):\n    unique = sorted(set(nums))\n    return unique[-2] if len(unique) >= 2 else None\n\nprint(f\"Second: {second_largest([4, 9, 7, 9, 2])}\")"
+    },
+    {
+      "id": "CH09-X-021",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数验证哥德巴赫猜想。",
+      "code_template": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\ndef goldbach(n):\n    for p in range(2, n):\n        if is_prime(p) and is_prime(n - p):\n            return p, n - p\n    return None\n\nprint(___)",
+      "expected_output": "(5, 23)\n",
+      "hints": "填空哥德巴赫。",
+      "test_cases": [
+        "assert captured_output == '(5, 23)\\n'"
+      ],
+      "solution": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\n\ndef goldbach(n):\n    for p in range(2, n):\n        if is_prime(p) and is_prime(n - p):\n            return p, n - p\n    return None\n\nprint(goldbach(28))"
+    },
+    {
+      "id": "CH09-X-022",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数实现字符串压缩。",
+      "code_template": "def compress(s):\n    result = \"\"\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i - 1]:\n            count += 1\n        else:\n            result += s[i - 1] + str(count)\n            count = 1\n    result += s[-1] + str(count)\n    return result\n\nprint(___)",
+      "expected_output": "a3b2c1\n",
+      "hints": "填空压缩。",
+      "test_cases": [
+        "assert captured_output == 'a3b2c1\\n'"
+      ],
+      "solution": "def compress(s):\n    result = \"\"\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i - 1]:\n            count += 1\n        else:\n            result += s[i - 1] + str(count)\n            count = 1\n    result += s[-1] + str(count)\n    return result\n\nprint(compress(\"aaabbc\"))"
+    },
+    {
+      "id": "CH09-X-023",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求数组中只出现一次的数。",
+      "code_template": "def single_number(nums):\n    result = 0\n    for n in nums:\n        result ^= n\n    return result\n\nprint(___)",
+      "expected_output": "Single: 4\n",
+      "hints": "填空异或。",
+      "test_cases": [
+        "assert captured_output == 'Single: 4\\n'"
+      ],
+      "solution": "def single_number(nums):\n    result = 0\n    for n in nums:\n        result ^= n\n    return result\n\nprint(f\"Single: {single_number([4, 1, 2, 1, 2])}\")"
+    },
+    {
+      "id": "CH09-X-024",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求 3n+1 序列。",
+      "code_template": "def collatz(n):\n    seq = [n]\n    while n != 1:\n        if n % 2 == 0:\n            n //= 2\n        else:\n            n = n * 3 + 1\n        seq.append(n)\n    return seq\n\nprint(___)",
+      "expected_output": "[6, 3, 10, 5, 16, 8, 4, 2, 1]\n",
+      "hints": "填空 3n+1。",
+      "test_cases": [
+        "assert captured_output == '[6, 3, 10, 5, 16, 8, 4, 2, 1]\\n'"
+      ],
+      "solution": "def collatz(n):\n    seq = [n]\n    while n != 1:\n        if n % 2 == 0:\n            n //= 2\n        else:\n            n = n * 3 + 1\n        seq.append(n)\n    return seq\n\nprint(collatz(6))"
+    },
+    {
+      "id": "CH09-X-025",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求最小差配对。",
+      "code_template": "def min_difference(nums):\n    nums.sort()\n    return min(nums[i + 1] - nums[i] for i in range(len(nums) - 1))\n\nprint(___)",
+      "expected_output": "Min diff: 2\n",
+      "hints": "填空最小差。",
+      "test_cases": [
+        "assert captured_output == 'Min diff: 2\\n'"
+      ],
+      "solution": "def min_difference(nums):\n    nums.sort()\n    return min(nums[i + 1] - nums[i] for i in range(len(nums) - 1))\n\nprint(f\"Min diff: {min_difference([3, 9, 1, 6])}\")"
+    },
+    {
+      "id": "CH09-X-026",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数实现斐波那契（迭代优化）。",
+      "code_template": "def fib_iter(n):\n    a, b = 0, 1\n    for _ in range(n):\n        a, b = b, a + b\n    return a\n\nfor n in [0, 5, 10]:\n    print(___)",
+      "expected_output": "fib(0) = 0\nfib(5) = 5\nfib(10) = 55\n",
+      "hints": "填空迭代斐波那契。",
+      "test_cases": [
+        "assert captured_output == 'fib(0) = 0\\nfib(5) = 5\\nfib(10) = 55\\n'"
+      ],
+      "solution": "def fib_iter(n):\n    a, b = 0, 1\n    for _ in range(n):\n        a, b = b, a + b\n    return a\n\nfor n in [0, 5, 10]:\n    print(f\"fib({n}) = {fib_iter(n)}\")"
+    },
+    {
+      "id": "CH09-X-027",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求最长回文子串长度（简化）。",
+      "code_template": "def longest_pal(s):\n    max_len = 1\n    for i in range(len(s)):\n        for j in range(i + 1, len(s) + 1):\n            sub = s[i:j]\n            if sub == sub[::-1]:\n                max_len = max(max_len, len(sub))\n    return max_len\n\nprint('Longest pal:',___)",
+      "expected_output": "Longest pal: 3\n",
+      "hints": "填空回文子串。",
+      "test_cases": [
+        "assert captured_output == 'Longest pal: 3\\n'"
+      ],
+      "solution": "def longest_pal(s):\n    max_len = 1\n    for i in range(len(s)):\n        for j in range(i + 1, len(s) + 1):\n            sub = s[i:j]\n            if sub == sub[::-1]:\n                max_len = max(max_len, len(sub))\n    return max_len\n\nprint('Longest pal:', longest_pal('babad'))"
+    },
+    {
+      "id": "CH09-X-028",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求约瑟夫环幸存者。",
+      "code_template": "def josephus(n, k):\n    people = list(range(1, n + 1))\n    idx = 0\n    while len(people) > 1:\n        idx = (idx + k - 1) % len(people)\n        people.pop(idx)\n    return people[0]\n\nprint(___)",
+      "expected_output": "Survivor: 4\n",
+      "hints": "填空约瑟夫环。",
+      "test_cases": [
+        "assert captured_output == 'Survivor: 4\\n'"
+      ],
+      "solution": "def josephus(n, k):\n    people = list(range(1, n + 1))\n    idx = 0\n    while len(people) > 1:\n        idx = (idx + k - 1) % len(people)\n        people.pop(idx)\n    return people[0]\n\nprint(f\"Survivor: {josephus(7, 3)}\")"
+    },
+    {
+      "id": "CH09-X-029",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数求螺旋矩阵。",
+      "code_template": "def spiral(n):\n    matrix = [[0] * n for _ in range(n)]\n    num = 1\n    top, bottom, left, right = 0, n - 1, 0, n - 1\n    while top <= bottom and left <= right:\n        for j in range(left, right + 1):\n            matrix[top][j] = num\n            num += 1\n        top += 1\n        for i in range(top, bottom + 1):\n            matrix[i][right] = num\n            num += 1\n        right -= 1\n        for j in range(right, left - 1, -1):\n            matrix[bottom][j] = num\n            num += 1\n        bottom -= 1\n        for i in range(bottom, top - 1, -1):\n            matrix[i][left] = num\n            num += 1\n        left += 1\n    return matrix\n\nfor row in spiral(3):\n    print(___)",
+      "expected_output": "[1, 2, 3]\n[8, 9, 4]\n[7, 6, 5]\n",
+      "hints": "填空螺旋矩阵。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3]\\n[8, 9, 4]\\n[7, 6, 5]\\n'"
+      ],
+      "solution": "def spiral(n):\n    matrix = [[0] * n for _ in range(n)]\n    num = 1\n    top, bottom, left, right = 0, n - 1, 0, n - 1\n    while top <= bottom and left <= right:\n        for j in range(left, right + 1):\n            matrix[top][j] = num\n            num += 1\n        top += 1\n        for i in range(top, bottom + 1):\n            matrix[i][right] = num\n            num += 1\n        right -= 1\n        for j in range(right, left - 1, -1):\n            matrix[bottom][j] = num\n            num += 1\n        bottom -= 1\n        for i in range(bottom, top - 1, -1):\n            matrix[i][left] = num\n            num += 1\n        left += 1\n    return matrix\n\nfor row in spiral(3):\n    print(row)"
+    },
+    {
+      "id": "CH09-X-030",
+      "topic": "函数 (基础)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "综合：函数库演示（多函数协同）。",
+      "code_template": "def add(a, b):\n    return a + b\n\ndef mul(a, b):\n    return a * b\n\nx, y = 3, 4\nprint(f\"{x} + {y} = {add(x, y)}\")\nprint(f\"{x} * {y} = {mul(x, y)}\")\nprint(___)",
+      "expected_output": "3 + 4 = 7\n3 * 4 = 12\n(a+b)*2 = 14\n",
+      "hints": "填空多函数协同。",
+      "test_cases": [
+        "assert captured_output == '3 + 4 = 7\\n3 * 4 = 12\\n(a+b)*2 = 14\\n'"
+      ],
+      "solution": "def add(a, b):\n    return a + b\n\ndef mul(a, b):\n    return a * b\n\nx, y = 3, 4\nprint(f\"{x} + {y} = {add(x, y)}\")\nprint(f\"{x} * {y} = {mul(x, y)}\")\nprint(f\"(a+b)*2 = {mul(add(x, y), 2)}\")"
+    }
+  ]
+}

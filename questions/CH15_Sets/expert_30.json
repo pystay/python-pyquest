@@ -1,0 +1,427 @@
+{
+  "chapter": "CH15",
+  "title": "集合 (Sets)",
+  "difficulty": "较难",
+  "questions": [
+    {
+      "id": "CH15-X-001",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用集合求最长连续序列。",
+      "code_template": "nums = [100, 4, 200, 1, 3, 2]\nnum_set = set(nums)\nlongest = 0\nfor n in num_set:\n    if n - 1 not in num_set:\n        length = 1\n        while n + length in num_set:\n            length += 1\n        longest = max(longest, length)\nprint(___)",
+      "expected_output": "Longest: 4\n",
+      "hints": "填空集合连续序列。",
+      "test_cases": [
+        "assert captured_output == 'Longest: 4\\n'"
+      ],
+      "solution": "nums = [100, 4, 200, 1, 3, 2]\nnum_set = set(nums)\nlongest = 0\nfor n in num_set:\n    if n - 1 not in num_set:\n        length = 1\n        while n + length in num_set:\n            length += 1\n        longest = max(longest, length)\nprint(f\"Longest: {longest}\")"
+    },
+    {
+      "id": "CH15-X-002",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合实现单词字母差。",
+      "code_template": "def missing_letters(word):\n    alphabet = set(\"abcdefghijklmnopqrstuvwxyz\")\n    return sorted(alphabet - set(word.lower()))\n\nprint(___)",
+      "expected_output": "['d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']\n",
+      "hints": "填空缺失字母。",
+      "test_cases": [
+        "assert captured_output == \"['d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']\\n\""
+      ],
+      "solution": "def missing_letters(word):\n    alphabet = set(\"abcdefghijklmnopqrstuvwxyz\")\n    return sorted(alphabet - set(word.lower()))\n\nprint(missing_letters(\"abc\"))"
+    },
+    {
+      "id": "CH15-X-003",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合实现去重保序。",
+      "code_template": "def unique_ordered(items):\n    seen = set()\n    result = []\n    for item in items:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n    return result\n\nprint(___)",
+      "expected_output": "[3, 1, 2]\n",
+      "hints": "填空去重保序。",
+      "test_cases": [
+        "assert captured_output == '[3, 1, 2]\\n'"
+      ],
+      "solution": "def unique_ordered(items):\n    seen = set()\n    result = []\n    for item in items:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n    return result\n\nprint(unique_ordered([3, 1, 3, 2, 1]))"
+    },
+    {
+      "id": "CH15-X-004",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合实现变位词分组。",
+      "code_template": "def group_anagrams(words):\n    groups = {}\n    for w in words:\n        key = tuple(sorted(w))\n        groups.setdefault(key, []).append(w)\n    return groups\n\nprint(___)",
+      "expected_output": "{('a', 'b', 'c'): ['abc', 'cba'], ('d', 'e', 'f'): ['def', 'fed']}\n",
+      "hints": "填空变位词分组。",
+      "test_cases": [
+        "assert captured_output == \"{('a', 'b', 'c'): ['abc', 'cba'], ('d', 'e', 'f'): ['def', 'fed']}\\n\""
+      ],
+      "solution": "def group_anagrams(words):\n    groups = {}\n    for w in words:\n        key = tuple(sorted(w))\n        groups.setdefault(key, []).append(w)\n    return groups\n\nprint(group_anagrams([\"abc\", \"cba\", \"def\", \"fed\"]))"
+    },
+    {
+      "id": "CH15-X-005",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求最大交集子集。",
+      "code_template": "sets = [{1, 2, 3}, {2, 3, 4}, {3, 4, 5}]\ncommon = sets[0]\nfor s in sets[1:]:\n    common &= s\nprint(___)",
+      "expected_output": "{3}\n",
+      "hints": "填空多集合交集。",
+      "test_cases": [
+        "assert captured_output == '{3}\\n'"
+      ],
+      "solution": "sets = [{1, 2, 3}, {2, 3, 4}, {3, 4, 5}]\ncommon = sets[0]\nfor s in sets[1:]:\n    common &= s\nprint(common)"
+    },
+    {
+      "id": "CH15-X-006",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合实现对称差去重。",
+      "code_template": "def symmetric(a, b):\n    return sorted(a ^ b)\n\nprint(___)",
+      "expected_output": "[1, 2, 4, 5]\n",
+      "hints": "填空对称差函数。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 4, 5]\\n'"
+      ],
+      "solution": "def symmetric(a, b):\n    return sorted(a ^ b)\n\nprint(symmetric({1, 2, 3}, {3, 4, 5}))"
+    },
+    {
+      "id": "CH15-X-007",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求覆盖检查。",
+      "code_template": "def covers(available, required):\n    return required.issubset(available)\n\navailable = {\"a\", \"b\", \"c\", \"d\"}\nrequired = {\"a\", \"c\"}\nprint('Covered:',___)",
+      "expected_output": "Covered: True\n",
+      "hints": "填空覆盖检查。",
+      "test_cases": [
+        "assert captured_output == 'Covered: True\\n'"
+      ],
+      "solution": "def covers(available, required):\n    return required.issubset(available)\n\navailable = {\"a\", \"b\", \"c\", \"d\"}\nrequired = {\"a\", \"c\"}\nprint('Covered:', covers(available, required))"
+    },
+    {
+      "id": "CH15-X-008",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合实现两数差对。",
+      "code_template": "def diff_pairs(nums, diff):\n    num_set = set(nums)\n    return sorted({(n, n + diff) for n in num_set if n + diff in num_set})\n\nprint(___)",
+      "expected_output": "[(1, 3), (3, 5), (5, 7)]\n",
+      "hints": "填空差对。",
+      "test_cases": [
+        "assert captured_output == '[(1, 3), (3, 5), (5, 7)]\\n'"
+      ],
+      "solution": "def diff_pairs(nums, diff):\n    num_set = set(nums)\n    return sorted({(n, n + diff) for n in num_set if n + diff in num_set})\n\nprint(diff_pairs([1, 3, 5, 7], 2))"
+    },
+    {
+      "id": "CH15-X-009",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合实现多列表并集去重。",
+      "code_template": "lists = [[1, 2], [2, 3], [3, 4]]\nall_items = set()\nfor lst in lists:\n    all_items.update(lst)\nprint('All:',___)",
+      "expected_output": "All: [1, 2, 3, 4]\n",
+      "hints": "填空多列表并集。",
+      "test_cases": [
+        "assert captured_output == 'All: [1, 2, 3, 4]\\n'"
+      ],
+      "solution": "lists = [[1, 2], [2, 3], [3, 4]]\nall_items = set()\nfor lst in lists:\n    all_items.update(lst)\nprint('All:', sorted(all_items))"
+    },
+    {
+      "id": "CH15-X-010",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求出现次数大于 1 的。",
+      "code_template": "def duplicates(nums):\n    seen = set()\n    dupes = set()\n    for n in nums:\n        if n in seen:\n            dupes.add(n)\n        seen.add(n)\n    return sorted(dupes)\n\nprint('Dupes:',___)",
+      "expected_output": "Dupes: [2, 3]\n",
+      "hints": "填空重复检测。",
+      "test_cases": [
+        "assert captured_output == 'Dupes: [2, 3]\\n'"
+      ],
+      "solution": "def duplicates(nums):\n    seen = set()\n    dupes = set()\n    for n in nums:\n        if n in seen:\n            dupes.add(n)\n        seen.add(n)\n    return sorted(dupes)\n\nprint('Dupes:', duplicates([1, 2, 2, 3, 3, 3]))"
+    },
+    {
+      "id": "CH15-X-011",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求最长公共子集长度。",
+      "code_template": "def common_count(a, b):\n    return len(a & b)\n\nprint('Common:',___)",
+      "expected_output": "Common: 2\n",
+      "hints": "填空公共计数。",
+      "test_cases": [
+        "assert captured_output == 'Common: 2\\n'"
+      ],
+      "solution": "def common_count(a, b):\n    return len(a & b)\n\nprint('Common:', common_count({1, 2, 3, 4}, {3, 4, 5}))"
+    },
+    {
+      "id": "CH15-X-012",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合实现字符串差异。",
+      "code_template": "def char_diff(s1, s2):\n    return sorted(set(s1) ^ set(s2))\n\nprint(___)",
+      "expected_output": "['c', 'd']\n",
+      "hints": "填空字符差异。",
+      "test_cases": [
+        "assert captured_output == \"['c', 'd']\\n\""
+      ],
+      "solution": "def char_diff(s1, s2):\n    return sorted(set(s1) ^ set(s2))\n\nprint(char_diff(\"abc\", \"abd\"))"
+    },
+    {
+      "id": "CH15-X-013",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求唯一数之和。",
+      "code_template": "def unique_sum_lists(lists):\n    return sum(set().union(*[set(l) for l in lists]))\n\nprint('Sum:',___)",
+      "expected_output": "Sum: 6\n",
+      "hints": "填空唯一和。",
+      "test_cases": [
+        "assert captured_output == 'Sum: 6\\n'"
+      ],
+      "solution": "def unique_sum_lists(lists):\n    return sum(set().union(*[set(l) for l in lists]))\n\nprint('Sum:', unique_sum_lists([[1, 2], [2, 3]]))"
+    },
+    {
+      "id": "CH15-X-014",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合实现相似度。",
+      "code_template": "def jaccard(a, b):\n    return len(a & b) / len(a | b)\n\nprint(___)",
+      "expected_output": "0.5\n",
+      "hints": "填空 Jaccard。",
+      "test_cases": [
+        "assert captured_output == '0.5\\n'"
+      ],
+      "solution": "def jaccard(a, b):\n    return len(a & b) / len(a | b)\n\nprint(round(jaccard({1, 2, 3}, {2, 3, 4}), 2))"
+    },
+    {
+      "id": "CH15-X-015",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求幂集大小。",
+      "code_template": "def powerset_size(s):\n    return 2 ** len(s)\n\nprint('Powerset:',___)",
+      "expected_output": "Powerset: 8\n",
+      "hints": "填空幂集大小。",
+      "test_cases": [
+        "assert captured_output == 'Powerset: 8\\n'"
+      ],
+      "solution": "def powerset_size(s):\n    return 2 ** len(s)\n\nprint('Powerset:', powerset_size({1, 2, 3}))"
+    },
+    {
+      "id": "CH15-X-016",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合实现去重排序合并。",
+      "code_template": "def merge_unique(a, b):\n    return sorted(a | b)\n\nprint(___)",
+      "expected_output": "[1, 2, 3, 4, 5]\n",
+      "hints": "填空合并去重。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3, 4, 5]\\n'"
+      ],
+      "solution": "def merge_unique(a, b):\n    return sorted(a | b)\n\nprint(merge_unique({1, 3}, {2, 3, 4, 5}))"
+    },
+    {
+      "id": "CH15-X-017",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求最频繁元素。",
+      "code_template": "def most_common(nums):\n    counts = {}\n    for n in nums:\n        counts[n] = counts.get(n, 0) + 1\n    return max(counts, key=counts.get)\n\nprint('Mode:',___)",
+      "expected_output": "Mode: 2\n",
+      "hints": "填空众数。",
+      "test_cases": [
+        "assert captured_output == 'Mode: 2\\n'"
+      ],
+      "solution": "def most_common(nums):\n    counts = {}\n    for n in nums:\n        counts[n] = counts.get(n, 0) + 1\n    return max(counts, key=counts.get)\n\nprint('Mode:', most_common([1, 2, 2, 3, 2]))"
+    },
+    {
+      "id": "CH15-X-018",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求缺失数字。",
+      "code_template": "def missing_number(nums):\n    n = len(nums)\n    full = set(range(n + 1))\n    return (full - set(nums)).pop()\n\nprint('Missing:',___)",
+      "expected_output": "Missing: 2\n",
+      "hints": "填空缺失数。",
+      "test_cases": [
+        "assert captured_output == 'Missing: 2\\n'"
+      ],
+      "solution": "def missing_number(nums):\n    n = len(nums)\n    full = set(range(n + 1))\n    return (full - set(nums)).pop()\n\nprint('Missing:', missing_number([0, 1, 3]))"
+    },
+    {
+      "id": "CH15-X-019",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求三元组和。",
+      "code_template": "def triple_sum(nums, target):\n    result = set()\n    for i in range(len(nums)):\n        for j in range(i + 1, len(nums)):\n            for k in range(j + 1, len(nums)):\n                if nums[i] + nums[j] + nums[k] == target:\n                    result.add(tuple(sorted([nums[i], nums[j], nums[k]])))\n    return sorted(result)\n\nprint(___)",
+      "expected_output": "[(1, 2, 3)]\n",
+      "hints": "填空三元组。",
+      "test_cases": [
+        "assert captured_output == '[(1, 2, 3)]\\n'"
+      ],
+      "solution": "def triple_sum(nums, target):\n    result = set()\n    for i in range(len(nums)):\n        for j in range(i + 1, len(nums)):\n            for k in range(j + 1, len(nums)):\n                if nums[i] + nums[j] + nums[k] == target:\n                    result.add(tuple(sorted([nums[i], nums[j], nums[k]])))\n    return sorted(result)\n\nprint(triple_sum([1, 2, 3, 4], 6))"
+    },
+    {
+      "id": "CH15-X-020",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求可组成数字。",
+      "code_template": "def can_make(nums, target):\n    num_set = set(nums)\n    return any(target - n in num_set for n in num_set)\n\nprint('Make:',___, can_make([3, 5, 1], 9))",
+      "expected_output": "Make: True False\n",
+      "hints": "填空组成判断。",
+      "test_cases": [
+        "assert captured_output == 'Make: True False\\n'"
+      ],
+      "solution": "def can_make(nums, target):\n    num_set = set(nums)\n    return any(target - n in num_set for n in num_set)\n\nprint('Make:', can_make([3, 5, 1], 8), can_make([3, 5, 1], 9))"
+    },
+    {
+      "id": "CH15-X-021",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求唯一元素。",
+      "code_template": "def single(nums):\n    result = 0\n    for n in nums:\n        result ^= n\n    return result\n\nprint('Single:',___)",
+      "expected_output": "Single: 4\n",
+      "hints": "填空异或唯一。",
+      "test_cases": [
+        "assert captured_output == 'Single: 4\\n'"
+      ],
+      "solution": "def single(nums):\n    result = 0\n    for n in nums:\n        result ^= n\n    return result\n\nprint('Single:', single([4, 1, 2, 1, 2]))"
+    },
+    {
+      "id": "CH15-X-022",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求两集合最大差。",
+      "code_template": "def max_diff(a, b):\n    return max(a | b) - min(a | b)\n\nprint('Diff:',___)",
+      "expected_output": "Diff: 8\n",
+      "hints": "填空最大差。",
+      "test_cases": [
+        "assert captured_output == 'Diff: 8\\n'"
+      ],
+      "solution": "def max_diff(a, b):\n    return max(a | b) - min(a | b)\n\nprint('Diff:', max_diff({1, 5, 9}, {3, 7}))"
+    },
+    {
+      "id": "CH15-X-023",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合实现词频过滤。",
+      "code_template": "def filter_stopwords(words, stopwords):\n    stop = set(stopwords)\n    return [w for w in words if w not in stop]\n\nprint(___)",
+      "expected_output": "['cat']\n",
+      "hints": "填空停用词过滤。",
+      "test_cases": [
+        "assert captured_output == \"['cat']\\n\""
+      ],
+      "solution": "def filter_stopwords(words, stopwords):\n    stop = set(stopwords)\n    return [w for w in words if w not in stop]\n\nprint(filter_stopwords([\"a\", \"the\", \"cat\"], [\"a\", \"the\"]))"
+    },
+    {
+      "id": "CH15-X-024",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求交集数。",
+      "code_template": "def intersection_size(a, b):\n    return len(a & b)\n\nprint('Count:',___)",
+      "expected_output": "Count: 2\n",
+      "hints": "填空交集数。",
+      "test_cases": [
+        "assert captured_output == 'Count: 2\\n'"
+      ],
+      "solution": "def intersection_size(a, b):\n    return len(a & b)\n\nprint('Count:', intersection_size({1, 2, 3}, {2, 3, 4}))"
+    },
+    {
+      "id": "CH15-X-025",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合实现双色分组。",
+      "code_template": "def partition(nums):\n    evens = set()\n    odds = set()\n    for n in nums:\n        if n % 2 == 0:\n            evens.add(n)\n        else:\n            odds.add(n)\n    return sorted(evens), sorted(odds)\n\ne, o = partition([1, 2, 3, 4, 5])\nprint(___, o)",
+      "expected_output": "[2, 4] [1, 3, 5]\n",
+      "hints": "填空奇偶分组。",
+      "test_cases": [
+        "assert captured_output == '[2, 4] [1, 3, 5]\\n'"
+      ],
+      "solution": "def partition(nums):\n    evens = set()\n    odds = set()\n    for n in nums:\n        if n % 2 == 0:\n            evens.add(n)\n        else:\n            odds.add(n)\n    return sorted(evens), sorted(odds)\n\ne, o = partition([1, 2, 3, 4, 5])\nprint(e, o)"
+    },
+    {
+      "id": "CH15-X-026",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求最大可覆盖区间。",
+      "code_template": "def covered(nums):\n    num_set = set(nums)\n    return max(len(range(min(nums), max(nums) + 1)) - len(num_set), 0)\n\nprint(___)",
+      "expected_output": "1\n",
+      "hints": "填空覆盖缺口。",
+      "test_cases": [
+        "assert captured_output == '1\\n'"
+      ],
+      "solution": "def covered(nums):\n    num_set = set(nums)\n    return max(len(range(min(nums), max(nums) + 1)) - len(num_set), 0)\n\nprint(covered([1, 2, 4]))"
+    },
+    {
+      "id": "CH15-X-027",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合实现对称分组。",
+      "code_template": "def group_by_parity(nums):\n    groups = {}\n    for n in nums:\n        groups.setdefault(n % 2, set()).add(n)\n    return {k: sorted(v) for k, v in groups.items()}\n\nprint(___)",
+      "expected_output": "{1: [1, 3], 0: [2, 4]}\n",
+      "hints": "填空奇偶分组字典。",
+      "test_cases": [
+        "assert captured_output == '{1: [1, 3], 0: [2, 4]}\\n'"
+      ],
+      "solution": "def group_by_parity(nums):\n    groups = {}\n    for n in nums:\n        groups.setdefault(n % 2, set()).add(n)\n    return {k: sorted(v) for k, v in groups.items()}\n\nprint(group_by_parity([1, 2, 3, 4]))"
+    },
+    {
+      "id": "CH15-X-028",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求任意差目标。",
+      "code_template": "def has_diff(nums, diff):\n    num_set = set(nums)\n    return any(n + diff in num_set for n in num_set)\n\nprint('Diff:',___, has_diff([1, 3, 5], 1))",
+      "expected_output": "Diff: True False\n",
+      "hints": "填空差目标。",
+      "test_cases": [
+        "assert captured_output == 'Diff: True False\\n'"
+      ],
+      "solution": "def has_diff(nums, diff):\n    num_set = set(nums)\n    return any(n + diff in num_set for n in num_set)\n\nprint('Diff:', has_diff([1, 3, 5], 2), has_diff([1, 3, 5], 1))"
+    },
+    {
+      "id": "CH15-X-029",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "集合求并集最小覆盖。",
+      "code_template": "def min_cover(sets):\n    union = set()\n    for s in sets:\n        union |= s\n    return len(union)\n\nprint('Cover:',___)",
+      "expected_output": "Cover: 4\n",
+      "hints": "填空最小覆盖。",
+      "test_cases": [
+        "assert captured_output == 'Cover: 4\\n'"
+      ],
+      "solution": "def min_cover(sets):\n    union = set()\n    for s in sets:\n        union |= s\n    return len(union)\n\nprint('Cover:', min_cover([{1, 2}, {2, 3}, {4}]))"
+    },
+    {
+      "id": "CH15-X-030",
+      "topic": "集合 (Sets)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "综合：集合数据分析。",
+      "code_template": "def analyze(nums):\n    s = set(nums)\n    return len(s), sum(s), max(s) - min(s)\n\nunique_count, unique_sum, span = analyze([1, 2, 2, 5])\nprint(___, unique_sum, span)",
+      "expected_output": "3 8 4\n",
+      "hints": "填空集合分析。",
+      "test_cases": [
+        "assert captured_output == '3 8 4\\n'"
+      ],
+      "solution": "def analyze(nums):\n    s = set(nums)\n    return len(s), sum(s), max(s) - min(s)\n\nunique_count, unique_sum, span = analyze([1, 2, 2, 5])\nprint(unique_count, unique_sum, span)"
+    }
+  ]
+}

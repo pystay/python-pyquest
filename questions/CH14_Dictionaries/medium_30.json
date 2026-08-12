@@ -1,0 +1,427 @@
+{
+  "chapter": "CH14",
+  "title": "字典 (Dictionaries)",
+  "difficulty": "简单",
+  "questions": [
+    {
+      "id": "CH14-M-001",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "统计列表元素频率。",
+      "code_template": "nums = [1, 2, 2, 3]\ncounts = {}\nfor n in nums:\n    counts[n] = counts.get(n, 0) + 1\nprint(___)",
+      "expected_output": "{1: 1, 2: 2, 3: 1}\n",
+      "hints": "填空频率统计。",
+      "test_cases": [
+        "assert captured_output == '{1: 1, 2: 2, 3: 1}\\n'"
+      ],
+      "solution": "nums = [1, 2, 2, 3]\ncounts = {}\nfor n in nums:\n    counts[n] = counts.get(n, 0) + 1\nprint(counts)"
+    },
+    {
+      "id": "CH14-M-002",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用字典记录学生分数。",
+      "code_template": "scores = {\"Alice\": 90, \"Bob\": 85}\nfor name, score in scores.items():\n    print(___)",
+      "expected_output": "Alice: 90\nBob: 85\n",
+      "hints": "填空遍历输出。",
+      "test_cases": [
+        "assert captured_output == 'Alice: 90\\nBob: 85\\n'"
+      ],
+      "solution": "scores = {\"Alice\": 90, \"Bob\": 85}\nfor name, score in scores.items():\n    print(f\"{name}: {score}\")"
+    },
+    {
+      "id": "CH14-M-003",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "合并两个字典。",
+      "code_template": "d1 = {\"a\": 1}\nd2 = {\"b\": 4}\nd1.update(d2)\nprint(___)",
+      "expected_output": "{'a': 1, 'b': 4}\n",
+      "hints": "填空 update 合并。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 1, 'b': 4}\\n\""
+      ],
+      "solution": "d1 = {\"a\": 1}\nd2 = {\"b\": 4}\nd1.update(d2)\nprint(d1)"
+    },
+    {
+      "id": "CH14-M-004",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字典按键排序输出。",
+      "code_template": "d = {\"b\": 1, \"a\": 2, \"c\": 3}\nfor k in sorted(d):\n    print(___, d[k])",
+      "expected_output": "a 2\nb 1\nc 3\n",
+      "hints": "填空排序遍历。",
+      "test_cases": [
+        "assert captured_output == 'a 2\\nb 1\\nc 3\\n'"
+      ],
+      "solution": "d = {\"b\": 1, \"a\": 2, \"c\": 3}\nfor k in sorted(d):\n    print(k, d[k])"
+    },
+    {
+      "id": "CH14-M-005",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字典按值排序。",
+      "code_template": "d = {\"a\": 3, \"b\": 1, \"c\": 2}\nsorted_d = sorted(d.items(), key=lambda x: x[1])\nprint(___)",
+      "expected_output": "[('b', 1), ('c', 2), ('a', 3)]\n",
+      "hints": "填空按值排序。",
+      "test_cases": [
+        "assert captured_output == \"[('b', 1), ('c', 2), ('a', 3)]\\n\""
+      ],
+      "solution": "d = {\"a\": 3, \"b\": 1, \"c\": 2}\nsorted_d = sorted(d.items(), key=lambda x: x[1])\nprint(sorted_d)"
+    },
+    {
+      "id": "CH14-M-006",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "get() 安全访问。",
+      "code_template": "d = {\"a\": 1}\nprint(___)",
+      "expected_output": "missing\n",
+      "hints": "填空安全访问。",
+      "test_cases": [
+        "assert captured_output == 'missing\\n'"
+      ],
+      "solution": "d = {\"a\": 1}\nprint(d.get(\"b\", \"missing\"))"
+    },
+    {
+      "id": "CH14-M-007",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "统计字符串字符频率。",
+      "code_template": "text = \"hello\"\ncounts = {}\nfor ch in text:\n    counts[ch] = counts.get(ch, 0) + 1\nprint(___)",
+      "expected_output": "{'h': 1, 'e': 1, 'l': 2, 'o': 1}\n",
+      "hints": "填空字符频率。",
+      "test_cases": [
+        "assert captured_output == \"{'h': 1, 'e': 1, 'l': 2, 'o': 1}\\n\""
+      ],
+      "solution": "text = \"hello\"\ncounts = {}\nfor ch in text:\n    counts[ch] = counts.get(ch, 0) + 1\nprint(counts)"
+    },
+    {
+      "id": "CH14-M-008",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字典推导式。",
+      "code_template": "squares = {n: n * n for n in range(1, 4)}\nprint(___)",
+      "expected_output": "{1: 1, 2: 4, 3: 9}\n",
+      "hints": "填空推导式。",
+      "test_cases": [
+        "assert captured_output == '{1: 1, 2: 4, 3: 9}\\n'"
+      ],
+      "solution": "squares = {n: n * n for n in range(1, 4)}\nprint(squares)"
+    },
+    {
+      "id": "CH14-M-009",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "统计单词个数。",
+      "code_template": "text = \"the cat the dog\"\nwords = text.split()\ncounts = {}\nfor w in words:\n    counts[w] = counts.get(w, 0) + 1\nprint(___)",
+      "expected_output": "{'the': 2, 'cat': 1, 'dog': 1}\n",
+      "hints": "填空单词频率。",
+      "test_cases": [
+        "assert captured_output == \"{'the': 2, 'cat': 1, 'dog': 1}\\n\""
+      ],
+      "solution": "text = \"the cat the dog\"\nwords = text.split()\ncounts = {}\nfor w in words:\n    counts[w] = counts.get(w, 0) + 1\nprint(counts)"
+    },
+    {
+      "id": "CH14-M-010",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字典值汇总。",
+      "code_template": "d = {\"a\": 10, \"b\": 20, \"c\": 30}\nprint(___)",
+      "expected_output": "Total: 60\n",
+      "hints": "填空值汇总。",
+      "test_cases": [
+        "assert captured_output == 'Total: 60\\n'"
+      ],
+      "solution": "d = {\"a\": 10, \"b\": 20, \"c\": 30}\nprint(f\"Total: {sum(d.values())}\")"
+    },
+    {
+      "id": "CH14-M-011",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "pop 与默认值。",
+      "code_template": "d = {\"a\": 1}\nprint(___)",
+      "expected_output": "11\n",
+      "hints": "填空 pop 默认。",
+      "test_cases": [
+        "assert captured_output == '11\\n'"
+      ],
+      "solution": "d = {\"a\": 1}\nprint(d.pop(\"b\", 11))"
+    },
+    {
+      "id": "CH14-M-012",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字典键值对数量与类型。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\nprint(___, type(d).__name__)",
+      "expected_output": "2 dict\n",
+      "hints": "填空统计。",
+      "test_cases": [
+        "assert captured_output == '2 dict\\n'"
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\nprint(len(d), type(d).__name__)"
+    },
+    {
+      "id": "CH14-M-013",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "更新并输出字典。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\nd[\"c\"] = 3\nd[\"a\"] = 10\nprint(___)",
+      "expected_output": "{'a': 10, 'b': 2, 'c': 3}\n",
+      "hints": "填空增改。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 10, 'b': 2, 'c': 3}\\n\""
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\nd[\"c\"] = 3\nd[\"a\"] = 10\nprint(d)"
+    },
+    {
+      "id": "CH14-M-014",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "嵌套字典遍历。",
+      "code_template": "users = {\"alice\": {\"age\": 20}, \"bob\": {\"age\": 25}}\nfor name, info in users.items():\n    print(___, info[\"age\"])",
+      "expected_output": "alice 20\nbob 25\n",
+      "hints": "填空嵌套遍历。",
+      "test_cases": [
+        "assert captured_output == 'alice 20\\nbob 25\\n'"
+      ],
+      "solution": "users = {\"alice\": {\"age\": 20}, \"bob\": {\"age\": 25}}\nfor name, info in users.items():\n    print(name, info[\"age\"])"
+    },
+    {
+      "id": "CH14-M-015",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字典成员判断。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\nif \"b\" in d:\n    print(\"found\")\nelse:\n    print(___)",
+      "expected_output": "found\n",
+      "hints": "填空成员判断。",
+      "test_cases": [
+        "assert captured_output == 'found\\n'"
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\nif \"b\" in d:\n    print(\"found\")\nelse:\n    print(\"missing\")"
+    },
+    {
+      "id": "CH14-M-016",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "值求和与平均。",
+      "code_template": "d = {\"a\": 80, \"b\": 90}\navg = sum(d.values()) / len(d)\nprint(___)",
+      "expected_output": "Average: 85.0\n",
+      "hints": "填空平均。",
+      "test_cases": [
+        "assert captured_output == 'Average: 85.0\\n'"
+      ],
+      "solution": "d = {\"a\": 80, \"b\": 90}\navg = sum(d.values()) / len(d)\nprint(f\"Average: {avg}\")"
+    },
+    {
+      "id": "CH14-M-017",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用字典做计数器。",
+      "code_template": "counts = {}\nfor item in [\"a\", \"b\", \"a\", \"a\", \"b\", \"b\", \"b\"]:\n    counts[item] = counts.get(item, 0) + 1\nprint(___)",
+      "expected_output": "{'a': 3, 'b': 4}\n",
+      "hints": "填空计数。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 3, 'b': 4}\\n\""
+      ],
+      "solution": "counts = {}\nfor item in [\"a\", \"b\", \"a\", \"a\", \"b\", \"b\", \"b\"]:\n    counts[item] = counts.get(item, 0) + 1\nprint(counts)"
+    },
+    {
+      "id": "CH14-M-018",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字典反转键值。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\nreversed_d = {v: k for k, v in d.items()}\nprint(___)",
+      "expected_output": "{1: 'a', 2: 'b'}\n",
+      "hints": "填空反转。",
+      "test_cases": [
+        "assert captured_output == \"{1: 'a', 2: 'b'}\\n\""
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\nreversed_d = {v: k for k, v in d.items()}\nprint(reversed_d)"
+    },
+    {
+      "id": "CH14-M-019",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "遍历输出键值对。",
+      "code_template": "d = {\"x\": 1, \"y\": 2, \"z\": 3}\nfor k, v in d.items():\n    print(___)",
+      "expected_output": "x = 1\ny = 2\nz = 3\n",
+      "hints": "填空格式化输出。",
+      "test_cases": [
+        "assert captured_output == 'x = 1\\ny = 2\\nz = 3\\n'"
+      ],
+      "solution": "d = {\"x\": 1, \"y\": 2, \"z\": 3}\nfor k, v in d.items():\n    print(f\"{k} = {v}\")"
+    },
+    {
+      "id": "CH14-M-020",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "setdefault 计数器。",
+      "code_template": "counts = {}\nfor ch in \"aba\":\n    counts.setdefault(ch, 0)\n    counts[ch] += 1\nprint(___)",
+      "expected_output": "{'a': 2, 'b': 1}\n",
+      "hints": "填空 setdefault。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 2, 'b': 1}\\n\""
+      ],
+      "solution": "counts = {}\nfor ch in \"aba\":\n    counts.setdefault(ch, 0)\n    counts[ch] += 1\nprint(counts)"
+    },
+    {
+      "id": "CH14-M-021",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字典求最大值的键。",
+      "code_template": "d = {\"a\": 3, \"b\": 7, \"c\": 5}\nprint(___)",
+      "expected_output": "b\n",
+      "hints": "填空最大键。",
+      "test_cases": [
+        "assert captured_output == 'b\\n'"
+      ],
+      "solution": "d = {\"a\": 3, \"b\": 7, \"c\": 5}\nprint(max(d, key=d.get))"
+    },
+    {
+      "id": "CH14-M-022",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "合并两个列表为字典。",
+      "code_template": "keys = [\"a\", \"b\"]\nvalues = [1, 8]\nd = dict(zip(keys, values))\nprint(___)",
+      "expected_output": "{'a': 1, 'b': 8}\n",
+      "hints": "填空 zip 转字典。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 1, 'b': 8}\\n\""
+      ],
+      "solution": "keys = [\"a\", \"b\"]\nvalues = [1, 8]\nd = dict(zip(keys, values))\nprint(d)"
+    },
+    {
+      "id": "CH14-M-023",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字典值求和筛选。",
+      "code_template": "d = {\"a\": 5, \"b\": 12, \"c\": 8}\ntotal = sum(v for v in d.values() if v > 6)\nprint(___)",
+      "expected_output": "Sum: 20\n",
+      "hints": "填空筛选求和。",
+      "test_cases": [
+        "assert captured_output == 'Sum: 20\\n'"
+      ],
+      "solution": "d = {\"a\": 5, \"b\": 12, \"c\": 8}\ntotal = sum(v for v in d.values() if v > 6)\nprint(f\"Sum: {total}\")"
+    },
+    {
+      "id": "CH14-M-024",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字典删除并确认。",
+      "code_template": "d = {\"a\": 1, \"b\": 2}\ndel d[\"a\"]\nprint(___, \"b\" in d)",
+      "expected_output": "False True\n",
+      "hints": "填空删除判断。",
+      "test_cases": [
+        "assert captured_output == 'False True\\n'"
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2}\ndel d[\"a\"]\nprint(\"a\" in d, \"b\" in d)"
+    },
+    {
+      "id": "CH14-M-025",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字典默认值工厂。",
+      "code_template": "def default_factory():\n    return \"N/A\"\n\nd = {}\nvalue = d.get(\"name\", default_factory())\nprint(___)",
+      "expected_output": "N/A\n",
+      "hints": "填空默认函数。",
+      "test_cases": [
+        "assert captured_output == 'N/A\\n'"
+      ],
+      "solution": "def default_factory():\n    return \"N/A\"\n\nd = {}\nvalue = d.get(\"name\", default_factory())\nprint(value)"
+    },
+    {
+      "id": "CH14-M-026",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "统计正负值。",
+      "code_template": "d = {\"pos\": 0, \"neg\": 0}\nfor n in [3, -1, 5, -2]:\n    if n > 0:\n        d[\"pos\"] += 1\n    else:\n        d[\"neg\"] += 1\nprint(___)",
+      "expected_output": "{'pos': 2, 'neg': 2}\n",
+      "hints": "填空分类计数。",
+      "test_cases": [
+        "assert captured_output == \"{'pos': 2, 'neg': 2}\\n\""
+      ],
+      "solution": "d = {\"pos\": 0, \"neg\": 0}\nfor n in [3, -1, 5, -2]:\n    if n > 0:\n        d[\"pos\"] += 1\n    else:\n        d[\"neg\"] += 1\nprint(d)"
+    },
+    {
+      "id": "CH14-M-027",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字典键排序取前。",
+      "code_template": "d = {\"a\": 1, \"b\": 2, \"c\": 3}\nfirst_keys = sorted(d)[:3]\nprint(___)",
+      "expected_output": "['a', 'b', 'c']\n",
+      "hints": "填空排序切片。",
+      "test_cases": [
+        "assert captured_output == \"['a', 'b', 'c']\\n\""
+      ],
+      "solution": "d = {\"a\": 1, \"b\": 2, \"c\": 3}\nfirst_keys = sorted(d)[:3]\nprint(first_keys)"
+    },
+    {
+      "id": "CH14-M-028",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "多字典值运算。",
+      "code_template": "d1 = {\"a\": 2}\nd2 = {\"a\": 12}\nprint(___)",
+      "expected_output": "14\n",
+      "hints": "填空跨字典运算。",
+      "test_cases": [
+        "assert captured_output == '14\\n'"
+      ],
+      "solution": "d1 = {\"a\": 2}\nd2 = {\"a\": 12}\nprint(d1[\"a\"] + d2[\"a\"])"
+    },
+    {
+      "id": "CH14-M-029",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字典更新与查询。",
+      "code_template": "d = {\"count\": 0}\nd[\"count\"] += 1\nd[\"count\"] += 1\nprint(___)",
+      "expected_output": "2\n",
+      "hints": "填空累加。",
+      "test_cases": [
+        "assert captured_output == '2\\n'"
+      ],
+      "solution": "d = {\"count\": 0}\nd[\"count\"] += 1\nd[\"count\"] += 1\nprint(d[\"count\"])"
+    },
+    {
+      "id": "CH14-M-030",
+      "topic": "字典 (Dictionaries)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "综合：字典构建与遍历。",
+      "code_template": "items = [(\"x\", 1), (\"y\", 2)]\nd = dict(items)\nfor k in d:\n    print(___, d[k])",
+      "expected_output": "x 1\ny 2\n",
+      "hints": "填空构建遍历。",
+      "test_cases": [
+        "assert captured_output == 'x 1\\ny 2\\n'"
+      ],
+      "solution": "items = [(\"x\", 1), (\"y\", 2)]\nd = dict(items)\nfor k in d:\n    print(k, d[k])"
+    }
+  ]
+}

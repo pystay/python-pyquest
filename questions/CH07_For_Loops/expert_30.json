@@ -1,0 +1,427 @@
+{
+  "chapter": "CH07",
+  "title": "循环 (for)",
+  "difficulty": "较难",
+  "questions": [
+    {
+      "id": "CH07-X-001",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 for 实现完整冒泡排序并输出每轮。",
+      "code_template": "nums = [5, 3, 8, 1]\nfor i in range(len(nums) - 1):\n    for j in range(len(nums) - 1 - i):\n        if nums[j] > nums[j + 1]:\n            nums[j], nums[j + 1] = nums[j + 1], nums[j]\n    print(___)",
+      "expected_output": "Pass 1: [3, 5, 1, 8]\nPass 2: [3, 1, 5, 8]\nPass 3: [1, 3, 5, 8]\n",
+      "hints": "填空冒泡排序。",
+      "test_cases": [
+        "assert captured_output == 'Pass 1: [3, 5, 1, 8]\\nPass 2: [3, 1, 5, 8]\\nPass 3: [1, 3, 5, 8]\\n'"
+      ],
+      "solution": "nums = [5, 3, 8, 1]\nfor i in range(len(nums) - 1):\n    for j in range(len(nums) - 1 - i):\n        if nums[j] > nums[j + 1]:\n            nums[j], nums[j + 1] = nums[j + 1], nums[j]\n    print(f\"Pass {i + 1}: {nums}\")"
+    },
+    {
+      "id": "CH07-X-002",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 for 生成杨辉三角前 5 行。",
+      "code_template": "rows = 5\ntriangle = []\nfor i in range(rows):\n    row = [1] * (i + 1)\n    for j in range(1, i):\n        row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]\n    triangle.append(row)\nfor row in triangle:\n    print(___)",
+      "expected_output": "[1]\n[1, 1]\n[1, 2, 1]\n[1, 3, 3, 1]\n[1, 4, 6, 4, 1]\n",
+      "hints": "填空杨辉三角。",
+      "test_cases": [
+        "assert captured_output == '[1]\\n[1, 1]\\n[1, 2, 1]\\n[1, 3, 3, 1]\\n[1, 4, 6, 4, 1]\\n'"
+      ],
+      "solution": "rows = 5\ntriangle = []\nfor i in range(rows):\n    row = [1] * (i + 1)\n    for j in range(1, i):\n        row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]\n    triangle.append(row)\nfor row in triangle:\n    print(row)"
+    },
+    {
+      "id": "CH07-X-003",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "求 100 以内所有质数之和。",
+      "code_template": "total = 0\nfor n in range(2, 101):\n    is_prime = True\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            is_prime = False\n            break\n    if is_prime:\n        total += n\nprint(___)",
+      "expected_output": "Prime sum: 1060\n",
+      "hints": "填空质数累加。",
+      "test_cases": [
+        "assert captured_output == 'Prime sum: 1060\\n'"
+      ],
+      "solution": "total = 0\nfor n in range(2, 101):\n    is_prime = True\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            is_prime = False\n            break\n    if is_prime:\n        total += n\nprint(f\"Prime sum: {total}\")"
+    },
+    {
+      "id": "CH07-X-004",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 for 实现选择排序。",
+      "code_template": "nums = [5, 3, 8, 1, 2]\nfor i in range(len(nums)):\n    min_idx = i\n    for j in range(i + 1, len(nums)):\n        if nums[j] < nums[min_idx]:\n            min_idx = j\n    nums[i], nums[min_idx] = nums[min_idx], nums[i]\nprint(___)",
+      "expected_output": "[1, 2, 3, 5, 8]\n",
+      "hints": "填空选择排序。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3, 5, 8]\\n'"
+      ],
+      "solution": "nums = [5, 3, 8, 1, 2]\nfor i in range(len(nums)):\n    min_idx = i\n    for j in range(i + 1, len(nums)):\n        if nums[j] < nums[min_idx]:\n            min_idx = j\n    nums[i], nums[min_idx] = nums[min_idx], nums[i]\nprint(nums)"
+    },
+    {
+      "id": "CH07-X-005",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "生成螺旋矩阵（for 版简化）。",
+      "code_template": "n = 3\nmatrix = [[0] * n for _ in range(n)]\nnum = 1\ntop, bottom, left, right = 0, n - 1, 0, n - 1\nwhile top <= bottom and left <= right:\n    for j in range(left, right + 1):\n        matrix[top][j] = num\n        num += 1\n    top += 1\n    for i in range(top, bottom + 1):\n        matrix[i][right] = num\n        num += 1\n    right -= 1\n    for j in range(right, left - 1, -1):\n        matrix[bottom][j] = num\n        num += 1\n    bottom -= 1\n    for i in range(bottom, top - 1, -1):\n        matrix[i][left] = num\n        num += 1\n    left += 1\nfor row in matrix:\n    print(___)",
+      "expected_output": "[1, 2, 3]\n[8, 9, 4]\n[7, 6, 5]\n",
+      "hints": "填空螺旋填充。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3]\\n[8, 9, 4]\\n[7, 6, 5]\\n'"
+      ],
+      "solution": "n = 3\nmatrix = [[0] * n for _ in range(n)]\nnum = 1\ntop, bottom, left, right = 0, n - 1, 0, n - 1\nwhile top <= bottom and left <= right:\n    for j in range(left, right + 1):\n        matrix[top][j] = num\n        num += 1\n    top += 1\n    for i in range(top, bottom + 1):\n        matrix[i][right] = num\n        num += 1\n    right -= 1\n    for j in range(right, left - 1, -1):\n        matrix[bottom][j] = num\n        num += 1\n    bottom -= 1\n    for i in range(bottom, top - 1, -1):\n        matrix[i][left] = num\n        num += 1\n    left += 1\nfor row in matrix:\n    print(row)"
+    },
+    {
+      "id": "CH07-X-006",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 for 求最大子段和（Kadane）。",
+      "code_template": "nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]\nmax_sum = nums[0]\ncur = 0\nfor n in nums:\n    cur = max(n, cur + n)\n    max_sum = max(max_sum, cur)\nprint(___)",
+      "expected_output": "6\n",
+      "hints": "填空 Kadane。",
+      "test_cases": [
+        "assert captured_output == '6\\n'"
+      ],
+      "solution": "nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]\nmax_sum = nums[0]\ncur = 0\nfor n in nums:\n    cur = max(n, cur + n)\n    max_sum = max(max_sum, cur)\nprint(max_sum)"
+    },
+    {
+      "id": "CH07-X-007",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "求 1000 以内的完数。",
+      "code_template": "for n in range(2, 1001):\n    total = 0\n    for d in range(1, n):\n        if n % d == 0:\n            total += d\n    if total == n:\n        print(___)",
+      "expected_output": "6\n28\n496\n",
+      "hints": "填空完数判断。",
+      "test_cases": [
+        "assert captured_output == '6\\n28\\n496\\n'"
+      ],
+      "solution": "for n in range(2, 1001):\n    total = 0\n    for d in range(1, n):\n        if n % d == 0:\n            total += d\n    if total == n:\n        print(n)"
+    },
+    {
+      "id": "CH07-X-008",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "统计单词频率并输出前 3。",
+      "code_template": "text = \"the cat and the dog and the bird and fish\"\nwords = text.split()\ncounts = {}\nfor w in words:\n    counts[w] = counts.get(w, 0) + 1\nfor w, c in sorted(counts.items(), key=lambda x: x[1], reverse=True)[:3]:\n    print(___)",
+      "expected_output": "the: 3\nand: 3\ncat: 1\n",
+      "hints": "填空词频排序。",
+      "test_cases": [
+        "assert captured_output == 'the: 3\\nand: 3\\ncat: 1\\n'"
+      ],
+      "solution": "text = \"the cat and the dog and the bird and fish\"\nwords = text.split()\ncounts = {}\nfor w in words:\n    counts[w] = counts.get(w, 0) + 1\nfor w, c in sorted(counts.items(), key=lambda x: x[1], reverse=True)[:3]:\n    print(f\"{w}: {c}\")"
+    },
+    {
+      "id": "CH07-X-009",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 for 求两数之和索引（暴力）。",
+      "code_template": "nums = [2, 7, 11, 15]\ntarget = 9\nfor i in range(len(nums)):\n    for j in range(i + 1, len(nums)):\n        if nums[i] + nums[j] == target:\n            print(___)",
+      "expected_output": "0 + 1 = 9\n",
+      "hints": "填空双重循环。",
+      "test_cases": [
+        "assert captured_output == '0 + 1 = 9\\n'"
+      ],
+      "solution": "nums = [2, 7, 11, 15]\ntarget = 9\nfor i in range(len(nums)):\n    for j in range(i + 1, len(nums)):\n        if nums[i] + nums[j] == target:\n            print(f\"{i} + {j} = {target}\")"
+    },
+    {
+      "id": "CH07-X-010",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "生成 8x8 国际象棋棋盘。",
+      "code_template": "for i in range(8):\n    row = \"\"\n    for j in range(8):\n        row += \"X\" if (i + j) % 2 == 0 else \"O\"\n    print(___)",
+      "expected_output": "XOXOXOXO\nOXOXOXOX\nXOXOXOXO\nOXOXOXOX\nXOXOXOXO\nOXOXOXOX\nXOXOXOXO\nOXOXOXOX\n",
+      "hints": "填空棋盘生成。",
+      "test_cases": [
+        "assert captured_output == 'XOXOXOXO\\nOXOXOXOX\\nXOXOXOXO\\nOXOXOXOX\\nXOXOXOXO\\nOXOXOXOX\\nXOXOXOXO\\nOXOXOXOX\\n'"
+      ],
+      "solution": "for i in range(8):\n    row = \"\"\n    for j in range(8):\n        row += \"X\" if (i + j) % 2 == 0 else \"O\"\n    print(row)"
+    },
+    {
+      "id": "CH07-X-011",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "求 1 到 500 的水仙花数。",
+      "code_template": "for n in range(100, 500):\n    a = n // 100\n    b = (n // 10) % 10\n    c = n % 10\n    if a ** 3 + b ** 3 + c ** 3 == n:\n        print(___)",
+      "expected_output": "153\n370\n371\n407\n",
+      "hints": "填空水仙花。",
+      "test_cases": [
+        "assert captured_output == '153\\n370\\n371\\n407\\n'"
+      ],
+      "solution": "for n in range(100, 500):\n    a = n // 100\n    b = (n // 10) % 10\n    c = n % 10\n    if a ** 3 + b ** 3 + c ** 3 == n:\n        print(n)"
+    },
+    {
+      "id": "CH07-X-012",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 for 实现插入排序。",
+      "code_template": "nums = [5, 3, 8, 1]\nfor i in range(1, len(nums)):\n    key = nums[i]\n    j = i - 1\n    while j >= 0 and nums[j] > key:\n        nums[j + 1] = nums[j]\n        j -= 1\n    nums[j + 1] = key\nprint(___)",
+      "expected_output": "[1, 3, 5, 8]\n",
+      "hints": "填空插入排序。",
+      "test_cases": [
+        "assert captured_output == '[1, 3, 5, 8]\\n'"
+      ],
+      "solution": "nums = [5, 3, 8, 1]\nfor i in range(1, len(nums)):\n    key = nums[i]\n    j = i - 1\n    while j >= 0 and nums[j] > key:\n        nums[j + 1] = nums[j]\n        j -= 1\n    nums[j + 1] = key\nprint(nums)"
+    },
+    {
+      "id": "CH07-X-013",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "输出九九乘法表（for 嵌套）。",
+      "code_template": "for i in range(1, 10):\n    line = []\n    for j in range(1, i + 1):\n        line.append(f\"{j}x{i}={i * j}\")\n    print(___)",
+      "expected_output": "1x1=1\n1x2=2 2x2=4\n1x3=3 2x3=6 3x3=9\n1x4=4 2x4=8 3x4=12 4x4=16\n1x5=5 2x5=10 3x5=15 4x5=20 5x5=25\n1x6=6 2x6=12 3x6=18 4x6=24 5x6=30 6x6=36\n1x7=7 2x7=14 3x7=21 4x7=28 5x7=35 6x7=42 7x7=49\n1x8=8 2x8=16 3x8=24 4x8=32 5x8=40 6x8=48 7x8=56 8x8=64\n1x9=9 2x9=18 3x9=27 4x9=36 5x9=45 6x9=54 7x9=63 8x9=72 9x9=81\n",
+      "hints": "填空乘法表。",
+      "test_cases": [
+        "assert captured_output == '1x1=1\\n1x2=2 2x2=4\\n1x3=3 2x3=6 3x3=9\\n1x4=4 2x4=8 3x4=12 4x4=16\\n1x5=5 2x5=10 3x5=15 4x5=20 5x5=25\\n1x6=6 2x6=12 3x6=18 4x6=24 5x6=30 6x6=36\\n1x7=7 2x7=14 3x7=21 4x7=28 5x7=35 6x7=42 7x7=49\\n1x8=8 2x8=16 3x8=24 4x8=32 5x8=40 6x8=48 7x8=56 8x8=64\\n1x9=9 2x9=18 3x9=27 4x9=36 5x9=45 6x9=54 7x9=63 8x9=72 9x9=81\\n'"
+      ],
+      "solution": "for i in range(1, 10):\n    line = []\n    for j in range(1, i + 1):\n        line.append(f\"{j}x{i}={i * j}\")\n    print(\" \".join(line))"
+    },
+    {
+      "id": "CH07-X-014",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断回文数并输出验证过程。",
+      "code_template": "for n in [12321, 12345, 11]:\n    s = str(n)\n    if s == s[::-1]:\n        print(f\"{n} is palindrome\")\n    else:\n        print(___)",
+      "expected_output": "12321 is palindrome\n12345 is not palindrome\n11 is palindrome\n",
+      "hints": "填空回文判断。",
+      "test_cases": [
+        "assert captured_output == '12321 is palindrome\\n12345 is not palindrome\\n11 is palindrome\\n'"
+      ],
+      "solution": "for n in [12321, 12345, 11]:\n    s = str(n)\n    if s == s[::-1]:\n        print(f\"{n} is palindrome\")\n    else:\n        print(f\"{n} is not palindrome\")"
+    },
+    {
+      "id": "CH07-X-015",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 for 求矩阵主对角线和。",
+      "code_template": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\ntotal = 0\nfor i in range(3):\n    total += matrix[i][i]\nprint(___)",
+      "expected_output": "Diagonal sum: 15\n",
+      "hints": "填空对角线。",
+      "test_cases": [
+        "assert captured_output == 'Diagonal sum: 15\\n'"
+      ],
+      "solution": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\ntotal = 0\nfor i in range(3):\n    total += matrix[i][i]\nprint(f\"Diagonal sum: {total}\")"
+    },
+    {
+      "id": "CH07-X-016",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "统计并输出字符类型分布。",
+      "code_template": "text = \"Hello, Python 3.12!\"\nletters = digits = other = 0\nfor ch in text:\n    if ch.isalpha():\n        letters += 1\n    elif ch.isdigit():\n        digits += 1\n    else:\n        other += 1\nprint(___)",
+      "expected_output": "Letters: 11, Digits: 3, Other: 5\n",
+      "hints": "填空字符分类。",
+      "test_cases": [
+        "assert captured_output == 'Letters: 11, Digits: 3, Other: 5\\n'"
+      ],
+      "solution": "text = \"Hello, Python 3.12!\"\nletters = digits = other = 0\nfor ch in text:\n    if ch.isalpha():\n        letters += 1\n    elif ch.isdigit():\n        digits += 1\n    else:\n        other += 1\nprint(f\"Letters: {letters}, Digits: {digits}, Other: {other}\")"
+    },
+    {
+      "id": "CH07-X-017",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "求列表第二大的数。",
+      "code_template": "nums = [4, 9, 7, 9, 2]\nunique = sorted(set(nums))\nprint(___)",
+      "expected_output": "Second largest: 7\n",
+      "hints": "填空去重取第二大。",
+      "test_cases": [
+        "assert captured_output == 'Second largest: 7\\n'"
+      ],
+      "solution": "nums = [4, 9, 7, 9, 2]\nunique = sorted(set(nums))\nprint(f\"Second largest: {unique[-2]}\")"
+    },
+    {
+      "id": "CH07-X-018",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 for 输出斐波那契对。",
+      "code_template": "a, b = 0, 1\nfor i in range(8):\n    print(___)\n    a, b = b, a + b",
+      "expected_output": "fib(0) = 0\nfib(1) = 1\nfib(2) = 1\nfib(3) = 2\nfib(4) = 3\nfib(5) = 5\nfib(6) = 8\nfib(7) = 13\n",
+      "hints": "填空递推。",
+      "test_cases": [
+        "assert captured_output == 'fib(0) = 0\\nfib(1) = 1\\nfib(2) = 1\\nfib(3) = 2\\nfib(4) = 3\\nfib(5) = 5\\nfib(6) = 8\\nfib(7) = 13\\n'"
+      ],
+      "solution": "a, b = 0, 1\nfor i in range(8):\n    print(f\"fib({i}) = {a}\")\n    a, b = b, a + b"
+    },
+    {
+      "id": "CH07-X-019",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "统计矩阵中偶数的个数。",
+      "code_template": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\ncount = 0\nfor row in matrix:\n    for n in row:\n        if n % 2 == 0:\n            count += 1\nprint(___)",
+      "expected_output": "Evens: 4\n",
+      "hints": "填空矩阵计数。",
+      "test_cases": [
+        "assert captured_output == 'Evens: 4\\n'"
+      ],
+      "solution": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\ncount = 0\nfor row in matrix:\n    for n in row:\n        if n % 2 == 0:\n            count += 1\nprint(f\"Evens: {count}\")"
+    },
+    {
+      "id": "CH07-X-020",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "求 1 到 100 的阶乘和（大数）。",
+      "code_template": "def fact(n):\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\ntotal = 0\nfor i in range(1, 11):\n    total += fact(i)\nprint(___)",
+      "expected_output": "Sum: 4037913\n",
+      "hints": "填空阶乘和。",
+      "test_cases": [
+        "assert captured_output == 'Sum: 4037913\\n'"
+      ],
+      "solution": "def fact(n):\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\ntotal = 0\nfor i in range(1, 11):\n    total += fact(i)\nprint(f\"Sum: {total}\")"
+    },
+    {
+      "id": "CH07-X-021",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "模拟约瑟夫环（for 辅助）。",
+      "code_template": "people = list(range(1, 7))\nk = 3\nidx = 0\norder = []\nwhile people:\n    idx = (idx + k - 1) % len(people)\n    order.append(people.pop(idx))\nprint(___)",
+      "expected_output": "[3, 6, 4, 2, 5, 1]\n",
+      "hints": "填空约瑟夫。",
+      "test_cases": [
+        "assert captured_output == '[3, 6, 4, 2, 5, 1]\\n'"
+      ],
+      "solution": "people = list(range(1, 7))\nk = 3\nidx = 0\norder = []\nwhile people:\n    idx = (idx + k - 1) % len(people)\n    order.append(people.pop(idx))\nprint(order)"
+    },
+    {
+      "id": "CH07-X-022",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 for 找连续最大乘积（简化）。",
+      "code_template": "nums = [2, 3, -2, 4]\nmax_prod = nums[0]\nfor i in range(len(nums)):\n    prod = 1\n    for j in range(i, len(nums)):\n        prod *= nums[j]\n        max_prod = max(max_prod, prod)\nprint(___)",
+      "expected_output": "Max product: 6\n",
+      "hints": "填空乘积扫描。",
+      "test_cases": [
+        "assert captured_output == 'Max product: 6\\n'"
+      ],
+      "solution": "nums = [2, 3, -2, 4]\nmax_prod = nums[0]\nfor i in range(len(nums)):\n    prod = 1\n    for j in range(i, len(nums)):\n        prod *= nums[j]\n        max_prod = max(max_prod, prod)\nprint(f\"Max product: {max_prod}\")"
+    },
+    {
+      "id": "CH07-X-023",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "生成数字金字塔（居中）。",
+      "code_template": "n = 5\nfor i in range(1, n + 1):\n    line = \" \".join(str(j) for j in range(1, i + 1))\n    print(___)",
+      "expected_output": "    1     \n   1 2    \n  1 2 3   \n 1 2 3 4  \n1 2 3 4 5 \n",
+      "hints": "填空居中金字塔。",
+      "test_cases": [
+        "assert captured_output == '    1     \\n   1 2    \\n  1 2 3   \\n 1 2 3 4  \\n1 2 3 4 5 \\n'"
+      ],
+      "solution": "n = 5\nfor i in range(1, n + 1):\n    line = \" \".join(str(j) for j in range(1, i + 1))\n    print(f\"{line:^{n * 2}}\")"
+    },
+    {
+      "id": "CH07-X-024",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "统计每个字符出现次数（含空格）。",
+      "code_template": "text = \"ab a bb\"\ncounts = {}\nfor ch in text:\n    counts[ch] = counts.get(ch, 0) + 1\nfor ch in sorted(counts):\n    print(___)",
+      "expected_output": "' ': 2\n'a': 2\n'b': 3\n",
+      "hints": "填空字符统计。",
+      "test_cases": [
+        "assert captured_output == \"' ': 2\\n'a': 2\\n'b': 3\\n\""
+      ],
+      "solution": "text = \"ab a bb\"\ncounts = {}\nfor ch in text:\n    counts[ch] = counts.get(ch, 0) + 1\nfor ch in sorted(counts):\n    print(f\"{repr(ch)}: {counts[ch]}\")"
+    },
+    {
+      "id": "CH07-X-025",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "判断序列是否单调。",
+      "code_template": "nums = [1, 3, 5, 6]\nincreasing = True\ndecreasing = True\nfor i in range(1, len(nums)):\n    if nums[i] < nums[i - 1]:\n        increasing = False\n    if nums[i] > nums[i - 1]:\n        decreasing = False\nif increasing:\n    print(\"increasing\")\nelif decreasing:\n    print(\"decreasing\")\nelse:\n    print(___)",
+      "expected_output": "increasing\n",
+      "hints": "填空单调判断。",
+      "test_cases": [
+        "assert captured_output == 'increasing\\n'"
+      ],
+      "solution": "nums = [1, 3, 5, 6]\nincreasing = True\ndecreasing = True\nfor i in range(1, len(nums)):\n    if nums[i] < nums[i - 1]:\n        increasing = False\n    if nums[i] > nums[i - 1]:\n        decreasing = False\nif increasing:\n    print(\"increasing\")\nelif decreasing:\n    print(\"decreasing\")\nelse:\n    print(\"neither\")"
+    },
+    {
+      "id": "CH07-X-026",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "求 1 到 n 各数的约数个数表。",
+      "code_template": "for n in range(1, 8):\n    count = 0\n    for d in range(1, n + 1):\n        if n % d == 0:\n            count += 1\n    print(___)",
+      "expected_output": "1: 1 divisors\n2: 2 divisors\n3: 2 divisors\n4: 3 divisors\n5: 2 divisors\n6: 4 divisors\n7: 2 divisors\n",
+      "hints": "填空约数计数。",
+      "test_cases": [
+        "assert captured_output == '1: 1 divisors\\n2: 2 divisors\\n3: 2 divisors\\n4: 3 divisors\\n5: 2 divisors\\n6: 4 divisors\\n7: 2 divisors\\n'"
+      ],
+      "solution": "for n in range(1, 8):\n    count = 0\n    for d in range(1, n + 1):\n        if n % d == 0:\n            count += 1\n    print(f\"{n}: {count} divisors\")"
+    },
+    {
+      "id": "CH07-X-027",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "把列表循环左移 k 位。",
+      "code_template": "nums = [1, 2, 3, 4, 5]\nk = 2\nshifted = nums[k:] + nums[:k]\nprint(___)",
+      "expected_output": "[3, 4, 5, 1, 2]\n",
+      "hints": "填空循环移位。",
+      "test_cases": [
+        "assert captured_output == '[3, 4, 5, 1, 2]\\n'"
+      ],
+      "solution": "nums = [1, 2, 3, 4, 5]\nk = 2\nshifted = nums[k:] + nums[:k]\nprint(shifted)"
+    },
+    {
+      "id": "CH07-X-028",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "输出 100 以内的孪生素数对。",
+      "code_template": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\nfor n in range(2, 98):\n    if is_prime(n) and is_prime(n + 2):\n        print(___, n + 2)",
+      "expected_output": "3 5\n5 7\n11 13\n17 19\n29 31\n41 43\n59 61\n71 73\n",
+      "hints": "填空孪生素数。",
+      "test_cases": [
+        "assert captured_output == '3 5\\n5 7\\n11 13\\n17 19\\n29 31\\n41 43\\n59 61\\n71 73\\n'"
+      ],
+      "solution": "def is_prime(n):\n    if n < 2:\n        return False\n    for d in range(2, int(n ** 0.5) + 1):\n        if n % d == 0:\n            return False\n    return True\nfor n in range(2, 98):\n    if is_prime(n) and is_prime(n + 2):\n        print(n, n + 2)"
+    },
+    {
+      "id": "CH07-X-029",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "用 for 生成乘法表并求和。",
+      "code_template": "total = 0\nfor i in range(1, 6):\n    for j in range(1, 6):\n        total += i * j\nprint(___)",
+      "expected_output": "Sum of 5x5 table: 225\n",
+      "hints": "填空表内求和。",
+      "test_cases": [
+        "assert captured_output == 'Sum of 5x5 table: 225\\n'"
+      ],
+      "solution": "total = 0\nfor i in range(1, 6):\n    for j in range(1, 6):\n        total += i * j\nprint(f\"Sum of 5x5 table: {total}\")"
+    },
+    {
+      "id": "CH07-X-030",
+      "topic": "循环 (for)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "综合：for 输出学生成绩报告。",
+      "code_template": "students = [(\"Alice\", 92), (\"Bob\", 78), (\"Cara\", 88)]\nprint(f\"{'Name':<8}{'Score':>6}{'Grade':>8}\")\nfor name, score in students:\n    if score >= 90:\n        grade = \"A\"\n    elif score >= 80:\n        grade = \"B\"\n    else:\n        grade = \"C\"\n    print(___)",
+      "expected_output": "Name     Score   Grade\nAlice       92       A\nBob         78       C\nCara        88       B\n",
+      "hints": "填空成绩报告。",
+      "test_cases": [
+        "assert captured_output == 'Name     Score   Grade\\nAlice       92       A\\nBob         78       C\\nCara        88       B\\n'"
+      ],
+      "solution": "students = [(\"Alice\", 92), (\"Bob\", 78), (\"Cara\", 88)]\nprint(f\"{'Name':<8}{'Score':>6}{'Grade':>8}\")\nfor name, score in students:\n    if score >= 90:\n        grade = \"A\"\n    elif score >= 80:\n        grade = \"B\"\n    else:\n        grade = \"C\"\n    print(f\"{name:<8}{score:>6}{grade:>8}\")"
+    }
+  ]
+}

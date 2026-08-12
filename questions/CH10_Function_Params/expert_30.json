@@ -1,0 +1,427 @@
+{
+  "chapter": "CH10",
+  "title": "函数 (参数)",
+  "difficulty": "较难",
+  "questions": [
+    {
+      "id": "CH10-X-001",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数实现参数校验并处理。",
+      "code_template": "def divide(a, b):\n    if b == 0:\n        print(\"Error: division by zero\")\n    else:\n        print(___)\n\ndivide(10, 2)\ndivide(5, 0)",
+      "expected_output": "5.0\nError: division by zero\n",
+      "hints": "填空除零处理。",
+      "test_cases": [
+        "assert captured_output == '5.0\\nError: division by zero\\n'"
+      ],
+      "solution": "def divide(a, b):\n    if b == 0:\n        print(\"Error: division by zero\")\n    else:\n        print(a / b)\n\ndivide(10, 2)\ndivide(5, 0)"
+    },
+    {
+      "id": "CH10-X-002",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数用 *args 求最小公倍数。",
+      "code_template": "def lcm_all(*nums):\n    m = max(nums)\n    while not all(m % n == 0 for n in nums):\n        m += 1\n    return m\n\nprint('LCM:',___)",
+      "expected_output": "LCM: 12\n",
+      "hints": "填空 lcm。",
+      "test_cases": [
+        "assert captured_output == 'LCM: 12\\n'"
+      ],
+      "solution": "def lcm_all(*nums):\n    m = max(nums)\n    while not all(m % n == 0 for n in nums):\n        m += 1\n    return m\n\nprint('LCM:', lcm_all(2, 3, 4))"
+    },
+    {
+      "id": "CH10-X-003",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数参数实现最大公约数（多参数）。",
+      "code_template": "def gcd_all(*nums):\n    def gcd(a, b):\n        while b:\n            a, b = b, a % b\n        return a\n    result = nums[0]\n    for n in nums[1:]:\n        result = gcd(result, n)\n    return result\n\nprint('GCD:',___)",
+      "expected_output": "GCD: 6\n",
+      "hints": "填空 gcd 链。",
+      "test_cases": [
+        "assert captured_output == 'GCD: 6\\n'"
+      ],
+      "solution": "def gcd_all(*nums):\n    def gcd(a, b):\n        while b:\n            a, b = b, a % b\n        return a\n    result = nums[0]\n    for n in nums[1:]:\n        result = gcd(result, n)\n    return result\n\nprint('GCD:', gcd_all(12, 18, 24))"
+    },
+    {
+      "id": "CH10-X-004",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "kwargs 构建配置并输出。",
+      "code_template": "def build_config(**options):\n    defaults = {\"theme\": \"light\", \"lang\": \"en\"}\n    defaults.update(options)\n    for k in sorted(defaults):\n        print(___)\n\nbuild_config(theme=\"dark\")",
+      "expected_output": "lang = en\ntheme = dark\n",
+      "hints": "填空配置合并。",
+      "test_cases": [
+        "assert captured_output == 'lang = en\\ntheme = dark\\n'"
+      ],
+      "solution": "def build_config(**options):\n    defaults = {\"theme\": \"light\", \"lang\": \"en\"}\n    defaults.update(options)\n    for k in sorted(defaults):\n        print(f\"{k} = {defaults[k]}\")\n\nbuild_config(theme=\"dark\")"
+    },
+    {
+      "id": "CH10-X-005",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数参数实现简化版 argparse。",
+      "code_template": "def parse(*args, **kwargs):\n    for a in args:\n        print(f\"arg: {a}\")\n    for k, v in kwargs.items():\n        print(___)\n\nparse(\"input.txt\", verbose=True, out=\"out.txt\")",
+      "expected_output": "arg: input.txt\nopt: verbose=True\nopt: out=out.txt\n",
+      "hints": "填空参数解析。",
+      "test_cases": [
+        "assert captured_output == 'arg: input.txt\\nopt: verbose=True\\nopt: out=out.txt\\n'"
+      ],
+      "solution": "def parse(*args, **kwargs):\n    for a in args:\n        print(f\"arg: {a}\")\n    for k, v in kwargs.items():\n        print(f\"opt: {k}={v}\")\n\nparse(\"input.txt\", verbose=True, out=\"out.txt\")"
+    },
+    {
+      "id": "CH10-X-006",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数默认值可变对象陷阱（正确写法）。",
+      "code_template": "def add_to(items=None):\n    if items is None:\n        items = []\n    items.append(\"x\")\n    return items\n\nprint(add_to())\nprint(___)",
+      "expected_output": "['x']\n['x']\n",
+      "hints": "填空 None 陷阱。",
+      "test_cases": [
+        "assert captured_output == \"['x']\\n['x']\\n\""
+      ],
+      "solution": "def add_to(items=None):\n    if items is None:\n        items = []\n    items.append(\"x\")\n    return items\n\nprint(add_to())\nprint(add_to())"
+    },
+    {
+      "id": "CH10-X-007",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数参数做矩阵转置。",
+      "code_template": "def transpose(matrix):\n    rows = len(matrix)\n    cols = len(matrix[0])\n    result = [[matrix[j][i] for j in range(rows)] for i in range(cols)]\n    return result\n\nfor row in transpose([[1, 2], [3, 4], [5, 6]]):\n    print(___)",
+      "expected_output": "[1, 3, 5]\n[2, 4, 6]\n",
+      "hints": "填空转置参数。",
+      "test_cases": [
+        "assert captured_output == '[1, 3, 5]\\n[2, 4, 6]\\n'"
+      ],
+      "solution": "def transpose(matrix):\n    rows = len(matrix)\n    cols = len(matrix[0])\n    result = [[matrix[j][i] for j in range(rows)] for i in range(cols)]\n    return result\n\nfor row in transpose([[1, 2], [3, 4], [5, 6]]):\n    print(row)"
+    },
+    {
+      "id": "CH10-X-008",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "可变参数计算加权平均。",
+      "code_template": "def weighted_avg(weights, *scores):\n    total = sum(w * s for w, s in zip(weights, scores))\n    return total / sum(weights)\n\nprint(___)",
+      "expected_output": "86.66666666666667\n",
+      "hints": "填空加权平均。",
+      "test_cases": [
+        "assert captured_output == '86.66666666666667\\n'"
+      ],
+      "solution": "def weighted_avg(weights, *scores):\n    total = sum(w * s for w, s in zip(weights, scores))\n    return total / sum(weights)\n\nprint(weighted_avg([1, 2], 80, 90))"
+    },
+    {
+      "id": "CH10-X-009",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "kwargs 实现事件分发。",
+      "code_template": "def dispatch(event, **data):\n    print(f\"Event: {event}\")\n    for k, v in data.items():\n        print(___)\n\ndispatch(\"login\", user=\"alice\", ip=\"10.0.0.1\")",
+      "expected_output": "Event: login\n  user: alice\n  ip: 10.0.0.1\n",
+      "hints": "填空事件分发。",
+      "test_cases": [
+        "assert captured_output == 'Event: login\\n  user: alice\\n  ip: 10.0.0.1\\n'"
+      ],
+      "solution": "def dispatch(event, **data):\n    print(f\"Event: {event}\")\n    for k, v in data.items():\n        print(f\"  {k}: {v}\")\n\ndispatch(\"login\", user=\"alice\", ip=\"10.0.0.1\")"
+    },
+    {
+      "id": "CH10-X-010",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数参数做二分查找。",
+      "code_template": "def binary_search(nums, target, low=0, high=None):\n    if high is None:\n        high = len(nums) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if nums[mid] == target:\n            return mid\n        elif nums[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\nprint('Found at:',___)",
+      "expected_output": "Found at: 3\n",
+      "hints": "填空二分参数。",
+      "test_cases": [
+        "assert captured_output == 'Found at: 3\\n'"
+      ],
+      "solution": "def binary_search(nums, target, low=0, high=None):\n    if high is None:\n        high = len(nums) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if nums[mid] == target:\n            return mid\n        elif nums[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\nprint('Found at:', binary_search([1, 3, 5, 7, 9], 7))"
+    },
+    {
+      "id": "CH10-X-011",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数参数做快速幂。",
+      "code_template": "def fast_pow(base, exp, mod=None):\n    result = 1\n    while exp > 0:\n        if exp % 2 == 1:\n            result *= base\n            if mod:\n                result %= mod\n        base *= base\n        if mod:\n            base %= mod\n        exp //= 2\n    return result\n\nprint(___, fast_pow(2, 10, 1000))",
+      "expected_output": "1024 24\n",
+      "hints": "填空快速幂参数。",
+      "test_cases": [
+        "assert captured_output == '1024 24\\n'"
+      ],
+      "solution": "def fast_pow(base, exp, mod=None):\n    result = 1\n    while exp > 0:\n        if exp % 2 == 1:\n            result *= base\n            if mod:\n                result %= mod\n        base *= base\n        if mod:\n            base %= mod\n        exp //= 2\n    return result\n\nprint(fast_pow(2, 10), fast_pow(2, 10, 1000))"
+    },
+    {
+      "id": "CH10-X-012",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数传递并统计词频。",
+      "code_template": "def word_freq(*texts):\n    counts = {}\n    for t in texts:\n        for w in t.split():\n            counts[w] = counts.get(w, 0) + 1\n    return counts\n\nprint(___)",
+      "expected_output": "{'a': 2, 'b': 2, 'c': 1}\n",
+      "hints": "填空词频参数。",
+      "test_cases": [
+        "assert captured_output == \"{'a': 2, 'b': 2, 'c': 1}\\n\""
+      ],
+      "solution": "def word_freq(*texts):\n    counts = {}\n    for t in texts:\n        for w in t.split():\n            counts[w] = counts.get(w, 0) + 1\n    return counts\n\nprint(word_freq(\"a b\", \"b c\", \"a\"))"
+    },
+    {
+      "id": "CH10-X-013",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数做组合数学（C(n,k)）。",
+      "code_template": "def comb(n, k):\n    if k > n:\n        return 0\n    result = 1\n    for i in range(k):\n        result = result * (n - i) // (i + 1)\n    return result\n\nprint(___, comb(10, 3))",
+      "expected_output": "10 120\n",
+      "hints": "填空组合数。",
+      "test_cases": [
+        "assert captured_output == '10 120\\n'"
+      ],
+      "solution": "def comb(n, k):\n    if k > n:\n        return 0\n    result = 1\n    for i in range(k):\n        result = result * (n - i) // (i + 1)\n    return result\n\nprint(comb(5, 2), comb(10, 3))"
+    },
+    {
+      "id": "CH10-X-014",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数驱动多策略排序。",
+      "code_template": "def custom_sort(items, key=None, reverse=False):\n    if key:\n        items.sort(key=key, reverse=reverse)\n    else:\n        items.sort(reverse=reverse)\n    return items\n\nprint(custom_sort([\"bbb\", \"a\", \"cc\"], key=len))\nprint(___)",
+      "expected_output": "['a', 'cc', 'bbb']\n[3, 2, 1]\n",
+      "hints": "填空排序策略。",
+      "test_cases": [
+        "assert captured_output == \"['a', 'cc', 'bbb']\\n[3, 2, 1]\\n\""
+      ],
+      "solution": "def custom_sort(items, key=None, reverse=False):\n    if key:\n        items.sort(key=key, reverse=reverse)\n    else:\n        items.sort(reverse=reverse)\n    return items\n\nprint(custom_sort([\"bbb\", \"a\", \"cc\"], key=len))\nprint(custom_sort([3, 1, 2], reverse=True))"
+    },
+    {
+      "id": "CH10-X-015",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "函数参数实现日历计算。",
+      "code_template": "def days_in_month(month, leap=False):\n    if month in (1, 3, 5, 7, 8, 10, 12):\n        return 31\n    elif month in (4, 6, 9, 11):\n        return 30\n    elif leap:\n        return 29\n    return 28\n\nprint(___, days_in_month(2))",
+      "expected_output": "29 28\n",
+      "hints": "填空日期参数。",
+      "test_cases": [
+        "assert captured_output == '29 28\\n'"
+      ],
+      "solution": "def days_in_month(month, leap=False):\n    if month in (1, 3, 5, 7, 8, 10, 12):\n        return 31\n    elif month in (4, 6, 9, 11):\n        return 30\n    elif leap:\n        return 29\n    return 28\n\nprint(days_in_month(2, leap=True), days_in_month(2))"
+    },
+    {
+      "id": "CH10-X-016",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "kwargs 批量设置对象属性。",
+      "code_template": "class Config:\n    pass\n\ncfg = Config()\nfor k, v in {\"host\": \"localhost\", \"port\": 8080}.items():\n    setattr(cfg, k, v)\nprint(___, cfg.port)",
+      "expected_output": "localhost 8080\n",
+      "hints": "填空属性设置。",
+      "test_cases": [
+        "assert captured_output == 'localhost 8080\\n'"
+      ],
+      "solution": "class Config:\n    pass\n\ncfg = Config()\nfor k, v in {\"host\": \"localhost\", \"port\": 8080}.items():\n    setattr(cfg, k, v)\nprint(cfg.host, cfg.port)"
+    },
+    {
+      "id": "CH10-X-017",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数实现简化版柯里化。",
+      "code_template": "def adder(x):\n    def inner(y):\n        return x + y\n    return inner\n\nadd5 = adder(5)\nprint(___, add5(10))",
+      "expected_output": "8 15\n",
+      "hints": "填空闭包参数。",
+      "test_cases": [
+        "assert captured_output == '8 15\\n'"
+      ],
+      "solution": "def adder(x):\n    def inner(y):\n        return x + y\n    return inner\n\nadd5 = adder(5)\nprint(add5(3), add5(10))"
+    },
+    {
+      "id": "CH10-X-018",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数验证并输出错误。",
+      "code_template": "def safe_int(s, default=0):\n    try:\n        return int(s)\n    except ValueError:\n        return default\n\nprint(___, safe_int(\"abc\"))",
+      "expected_output": "42 0\n",
+      "hints": "填空安全转换。",
+      "test_cases": [
+        "assert captured_output == '42 0\\n'"
+      ],
+      "solution": "def safe_int(s, default=0):\n    try:\n        return int(s)\n    except ValueError:\n        return default\n\nprint(safe_int(\"42\"), safe_int(\"abc\"))"
+    },
+    {
+      "id": "CH10-X-019",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数做矩阵乘法。",
+      "code_template": "def mat_mul(a, b):\n    result = [[0, 0], [0, 0]]\n    for i in range(2):\n        for j in range(2):\n            for k in range(2):\n                result[i][j] += a[i][k] * b[k][j]\n    return result\n\nprint(___)",
+      "expected_output": "[[19, 22], [43, 50]]\n",
+      "hints": "填空矩阵乘法。",
+      "test_cases": [
+        "assert captured_output == '[[19, 22], [43, 50]]\\n'"
+      ],
+      "solution": "def mat_mul(a, b):\n    result = [[0, 0], [0, 0]]\n    for i in range(2):\n        for j in range(2):\n            for k in range(2):\n                result[i][j] += a[i][k] * b[k][j]\n    return result\n\nprint(mat_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]]))"
+    },
+    {
+      "id": "CH10-X-020",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数实现字符串压缩。",
+      "code_template": "def compress(s, max_run=None):\n    result = \"\"\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i - 1] and (max_run is None or count < max_run):\n            count += 1\n        else:\n            result += s[i - 1] + str(count)\n            count = 1\n    result += s[-1] + str(count)\n    return result\n\nprint(___)",
+      "expected_output": "a2a1b2b1\n",
+      "hints": "填空压缩参数。",
+      "test_cases": [
+        "assert captured_output == 'a2a1b2b1\\n'"
+      ],
+      "solution": "def compress(s, max_run=None):\n    result = \"\"\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i - 1] and (max_run is None or count < max_run):\n            count += 1\n        else:\n            result += s[i - 1] + str(count)\n            count = 1\n    result += s[-1] + str(count)\n    return result\n\nprint(compress(\"aaabbb\", max_run=2))"
+    },
+    {
+      "id": "CH10-X-021",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数驱动筛选（多条件）。",
+      "code_template": "def filter_nums(nums, *, even=None, positive=None):\n    result = nums\n    if even is not None:\n        result = [n for n in result if (n % 2 == 0) == even]\n    if positive is not None:\n        result = [n for n in result if (n > 0) == positive]\n    return result\n\nprint(___)",
+      "expected_output": "[2]\n",
+      "hints": "填空多条件筛选。",
+      "test_cases": [
+        "assert captured_output == '[2]\\n'"
+      ],
+      "solution": "def filter_nums(nums, *, even=None, positive=None):\n    result = nums\n    if even is not None:\n        result = [n for n in result if (n % 2 == 0) == even]\n    if positive is not None:\n        result = [n for n in result if (n > 0) == positive]\n    return result\n\nprint(filter_nums([-2, -1, 0, 1, 2], even=True, positive=True))"
+    },
+    {
+      "id": "CH10-X-022",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数做动态规划（简化）。",
+      "code_template": "def min_steps(n, memo=None):\n    if memo is None:\n        memo = {}\n    if n <= 1:\n        return 0\n    if n in memo:\n        return memo[n]\n    memo[n] = 1 + min_steps(n - 1, memo)\n    return memo[n]\n\nprint('Steps:',___)",
+      "expected_output": "Steps: 5\n",
+      "hints": "填空 DP 参数。",
+      "test_cases": [
+        "assert captured_output == 'Steps: 5\\n'"
+      ],
+      "solution": "def min_steps(n, memo=None):\n    if memo is None:\n        memo = {}\n    if n <= 1:\n        return 0\n    if n in memo:\n        return memo[n]\n    memo[n] = 1 + min_steps(n - 1, memo)\n    return memo[n]\n\nprint('Steps:', min_steps(6))"
+    },
+    {
+      "id": "CH10-X-023",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数实现二分查找演示过程。",
+      "code_template": "def search_steps(nums, target):\n    low, high = 0, len(nums) - 1\n    steps = []\n    while low <= high:\n        mid = (low + high) // 2\n        steps.append(nums[mid])\n        if nums[mid] == target:\n            return steps\n        elif nums[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return steps\n\nprint(___)",
+      "expected_output": "[5, 9]\n",
+      "hints": "填空二分步骤。",
+      "test_cases": [
+        "assert captured_output == '[5, 9]\\n'"
+      ],
+      "solution": "def search_steps(nums, target):\n    low, high = 0, len(nums) - 1\n    steps = []\n    while low <= high:\n        mid = (low + high) // 2\n        steps.append(nums[mid])\n        if nums[mid] == target:\n            return steps\n        elif nums[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return steps\n\nprint(search_steps([1, 3, 5, 7, 9, 11], 9))"
+    },
+    {
+      "id": "CH10-X-024",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数做区间合并。",
+      "code_template": "def merge_intervals(intervals):\n    intervals.sort()\n    result = []\n    for start, end in intervals:\n        if result and start <= result[-1][1]:\n            result[-1][1] = max(result[-1][1], end)\n        else:\n            result.append([start, end])\n    return result\n\nprint(___)",
+      "expected_output": "[[1, 6], [8, 10]]\n",
+      "hints": "填空区间合并。",
+      "test_cases": [
+        "assert captured_output == '[[1, 6], [8, 10]]\\n'"
+      ],
+      "solution": "def merge_intervals(intervals):\n    intervals.sort()\n    result = []\n    for start, end in intervals:\n        if result and start <= result[-1][1]:\n            result[-1][1] = max(result[-1][1], end)\n        else:\n            result.append([start, end])\n    return result\n\nprint(merge_intervals([[1, 3], [2, 6], [8, 10]]))"
+    },
+    {
+      "id": "CH10-X-025",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "kwargs 实现报表聚合。",
+      "code_template": "def aggregate(operation, **data):\n    values = list(data.values())\n    if operation == \"sum\":\n        return sum(values)\n    elif operation == \"avg\":\n        return sum(values) / len(values)\n    return max(values)\n\nprint(___)",
+      "expected_output": "20.0\n",
+      "hints": "填空聚合参数。",
+      "test_cases": [
+        "assert captured_output == '20.0\\n'"
+      ],
+      "solution": "def aggregate(operation, **data):\n    values = list(data.values())\n    if operation == \"sum\":\n        return sum(values)\n    elif operation == \"avg\":\n        return sum(values) / len(values)\n    return max(values)\n\nprint(aggregate(\"avg\", a=10, b=20, c=30))"
+    },
+    {
+      "id": "CH10-X-026",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数做最长递增子序列（简化）。",
+      "code_template": "def lis(nums):\n    dp = [1] * len(nums)\n    for i in range(len(nums)):\n        for j in range(i):\n            if nums[j] < nums[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp)\n\nprint('LIS:',___)",
+      "expected_output": "LIS: 3\n",
+      "hints": "填空 LIS。",
+      "test_cases": [
+        "assert captured_output == 'LIS: 3\\n'"
+      ],
+      "solution": "def lis(nums):\n    dp = [1] * len(nums)\n    for i in range(len(nums)):\n        for j in range(i):\n            if nums[j] < nums[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp)\n\nprint('LIS:', lis([3, 10, 2, 1, 20]))"
+    },
+    {
+      "id": "CH10-X-027",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数实现数字转罗马（简化）。",
+      "code_template": "def to_roman(n):\n    pairs = [(10, \"X\"), (9, \"IX\"), (5, \"V\"), (4, \"IV\"), (1, \"I\")]\n    result = \"\"\n    for value, symbol in pairs:\n        while n >= value:\n            result += symbol\n            n -= value\n    return result\n\nfor n in [1, 4, 9, 14]:\n    print(___)",
+      "expected_output": "1 -> I\n4 -> IV\n9 -> IX\n14 -> XIV\n",
+      "hints": "填空罗马数字。",
+      "test_cases": [
+        "assert captured_output == '1 -> I\\n4 -> IV\\n9 -> IX\\n14 -> XIV\\n'"
+      ],
+      "solution": "def to_roman(n):\n    pairs = [(10, \"X\"), (9, \"IX\"), (5, \"V\"), (4, \"IV\"), (1, \"I\")]\n    result = \"\"\n    for value, symbol in pairs:\n        while n >= value:\n            result += symbol\n            n -= value\n    return result\n\nfor n in [1, 4, 9, 14]:\n    print(f\"{n} -> {to_roman(n)}\")"
+    },
+    {
+      "id": "CH10-X-028",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数驱动排序稳定性演示。",
+      "code_template": "def stable_by(data, key):\n    return sorted(data, key=key)\n\npeople = [(\"A\", 25), (\"B\", 20), (\"C\", 25)]\nfor name, age in stable_by(people, lambda x: x[1]):\n    print(___, age)",
+      "expected_output": "B 20\nA 25\nC 25\n",
+      "hints": "填空稳定排序。",
+      "test_cases": [
+        "assert captured_output == 'B 20\\nA 25\\nC 25\\n'"
+      ],
+      "solution": "def stable_by(data, key):\n    return sorted(data, key=key)\n\npeople = [(\"A\", 25), (\"B\", 20), (\"C\", 25)]\nfor name, age in stable_by(people, lambda x: x[1]):\n    print(name, age)"
+    },
+    {
+      "id": "CH10-X-029",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "参数做多结果统计。",
+      "code_template": "def stats(nums):\n    return sum(nums), max(nums), min(nums)\n\ntotal, maximum, minimum = stats([3, 7, 2, 9])\nprint(___, maximum, minimum)",
+      "expected_output": "21 9 2\n",
+      "hints": "填空多返回。",
+      "test_cases": [
+        "assert captured_output == '21 9 2\\n'"
+      ],
+      "solution": "def stats(nums):\n    return sum(nums), max(nums), min(nums)\n\ntotal, maximum, minimum = stats([3, 7, 2, 9])\nprint(total, maximum, minimum)"
+    },
+    {
+      "id": "CH10-X-030",
+      "topic": "函数 (参数)",
+      "difficulty": "较难",
+      "stars": "⭐⭐⭐⭐",
+      "description": "综合：参数实现通用表格打印。",
+      "code_template": "def print_table(rows, headers=None, width=8):\n    if headers:\n        print(\" \".join(h.center(width) for h in headers))\n    for row in rows:\n        print(___)\n\nprint_table([[1, 2], [3, 4]], headers=[\"A\", \"B\"], width=4)",
+      "expected_output": " A    B  \n 1    2  \n 3    4  \n",
+      "hints": "填空表格打印。",
+      "test_cases": [
+        "assert captured_output == ' A    B  \\n 1    2  \\n 3    4  \\n'"
+      ],
+      "solution": "def print_table(rows, headers=None, width=8):\n    if headers:\n        print(\" \".join(h.center(width) for h in headers))\n    for row in rows:\n        print(\" \".join(str(c).center(width) for c in row))\n\nprint_table([[1, 2], [3, 4]], headers=[\"A\", \"B\"], width=4)"
+    }
+  ]
+}

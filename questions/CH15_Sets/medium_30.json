@@ -1,0 +1,427 @@
+{
+  "chapter": "CH15",
+  "title": "集合 (Sets)",
+  "difficulty": "简单",
+  "questions": [
+    {
+      "id": "CH15-M-001",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "用集合去重列表。",
+      "code_template": "nums = [1, 2, 2, 3, 3, 3, 4]\nunique = list(set(nums))\nprint(___)",
+      "expected_output": "[1, 2, 3, 4]\n",
+      "hints": "填空去重排序。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 3, 4]\\n'"
+      ],
+      "solution": "nums = [1, 2, 2, 3, 3, 3, 4]\nunique = list(set(nums))\nprint(sorted(unique))"
+    },
+    {
+      "id": "CH15-M-002",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "求两列表公共元素。",
+      "code_template": "a = [1, 2, 3]\nb = [2, 3, 4]\ncommon = list(set(a) & set(b))\nprint('Common:',___)",
+      "expected_output": "Common: [2, 3]\n",
+      "hints": "填空交集。",
+      "test_cases": [
+        "assert captured_output == 'Common: [2, 3]\\n'"
+      ],
+      "solution": "a = [1, 2, 3]\nb = [2, 3, 4]\ncommon = list(set(a) & set(b))\nprint('Common:', sorted(common))"
+    },
+    {
+      "id": "CH15-M-003",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "求两列表差集。",
+      "code_template": "a = [1, 2, 3, 4, 6]\nb = [2, 3]\ndiff = list(set(a) - set(b))\nprint(___)",
+      "expected_output": "[1, 4, 6]\n",
+      "hints": "填空差集。",
+      "test_cases": [
+        "assert captured_output == '[1, 4, 6]\\n'"
+      ],
+      "solution": "a = [1, 2, 3, 4, 6]\nb = [2, 3]\ndiff = list(set(a) - set(b))\nprint(sorted(diff))"
+    },
+    {
+      "id": "CH15-M-004",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合成员判断并输出。",
+      "code_template": "s = {1, 2, 3}\nif 2 in s:\n    print(\"found\")\nelse:\n    print(___)",
+      "expected_output": "found\n",
+      "hints": "填空成员判断。",
+      "test_cases": [
+        "assert captured_output == 'found\\n'"
+      ],
+      "solution": "s = {1, 2, 3}\nif 2 in s:\n    print(\"found\")\nelse:\n    print(\"missing\")"
+    },
+    {
+      "id": "CH15-M-005",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合遍历统计。",
+      "code_template": "s = {1, 2, 3, 4}\ntotal = 0\nfor v in s:\n    total += v\nprint(___)",
+      "expected_output": "Total: 10\n",
+      "hints": "填空遍历累加。",
+      "test_cases": [
+        "assert captured_output == 'Total: 10\\n'"
+      ],
+      "solution": "s = {1, 2, 3, 4}\ntotal = 0\nfor v in s:\n    total += v\nprint(f\"Total: {total}\")"
+    },
+    {
+      "id": "CH15-M-006",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合更新操作。",
+      "code_template": "s = {1, 2, 4}\ns.add(3)\ns.remove(1)\ns.discard(9)\nprint(___)",
+      "expected_output": "{2, 3, 4}\n",
+      "hints": "填空链式操作。",
+      "test_cases": [
+        "assert captured_output == '{2, 3, 4}\\n'"
+      ],
+      "solution": "s = {1, 2, 4}\ns.add(3)\ns.remove(1)\ns.discard(9)\nprint(s)"
+    },
+    {
+      "id": "CH15-M-007",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "判断两集合相等。",
+      "code_template": "a = {1, 2, 3}\nb = {3, 2, 1}\nprint('Equal:',___)",
+      "expected_output": "Equal: True\n",
+      "hints": "填空相等判断。",
+      "test_cases": [
+        "assert captured_output == 'Equal: True\\n'"
+      ],
+      "solution": "a = {1, 2, 3}\nb = {3, 2, 1}\nprint('Equal:', a == b)"
+    },
+    {
+      "id": "CH15-M-008",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "求对称差并排序。",
+      "code_template": "a = {1, 2, 3}\nb = {3, 4}\nprint(___)",
+      "expected_output": "[1, 2, 4]\n",
+      "hints": "填空对称差。",
+      "test_cases": [
+        "assert captured_output == '[1, 2, 4]\\n'"
+      ],
+      "solution": "a = {1, 2, 3}\nb = {3, 4}\nprint(sorted(a ^ b))"
+    },
+    {
+      "id": "CH15-M-009",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合推导式。",
+      "code_template": "squares = {n * n for n in range(1, 4)}\nprint(___)",
+      "expected_output": "{1, 4, 9}\n",
+      "hints": "填空推导式。",
+      "test_cases": [
+        "assert captured_output == '{1, 4, 9}\\n'"
+      ],
+      "solution": "squares = {n * n for n in range(1, 4)}\nprint(squares)"
+    },
+    {
+      "id": "CH15-M-010",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "统计唯一字符数。",
+      "code_template": "text = \"banana\"\nprint('Unique:',___)",
+      "expected_output": "Unique: 3\n",
+      "hints": "填空唯一字符。",
+      "test_cases": [
+        "assert captured_output == 'Unique: 3\\n'"
+      ],
+      "solution": "text = \"banana\"\nprint('Unique:', len(set(text)))"
+    },
+    {
+      "id": "CH15-M-011",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合运算组合输出。",
+      "code_template": "a = {1, 2, 3, 4}\nb = {3, 4, 5, 6}\nprint(___, len(a & b), len(a - b))",
+      "expected_output": "6 2 2\n",
+      "hints": "填空三运算。",
+      "test_cases": [
+        "assert captured_output == '6 2 2\\n'"
+      ],
+      "solution": "a = {1, 2, 3, 4}\nb = {3, 4, 5, 6}\nprint(len(a | b), len(a & b), len(a - b))"
+    },
+    {
+      "id": "CH15-M-012",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合 isdisjoint 判断。",
+      "code_template": "a = {1, 2}\nb = {3, 4}\nprint('Disjoint:',___)",
+      "expected_output": "Disjoint: True\n",
+      "hints": "填空无交集判断。",
+      "test_cases": [
+        "assert captured_output == 'Disjoint: True\\n'"
+      ],
+      "solution": "a = {1, 2}\nb = {3, 4}\nprint('Disjoint:', a.isdisjoint(b))"
+    },
+    {
+      "id": "CH15-M-013",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "过滤重复单词。",
+      "code_template": "words = [\"a\", \"b\", \"a\"]\nunique_words = sorted(set(words))\nprint(___)",
+      "expected_output": "['a', 'b']\n",
+      "hints": "填空去重。",
+      "test_cases": [
+        "assert captured_output == \"['a', 'b']\\n\""
+      ],
+      "solution": "words = [\"a\", \"b\", \"a\"]\nunique_words = sorted(set(words))\nprint(unique_words)"
+    },
+    {
+      "id": "CH15-M-014",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合求并集大小。",
+      "code_template": "a = {1, 2}\nb = {2, 3, 4}\nprint('Size:',___)",
+      "expected_output": "Size: 4\n",
+      "hints": "填空并集大小。",
+      "test_cases": [
+        "assert captured_output == 'Size: 4\\n'"
+      ],
+      "solution": "a = {1, 2}\nb = {2, 3, 4}\nprint('Size:', len(a | b))"
+    },
+    {
+      "id": "CH15-M-015",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合条件筛选。",
+      "code_template": "nums = set(range(1, 8))\nevens = {n for n in nums if n % 2 == 0}\nprint(___)",
+      "expected_output": "{2, 4, 6}\n",
+      "hints": "填空筛选推导。",
+      "test_cases": [
+        "assert captured_output == '{2, 4, 6}\\n'"
+      ],
+      "solution": "nums = set(range(1, 8))\nevens = {n for n in nums if n % 2 == 0}\nprint(evens)"
+    },
+    {
+      "id": "CH15-M-016",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "字符串与集合互转。",
+      "code_template": "s = set(\"abc\")\nprint(___)",
+      "expected_output": "abc\n",
+      "hints": "填空字符排序。",
+      "test_cases": [
+        "assert captured_output == 'abc\\n'"
+      ],
+      "solution": "s = set(\"abc\")\nprint(\"\".join(sorted(s)))"
+    },
+    {
+      "id": "CH15-M-017",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合求最大最小差。",
+      "code_template": "s = {3, 9, 1, 7}\nprint('Span:',___)",
+      "expected_output": "Span: 8\n",
+      "hints": "填空极值差。",
+      "test_cases": [
+        "assert captured_output == 'Span: 8\\n'"
+      ],
+      "solution": "s = {3, 9, 1, 7}\nprint('Span:', max(s) - min(s))"
+    },
+    {
+      "id": "CH15-M-018",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合更新多个。",
+      "code_template": "s = {1}\ns.update([2, 3], {4})\nprint('Count:',___)",
+      "expected_output": "Count: 4\n",
+      "hints": "填空 update 多样。",
+      "test_cases": [
+        "assert captured_output == 'Count: 4\\n'"
+      ],
+      "solution": "s = {1}\ns.update([2, 3], {4})\nprint('Count:', len(s))"
+    },
+    {
+      "id": "CH15-M-019",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "判断子集输出。",
+      "code_template": "a = {1, 2}\nb = {1, 2, 3}\nif a.issubset(b):\n    print(\"subset\")\nelse:\n    print(___)",
+      "expected_output": "subset\n",
+      "hints": "填空子集判断。",
+      "test_cases": [
+        "assert captured_output == 'subset\\n'"
+      ],
+      "solution": "a = {1, 2}\nb = {1, 2, 3}\nif a.issubset(b):\n    print(\"subset\")\nelse:\n    print(\"not subset\")"
+    },
+    {
+      "id": "CH15-M-020",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合求元素总和。",
+      "code_template": "s = {4, 6, 8}\nprint(___)",
+      "expected_output": "Sum: 18\n",
+      "hints": "填空总和。",
+      "test_cases": [
+        "assert captured_output == 'Sum: 18\\n'"
+      ],
+      "solution": "s = {4, 6, 8}\nprint(f\"Sum: {sum(s)}\")"
+    },
+    {
+      "id": "CH15-M-021",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合与列表差异。",
+      "code_template": "s = {1, 2, 3}\nlst = [1, 2, 3, 3]\nprint(___, len(lst))",
+      "expected_output": "3 4\n",
+      "hints": "填空长度对比。",
+      "test_cases": [
+        "assert captured_output == '3 4\\n'"
+      ],
+      "solution": "s = {1, 2, 3}\nlst = [1, 2, 3, 3]\nprint(len(s), len(lst))"
+    },
+    {
+      "id": "CH15-M-022",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合包含检查。",
+      "code_template": "s = {\"apple\", \"banana\"}\nprint(___, \"cherry\" in s)",
+      "expected_output": "True False\n",
+      "hints": "填空包含检查。",
+      "test_cases": [
+        "assert captured_output == 'True False\\n'"
+      ],
+      "solution": "s = {\"apple\", \"banana\"}\nprint(\"apple\" in s, \"cherry\" in s)"
+    },
+    {
+      "id": "CH15-M-023",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合求差集大小。",
+      "code_template": "a = {1, 2, 3, 4}\nb = {2, 3}\nprint('Diff:',___)",
+      "expected_output": "Diff: 2\n",
+      "hints": "填空差集大小。",
+      "test_cases": [
+        "assert captured_output == 'Diff: 2\\n'"
+      ],
+      "solution": "a = {1, 2, 3, 4}\nb = {2, 3}\nprint('Diff:', len(a - b))"
+    },
+    {
+      "id": "CH15-M-024",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "清空后判断。",
+      "code_template": "s = {1, 2}\ns.clear()\nprint('Empty:',___)",
+      "expected_output": "Empty: True\n",
+      "hints": "填空清空判断。",
+      "test_cases": [
+        "assert captured_output == 'Empty: True\\n'"
+      ],
+      "solution": "s = {1, 2}\ns.clear()\nprint('Empty:', len(s) == 0)"
+    },
+    {
+      "id": "CH15-M-025",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合交集大小。",
+      "code_template": "a = {1, 2, 3}\nb = {2, 3, 4}\nprint('Inter:',___)",
+      "expected_output": "Inter: 2\n",
+      "hints": "填空交集大小。",
+      "test_cases": [
+        "assert captured_output == 'Inter: 2\\n'"
+      ],
+      "solution": "a = {1, 2, 3}\nb = {2, 3, 4}\nprint('Inter:', len(a & b))"
+    },
+    {
+      "id": "CH15-M-026",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "浮点集合运算。",
+      "code_template": "a = {1.5, 2.5}\nb = {2.5, 3.5}\nprint(___)",
+      "expected_output": "[1.5, 2.5, 3.5]\n",
+      "hints": "填空浮点并集。",
+      "test_cases": [
+        "assert captured_output == '[1.5, 2.5, 3.5]\\n'"
+      ],
+      "solution": "a = {1.5, 2.5}\nb = {2.5, 3.5}\nprint(sorted(a | b))"
+    },
+    {
+      "id": "CH15-M-027",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合求和平均。",
+      "code_template": "s = {2, 4, 6}\nprint(___)",
+      "expected_output": "Average: 4.0\n",
+      "hints": "填空平均。",
+      "test_cases": [
+        "assert captured_output == 'Average: 4.0\\n'"
+      ],
+      "solution": "s = {2, 4, 6}\nprint(f\"Average: {sum(s) / len(s)}\")"
+    },
+    {
+      "id": "CH15-M-028",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合逆序输出。",
+      "code_template": "s = {1, 2, 3}\nprint(___)",
+      "expected_output": "[3, 2, 1]\n",
+      "hints": "填空降序。",
+      "test_cases": [
+        "assert captured_output == '[3, 2, 1]\\n'"
+      ],
+      "solution": "s = {1, 2, 3}\nprint(sorted(s, reverse=True))"
+    },
+    {
+      "id": "CH15-M-029",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "集合与元组互转。",
+      "code_template": "t = (1, 2, 2, 3)\nprint(___)",
+      "expected_output": "(1, 2, 3)\n",
+      "hints": "填空元组转换。",
+      "test_cases": [
+        "assert captured_output == '(1, 2, 3)\\n'"
+      ],
+      "solution": "t = (1, 2, 2, 3)\nprint(tuple(set(t)))"
+    },
+    {
+      "id": "CH15-M-030",
+      "topic": "集合 (Sets)",
+      "difficulty": "简单",
+      "stars": "⭐⭐",
+      "description": "综合：集合统计。",
+      "code_template": "nums = [1, 2, 2, 3, 3, 3]\ns = set(nums)\nprint(___, sum(s))",
+      "expected_output": "3 6\n",
+      "hints": "填空统计。",
+      "test_cases": [
+        "assert captured_output == '3 6\\n'"
+      ],
+      "solution": "nums = [1, 2, 2, 3, 3, 3]\ns = set(nums)\nprint(len(s), sum(s))"
+    }
+  ]
+}
