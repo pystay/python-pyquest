@@ -23,6 +23,7 @@
       <div class="progress-card">
         <div class="progress-label">已完成 <span id="progress-count">0</span> / <span id="progress-total">0</span></div>
         <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+        <button id="btn-clear-progress" class="btn ghost clear-btn">清空进度</button>
       </div>
       <div id="chapter-list" class="chapter-list"></div>
     </aside>
@@ -31,7 +32,7 @@
       <section id="welcome" class="welcome">
         <h2>欢迎来到 PyQuest 🎉</h2>
         <p>闯关式 Python 刷题平台。从 <strong>CH01 Hello, World!</strong> 开始，完成一题解锁下一题。</p>
-        <p class="muted">题库：15 章 · 1780 道题 · 四档难度（超简单 → 较难）。代码在浏览器内通过 Pyodide 实时运行判分。</p>
+        <p class="muted">代码区初始为空白，请从零开始编写完整 Python 代码；点「运行」由 Pyodide 实时判分。</p>
         <button id="btn-start" class="btn primary">开始刷题</button>
       </section>
 

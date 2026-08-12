@@ -154,10 +154,16 @@ async function openQuestion(id) {
   $("q-hints-text").textContent = q.hints || "";
   $("q-hints").classList.toggle("hidden", !q.hints);
 
+  // 编辑器初始为空白；仅当用户之前保存过代码时恢复，否则一律留空
   const saved = loadCode(q.id);
-  $("editor").value = saved || q.code_template || "";
+  $("editor").value = saved || "";
+
+  // 彻底重置输出与判定区（不残留上一题的通过/失败状态）
   $("output").textContent = "点击「运行」查看结果…";
   $("verdict").classList.add("hidden");
+  $("verdict").innerHTML = "";
+  $("btn-run").disabled = false;
+  $("btn-run").textContent = "▶ 运行";
 
   document.querySelectorAll(".qlink").forEach((b) => {
     b.classList.toggle("active", b.dataset.id === id);
@@ -166,6 +172,9 @@ async function openQuestion(id) {
 }
 
 /* ---------- 运行与判分 ---------- */
+// 运行序号：切题后旧运行结果一律丢弃，防止“残留的通过提示”串到其他题
+let runSeq = 0;
+
 function captureRun(pyodide, code) {
   let out = "";
   pyodide.setStdout({ batched: (s) => { out += s; } });
@@ -180,8 +189,8 @@ function captureRun(pyodide, code) {
 function judge(q, actual) {
   const expected = q.expected_output || "";
   if (actual === expected) return { pass: true };
-  // 容差：忽略末尾空行差异
-  if (actual.replace(/\s+$/, "") === expected.replace(/\s+$/, "") && actual !== expected) {
+  // 仅当期望输出本身不是空白时，才允许“尾部空白差异”容差（如缺末尾换行）
+  if (expected.trim() !== "" && actual.replace(/\s+$/, "") === expected.replace(/\s+$/, "")) {
     return { pass: true, soft: true };
   }
   return { pass: false };
@@ -192,18 +201,23 @@ async function runCode() {
     $("output").textContent = "Python 引擎尚未就绪，请稍候…";
     return;
   }
-  const q = state.questions[$("q-id").textContent];
+  const qid = $("q-id").textContent;
+  const q = state.questions[qid];
   if (!q) return;
+  const seq = ++runSeq;
   const code = $("editor").value;
-  saveCode(q.id, code);
+  saveCode(qid, code);
 
   const btn = $("btn-run");
   btn.disabled = true;
   btn.textContent = "运行中…";
   $("verdict").classList.add("hidden");
+  $("verdict").innerHTML = "";
 
   try {
     const actual = captureRun(state.pyodide, code);
+    // 运行期间若已切题，丢弃本次结果，不显示任何判定
+    if (seq !== runSeq) return;
     $("output").textContent = actual === "" ? "（无输出）" : actual;
 
     const v = judge(q, actual);
@@ -212,11 +226,11 @@ async function runCode() {
     if (v.pass) {
       box.className = "verdict ok";
       box.innerHTML = "✅ 通过！" + (v.soft ? "（末尾空行差异已忽略）" : "");
-      if (!state.progress[q.id]) {
-        state.progress[q.id] = true;
+      if (!state.progress[qid]) {
+        state.progress[qid] = true;
         saveProgress();
         refreshProgressBar();
-        markLinkDone(q.id);
+        markLinkDone(qid);
       }
     } else {
       box.className = "verdict fail";
@@ -225,14 +239,17 @@ async function runCode() {
         "\n实际输出：\n" + escapeHtml(actual) + "</pre>";
     }
   } catch (err) {
+    if (seq !== runSeq) return;
     $("output").textContent = "";
     const box = $("verdict");
     box.classList.remove("hidden");
     box.className = "verdict fail";
     box.innerHTML = "⚠️ 程序运行出错（SyntaxError / 异常）：<pre>" + escapeHtml(String(err)) + "</pre>";
   } finally {
-    btn.disabled = false;
-    btn.textContent = "▶ 运行";
+    if (seq === runSeq) {
+      btn.disabled = false;
+      btn.textContent = "▶ 运行";
+    }
   }
 }
 
@@ -274,12 +291,25 @@ $("btn-run").addEventListener("click", runCode);
 $("btn-prev").addEventListener("click", () => goto(-1));
 $("btn-next").addEventListener("click", () => goto(1));
 $("btn-reset").addEventListener("click", () => {
-  const q = state.questions[$("q-id").textContent];
-  if (q) $("editor").value = q.code_template;
+  $("editor").value = "";
+  $("output").textContent = "点击「运行」查看结果…";
+  $("verdict").classList.add("hidden");
+  $("verdict").innerHTML = "";
 });
 $("btn-hint").addEventListener("click", () => $("q-hints").classList.remove("hidden"));
 $("btn-start").addEventListener("click", () => {
   if (state.order.length) openQuestion(state.order[0]);
+});
+$("btn-clear-progress").addEventListener("click", () => {
+  if (!confirm("确定清空全部进度与已保存的代码？此操作不可恢复。")) return;
+  try { localStorage.removeItem(KEY_PROGRESS); } catch (e) {}
+  state.progress = {};
+  refreshProgressBar();
+  document.querySelectorAll(".qlink").forEach((b) => b.classList.remove("done"));
+  $("editor").value = "";
+  $("output").textContent = "点击「运行」查看结果…";
+  $("verdict").classList.add("hidden");
+  $("verdict").innerHTML = "";
 });
 $("editor").addEventListener("keydown", (e) => {
   if (e.key === "Tab") {
